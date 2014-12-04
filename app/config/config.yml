@@ -41,4 +41,4 @@ swiftmailer:
     spool:     { type: memory }
 
 ccm_benchmark_ting_documentation:
-    doc_path: @CCMBenchmarkTingDocumentationBundle/Resources/doc
+    doc_path: %kernel.root_dir%/Resources/doc
