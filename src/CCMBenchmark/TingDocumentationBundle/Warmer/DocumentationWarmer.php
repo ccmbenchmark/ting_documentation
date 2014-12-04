@@ -50,7 +50,7 @@ class DocumentationWarmer implements CacheWarmerInterface
         $builder->build($input, $output, true);
 
         foreach (glob($input.'/*', GLOB_ONLYDIR) as $folder) {
-            $this->buildDirectory($folder, $output.'/'.basename($folder));
+            $this->buildDirectory($folder, $output.'/'.basename($folder), false);
         }
     }
 }
