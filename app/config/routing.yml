@@ -1,0 +1,3 @@
+ccm_benchmark_ting_documentation:
+    resource: "@CCMBenchmarkTingDocumentationBundle/Resources/config/routing.xml"
+    prefix:   /
