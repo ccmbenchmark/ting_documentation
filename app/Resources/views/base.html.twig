@@ -25,11 +25,24 @@
                     </div>
                 </div>
             </header>
-            <div role="main">
-                <div class="layout_ct">
-                    <section class="doc_box">
-                        {% block body %}{% endblock %}
-                    </section>
+            <div role="main" class="layout_ct">
+                <div class="grid_line gutter">
+                    <div class="grid_left w25">
+                        <section class="doc_box doc_box--skin_1">
+                            <h3 class="doc_separator">Sommaire</h3>
+                            <ul>
+                                <li>
+                                    <a href="" target="_blank">Lien</a>
+                                </li>
+                            </ul>
+
+                        </section>
+                    </div>
+                    <div class="grid_last">
+                        <section class="doc_box">
+                            {% block body %}{% endblock %}
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
