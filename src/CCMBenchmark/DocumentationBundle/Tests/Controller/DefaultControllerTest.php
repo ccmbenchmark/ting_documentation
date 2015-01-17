@@ -1,6 +1,6 @@
 <?php
 
-namespace CCMBenchmark\TingDocumentationBundle\Tests\Controller;
+namespace CCMBenchmark\DocumentationBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

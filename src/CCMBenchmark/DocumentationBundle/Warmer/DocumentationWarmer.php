@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CCMBenchmark\TingDocumentationBundle\Warmer;
+namespace CCMBenchmark\DocumentationBundle\Warmer;
 
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -10,6 +10,8 @@ use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
 class DocumentationWarmer implements CacheWarmerInterface
 {
     protected $container;
+
+    protected $builder;
 
     public function __construct(ContainerInterface $container)
     {
@@ -38,16 +40,17 @@ class DocumentationWarmer implements CacheWarmerInterface
     public function warmUp($cacheDir)
     {
         $directory = $this->container->get('fileLocator')->locate(
-            $this->container->getParameter('ccm_benchmark_ting_documentation.doc_path')
+            $this->container->getParameter('ccm_benchmark_documentation.doc_path')
         );
 
+        \CCMBenchmark\DocumentationBundle\RST\Builder::$baseDirectory = $directory;
         $this->buildDirectory($directory, $cacheDir . '/doc');
     }
 
     protected function buildDirectory($input, $output)
     {
-        $builder = new \CCMBenchmark\TingDocumentationBundle\RST\Builder();
-        $builder->build($input, $output, true);
+        $this->builder = new \CCMBenchmark\DocumentationBundle\RST\Builder();
+        $this->builder->build($input, $output, false);
 
         foreach (glob($input.'/*', GLOB_ONLYDIR) as $folder) {
             $this->buildDirectory($folder, $output.'/'.basename($folder), false);
