@@ -21,5 +21,3 @@ Ting is not an ORM, because it doesn't fully support relations between objects. 
   echo 'toto';
 
 test
-
-:doc:`HoHo <truc>`

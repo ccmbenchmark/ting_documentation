@@ -4,8 +4,37 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "61a46e27204b55b72aca97b76f575aba",
+    "hash": "722446a5288d7592c5efeabf57c21554",
     "packages": [
+        {
+            "name": "ccmbenchmark/documentation-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:ccmbenchmark/documentation_bundle.git",
+                "reference": "2e0fc936db33da20162ab0be13085cd15a3eee8a"
+            },
+            "dist": {
+                "type": "tar",
+                "url": "http://satis.admin2.ccmbg.com//dist/ccmbenchmark-documentation-bundle-1.0.0-f51b3d.tar",
+                "reference": "2e0fc936db33da20162ab0be13085cd15a3eee8a",
+                "shasum": "b65a83c413b1aa4b815b09b76c49c36c77cd1331"
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CCMBenchmark\\DocumentationBundle\\": "src/DocumentationBundle/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Integrate a RST Documentation into your symfony 2.0 application",
+            "time": "2015-01-19 08:35:59"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.1",
@@ -1699,6 +1728,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },

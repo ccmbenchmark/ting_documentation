@@ -40,5 +40,5 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-ccm_benchmark_ting_documentation:
+ccm_benchmark_documentation:
     doc_path: %kernel.root_dir%/Resources/doc

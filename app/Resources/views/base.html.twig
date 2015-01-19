@@ -2,12 +2,50 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=components|framework|docs&v=201412041055">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="ccmcss-doc">
+        <div class="layout">
+            <header id="header" role="banner">
+                <div class="grid_row gutter">
+                    <div class="grid_col">
+                        <a href="/fc/__docs/">
+                            <div class="ccmcss-doc-logo">
+                                <div class="ccmcss-doc-logo__hd">Ting</div>
+                                <div class="ccmcss-doc-logo__ft">Datamapper</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid_col grid_col--middle w100">
+                        <h1>Datamapper PHP</h1>
+                    </div>
+                </div>
+            </header>
+            <div role="main" class="layout_ct">
+                <div class="grid_line gutter">
+                    <div class="grid_left w25">
+                        <section class="doc_box doc_box--skin_1">
+                            <h3 class="doc_separator">Sommaire</h3>
+                            <ul>
+                                <li>
+                                    <a href="" target="_blank">Lien</a>
+                                </li>
+                            </ul>
+
+                        </section>
+                    </div>
+                    <div class="grid_last">
+                        <section class="doc_box">
+                            {% block body %}{% endblock %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
