@@ -6,6 +6,12 @@
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://satis.admin2.ccmbg.com/"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.6.*",
@@ -15,7 +21,8 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "gregwar/rst": "~1.0"
+        "gregwar/rst": "~1.0",
+        "ccmbenchmark/documentation-bundle": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
