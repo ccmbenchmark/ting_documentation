@@ -79,5 +79,5 @@ Vous pouvez injecter votre propre serializer :
     ]);
 
 Le type bool est considéré comme un type complexe, car la façon de le stocker en base est différent selon les sgbd :
-    - \CCMBenchmark\Ting\Driver\Pgsql\Serializer\Bool'
-    - \CCMBenchmark\Ting\Driver\Mysqli\Serializer\Bool'
+    - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Bool
+    - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Bool
