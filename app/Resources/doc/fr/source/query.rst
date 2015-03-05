@@ -1,7 +1,5 @@
 .. sectnum::
-
-.. contents:: Query
-  :depth: 1
+    :start: 1
 
 Les requêtes
 =====================
@@ -15,7 +13,7 @@ L'objet Query
 Une requête s'effectue en récupérant l'objet CCMBenchmark\\Ting\\Query\\Query
 via le Repository.
 
-Pour se faire il suff-it d'appeler :
+Pour ce faire il suffit d'appeler :
 
 .. code-block:: php
 
@@ -24,8 +22,8 @@ Pour se faire il suff-it d'appeler :
 
 Les paramètres
 ~~~~~~~~~~~~~~
-Pour mettre des paramètres dynamique dans la requête il faut utiliser la méthode
-"setParams" qui prend un argument un tableau associatif :
+Pour mettre des paramètres dynamiques dans la requête il faut utiliser la méthode
+"setParams" qui prend en argument un tableau associatif :
 
 .. code-block:: php
 
@@ -49,7 +47,7 @@ Récupérer les résultats
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 La méthode "query" retourne un objet CCMBenchmark\\Ting\\Repository\\Collection
-Cet objet est un iterator, vous pouvez donc récupérer les résultats de cette façon :
+Cet objet est un Iterator, vous pouvez donc récupérer les résultats de cette façon :
 
 .. code-block:: php
 
@@ -64,26 +62,27 @@ Cet objet est un iterator, vous pouvez donc récupérer les résultats de cette 
 Explication sur le format retourné
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Les données retournée par l'objet Collection sont auparavant hydrater par l'objet
-CCMBenchmark\\Ting\\Repository\\Hydrator il retourne toujours un tableau associatif, où la clé est le nom de la table (ou l'alias) et la valeur l'objet dans laquelle la table est mappée, ou un stdClass, pour l'exemple précédent le print_r va donc afficher :
+Les données retournées par l'objet Collection sont auparavant hydratées par l'objet
+CCMBenchmark\\Ting\\Repository\\Hydrator. Il retourne toujours un tableau associatif, dans lequel la clé est le nom de la table (ou son alias) et la valeur est soit l'objet dans lequel la table est mappée, soit un stdClass s'il n'y a pas d'objet dans lequel on peut mapper les informations.
+Pour l'exemple précédent le print_r va donc afficher :
 ['user' => User# ]
 
-C'est très utile lorsque vous récupérer plusieurs types d'objets différent en même temps (via une jointure), mais pas très pratique lorsque vous récupérez seulement un même type d'objet (comme dans l'exemple précédent)
+C'est très utile lorsque vous récupérez plusieurs types d'objets différents en une requête (via une jointure), mais moins pertinent lorsque vous récupérez seulement un même type d'objet (comme dans l'exemple précédent).
 
 
-Avoir un format de retour plus simple pour des requêtes sans jointures
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Format de retour simplifié pour des requêtes sans jointures
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Donc vous pouvez utiliser un autre hydrateur qui sert justement à retourner qu'un type d'objet il s'agit de CCMBenchmark\\Ting\\Repository\\HydratorSingleObject
+Donc vous pouvez utiliser un autre hydrateur qui sert justement à retourner un seul type d'objet. Il s'agit de CCMBenchmark\\Ting\\Repository\\HydratorSingleObject
 
-L'hydrateur est lié à la collection, il s'injecte donc dans la collection.
+L'hydrateur est lié à la collection, il faut l'y injecter.
 Il faut donc récupérer une collection et lui injecter l'hydrateur de notre choix, la méthode "getCollection" d'un Repository permet de faire les deux :
 
 .. code-block:: php
 
   $this->getCollection(new CCMBenchmark\Ting\Repository\HydratorSingleObject())
 
-Il suffit ensuite de demander à l'objet Query d'utiliser cette collection, ça se fait dans la méthode "query", le code final donnera donc :
+Il suffit ensuite de demander à l'objet Query d'utiliser cette collection, ça se fait dans la méthode "query", le code final sera donc :
 
 .. code-block:: php
 
@@ -101,7 +100,7 @@ User
 Compter les éléments d'une collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Il faut savoir qu'une Collection est "countable", vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : count($collection);
+Il faut savoir qu'une Collection implémente l'interface standard Countable. Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : count($collection);
 
 Une requête de lecture s'effectuera par défaut sur un des slaves configurés (si des slaves ont été configurés), si vous avez besoin
 d'effectuer votre requête sur le master, alors il faut appeler la méthode "selectMaster" :
@@ -118,7 +117,7 @@ Si la requête exécuté ne se termine pas correctement, une exception du type C
 
 
 Effectuer une requête d'écriture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 La logique reste la même que pour une requête de lecture, à quelques différences près.
 Il faut appeler la méthode "execute" sur l'objet CCMBenchmark\\Ting\\Query\\Query

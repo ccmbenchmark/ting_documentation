@@ -1,14 +1,12 @@
 .. sectnum::
-
-.. contents:: UnitOfWork
-:depth: 1
+    :start: 3
 
 L'unitOfWork
 ============
 
 Au sujet de l'unitOfWork
 ------------------------
-L'unitOfWork à pour rôle de tracker les changements des objets afin de les persister en base de données.
+L'unitOfWork a pour rôle de tracker les changements des objets afin de les persister en base de données.
 
 Fonctionnement interne
 ~~~~~~~~~~~~~~~~~~~~~~

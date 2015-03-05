@@ -1,7 +1,5 @@
 .. sectnum::
-
-.. contents:: Repository
-:depth: 1
+    :start: 2
 
 Repository
 ==========
@@ -9,7 +7,7 @@ Repository
 Au sujet du Repository
 ----------------------
 Le Repository va faire le lien entre votre objet entité et votre base de données, par l'intermédiaire de l'objet Query.
-Il est aussi responsable d'initialiser les Metadata qui concerne votre entité afin de savoir comment mapper
+Il est aussi responsable d'initialiser les Metadata qui concernent votre entité afin de savoir comment mapper
 votre objet en base de données.
 
 Création des Metadata
@@ -51,8 +49,8 @@ Quelques précisions :
         - datetime
         - json
 
-Le type bool, datetime et json sont un peu particulier, car il s'agit de types considérés complexes et qui acceptent
-donc d'être sérializé/désérializé via des options :
+Le type bool, datetime et json sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent
+donc d'être sérializés/désérializés via des options :
 
 .. code-block:: php
 
@@ -65,7 +63,7 @@ donc d'être sérializé/désérializé via des options :
         ]
     ]);
 
-Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possible.
+Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.
 
 Vous pouvez injecter votre propre serializer :
 
@@ -78,6 +76,6 @@ Vous pouvez injecter votre propre serializer :
         'serializer' => '\Bouh\Awesome\Serializer'
     ]);
 
-Le type bool est considéré comme un type complexe, car la façon de le stocker en base est différent selon les sgbd :
+Le type bool est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :
     - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Bool
     - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Bool
