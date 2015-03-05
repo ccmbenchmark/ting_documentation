@@ -29,8 +29,6 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    paths:
-        "%kernel.cache_dir%/doc/" : CCMBenchmarkDocHTML
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -39,6 +37,3 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-
-ccm_benchmark_documentation:
-    doc_path: %kernel.root_dir%/Resources/doc
