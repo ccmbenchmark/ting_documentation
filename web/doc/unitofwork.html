@@ -1,0 +1,217 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>3   L’unitOfWork &mdash; documentation ting 1</title>
+    
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="top" title="documentation ting 1" href="index.html"/>
+    <link rel="prev" title="2   Repository" href="repository.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/" class="fa fa-home"> ting</a>
+            
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;Au sujet du Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Création des Metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#au-sujet-de-l-unitofwork">3.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remarques-pour-les-batchs">3.2&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="home.html">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            <div class="ting_menu" role="menubar">
+    <ul>
+        <li>
+            Accueil
+        </li>
+        <li>
+            Documentation
+        </li>
+        <li>
+            Sources
+        </li>
+        <li>
+            Authors
+        </li>
+    </ul>
+</div>
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="home.html">Docs</a> &raquo;</li>
+      
+    <li>3&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <div class="section" id="l-unitofwork">
+<h1>3&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork<a class="headerlink" href="#l-unitofwork" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="au-sujet-de-l-unitofwork">
+<h2>3.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork<a class="headerlink" href="#au-sujet-de-l-unitofwork" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L&#8217;unitOfWork a pour rôle de tracker les changements des objets afin de les persister en base de données.</p>
+<div class="section" id="fonctionnement-interne">
+<h3>3.1.1&nbsp;&nbsp;&nbsp;Fonctionnement interne<a class="headerlink" href="#fonctionnement-interne" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L&#8217;unitOfWork initialise dans tous les objets &#8220;managed&#8221; une propriétée tingUUID qui ne doit en aucun cas être altérée
+par l&#8217;utilisateur. Un objet &#8220;managed&#8221; est un objet qui existe déjà en base et qui provoquera une requête UPDATE
+lorsque l&#8217;on demandera à ce qu&#8217;il soit persisté.</p>
+</div>
+</div>
+<div class="section" id="remarques-pour-les-batchs">
+<h2>3.2&nbsp;&nbsp;&nbsp;Remarques pour les batchs<a class="headerlink" href="#remarques-pour-les-batchs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de traitement sur un grand nombre d&#8217;objet il est impératif de détacher les objets dont on a plus l&#8217;usage afin
+que l&#8217;unitOfWork libère de la mémoire :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$unitOfWork-&gt;detach($entity);</span>
+</pre></div>
+</div>
+<p>On peut aussi détacher tous les objets lorsque ceux-ci ont été persistés :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$unitOfWork-&gt;detachAll();</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+                </div>
+                <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="repository.html" class="btn btn-neutral" title="2   Repository"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, CCM Benchmark Group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/translations.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+ 
+
+</body>
+</html>
