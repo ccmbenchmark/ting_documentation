@@ -12,3 +12,5 @@
 /composer.phar
 .idea
 app/Resources/doc/fr/build
+/web/doc/_sources
+/web/doc/doctrees
