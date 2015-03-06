@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "license": "MIT",
+    "name": "ccmbenchmark/ting_documentation",
+    "license": "proprietary",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Documentation for ccmbenchmark/ting",
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
@@ -20,9 +20,7 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0",
-        "gregwar/rst": "~1.0",
-        "ccmbenchmark/documentation-bundle": "~1.0"
+        "incenteev/composer-parameter-handler": "~2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -54,9 +52,6 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.6-dev"
         }
     }
 }

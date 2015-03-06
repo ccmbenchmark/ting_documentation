@@ -11,3 +11,5 @@
 /bin/
 /composer.phar
 .idea
+/web/doc/_sources
+/web/doc/doctrees

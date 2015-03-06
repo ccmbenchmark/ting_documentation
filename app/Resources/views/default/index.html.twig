@@ -1,5 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    Homepage.
+    <h1>Ting - Data Mapper</h1>
+    <div role="main">
+        <div id="doc">
+            <a href="/doc/">
+                <img src="{{ asset('img/doc.png') }}" /><br />
+                Documentation
+            </a>
+        </div>
+        <div id="bitbucket">
+            <a href="https://bitbucket.org/ccmbenchmark/ting">
+                <img src="{{ asset('img/bitbucket_rgb_blue.png') }}" /><br />
+                Sources
+            </a>
+        </div>
+        <div style="clear: both"></div>
+    </div>
 {% endblock %}

@@ -1,8 +1,10 @@
+.. ting documentation master file, created by
+   sphinx-quickstart on Tue Jan 20 08:55:41 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-Ting - PHP Datamapper
-=====================
-
-**Ting est un datamapper simple et rapide pour PHP.**
+Ting - Documentation
+====================
 
 * **Simple**: no magic inside : it's basically SQL queries
 * **Fast**: with no magic comes no overhead
@@ -14,10 +16,12 @@ Some great datamapper frameworks for MySQL and PostgreSQL already exists. Howeve
 
 Ting is not an ORM, because it doesn't fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.
 
-**Short samples**
 
-.. code-block:: php
+.. toctree::
+   :maxdepth: 3
 
-  echo 'toto';
+   query
+   repository
+   unitofwork
 
-test
+
