@@ -17,12 +17,13 @@
                 color:white;
             }
             div.layout {
-                width: 800px;
+                width: 1000px;
                 margin: auto;
             }
             div[role="main"] div {
                 text-align: center;
-                width:400px;
+                width:500px;
+                margin: 100px auto;
             }
             #doc{
                 float:left;
@@ -32,24 +33,57 @@
             }
         </style>
     </head>
-    <body style="background-color: #343131">
+    <body style="background-color: #2f2f2e">
         <div class="layout">
-            <h1>Ting - Data Mapper</h1>
-            <div role="main">
-                <div id="doc">
-                    <a href="/doc/">
-                        <img src="{{ asset('img/doc.png') }}" /><br />
-                        Documentation
-                    </a>
-                </div>
-                <div id="bitbucket">
-                    <a href="https://bitbucket.org/ccmbenchmark/ting">
-                        <img src="{{ asset('img/bitbucket_rgb_blue.png') }}" /><br />
-                        Sources
-                    </a>
-                </div>
-            </div>
+            {% block body %}
+            {% endblock %}
         </div>
+
+        <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=footer">
+        <footer role="contentinfo" class="ccmcss_footer ccmcss_footer--dark">
+            <ul class="toollinks">
+                <li><a href="http://www.ccmbenchmark.com/advertising/fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+                <li><a href="http://www.ccmbenchmark.com/institut/contact/information">Contact</a></li>
+                <li><a href="http://benchmail.benchmark.fr/magazine/archive_406_1.html">Press</a></li>
+                <li><a href="http://www.journaldunet.com/donneesperso.shtml">Données personnelles</a></li>
+                <li><a href="http://www.ccmbenchmark.com/mentions-legales">Mentions légales</a></li>
+                <li><a href="http://www.ccmbenchmark.com/">&copy; 2015 CCM Benchmark</a></li>
+            </ul>
+            <div class="logo">
+                <a href="#">
+                    <hgroup>
+                        <span>CCM Benchmark Group</span>
+                    </hgroup>
+                </a>
+            </div>
+            <div class="brands">
+                <a href="http://www.commentcamarche.net/" class="group_ccm" original-title="commentçamarche.net"></a>
+                <a href="http://www.journaldunet.com/" class="group_jdn" original-title="Le Journal du Net"></a>
+                <a href="http://droit-finances.commentcamarche.net/" class="group_df" original-title="Droit-finances.net"></a>
+                <a href="http://www.journaldesfemmes.com/" class="group_jdf" original-title="Journal des femmes"></a>
+                <a href="http://www.linternaute.com/" class="group_linter" original-title="linternaute.com"></a>
+                <a href="http://copainsdavant.linternaute.com/" class="group_copains" original-title="Copains d'avant"></a>
+                <a href="http://sante-medecine.commentcamarche.net/" class="group_ms" original-title="Santé-médecine.net"></a>
+            </div>
+            <p class="foot_links">
+                <a href="http://www.linternaute.com/voyage/">Voyage</a>,
+                <a href="http://www.linternaute.com/loisirs/">Loisirs</a>,
+                <a href="http://www.linternaute.com/restaurant/">Restos</a>,
+                <a href="http://www.linternaute.com/cinema/">Cinéma</a>,
+                <a href="http://www.linternaute.com/bricolage/">Bricolage</a>,
+                <a href="http://www.linternaute.com/argent/">Argent</a>,
+                <a href="http://deco.journaldesfemmes.com/">Décoration</a>,
+                <a href="http://cuisine.journaldesfemmes.com/">Cuisine</a>,
+                <a href="http://www.linternaute.com/auto/">Auto</a>,
+                <a href="http://sante.journaldesfemmes.com/">Santé</a>,
+                <a href="http://www.linternaute.com/homme/">Homme</a>,
+                <a href="http://www.linternaute.com/actualite/">Actualités</a>,
+                <a href="http://www.commentcamarche.net/">High-tech</a>,
+                <a href="http://www.journaldunet.com/">Entreprise</a>,
+                <a href="http://expeert.com/fr/">Expeert</a>
+            </p>
+        </footer>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
