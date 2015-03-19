@@ -1,14 +1,17 @@
 .. sectnum::
     :start: 2
 
-Repository
-==========
+Le Repository
+=============
+
 
 Au sujet du Repository
 ----------------------
 Le Repository va faire le lien entre votre objet entité et votre base de données, par l'intermédiaire de l'objet Query.
+
 Il est aussi responsable d'initialiser les Metadata qui concernent votre entité afin de savoir comment mapper
 votre objet en base de données.
+
 
 Création des Metadata
 ---------------------
@@ -41,8 +44,8 @@ Comme un exemple est plus parlant qu'un long discours :
 
 Quelques précisions :
     - fieldName correspond au nom de la propriété de votre entité
-    - columnName au nom de la colonne dans votre base de données
-    - type au type de votre variable avec comme valeurs possibles :
+    - columnName correspond au nom de la colonne dans votre base de données
+    - type correspond au type de votre variable avec comme valeur possibles :
         - int
         - string
         - bool

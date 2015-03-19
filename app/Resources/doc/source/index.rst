@@ -22,6 +22,7 @@ Ting is not an ORM, because it doesn't fully support relations between objects. 
 
    query
    repository
+   hydrator
    unitofwork
 
 
