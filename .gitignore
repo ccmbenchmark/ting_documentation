@@ -13,3 +13,5 @@
 .idea
 /web/doc/_sources
 /web/doc/doctrees
+app/Resources/doc/fr/build/
+/web/doc/_static
