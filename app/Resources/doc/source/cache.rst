@@ -6,8 +6,8 @@ Le cache
 
 Au sujet du cache
 ------------------------
-Le résultat d'une requête effectuée avec les objets de cache sera soit récupérée depuis le cache si l'entrée y existe déjà,
-soit récupéré depuis la base de données puis insérée dans le cache.
+Le résultat d'une requête effectuée avec les objets de cache sera soit récupéré depuis le cache si l'entrée y existe déjà,
+soit récupéré depuis la base de données puis inséré dans le cache.
 
 Le résultat de la requête stockée dans le cache n'est pas dépendant du système d'hydration utilisé.
 

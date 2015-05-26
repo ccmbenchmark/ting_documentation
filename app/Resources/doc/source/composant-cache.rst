@@ -54,4 +54,4 @@ Remplacer une valeur dans le cache
 
 Sauvegarder de manière infini
 -----------------------------
-Il suffit de mettre un ttl de 0 pour sauvegarder de manière infini
+Il suffit de mettre un ttl de 0 pour sauvegarder de manière infinie
