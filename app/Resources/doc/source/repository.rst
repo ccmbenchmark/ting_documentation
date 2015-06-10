@@ -86,31 +86,31 @@ Le type bool est considéré comme un type complexe, car la façon de le stocker
 Requêtes
 --------
 
-Le Repository fourni plusieurs méthodes afin de faciliter le requête simple.
+Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.
 
 Trouver un objet par clé primaire
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
     $repository->get(['id' => 3])
 
 Tous les objets
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
     $repository->getAll()
 
-Un objet d'après une/des propriété(s) du model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Un objet d'après une ou plusieurs propriété(s) du modèle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
     $repository->getOneBy(['propertyName' => 'Sylvain']);
 
-Une collection d'objet d'après une/des propriété(s) du model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Une collection d'objet d'après une ou plusieurs propriété(s) du modèle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
