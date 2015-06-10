@@ -82,3 +82,36 @@ Vous pouvez injecter votre propre serializer :
 Le type bool est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :
     - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Bool
     - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Bool
+
+Requêtes
+--------
+
+Le Repository fourni plusieurs méthodes afin de faciliter le requête simple.
+
+Trouver un objet par clé primaire
+~~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    $repository->get(['id' => 3])
+
+Tous les objets
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    $repository->getAll()
+
+Un objet d'après une/des propriété(s) du model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    $repository->getOneBy(['propertyName' => 'Sylvain']);
+
+Une collection d'objet d'après une/des propriété(s) du model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: php
+
+    $repository->getBy(['propertyName' => 'Sylvain']);
