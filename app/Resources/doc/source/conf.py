@@ -66,6 +66,8 @@ release = '1'
 # for a list of supported languages.
 language = 'fr'
 
+locale_dirs = ['locale/']
+
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
 #today = ''
