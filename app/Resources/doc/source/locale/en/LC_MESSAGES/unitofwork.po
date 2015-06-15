@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -13,59 +13,69 @@ msgstr ""
 
 #: ../../unitofwork.rst:5
 msgid "L'unitOfWork"
-msgstr ""
+msgstr "UnitOfWork"
 
 #: ../../unitofwork.rst:8
 msgid "Au sujet de l'unitOfWork"
-msgstr ""
+msgstr "About unitofwork"
 
 #: ../../unitofwork.rst:9
 msgid ""
 "L'unitOfWork a pour rôle de tracker les changements des objets afin de les "
 "persister en base de données."
 msgstr ""
+"The UnitOfWork's role is to track object changes to persist it into database."
 
 #: ../../unitofwork.rst:12
 msgid "Fonctionnement interne"
-msgstr ""
+msgstr "Internal process"
 
 #: ../../unitofwork.rst:13
 msgid ""
 "L'unitOfWork initialise dans tous les objets \"managed\" une propriétée "
 "tingUUID qui ne doit en aucun cas être altérée par l'utilisateur."
 msgstr ""
+"The UnitOfWork initializes in all objects \"managed\" a property "
+"tingUUID which should not in any way be altered by the user."
 
 #: ../../unitofwork.rst:16
 msgid ""
 "Un objet \"managed\" est un objet qui existe déjà en base et qui provoquera "
 "une requête UPDATE lorsque l'on demandera à ce qu'il soit persisté."
 msgstr ""
+"Object \"managed\" is an object that already exists in base and will cause "
+"UPDATE query when you ask it to be persisted."
 
 #: ../../unitofwork.rst:20
 msgid "Principe"
-msgstr ""
+msgstr "Principle"
 
 #: ../../unitofwork.rst:21
 msgid ""
 "On demande à l'unitOfWork de persister les données, que ça soit pour une "
 "mise à jour, ou une suppression."
 msgstr ""
+"We ask the UnitOfWork to persist the data, be it for a "
+"update, or deletion."
 
 #: ../../unitofwork.rst:23
 msgid ""
 "On empile généralement les ordres dans la file d'attente de l'unitOfWork "
 "puis on lui demande de traiter l'ensemble d'une traite."
 msgstr ""
+"The orders are generally stacked in the queue of UnitOfWork "
+"then you ask it to treat the whole in one process."
 
 #: ../../unitofwork.rst:34
 msgid "Particularités"
-msgstr ""
+msgstr "Specifity"
 
 #: ../../unitofwork.rst:35
 msgid ""
 "Que ça soit pour persister la mise à jour ou l'insertion d'une entité il "
 "faut utiliser pushSave."
 msgstr ""
+"Whether it's to persist updating or inserting an entity you must use pushSave."
 
 #: ../../unitofwork.rst:37
 msgid ""
@@ -73,10 +83,12 @@ msgid ""
 "via les metadata en tant que autoincrement alors l'entité aura cette valeur "
 "d'initialisé avec l'autoincrement délivré par la base de données."
 msgstr ""
+"Upon insertion of an entity which has an autoincrement property (configured in metadata) "
+"the autoincrement issued by the database will be set in the entity."
 
 #: ../../unitofwork.rst:41
 msgid "Remarques pour les batchs"
-msgstr ""
+msgstr "Notes for batch process"
 
 #: ../../unitofwork.rst:42
 msgid ""
@@ -84,8 +96,11 @@ msgid ""
 "les objets dont on a plus l'usage afin que l'unitOfWork libère de la mémoire"
 " :"
 msgstr ""
+"When processing a large number of items it is imperative to detach "
+"items that we don't use anymore to free memory:"
 
 #: ../../unitofwork.rst:49
 msgid ""
 "On peut aussi détacher tous les objets lorsque ceux-ci ont été persistés :"
 msgstr ""
+"Can also detach all objects when they have been persisted:"
