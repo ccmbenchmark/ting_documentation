@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -46,7 +46,7 @@ msgid "Remplacer une valeur dans le cache"
 msgstr ""
 
 #: ../../composant-cache.rst:56
-msgid "Sauvegarder de manière infini"
+msgid "Sauvegarder de manière infinie"
 msgstr ""
 
 #: ../../composant-cache.rst:57

@@ -52,6 +52,6 @@ Remplacer une valeur dans le cache
 
   $cache->replace($key, $value, $ttl);
 
-Sauvegarder de manière infini
------------------------------
+Sauvegarder de manière infinie
+------------------------------
 Il suffit de mettre un ttl de 0 pour sauvegarder de manière infinie

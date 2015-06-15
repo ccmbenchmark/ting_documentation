@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -13,42 +13,44 @@ msgstr ""
 
 #: ../../composant-cache.rst:5
 msgid "Le composant cache"
-msgstr ""
+msgstr "Cache component"
 
 #: ../../composant-cache.rst:8
 msgid "Configuration"
-msgstr ""
+msgstr "Setup"
 
 #: ../../composant-cache.rst:9
 msgid ""
 "Il faut injecter la configuration via la méthode setConfig Elle est "
 "structurée de la façon suivante:"
 msgstr ""
+"We need to inject configuration with the method setConfig It "
+"structured as follows:"
 
 #: ../../composant-cache.rst:26
 msgid "Sauvegarder dans le cache"
-msgstr ""
+msgstr "Save in the cache"
 
 #: ../../composant-cache.rst:32
 msgid "Sauvegarder dans le cache plusieurs valeurs"
-msgstr ""
+msgstr "Save in the cache many values"
 
 #: ../../composant-cache.rst:38
 msgid "Effacer une valeur du cache"
-msgstr ""
+msgstr "Delete a value from the cache"
 
 #: ../../composant-cache.rst:44
 msgid "Effacer plusieurs valeurs du cache"
-msgstr ""
+msgstr "Delete many values from the cache"
 
 #: ../../composant-cache.rst:50
 msgid "Remplacer une valeur dans le cache"
-msgstr ""
+msgstr "Update a value in the cache"
 
 #: ../../composant-cache.rst:56
-msgid "Sauvegarder de manière infini"
-msgstr ""
+msgid "Sauvegarder de manière infinie"
+msgstr "Save with infinite time to live"
 
 #: ../../composant-cache.rst:57
 msgid "Il suffit de mettre un ttl de 0 pour sauvegarder de manière infinie"
-msgstr ""
+msgstr "Put a 0 ttl for infinite Cache"
