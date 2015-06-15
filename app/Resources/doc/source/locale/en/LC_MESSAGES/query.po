@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -13,15 +13,15 @@ msgstr ""
 
 #: ../../query.rst:5
 msgid "Les requêtes"
-msgstr ""
+msgstr "Queries"
 
 #: ../../query.rst:8
 msgid "Effectuer une requête de lecture"
-msgstr ""
+msgstr "Perform a read query"
 
 #: ../../query.rst:12
 msgid "L'objet Query"
-msgstr ""
+msgstr "The Query object"
 
 #: ../../query.rst:13
 msgid ""
@@ -29,34 +29,40 @@ msgid ""
 "CCMBenchmark\\\\Ting\\\\Query\\\\Query via le :doc:`Repository "
 "<repository>`."
 msgstr ""
+"A query is done by retrieving the object "
+"CCMBenchmark\\\\Ting\\\\Query\\\\Query from the :doc:`Repository "
+"<repository>`."
 
 #: ../../query.rst:16
 msgid "Pour ce faire il suffit d'appeler :"
-msgstr ""
+msgstr "To do this simply call:"
 
 #: ../../query.rst:24
 msgid "Les paramètres"
-msgstr ""
+msgstr "Parameters"
 
 #: ../../query.rst:25
 msgid ""
 "Pour mettre des paramètres dynamiques dans la requête il faut utiliser la "
 "méthode \"setParams\" qui prend en argument un tableau associatif :"
 msgstr ""
+"To set dynamic parameters in the query call the method "
+"\"setParams\" which takes as argument an associative array:"
 
 #: ../../query.rst:35
 msgid "Exécuter la requête"
-msgstr ""
+msgstr "Execute the query"
 
 #: ../../query.rst:37
 msgid ""
 "Pour retourner les données de lecture il faut utiliser la méthode \"query\" "
 ":"
 msgstr ""
+"To fetch the data data use the method \"query\":"
 
 #: ../../query.rst:47
 msgid "Récupérer les résultats"
-msgstr ""
+msgstr "Get result"
 
 #: ../../query.rst:49
 msgid ""
@@ -64,28 +70,33 @@ msgid ""
 "CCMBenchmark\\\\Ting\\\\Repository\\\\Collection. Cet objet est un Iterator,"
 " vous pouvez donc récupérer les résultats de cette façon :"
 msgstr ""
+"The \"query\" method returns an object "
+"CCMBenchmark\\\\Ting\\\\Repository\\\\Collection. This object is an Iterator,"
+" you can retrieve the results with an iteration:
 
 #: ../../query.rst:63
 msgid "Explication sur le format retourné"
-msgstr ""
+msgstr "Explanation of the format returned"
 
 #: ../../query.rst:65
 msgid "Voir la documentation concernant les :doc:`hydrateurs <hydrator>`"
-msgstr ""
+msgstr "See the documentation for the :doc:`hydrators <hydrator>`"
 
 #: ../../query.rst:68
 msgid "Format de retour simplifié pour des requêtes sans jointures"
-msgstr ""
+msgstr "Simplified return format for queries without joins"
 
 #: ../../query.rst:70
 msgid ""
 "Voir la documentation concernant l':ref:`hydration pour un seul objet <l"
 "-hydrateur-pour-un-seul-objet>`"
 msgstr ""
+"See the documentation concerning the "
+":ref:`hydrator for a single object <l-hydrateur-pour-un-seul-objet>`"
 
 #: ../../query.rst:73
 msgid "Compter les éléments d'une collection"
-msgstr ""
+msgstr "Counting items in a collection"
 
 #: ../../query.rst:75
 msgid ""
@@ -93,10 +104,13 @@ msgid ""
 "Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour "
 "un tableau PHP : count($collection);"
 msgstr ""
+"You should know that Collection implements the standard interface Countable. "
+"So you can find out how many elements your collection contains as "
+"an array PHP: count($collection);"
 
 #: ../../query.rst:79
 msgid "Exécuter une requête sur le master"
-msgstr ""
+msgstr "Run a query on the master"
 
 #: ../../query.rst:81
 msgid ""
@@ -104,20 +118,25 @@ msgid ""
 "(si des slaves ont été configurés), si vous avez besoin d'effectuer votre "
 "requête sur le master, alors il faut appeler la méthode \"selectMaster\" :"
 msgstr ""
+"A read request will be made by default on one of the configured slaves "
+"(when some slaves has been configured), if you need to perform your "
+"query on the master, then you must call the method \"selectMaster\":"
 
 #: ../../query.rst:91
 msgid "Erreur sur une requête"
-msgstr ""
+msgstr "Error on a request"
 
 #: ../../query.rst:93
 msgid ""
 "Si la requête exécuté ne se termine pas correctement, une exception du type "
 "CCMBenchmark\\\\Ting\\\\Driver\\\\QueryException sera levée"
 msgstr ""
+"If the query executed does not complete successfully, an exception of type "
+"CCMBenchmark\\\\Ting\\\\Driver\\\\QueryException will be raised"
 
 #: ../../query.rst:97
 msgid "Effectuer une requête d'écriture"
-msgstr ""
+msgstr "Perform a write request"
 
 #: ../../query.rst:99
 msgid ""
@@ -125,3 +144,5 @@ msgid ""
 "différences près. Il faut appeler la méthode \"execute\" sur l'objet "
 "CCMBenchmark\\\\Ting\\\\Query\\\\Query"
 msgstr ""
+"The logic is the same as for a read request. Except must call the method "
+"\"execute\" on the object CCMBenchmark\\\\Ting\\\\Query\\\\Query"
