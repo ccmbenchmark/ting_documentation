@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -114,7 +114,7 @@ msgstr ""
 #: ../../repository.rst:89
 msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
-"simples."
+"courantes."
 msgstr ""
 
 #: ../../repository.rst:92
