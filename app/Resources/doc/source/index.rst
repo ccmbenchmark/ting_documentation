@@ -6,15 +6,15 @@
 Ting - Documentation
 ====================
 
-* **Simple**: no magic inside : it's basically SQL queries
-* **Fast**: with no magic comes no overhead
-* **Supports** Mysql and PostgreSQL
+* **Simple**: pas de magie : simplement des requêtes SQL
+* **Rapide**: pas de magie donc pas d'overhead à ce sujet
+* **Supporte** Mysql et PostgreSQL
 
-**Why another datamapper for PHP?**
+**Pourquoi un autre datamapper pour PHP ?**
 
-Some great datamapper frameworks for MySQL and PostgreSQL already exists. However the most known tools are just too complicated: hard learning curve, requiring new skills to query databases or boring xml files to describe the database. Ting has been created with the simplicity as state of mind.
+Il existe déjà des bon datamapper pour MySQL et PostgreSQL. Cependant les plus connus sont compliqués : courbe d'apprentissage longue, besoin de nouvelles connaissances pour requêter la base, ou d'ennuyants fichiers xml pour la décrire. Ting a été créé avec comme état d'esprit de rester simple
 
-Ting is not an ORM, because it doesn't fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.
+Ting n'est pas un ORM, parce qu'il ne supporte pas un système de relation entre les objets. Mais vous pouvez facilement construire des requêtes avec des jointures et récupérer tous les objets impliqués dans votre requête.
 
 
 .. toctree::
