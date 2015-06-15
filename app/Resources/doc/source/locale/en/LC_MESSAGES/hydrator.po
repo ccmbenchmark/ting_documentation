@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../hydrator.rst:5
 msgid "Les hydrateurs"
-msgstr ""
+msgstr "Hydrators"
 
 #: ../../hydrator.rst:9
 msgid "Au sujet des hydrateurs"
-msgstr ""
+msgstr "About hydrators"
 
 #: ../../hydrator.rst:10
 msgid ""
@@ -25,10 +25,13 @@ msgid ""
 " les objets qui ont été configurés dans les metadata par l'intermédiaire du "
 ":doc:`Repository <repository>`"
 msgstr ""
+"The hydrator will be responsible for transforming the result of an SQL query in "
+"objects that were configured in the metadata through the "
+":doc:`Repository <repository>`"
 
 #: ../../hydrator.rst:15
 msgid "L'hydrateur par défaut"
-msgstr ""
+msgstr "Default hydrator"
 
 #: ../../hydrator.rst:16
 msgid ""
@@ -36,24 +39,27 @@ msgid ""
 "avec pour clé le nom de la table (ou l'alias utilisé) et pour valeur l'objet"
 " qu'il a réussi à créer par rapport aux metadata."
 msgstr ""
+"The default hydrator will use metadata to create the right object and will "
+"fill an associative array with for key the table name (or alias used) and "
+"the object for the value"
 
 #: ../../hydrator.rst:28 ../../hydrator.rst:58
 msgid "$data contiendra comme structure :"
-msgstr ""
+msgstr "$data contain:"
 
 #: ../../hydrator.rst:39
 msgid "Jointure avec aucune donnée"
-msgstr ""
+msgstr "SQL join with no data"
 
 #: ../../hydrator.rst:40
 msgid ""
 "Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur "
 "null"
-msgstr ""
+msgstr "When the join returns no data, the key 'c' will be null"
 
 #: ../../hydrator.rst:43
 msgid "Données sans metadata"
-msgstr ""
+msgstr "Data without metadata"
 
 #: ../../hydrator.rst:44
 msgid ""
@@ -62,14 +68,18 @@ msgid ""
 " une colonne qui n'a pas été mappée comme my_extra_column l'hydrateur va "
 "créer un objet stdClass avec des propriétés correspondant à ces colonnes."
 msgstr ""
+"If you perform a query that returns data that do not match "
+"any metadata, whether an aggregation column as SUM(price) or "
+"a column that has not been mapped as my_extra_column the hydrator will "
+"create a stdClass object with properties corresponding to those columns."
 
 #: ../../hydrator.rst:48
 msgid "Cet objet stdClass est accessible dans la clée 0 du tableau retourné."
-msgstr ""
+msgstr "This stdClass object is accessible in the key 0 of the returned array."
 
 #: ../../hydrator.rst:74
 msgid "L'hydrateur pour un seul objet"
-msgstr ""
+msgstr "The hydrator for a single object"
 
 #: ../../hydrator.rst:75
 msgid ""
@@ -77,13 +87,15 @@ msgid ""
 " l'on fait une requête qui n'a pour but que de retourner un objet, il n'est "
 "pas des plus appropriés."
 msgstr ""
+"The default hydrator is optimized to return multiple objects when we do "
+"a query that is intended to return only one item, it is not the best choice."
 
 #: ../../hydrator.rst:78
 msgid ""
 "Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre "
 "besoin."
-msgstr ""
+msgstr "You can inject HydratorSingleObject that best suit your needs"
 
 #: ../../hydrator.rst:89
 msgid "Dans ce cas $user contient directement un objet User."
-msgstr ""
+msgstr "In this case $user is an User object."
