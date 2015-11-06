@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../hydrator.rst:5
 msgid "Les hydrateurs"
-msgstr "Hydrators"
+msgstr "About the hydrators"
 
 #: ../../hydrator.rst:9
 msgid "Au sujet des hydrateurs"
@@ -25,8 +25,8 @@ msgid ""
 " les objets qui ont été configurés dans les metadata par l'intermédiaire du "
 ":doc:`Repository <repository>`"
 msgstr ""
-"The hydrator will be responsible for transforming the result of an SQL query in "
-"objects that were configured in the metadata through the "
+"The hydrator handles the sql query transformation into "
+"the objects that were configured in the metadata through the "
 ":doc:`Repository <repository>`"
 
 #: ../../hydrator.rst:15
@@ -39,9 +39,9 @@ msgid ""
 "avec pour clé le nom de la table (ou l'alias utilisé) et pour valeur l'objet"
 " qu'il a réussi à créer par rapport aux metadata."
 msgstr ""
-"The default hydrator will use metadata to create the right object and will "
-"fill an associative array with for key the table name (or alias used) and "
-"the object for the value"
+"The default hydrator will use the metadata to create the right object and will "
+"fill an associative array with, as a key, the table name (or alias used) and "
+"the object for as a value"
 
 #: ../../hydrator.rst:28 ../../hydrator.rst:58
 msgid "$data contiendra comme structure :"
@@ -94,8 +94,8 @@ msgstr ""
 msgid ""
 "Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre "
 "besoin."
-msgstr "You can inject HydratorSingleObject that best suit your needs"
+msgstr "You can inject HydratorSingleObject that suit better your needs"
 
 #: ../../hydrator.rst:89
 msgid "Dans ce cas $user contient directement un objet User."
-msgstr "In this case $user is an User object."
+msgstr "Dans ce cas $user est un objet User."

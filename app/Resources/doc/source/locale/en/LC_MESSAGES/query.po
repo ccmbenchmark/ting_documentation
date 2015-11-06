@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../query.rst:16
 msgid "Pour ce faire il suffit d'appeler :"
-msgstr "To do this simply call:"
+msgstr "To do this, just call:"
 
 #: ../../query.rst:24
 msgid "Les paramètres"
@@ -46,19 +46,19 @@ msgid ""
 "Pour mettre des paramètres dynamiques dans la requête il faut utiliser la "
 "méthode \"setParams\" qui prend en argument un tableau associatif :"
 msgstr ""
-"To set dynamic parameters in the query call the method "
+"To define dynamic parameters in the query call the method "
 "\"setParams\" which takes as argument an associative array:"
 
 #: ../../query.rst:35
 msgid "Exécuter la requête"
-msgstr "Execute the query"
+msgstr "Perform the query"
 
 #: ../../query.rst:37
 msgid ""
 "Pour retourner les données de lecture il faut utiliser la méthode \"query\" "
 ":"
 msgstr ""
-"To fetch the data data use the method \"query\":"
+"To fetch the data use the method \"query\":"
 
 #: ../../query.rst:47
 msgid "Récupérer les résultats"
@@ -72,31 +72,31 @@ msgid ""
 msgstr ""
 "The \"query\" method returns an object "
 "CCMBenchmark\\\\Ting\\\\Repository\\\\Collection. This object is an Iterator,"
-" you can retrieve the results with an iteration:
+" you can retrieve the results with an iteration:"
 
 #: ../../query.rst:63
 msgid "Explication sur le format retourné"
-msgstr "Explanation of the format returned"
+msgstr "Details about the output format"
 
 #: ../../query.rst:65
 msgid "Voir la documentation concernant les :doc:`hydrateurs <hydrator>`"
-msgstr "See the documentation for the :doc:`hydrators <hydrator>`"
+msgstr "See the documentation about the :doc:`hydrators <hydrator>`"
 
 #: ../../query.rst:68
 msgid "Format de retour simplifié pour des requêtes sans jointures"
-msgstr "Simplified return format for queries without joins"
+msgstr "Simplified output format for queries without joins"
 
 #: ../../query.rst:70
 msgid ""
 "Voir la documentation concernant l':ref:`hydration pour un seul objet <l"
 "-hydrateur-pour-un-seul-objet>`"
 msgstr ""
-"See the documentation concerning the "
+"See the documentation about the "
 ":ref:`hydrator for a single object <l-hydrateur-pour-un-seul-objet>`"
 
 #: ../../query.rst:73
 msgid "Compter les éléments d'une collection"
-msgstr "Counting items in a collection"
+msgstr "Count items in a collection"
 
 #: ../../query.rst:75
 msgid ""
@@ -110,7 +110,7 @@ msgstr ""
 
 #: ../../query.rst:79
 msgid "Exécuter une requête sur le master"
-msgstr "Run a query on the master"
+msgstr "Perform a query against the master"
 
 #: ../../query.rst:81
 msgid ""
@@ -118,13 +118,13 @@ msgid ""
 "(si des slaves ont été configurés), si vous avez besoin d'effectuer votre "
 "requête sur le master, alors il faut appeler la méthode \"selectMaster\" :"
 msgstr ""
-"A read request will be made by default on one of the configured slaves "
-"(when some slaves has been configured), if you need to perform your "
+"A read query will be made by default on one of the configured slaves "
+"(when some slaves have been configured), if you need to perform your "
 "query on the master, then you must call the method \"selectMaster\":"
 
 #: ../../query.rst:91
 msgid "Erreur sur une requête"
-msgstr "Error on a request"
+msgstr "Error on a query"
 
 #: ../../query.rst:93
 msgid ""
@@ -136,7 +136,7 @@ msgstr ""
 
 #: ../../query.rst:97
 msgid "Effectuer une requête d'écriture"
-msgstr "Perform a write request"
+msgstr "Perform a write query"
 
 #: ../../query.rst:99
 msgid ""
@@ -144,5 +144,5 @@ msgid ""
 "différences près. Il faut appeler la méthode \"execute\" sur l'objet "
 "CCMBenchmark\\\\Ting\\\\Query\\\\Query"
 msgstr ""
-"The logic is the same as for a read request. Except must call the method "
+"The logic is the same as for a read request. Except that you need to call the method "
 "\"execute\" on the object CCMBenchmark\\\\Ting\\\\Query\\\\Query"

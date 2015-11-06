@@ -17,7 +17,7 @@ msgstr "UnitOfWork"
 
 #: ../../unitofwork.rst:8
 msgid "Au sujet de l'unitOfWork"
-msgstr "About unitofwork"
+msgstr "About the unitofwork"
 
 #: ../../unitofwork.rst:9
 msgid ""
@@ -36,14 +36,14 @@ msgid ""
 "tingUUID qui ne doit en aucun cas être altérée par l'utilisateur."
 msgstr ""
 "The UnitOfWork initializes in all objects \"managed\" a property "
-"tingUUID which should not in any way be altered by the user."
+"tingUUID which must not in any way be altered by the user."
 
 #: ../../unitofwork.rst:16
 msgid ""
 "Un objet \"managed\" est un objet qui existe déjà en base et qui provoquera "
 "une requête UPDATE lorsque l'on demandera à ce qu'il soit persisté."
 msgstr ""
-"Object \"managed\" is an object that already exists in base and will cause "
+" A \"managed\" object is an object that already exists in base and will cause "
 "UPDATE query when you ask it to be persisted."
 
 #: ../../unitofwork.rst:20
@@ -55,8 +55,8 @@ msgid ""
 "On demande à l'unitOfWork de persister les données, que ça soit pour une "
 "mise à jour, ou une suppression."
 msgstr ""
-"We ask the UnitOfWork to persist the data, be it for a "
-"update, or deletion."
+"We ask the UnitOfWork to persist the data. It can be an "
+"update, or a deletion."
 
 #: ../../unitofwork.rst:23
 msgid ""
@@ -103,4 +103,4 @@ msgstr ""
 msgid ""
 "On peut aussi détacher tous les objets lorsque ceux-ci ont été persistés :"
 msgstr ""
-"Can also detach all objects when they have been persisted:"
+"We are also able to detach all objects when they have been persisted:"

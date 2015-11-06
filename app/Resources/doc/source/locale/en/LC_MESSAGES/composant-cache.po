@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../composant-cache.rst:5
 msgid "Le composant cache"
-msgstr "Cache component"
+msgstr "The cache component"
 
 #: ../../composant-cache.rst:8
 msgid "Configuration"
@@ -24,16 +24,16 @@ msgid ""
 "Il faut injecter la configuration via la méthode setConfig Elle est "
 "structurée de la façon suivante:"
 msgstr ""
-"We need to inject configuration with the method setConfig It "
+"The settings should be injected with the setConfig. It is "
 "structured as follows:"
 
 #: ../../composant-cache.rst:26
 msgid "Sauvegarder dans le cache"
-msgstr "Save in the cache"
+msgstr "Save into cache"
 
 #: ../../composant-cache.rst:32
 msgid "Sauvegarder dans le cache plusieurs valeurs"
-msgstr "Save in the cache many values"
+msgstr "Save several values into the cache"
 
 #: ../../composant-cache.rst:38
 msgid "Effacer une valeur du cache"
@@ -41,7 +41,7 @@ msgstr "Delete a value from the cache"
 
 #: ../../composant-cache.rst:44
 msgid "Effacer plusieurs valeurs du cache"
-msgstr "Delete many values from the cache"
+msgstr "Delete several values from the cache"
 
 #: ../../composant-cache.rst:50
 msgid "Remplacer une valeur dans le cache"

@@ -38,10 +38,10 @@ msgid ""
 "besoin de nouvelles connaissances pour requêter la base, ou d'ennuyants fichiers xml "
 "pour la décrire. Ting a été créé avec comme état d'esprit de rester simple"
 msgstr ""
-"Some great datamapper frameworks for MySQL and PostgreSQL already exists. "
-"However the most known tools are just too complicated: hard learning curve, "
+"Great datamappers for MySQL and PostgreSQL already exist. "
+"However the most popular tools are complex and hard to master "
 "requiring new skills to query databases or boring xml files to describe the "
-"database. Ting has been created with the simplicity as state of mind."
+"database. Ting has been created with the simplicity as a credo."
 
 #: ../../index.rst:17
 msgid ""

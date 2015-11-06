@@ -17,7 +17,7 @@ msgstr "Repository"
 
 #: ../../repository.rst:9
 msgid "Au sujet du Repository"
-msgstr "About repository"
+msgstr "About the repository"
 
 #: ../../repository.rst:10
 msgid ""
@@ -25,15 +25,15 @@ msgid ""
 "données, par l'intermédiaire de l'objet Query."
 msgstr ""
 "The repository is the link between your entity object and "
-"your database, via the Query object."
+"your database, through the Query object."
 
 #: ../../repository.rst:12
 msgid ""
 "Il est aussi responsable d'initialiser les Metadata qui concernent votre "
 "entité afin de savoir comment mapper votre objet en base de données."
 msgstr ""
-"It is also responsible for initializing Metadata related to your "
-"entity to learn how to map your database object."
+"It also have the responsibility to initialize Metadata related to your "
+"entity, to learn how to map your database object."
 
 #: ../../repository.rst:17
 msgid "Création des Metadata"
@@ -63,23 +63,23 @@ msgstr ""
 
 #: ../../repository.rst:49
 msgid "int"
-msgstr ""
+msgstr "int"
 
 #: ../../repository.rst:50
 msgid "string"
-msgstr ""
+msgstr "string"
 
 #: ../../repository.rst:51
 msgid "bool"
-msgstr ""
+msgstr "bool"
 
 #: ../../repository.rst:52
 msgid "datetime"
-msgstr ""
+msgstr "datetime"
 
 #: ../../repository.rst:53
 msgid "json"
-msgstr ""
+msgstr "json"
 
 #: ../../repository.rst:55
 msgid ""
@@ -89,15 +89,15 @@ msgid ""
 msgstr ""
 "The type bool, datetime and json are a bit special because they are "
 "dependent of database so they can be "
-"serialized / deserialized via options:"
+"serialized / deserialized with some options:"
 
 #: ../../repository.rst:69
 msgid ""
 "Je vous invite à regarder le code source de chaque Serializer pour voir les "
 "configurations possibles."
 msgstr ""
-"I invite you to look at the source code of each Serializer"
-" to see possible configurations."
+"Please take a look at the source code of each Serializer"
+" to see available options."
 
 #: ../../repository.rst:71
 msgid "Vous pouvez injecter votre propre serializer :"
@@ -109,15 +109,15 @@ msgid ""
 "stocker en base est différent selon chaque sgbd :"
 msgstr ""
 "The bool type is considered a complex type, because the way to "
-"storing into database is different depending on each sgbd"
+"storing into database is different depending on each RDBMS"
 
 #: ../../repository.rst:83
 msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Bool"
-msgstr ""
+msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Bool"
 
 #: ../../repository.rst:84
 msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Bool"
-msgstr ""
+msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Bool"
 
 #: ../../repository.rst:87
 msgid "Requêtes"
@@ -128,11 +128,11 @@ msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
 "courantes."
 msgstr ""
-"The Repository provided several methods to facilitate common queries."
+"The Repository provided several methods to perform common queries easily."
 
 #: ../../repository.rst:92
 msgid "Trouver un objet par clé primaire"
-msgstr "Find an object by primary key"
+msgstr "Find an object by it's primary key"
 
 #: ../../repository.rst:99
 msgid "Tous les objets"
@@ -144,4 +144,4 @@ msgstr "An object according to one or more properties of the model"
 
 #: ../../repository.rst:113
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
-msgstr "An object collection in accordance with one or more properties of the model"
+msgstr "An object collection, according to one or more properties of the model"
