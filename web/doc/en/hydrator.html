@@ -1,0 +1,295 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>3   About the hydrators &mdash; ting 1 documentation</title>
+    
+
+    <style>
+        .highlight {
+            background: #272822 !important;
+        }
+    </style>
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="top" title="ting 1 documentation" href="index.html"/>
+    <link rel="next" title="4   UnitOfWork" href="unitofwork.html"/>
+    <link rel="prev" title="2   Repository" href="repository.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/" class="fa fa-home"> ting</a>
+            
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            <div class="ting_menu" role="menubar">
+    <ul>
+        <li>
+            Accueil
+        </li>
+        <li>
+            Documentation
+        </li>
+        <li>
+            Sources
+        </li>
+        <li>
+            Authors
+        </li>
+    </ul>
+</div>
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>3&nbsp;&nbsp;&nbsp;About the hydrators</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <div class="section" id="les-hydrateurs">
+<h1>3&nbsp;&nbsp;&nbsp;About the hydrators<a class="headerlink" href="#les-hydrateurs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="au-sujet-des-hydrateurs">
+<h2>3.1&nbsp;&nbsp;&nbsp;About hydrators<a class="headerlink" href="#au-sujet-des-hydrateurs" title="Permalink to this headline">¶</a></h2>
+<p>The hydrator handles the sql query transformation into the objects that were configured in the metadata through the <a class="reference internal" href="repository.html"><em>Repository</em></a></p>
+</div>
+<div class="section" id="l-hydrateur-par-defaut">
+<h2>3.2&nbsp;&nbsp;&nbsp;Default hydrator<a class="headerlink" href="#l-hydrateur-par-defaut" title="Permalink to this headline">¶</a></h2>
+<p>The default hydrator will use the metadata to create the right object and will fill an associative array with, as a key, the table name (or alias used) and the object for as a value</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name&#39;</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>$data contain:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Sylvain&quot;</span><span class="p">),</span>
+    <span class="s1">&#39;c&#39;</span> <span class="o">=&gt;</span> <span class="nx">Comment</span><span class="p">(</span><span class="s2">&quot;Bonjour tout le monde&quot;</span><span class="p">)</span>
+  <span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="jointure-avec-aucune-donnee">
+<h3>3.2.1&nbsp;&nbsp;&nbsp;SQL join with no data<a class="headerlink" href="#jointure-avec-aucune-donnee" title="Permalink to this headline">¶</a></h3>
+<p>When the join returns no data, the key &#8216;c&#8217; will be null</p>
+</div>
+<div class="section" id="donnees-sans-metadata">
+<h3>3.2.2&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h3>
+<p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
+<p>This stdClass object is accessible in the key 0 of the returned array.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, my_extra_column, SUM(price) as total FROM article&#39;</span><span class="p">);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>$data contain:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">total</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">43</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">my_extra_column</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bic&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span><span class="s2">&quot;Stylo&quot;</span><span class="p">),</span>
+  <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="l-hydrateur-pour-un-seul-objet">
+<span id="id1"></span><h2>3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Permalink to this headline">¶</a></h2>
+<p>The default hydrator is optimized to return multiple objects when we do a query that is intended to return only one item, it is not the best choice.</p>
+<p>You can inject HydratorSingleObject that suit better your needs</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="k">new</span> <span class="nx">HydratorSingleObject</span><span class="p">()));</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Dans ce cas $user est un objet User.</p>
+</div>
+</div>
+
+
+                </div>
+                <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="unitofwork.html" class="btn btn-neutral float-right" title="4   UnitOfWork"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="repository.html" class="btn btn-neutral" title="2   Repository"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, CCM Benchmark Group.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+ 
+
+</body>
+</html>

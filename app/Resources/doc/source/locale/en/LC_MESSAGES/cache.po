@@ -1,0 +1,74 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-15 12:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../cache.rst:5
+msgid "Le cache"
+msgstr "Cache"
+
+#: ../../cache.rst:8
+msgid "Au sujet du cache"
+msgstr "About the cache"
+
+#: ../../cache.rst:9
+msgid ""
+"Le résultat d'une requête effectuée avec les objets de cache sera soit "
+"récupéré depuis le cache si l'entrée y existe déjà, soit récupéré depuis la "
+"base de données puis inséré dans le cache."
+msgstr ""
+"The result of a query made with the cache objects will be either"
+"retrieved from the cache if the entry is already there or recovered from the "
+"database and inserted into the cache."
+
+#: ../../cache.rst:12
+msgid ""
+"Le résultat de la requête stockée dans le cache n'est pas dépendant du "
+"système d'hydration utilisé."
+msgstr ""
+"The result of the query stored in the cache does not depend on "
+"the used hydratation system."
+
+#: ../../cache.rst:15
+msgid "Requête simple"
+msgstr "Simple query"
+
+#: ../../cache.rst:16
+msgid ""
+"Une requête destiné à utiliser le cache s'effectue en récupérant l'objet "
+"CCMBenchmark\\\\Ting\\\\Query\\\\Cached\\\\Query via le :doc:`Repository "
+"<repository>`."
+msgstr ""
+"A query intended to use the cache is done by retrieving the object "
+"CCMBenchmark\\\\Ting\\\\Query\\\\Cached\\\\Query from the :doc:`Repository "
+"<repository>`."
+
+#: ../../cache.rst:18 ../../cache.rst:30
+msgid ""
+"Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise en"
+" cache et la clé de cache:"
+msgstr ""
+"To proceed, just call the object and specify the duration it should remain in the "
+"cache and the cache key:"
+
+#: ../../cache.rst:27
+msgid "Requête préparée"
+msgstr "Prepared query"
+
+#: ../../cache.rst:28
+msgid ""
+"Pour une requête préparée il faut récupérer l'objet "
+"CCMBenchmark\\\\Ting\\\\Query\\\\Cached\\\\PreparedQuery via le "
+":doc:`Repository <repository>`."
+msgstr ""
+"For a prepared statement you must retrieve the object "
+"CCMBenchmark\\\\Ting\\\\Query\\\\Cached\\\\PreparedQuery from the "
+":doc:`Repository <repository>`."

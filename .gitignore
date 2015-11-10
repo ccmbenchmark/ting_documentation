@@ -15,3 +15,5 @@
 /web/doc/doctrees
 app/Resources/doc/fr/build/
 /web/doc/_static
+/web/doc/fr/_static
+/web/doc/en/_static

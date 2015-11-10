@@ -50,7 +50,8 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) -D language='en' $(BUILDDIR)/en
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) -D language='fr' $(BUILDDIR)/fr
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)."
 
@@ -146,9 +147,9 @@ info:
 	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
 
 gettext:
-	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
+	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) source/_build/locale
 	@echo
-	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
+	@echo "Build finished. The message catalogs are in source/_build/locale."
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
