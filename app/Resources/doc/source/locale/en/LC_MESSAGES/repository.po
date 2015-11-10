@@ -32,7 +32,7 @@ msgid ""
 "Il est aussi responsable d'initialiser les Metadata qui concernent votre "
 "entité afin de savoir comment mapper votre objet en base de données."
 msgstr ""
-"It also have the responsibility to initialize Metadata related to your "
+"It also bear the responsibility to intialize Metadata related to your "
 "entity, to learn how to map your database object."
 
 #: ../../repository.rst:17
@@ -59,7 +59,7 @@ msgstr "columnName is the name of the column in your database"
 msgid ""
 "type correspond au type de votre variable avec comme valeur possibles :"
 msgstr ""
-"type is the type of your variable, one from this list:"
+"type is the type of your variable; among one of the following :"
 
 #: ../../repository.rst:49
 msgid "int"
@@ -108,8 +108,8 @@ msgid ""
 "Le type bool est considéré comme un type complexe, car la façon de le "
 "stocker en base est différent selon chaque sgbd :"
 msgstr ""
-"The bool type is considered a complex type, because the way to "
-"storing into database is different depending on each RDBMS"
+"The bool type is considered a complex type, "
+"because the way they are stored in the database differs depending on each RDBMS"
 
 #: ../../repository.rst:83
 msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Bool"
@@ -128,7 +128,7 @@ msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
 "courantes."
 msgstr ""
-"The Repository provided several methods to perform common queries easily."
+"The Repository provides several methods to perform common queries easily."
 
 #: ../../repository.rst:92
 msgid "Trouver un objet par clé primaire"

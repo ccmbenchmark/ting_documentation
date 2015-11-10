@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../query.rst:47
 msgid "Récupérer les résultats"
-msgstr "Get result"
+msgstr "Get the output"
 
 #: ../../query.rst:49
 msgid ""
@@ -96,7 +96,7 @@ msgstr ""
 
 #: ../../query.rst:73
 msgid "Compter les éléments d'une collection"
-msgstr "Count items in a collection"
+msgstr "Counting items in a collection"
 
 #: ../../query.rst:75
 msgid ""
@@ -104,13 +104,12 @@ msgid ""
 "Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour "
 "un tableau PHP : count($collection);"
 msgstr ""
-"You should know that Collection implements the standard interface Countable. "
-"So you can find out how many elements your collection contains as "
-"an array PHP: count($collection);"
+"Knowing that a Collection implements the standard interface Countable. "
+"Yu can find how many elements it contains just as you would do for a PHP array: count($collection); "
 
 #: ../../query.rst:79
 msgid "Exécuter une requête sur le master"
-msgstr "Perform a query against the master"
+msgstr "Perform a query on the master"
 
 #: ../../query.rst:81
 msgid ""

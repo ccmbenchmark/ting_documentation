@@ -64,7 +64,7 @@ msgid ""
 "puis on lui demande de traiter l'ensemble d'une traite."
 msgstr ""
 "The orders are generally stacked in the queue of UnitOfWork "
-"then you ask it to treat the whole in one process."
+"then you ask it to treat the whole in a single process."
 
 #: ../../unitofwork.rst:34
 msgid "Particularités"
