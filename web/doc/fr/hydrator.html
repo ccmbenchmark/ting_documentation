@@ -59,8 +59,9 @@
             
             <a href="/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -87,7 +88,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">3&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#donnees-sans-metadata">3.3&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Composition d&#8217;objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">3.7&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
@@ -133,12 +138,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>3&nbsp;&nbsp;&nbsp;Les hydrateurs</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -168,8 +181,13 @@ et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux met
 <p>$data contiendra comme structure :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
   <span class="p">[</span>
-    <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Sylvain&quot;</span><span class="p">),</span>
-    <span class="s1">&#39;c&#39;</span> <span class="o">=&gt;</span> <span class="nx">Comment</span><span class="p">(</span><span class="s2">&quot;Bonjour tout le monde&quot;</span><span class="p">)</span>
+    <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Sylvain&quot;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;c&#39;</span> <span class="o">=&gt;</span> <span class="nx">Comment</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">text</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Bonjour tout le monde&quot;</span>
+    <span class="p">)</span>
   <span class="p">]</span>
 </pre></div>
 </div>
@@ -177,8 +195,9 @@ et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux met
 <h3>3.2.1&nbsp;&nbsp;&nbsp;Jointure avec aucune donnée<a class="headerlink" href="#jointure-avec-aucune-donnee" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Lorsque la jointure ne retourne aucune donnée, la clé &#8216;c&#8217; aura pour valeur null</p>
 </div>
+</div>
 <div class="section" id="donnees-sans-metadata">
-<h3>3.2.2&nbsp;&nbsp;&nbsp;Données sans metadata<a class="headerlink" href="#donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h3>
+<h2>3.3&nbsp;&nbsp;&nbsp;Données sans metadata<a class="headerlink" href="#donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Si vous effectuez une requête qui retourne des données qui ne correspondent à aucune metadata, que ce soit une colonne
 d&#8217;aggrégation comme SUM(price) ou une colonne qui n&#8217;a pas été mappée comme my_extra_column l&#8217;hydrateur va créer un objet
 stdClass avec des propriétés correspondant à ces colonnes.</p>
@@ -197,14 +216,92 @@ stdClass avec des propriétés correspondant à ces colonnes.</p>
       <span class="p">[</span><span class="nx">total</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">43</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">my_extra_column</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bic&#39;</span>
     <span class="p">),</span>
-    <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span><span class="s2">&quot;Stylo&quot;</span><span class="p">),</span>
+    <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Stylo&quot;</span>
+    <span class="p">)</span>
   <span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="mapper-des-donnees-sans-metadata">
+<h2>3.4&nbsp;&nbsp;&nbsp;Mapper des données sans metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans le cas où on à une colonne d&#8217;aggrégation on peut avoir envie de la mapper dans un objet.
+Pour mapper la colonne &#8220;nb_books&#8221; dans mon model User via la méthode &#8220;setNbBooks&#8221; il suffit de faire :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)&#39;</span><span class="p">);</span>
+<span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>
+<span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">mapAliasTo</span><span class="p">(</span><span class="s1">&#39;nb_books&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;setNbBooks&#39;</span><span class="p">)</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="k">new</span> <span class="nx">Collection</span><span class="p">(</span><span class="nv">$hydrator</span><span class="p">));</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>$data contiendra comme structure :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">nbBooks</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span>
+    <span class="p">)</span>
+  <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deserializer-des-donnees-sans-metadata">
+<h2>3.5&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour rappel l&#8217;action de déserializer consiste à transformer un type de base données dans un type PHP.
+Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on peut vouloir transformer la date en objet
+Datetime.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT title, NOW() as fetchedDate FROM article&#39;</span><span class="p">);</span>
+<span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>
+<span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">unserializeAliasWith</span><span class="p">(</span><span class="s1">&#39;fetchedDate&#39;</span><span class="p">,</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;SerializerFactory&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;CCMBenchmark\Ting\Serializer\Datetime&#39;</span><span class="p">))</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="k">new</span> <span class="nx">Collection</span><span class="p">(</span><span class="nv">$hydrator</span><span class="p">));</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>$data contiendra comme structure :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">fetchedDate</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Datetime</span><span class="p">(</span><span class="s2">&quot;2016-01-13 10:41:36&quot;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+  <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="composition-d-objet">
+<h2>3.6&nbsp;&nbsp;&nbsp;Composition d&#8217;objet<a class="headerlink" href="#composition-d-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut vouloir faire de la composition d&#8217;objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
+Pour mapper l&#8217;objet Country (qui a l&#8217;alias &#8220;co&#8221;) dans mon model City (qui a l&#8217;alias &#8220;cit&#8221;) via la méthode &#8220;setCountry&#8221; il suffit de faire :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)&#39;</span><span class="p">);</span>
+<span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>
+<span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">mapObjectTo</span><span class="p">(</span><span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;setCountry&#39;</span><span class="p">)</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="k">new</span> <span class="nx">Collection</span><span class="p">(</span><span class="nv">$hydrator</span><span class="p">));</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>$data contiendra comme structure :</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;cit&#39;</span> <span class="o">=&gt;</span> <span class="nx">City</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">country</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Country</span><span class="p">(</span>
+        <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="l-hydrateur-pour-un-seul-objet">
-<span id="id1"></span><h2>3.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<span id="id1"></span><h2>3.7&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L&#8217;hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l&#8217;on fait une requête qui n&#8217;a pour but que de retourner
 un objet, il n&#8217;est pas des plus appropriés.</p>
 <p>Vous pouvez injecter l&#8217;HydratorSingleObject qui conviendra mieux à votre besoin.</p>
