@@ -59,8 +59,9 @@
             
             <a href="/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -81,7 +82,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#querybuilder">2.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requetes">2.4&nbsp;&nbsp;&nbsp;Queries</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
@@ -133,12 +135,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>2&nbsp;&nbsp;&nbsp;Repository</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -232,29 +242,49 @@
 </dd>
 </dl>
 </div>
+<div class="section" id="querybuilder">
+<h2>2.3&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Permalink to this headline">¶</a></h2>
+<p>We can need chaining queries, a QueryBuilder can be used. Ting provide it through <cite>aura/sqlquery</cite>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_INSERT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_UPDATE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_DELETE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Documentation avaiable on <a class="reference external" href="https://github.com/auraphp/Aura.SqlQuery">https://github.com/auraphp/Aura.SqlQuery</a></p>
+</div>
 <div class="section" id="requetes">
-<h2>2.3&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#requetes" title="Permalink to this headline">¶</a></h2>
+<h2>2.4&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#requetes" title="Permalink to this headline">¶</a></h2>
 <p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
-<h3>2.3.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="tous-les-objets">
-<h3>2.3.2&nbsp;&nbsp;&nbsp;All items<a class="headerlink" href="#tous-les-objets" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.2&nbsp;&nbsp;&nbsp;All items<a class="headerlink" href="#tous-les-objets" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
-<h3>2.3.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
-<h3>2.3.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
