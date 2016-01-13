@@ -89,9 +89,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#donnees-sans-metadata">3.3&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Composition d&#8217;objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Object composition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">3.7&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
 </ul>
 </li>
@@ -196,7 +196,7 @@
 </div>
 <div class="section" id="donnees-sans-metadata">
 <h2>3.3&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
+<p>If you perform a query that returns data that do not match any metadata, whether an aggregate column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
 <p>This stdClass object is accessible in the key 0 of the returned array.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, my_extra_column, SUM(price) as total FROM article&#39;</span><span class="p">);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
@@ -220,9 +220,8 @@
 </div>
 </div>
 <div class="section" id="mapper-des-donnees-sans-metadata">
-<h2>3.4&nbsp;&nbsp;&nbsp;Mapper des données sans metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>Dans le cas où on à une colonne d&#8217;aggrégation on peut avoir envie de la mapper dans un objet.
-Pour mapper la colonne &#8220;nb_books&#8221; dans mon model User via la méthode &#8220;setNbBooks&#8221; il suffit de faire :</p>
+<h2>3.4&nbsp;&nbsp;&nbsp;Mapping data without metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
+<p>When you have an aggregate column you might want to mapped it to an object. To map the column &#8220;nb_books&#8221; into my model User througt the method &#8220;setNbBooks&#8221; you can do that:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">mapAliasTo</span><span class="p">(</span><span class="s1">&#39;nb_books&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;setNbBooks&#39;</span><span class="p">)</span>
@@ -244,10 +243,8 @@ Pour mapper la colonne &#8220;nb_books&#8221; dans mon model User via la méthod
 </div>
 </div>
 <div class="section" id="deserializer-des-donnees-sans-metadata">
-<h2>3.5&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>Pour rappel l&#8217;action de déserializer consiste à transformer un type de base données dans un type PHP.
-Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on peut vouloir transformer la date en objet
-Datetime.</p>
+<h2>3.5&nbsp;&nbsp;&nbsp;Deserialize data without metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
+<p>As a reminder, transform a database type into a PHP type is to deserializing. For example when you retrieve a date which is not in metadata, we may want to transform it to object Datetime.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT title, NOW() as fetchedDate FROM article&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">unserializeAliasWith</span><span class="p">(</span><span class="s1">&#39;fetchedDate&#39;</span><span class="p">,</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;SerializerFactory&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;CCMBenchmark\Ting\Serializer\Datetime&#39;</span><span class="p">))</span>
@@ -271,9 +268,8 @@ Datetime.</p>
 </div>
 </div>
 <div class="section" id="composition-d-objet">
-<h2>3.6&nbsp;&nbsp;&nbsp;Composition d&#8217;objet<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
-<p>On peut vouloir faire de la composition d&#8217;objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
-Pour mapper l&#8217;objet Country (qui a l&#8217;alias &#8220;co&#8221;) dans mon model City (qui a l&#8217;alias &#8220;cit&#8221;) via la méthode &#8220;setCountry&#8221; il suffit de faire :</p>
+<h2>3.6&nbsp;&nbsp;&nbsp;Object composition<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
+<p>We may want to do object compositions, injecting one object into one other on many deep levels. To map object Country (which has alias &#8220;co&#8221;) into my model City (which has alias &#8220;cit&#8221;) through the method &#8220;setCountry&#8221; you can do that:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">mapObjectTo</span><span class="p">(</span><span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;setCountry&#39;</span><span class="p">)</span>
@@ -308,7 +304,7 @@ Pour mapper l&#8217;objet Country (qui a l&#8217;alias &#8220;co&#8221;) dans mo
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Dans ce cas $user est un objet User.</p>
+<p>In that case $user is an object User.</p>
 </div>
 </div>
 

@@ -179,4 +179,4 @@ Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre besoin
     // ...
   }
 
-Dans ce cas $user contient directement un objet User.
+Dans ce cas $user est un objet User.
