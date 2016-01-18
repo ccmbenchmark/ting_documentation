@@ -15,4 +15,4 @@ Générer la documentation :
         make html
 
 Mettre à jour les po :
-    sphinx-intl update -p _build/locale
+    sphinx-intl update -p source/_build/locale

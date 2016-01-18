@@ -77,7 +77,7 @@ $data contiendra comme structure :
 
 Mapper des données sans metadata
 --------------------------------
-Dans le cas où on à une colonne d'aggrégation on peut avoir envie de la mapper dans un objet.
+Dans le cas d'une colonne d'aggrégation, on peut souhaiter la mapper dans un objet.
 Pour mapper la colonne "nb_books" dans mon model User via la méthode "setNbBooks" il suffit de faire :
 
 .. code-block:: php

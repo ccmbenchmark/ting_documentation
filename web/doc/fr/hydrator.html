@@ -225,7 +225,7 @@ stdClass avec des propriétés correspondant à ces colonnes.</p>
 </div>
 <div class="section" id="mapper-des-donnees-sans-metadata">
 <h2>3.4&nbsp;&nbsp;&nbsp;Mapper des données sans metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans le cas où on à une colonne d&#8217;aggrégation on peut avoir envie de la mapper dans un objet.
+<p>Dans le cas d&#8217;une colonne d&#8217;aggrégation, on peut souhaiter la mapper dans un objet.
 Pour mapper la colonne &#8220;nb_books&#8221; dans mon model User via la méthode &#8220;setNbBooks&#8221; il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hydrator&#39;</span><span class="p">);</span>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-13 11:51+0100\n"
+"POT-Creation-Date: 2016-01-13 16:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,34 +108,49 @@ msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Bool"
 msgstr ""
 
 #: ../../repository.rst:87
-msgid "Requêtes"
+msgid "QueryBuilder"
 msgstr ""
 
 #: ../../repository.rst:89
+msgid ""
+"On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté "
+"pour ce cas. Ting le fourni via `aura/sqlquery`."
+msgstr ""
+
+#: ../../repository.rst:96 ../../repository.rst:102 ../../repository.rst:108
+msgid "ou"
+msgstr ""
+
+#: ../../repository.rst:114
+msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
+msgstr ""
+
+#: ../../repository.rst:117
+msgid "Requêtes"
+msgstr ""
+
+#: ../../repository.rst:119
 msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
 "simples."
 msgstr ""
 
-#: ../../repository.rst:92
+#: ../../repository.rst:122
 msgid "Trouver un objet par clé primaire"
 msgstr ""
 
-#: ../../repository.rst:99
+#: ../../repository.rst:129
 msgid "Tous les objets"
 msgstr ""
 
-#: ../../repository.rst:106
+#: ../../repository.rst:136
 msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
-#: ../../repository.rst:113
+#: ../../repository.rst:143
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
 #~ msgid ""
-#~ "Le Repository fourni plusieurs méthodes "
-#~ "afin de faciliter les requêtes "
-#~ "courantes."
 #~ msgstr ""
 
