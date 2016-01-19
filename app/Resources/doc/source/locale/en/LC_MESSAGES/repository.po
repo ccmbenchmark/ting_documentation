@@ -136,7 +136,7 @@ msgstr "or"
 
 #: ../../repository.rst:114
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
-msgstr "Documentation avaiable on https://github.com/auraphp/Aura.SqlQuery"
+msgstr "Documentation available on https://github.com/auraphp/Aura.SqlQuery"
 
 #: ../../repository.rst:117
 msgid "Requêtes"
@@ -164,10 +164,3 @@ msgstr "An object according to one or more properties of the model"
 #: ../../repository.rst:143
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr "An object collection, according to one or more properties of the model"
-
-<<<<<<< HEAD
-=======
-#~ msgid "Documentation sur https://github.com/auraphp/Aura.SqlQuery"
-#~ msgstr ""
-
->>>>>>> 3.x
