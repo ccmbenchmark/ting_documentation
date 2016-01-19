@@ -62,23 +62,23 @@ msgstr "type is the type of your variable; among one of the following :"
 
 #: ../../repository.rst:49
 msgid "int"
-msgstr "int"
+msgstr ""
 
 #: ../../repository.rst:50
 msgid "string"
-msgstr "string"
+msgstr ""
 
 #: ../../repository.rst:51
 msgid "bool"
-msgstr "bool"
+msgstr ""
 
 #: ../../repository.rst:52
 msgid "datetime"
-msgstr "datetime"
+msgstr ""
 
 #: ../../repository.rst:53
 msgid "json"
-msgstr "json"
+msgstr ""
 
 #: ../../repository.rst:55
 msgid ""
@@ -127,14 +127,16 @@ msgid ""
 "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté "
 "pour ce cas. Ting le fourni via `aura/sqlquery`."
 msgstr ""
+"We can need chaining queries, a QueryBuilder can be used. Ting provide it"
+" through `aura/sqlquery`."
 
 #: ../../repository.rst:96 ../../repository.rst:102 ../../repository.rst:108
 msgid "ou"
-msgstr ""
+msgstr "or"
 
 #: ../../repository.rst:114
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
-msgstr ""
+msgstr "Documentation avaiable on https://github.com/auraphp/Aura.SqlQuery"
 
 #: ../../repository.rst:117
 msgid "Requêtes"
@@ -163,3 +165,9 @@ msgstr "An object according to one or more properties of the model"
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr "An object collection, according to one or more properties of the model"
 
+<<<<<<< HEAD
+=======
+#~ msgid "Documentation sur https://github.com/auraphp/Aura.SqlQuery"
+#~ msgstr ""
+
+>>>>>>> 3.x

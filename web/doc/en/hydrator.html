@@ -82,7 +82,8 @@
 <li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">2.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.4&nbsp;&nbsp;&nbsp;Queries</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
@@ -196,7 +197,7 @@
 </div>
 <div class="section" id="donnees-sans-metadata">
 <h2>3.3&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>If you perform a query that returns data that do not match any metadata, whether an aggregate column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
+<p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
 <p>This stdClass object is accessible in the key 0 of the returned array.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, my_extra_column, SUM(price) as total FROM article&#39;</span><span class="p">);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>

@@ -154,3 +154,6 @@ msgstr ""
 #~ msgid ""
 #~ msgstr ""
 
+#~ msgid "Documentation sur https://github.com/auraphp/Aura.SqlQuery"
+#~ msgstr ""
+
