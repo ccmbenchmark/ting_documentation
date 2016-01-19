@@ -83,6 +83,36 @@ Le type bool est considéré comme un type complexe, car la façon de le stocker
     - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Bool
     - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Bool
 
+QueryBuilder
+------------
+
+On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas.
+Ting le fourni via `aura/sqlquery`.
+
+.. code-block:: php
+
+    $repository->getQueryBuilder(Repository::QUERY_SELECT);
+
+ou
+
+.. code-block:: php
+
+    $repository->getQueryBuilder(Repository::QUERY_INSERT);
+
+ou
+
+.. code-block:: php
+
+    $repository->getQueryBuilder(Repository::QUERY_UPDATE);
+
+ou
+
+.. code-block:: php
+
+    $repository->getQueryBuilder(Repository::QUERY_DELETE);
+
+Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery
+
 Requêtes
 --------
 
