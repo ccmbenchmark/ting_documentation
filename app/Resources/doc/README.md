@@ -13,3 +13,6 @@ Installer le thème rtd :
 Générer la documentation :
     dans ce même répertoire taper :
         make html
+
+Mettre à jour les po :
+    sphinx-intl update -p source/_build/locale
