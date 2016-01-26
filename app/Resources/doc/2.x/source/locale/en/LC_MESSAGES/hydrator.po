@@ -1,0 +1,101 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-15 12:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../hydrator.rst:5
+msgid "Les hydrateurs"
+msgstr "About the hydrators"
+
+#: ../../hydrator.rst:9
+msgid "Au sujet des hydrateurs"
+msgstr "About hydrators"
+
+#: ../../hydrator.rst:10
+msgid ""
+"L'hydrateur va être chargé de transformer le résultat d'une requête SQL dans"
+" les objets qui ont été configurés dans les metadata par l'intermédiaire du "
+":doc:`Repository <repository>`"
+msgstr ""
+"The hydrator handles the sql query transformation into "
+"the objects that were configured in the metadata through the "
+":doc:`Repository <repository>`"
+
+#: ../../hydrator.rst:15
+msgid "L'hydrateur par défaut"
+msgstr "Default hydrator"
+
+#: ../../hydrator.rst:16
+msgid ""
+"L'hydrateur par défaut va retourner pour chaque ligne un tableau associatif "
+"avec pour clé le nom de la table (ou l'alias utilisé) et pour valeur l'objet"
+" qu'il a réussi à créer par rapport aux metadata."
+msgstr ""
+"The default hydrator will use the metadata to create the right object and will "
+"fill an associative array with, as a key, the table name (or alias used) and "
+"the object for as a value"
+
+#: ../../hydrator.rst:28 ../../hydrator.rst:58
+msgid "$data contiendra comme structure :"
+msgstr "$data contain:"
+
+#: ../../hydrator.rst:39
+msgid "Jointure avec aucune donnée"
+msgstr "SQL join with no data"
+
+#: ../../hydrator.rst:40
+msgid ""
+"Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur "
+"null"
+msgstr "When the join returns no data, the key 'c' will be null"
+
+#: ../../hydrator.rst:43
+msgid "Données sans metadata"
+msgstr "Data without metadata"
+
+#: ../../hydrator.rst:44
+msgid ""
+"Si vous effectuez une requête qui retourne des données qui ne correspondent "
+"à aucune metadata, que ce soit une colonne d'aggrégation comme SUM(price) ou"
+" une colonne qui n'a pas été mappée comme my_extra_column l'hydrateur va "
+"créer un objet stdClass avec des propriétés correspondant à ces colonnes."
+msgstr ""
+"If you perform a query that returns data that do not match "
+"any metadata, whether an aggregation column as SUM(price) or "
+"a column that has not been mapped as my_extra_column the hydrator will "
+"create a stdClass object with properties corresponding to those columns."
+
+#: ../../hydrator.rst:48
+msgid "Cet objet stdClass est accessible dans la clée 0 du tableau retourné."
+msgstr "This stdClass object is accessible in the key 0 of the returned array."
+
+#: ../../hydrator.rst:74
+msgid "L'hydrateur pour un seul objet"
+msgstr "The hydrator for a single object"
+
+#: ../../hydrator.rst:75
+msgid ""
+"L'hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque"
+" l'on fait une requête qui n'a pour but que de retourner un objet, il n'est "
+"pas des plus appropriés."
+msgstr ""
+"The default hydrator is optimized to return multiple objects when we do "
+"a query that is intended to return only one item, it is not the best choice."
+
+#: ../../hydrator.rst:78
+msgid ""
+"Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre "
+"besoin."
+msgstr "You can inject HydratorSingleObject that suit better your needs"
+
+#: ../../hydrator.rst:89
+msgid "Dans ce cas $user contient directement un objet User."
+msgstr "Dans ce cas $user est un objet User."
