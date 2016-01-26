@@ -1,0 +1,402 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>2   Repository &mdash; ting 1 documentation</title>
+    
+
+    <style>
+        .highlight {
+            background: #272822 !important;
+        }
+    </style>
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=footer">
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="top" title="ting 1 documentation" href="index.html"/>
+    <link rel="next" title="3   About the hydrators" href="hydrator.html"/>
+    <link rel="prev" title="1   Queries" href="query.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/" class="fa fa-home"> ting</a>
+            
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#querybuilder">2.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requetes">2.4&nbsp;&nbsp;&nbsp;Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.3&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.7&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>2&nbsp;&nbsp;&nbsp;Repository</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <div class="section" id="le-repository">
+<h1>2&nbsp;&nbsp;&nbsp;Repository<a class="headerlink" href="#le-repository" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="au-sujet-du-repository">
+<h2>2.1&nbsp;&nbsp;&nbsp;About the repository<a class="headerlink" href="#au-sujet-du-repository" title="Permalink to this headline">¶</a></h2>
+<p>The repository is the link between your entity object and your database, through the Query object.</p>
+<p>It also bear the responsibility to intialize Metadata related to your entity, to learn how to map your database object.</p>
+</div>
+<div class="section" id="creation-des-metadata">
+<h2>2.2&nbsp;&nbsp;&nbsp;Creating Metadata<a class="headerlink" href="#creation-des-metadata" title="Permalink to this headline">¶</a></h2>
+<p>As an example speaks louder than words:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">initMetadata</span><span class="p">(</span><span class="nx">SerializerFactoryInterface</span> <span class="nv">$serializerFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+<span class="p">{</span>
+    <span class="nv">$metadata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metadata</span><span class="p">(</span><span class="nv">$serializerFactory</span><span class="p">);</span>
+
+    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setEntity</span><span class="p">(</span><span class="s1">&#39;sample\src\model\City&#39;</span><span class="p">);</span>
+    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setConnectionName</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span>
+    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setDatabase</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">);</span>
+    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setTable</span><span class="p">(</span><span class="s1">&#39;t_city_cit&#39;</span><span class="p">);</span>
+
+    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;primary&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;autoincrement&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;fieldName&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;columnName&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;cit_id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;type&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;int&#39;</span>
+    <span class="p">));</span>
+
+    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
+    <span class="p">));</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Some details:</dt>
+<dd><ul class="first last">
+<li><p class="first">fieldName is the name of the property of your entity</p>
+</li>
+<li><p class="first">columnName is the name of the column in your database</p>
+</li>
+<li><dl class="first docutils">
+<dt>type is the type of your variable; among one of the following :</dt>
+<dd><ul class="first last simple">
+<li>int</li>
+<li>string</li>
+<li>bool</li>
+<li>datetime</li>
+<li>json</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>The type bool, datetime and json are a bit special because they are dependent of database so they can be serialized / deserialized with some options:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
+    <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span>               <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;serializer_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;unserialize&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;assoc&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<p>Please take a look at the source code of each Serializer to see available options.</p>
+<p>You can inject your own serializer:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
+    <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;serializer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Bouh\Awesome\Serializer&#39;</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>The bool type is considered a complex type, because the way they are stored in the database differs depending on each RDBMS</dt>
+<dd><ul class="first last simple">
+<li>CCMBenchmark\Ting\Driver\Pgsql\Serializer\Bool</li>
+<li>CCMBenchmark\Ting\Driver\Mysqli\Serializer\Bool</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="querybuilder">
+<h2>2.3&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Permalink to this headline">¶</a></h2>
+<p>We can need chaining queries, a QueryBuilder can be used. Ting provide it through <cite>aura/sqlquery</cite>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_INSERT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_UPDATE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_DELETE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Documentation available on <a class="reference external" href="https://github.com/auraphp/Aura.SqlQuery">https://github.com/auraphp/Aura.SqlQuery</a></p>
+</div>
+<div class="section" id="requetes">
+<h2>2.4&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#requetes" title="Permalink to this headline">¶</a></h2>
+<p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
+<div class="section" id="trouver-un-objet-par-cle-primaire">
+<h3>2.4.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tous-les-objets">
+<h3>2.4.2&nbsp;&nbsp;&nbsp;All items<a class="headerlink" href="#tous-les-objets" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
+<h3>2.4.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
+<h3>2.4.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+<footer role="contentinfo" class="ccmcss_footer ccmcss_footer--dark">
+    <ul class="toollinks">
+        <li><a href="http://www.ccmbenchmark.com/advertising/fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="http://www.ccmbenchmark.com/institut/contact/information">Contact</a></li>
+        <li><a href="http://benchmail.benchmark.fr/magazine/archive_406_1.html">Press</a></li>
+        <li><a href="http://www.journaldunet.com/donneesperso.shtml">Données personnelles</a></li>
+        <li><a href="http://www.ccmbenchmark.com/mentions-legales">Mentions légales</a></li>
+        <li><a href="http://www.ccmbenchmark.com/">&copy; 2015 CCM Benchmark</a></li>
+    </ul>
+    <div class="logo">
+        <a href="#">
+            <hgroup>
+                <span>CCM Benchmark Group</span>
+            </hgroup>
+        </a>
+    </div>
+    <div class="brands">
+        <a href="http://www.commentcamarche.net/" class="group_ccm" original-title="commentçamarche.net"></a>
+        <a href="http://www.journaldunet.com/" class="group_jdn" original-title="Le Journal du Net"></a>
+        <a href="http://droit-finances.commentcamarche.net/" class="group_df" original-title="Droit-finances.net"></a>
+        <a href="http://www.journaldesfemmes.com/" class="group_jdf" original-title="Journal des femmes"></a>
+        <a href="http://www.linternaute.com/" class="group_linter" original-title="linternaute.com"></a>
+        <a href="http://copainsdavant.linternaute.com/" class="group_copains" original-title="Copains d'avant"></a>
+        <a href="http://sante-medecine.commentcamarche.net/" class="group_ms" original-title="Santé-médecine.net"></a>
+    </div>
+    <p class="foot_links">
+        <a href="http://www.linternaute.com/voyage/">Voyage</a>,
+        <a href="http://www.linternaute.com/loisirs/">Loisirs</a>,
+        <a href="http://www.linternaute.com/restaurant/">Restos</a>,
+        <a href="http://www.linternaute.com/cinema/">Cinéma</a>,
+        <a href="http://www.linternaute.com/bricolage/">Bricolage</a>,
+        <a href="http://www.linternaute.com/argent/">Argent</a>,
+        <a href="http://deco.journaldesfemmes.com/">Décoration</a>,
+        <a href="http://cuisine.journaldesfemmes.com/">Cuisine</a>,
+        <a href="http://www.linternaute.com/auto/">Auto</a>,
+        <a href="http://sante.journaldesfemmes.com/">Santé</a>,
+        <a href="http://www.linternaute.com/homme/">Homme</a>,
+        <a href="http://www.linternaute.com/actualite/">Actualités</a>,
+        <a href="http://www.commentcamarche.net/">High-tech</a>,
+        <a href="http://www.journaldunet.com/">Entreprise</a>,
+        <a href="http://expeert.com/fr/">Expeert</a>
+    </p>
+</footer>
+
+</div>
+
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Ting docs</span>
+      v: 3.x
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Language</dt>
+            
+            <dd><a href="/ting/doc/3.x/en/index.html">en</a></dd>
+            
+            <dd><a href="/ting/doc/3.x/fr/index.html">fr</a></dd>
+            
+        </dl>
+        <dl>
+            <dt>Versions</dt>
+            
+            <dd><a href="/ting/doc/2.x/en/">2.x</a></dd>
+            
+            <dd><a href="/ting/doc/3.x/en/">3.x</a></dd>
+            
+        </dl>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+ 
+
+</body>
+</html>

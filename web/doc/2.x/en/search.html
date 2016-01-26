@@ -1,0 +1,280 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Search &mdash; ting  documentation</title>
+    
+
+    <style>
+        .highlight {
+            background: #272822 !important;
+        }
+    </style>
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=footer">
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="top" title="ting  documentation" href="index.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/" class="fa fa-home"> ting</a>
+            
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li></li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search
+      functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+<footer role="contentinfo" class="ccmcss_footer ccmcss_footer--dark">
+    <ul class="toollinks">
+        <li><a href="http://www.ccmbenchmark.com/advertising/fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="http://www.ccmbenchmark.com/institut/contact/information">Contact</a></li>
+        <li><a href="http://benchmail.benchmark.fr/magazine/archive_406_1.html">Press</a></li>
+        <li><a href="http://www.journaldunet.com/donneesperso.shtml">Données personnelles</a></li>
+        <li><a href="http://www.ccmbenchmark.com/mentions-legales">Mentions légales</a></li>
+        <li><a href="http://www.ccmbenchmark.com/">&copy; 2015 CCM Benchmark</a></li>
+    </ul>
+    <div class="logo">
+        <a href="#">
+            <hgroup>
+                <span>CCM Benchmark Group</span>
+            </hgroup>
+        </a>
+    </div>
+    <div class="brands">
+        <a href="http://www.commentcamarche.net/" class="group_ccm" original-title="commentçamarche.net"></a>
+        <a href="http://www.journaldunet.com/" class="group_jdn" original-title="Le Journal du Net"></a>
+        <a href="http://droit-finances.commentcamarche.net/" class="group_df" original-title="Droit-finances.net"></a>
+        <a href="http://www.journaldesfemmes.com/" class="group_jdf" original-title="Journal des femmes"></a>
+        <a href="http://www.linternaute.com/" class="group_linter" original-title="linternaute.com"></a>
+        <a href="http://copainsdavant.linternaute.com/" class="group_copains" original-title="Copains d'avant"></a>
+        <a href="http://sante-medecine.commentcamarche.net/" class="group_ms" original-title="Santé-médecine.net"></a>
+    </div>
+    <p class="foot_links">
+        <a href="http://www.linternaute.com/voyage/">Voyage</a>,
+        <a href="http://www.linternaute.com/loisirs/">Loisirs</a>,
+        <a href="http://www.linternaute.com/restaurant/">Restos</a>,
+        <a href="http://www.linternaute.com/cinema/">Cinéma</a>,
+        <a href="http://www.linternaute.com/bricolage/">Bricolage</a>,
+        <a href="http://www.linternaute.com/argent/">Argent</a>,
+        <a href="http://deco.journaldesfemmes.com/">Décoration</a>,
+        <a href="http://cuisine.journaldesfemmes.com/">Cuisine</a>,
+        <a href="http://www.linternaute.com/auto/">Auto</a>,
+        <a href="http://sante.journaldesfemmes.com/">Santé</a>,
+        <a href="http://www.linternaute.com/homme/">Homme</a>,
+        <a href="http://www.linternaute.com/actualite/">Actualités</a>,
+        <a href="http://www.commentcamarche.net/">High-tech</a>,
+        <a href="http://www.journaldunet.com/">Entreprise</a>,
+        <a href="http://expeert.com/fr/">Expeert</a>
+    </p>
+</footer>
+
+</div>
+
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Ting docs</span>
+      v: 2.x
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Language</dt>
+            
+            <dd><a href="/ting/doc/2.x/en/index.html">en</a></dd>
+            
+            <dd><a href="/ting/doc/2.x/fr/index.html">fr</a></dd>
+            
+        </dl>
+        <dl>
+            <dt>Versions</dt>
+            
+            <dd><a href="/ting/doc/2.7/en/">2.x</a></dd>
+            
+            <dd><a href="/ting/doc/3.0/en/">3.x</a></dd>
+            
+        </dl>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/searchtools.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+
+  <script type="text/javascript">
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script type="text/javascript" id="searchindexloader"></script>
+   
+
+
+</body>
+</html>
