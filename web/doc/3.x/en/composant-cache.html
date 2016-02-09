@@ -56,8 +56,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -85,11 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.3&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Object composition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.7&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -104,16 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">6&nbsp;&nbsp;&nbsp;The cache component</a></li>
 </ul>
 
             
@@ -135,12 +127,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>6&nbsp;&nbsp;&nbsp;The cache component</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -150,55 +150,8 @@
                     
   <div class="section" id="le-composant-cache">
 <h1>6&nbsp;&nbsp;&nbsp;The cache component<a class="headerlink" href="#le-composant-cache" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="configuration">
-<h2>6.1&nbsp;&nbsp;&nbsp;Setup<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<p>The settings should be injected with the setConfig. It is structured as follows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">setConfig</span><span class="p">([</span>
-  <span class="s1">&#39;servers&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-      <span class="p">[</span><span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">11211</span><span class="p">]</span>
-  <span class="p">],</span>
-  <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-      <span class="c1">// Cache driver specific options</span>
-  <span class="p">],</span>
-  <span class="s1">&#39;persistent_id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ting.test&#39;</span> <span class="c1">// Memcache persistent id</span>
-<span class="p">]);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sauvegarder-dans-le-cache">
-<h2>6.2&nbsp;&nbsp;&nbsp;Save into cache<a class="headerlink" href="#sauvegarder-dans-le-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sauvegarder-dans-le-cache-plusieurs-valeurs">
-<h2>6.3&nbsp;&nbsp;&nbsp;Save several values into the cache<a class="headerlink" href="#sauvegarder-dans-le-cache-plusieurs-valeurs" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">storeMulti</span><span class="p">(</span><span class="nv">$associativeArray</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="effacer-une-valeur-du-cache">
-<h2>6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache<a class="headerlink" href="#effacer-une-valeur-du-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="effacer-plusieurs-valeurs-du-cache">
-<h2>6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache<a class="headerlink" href="#effacer-plusieurs-valeurs-du-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">deleteMulti</span><span class="p">(</span><span class="nv">$keys</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="remplacer-une-valeur-dans-le-cache">
-<h2>6.6&nbsp;&nbsp;&nbsp;Update a value in the cache<a class="headerlink" href="#remplacer-une-valeur-dans-le-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">replace</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sauvegarder-de-maniere-infinie">
-<h2>6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live<a class="headerlink" href="#sauvegarder-de-maniere-infinie" title="Permalink to this headline">¶</a></h2>
-<p>Put a 0 ttl for infinite Cache</p>
-</div>
+<p>The cache component is now provided through <cite>doctrine/Cache</cite>.</p>
+<p>Documentation available on <a class="reference external" href="http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/caching.html">http://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/caching.html</a></p>
 </div>
 
 

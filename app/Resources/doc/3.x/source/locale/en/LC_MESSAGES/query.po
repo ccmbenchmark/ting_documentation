@@ -105,7 +105,7 @@ msgid ""
 "un tableau PHP : count($collection);"
 msgstr ""
 "Knowing that a Collection implements the standard interface Countable. "
-"Yu can find how many elements it contains just as you would do for a PHP array: count($collection); "
+"You can find how many elements it contains just as you would do for a PHP array: count($collection); "
 
 #: ../../query.rst:79
 msgid "Exécuter une requête sur le master"

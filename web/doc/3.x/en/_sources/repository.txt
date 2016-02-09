@@ -19,28 +19,30 @@ Comme un exemple est plus parlant qu'un long discours :
 
 .. code-block:: php
 
-    public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
+    class SampleRepository extends CCMBenchmark\Ting\Repository\Repository implements MetadataInitializer
     {
-        $metadata = new Metadata($serializerFactory);
+        public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
+        {
+            $metadata = new Metadata($serializerFactory);
 
-        $metadata->setEntity('sample\src\model\City');
-        $metadata->setConnectionName('main');
-        $metadata->setDatabase('world');
-        $metadata->setTable('t_city_cit');
+            $metadata->setEntity(Sample\Model\City::class);
+            $metadata->setConnectionName('main');
+            $metadata->setDatabase('world');
+            $metadata->setTable('t_city_cit');
 
-        $metadata->addField(array(
-            'primary'       => true,
-            'autoincrement' => true,
-            'fieldName'     => 'id',
-            'columnName'    => 'cit_id',
-            'type'          => 'int'
-        ));
+            $metadata->addField(array(
+                'primary'       => true,
+                'autoincrement' => true,
+                'fieldName'     => 'id',
+                'columnName'    => 'cit_id',
+                'type'          => 'int'
+            ));
 
-        $metadata->addField(array(
-            'fieldName'  => 'name',
-            'columnName' => 'cit_name',
-            'type'       => 'string'
-        ));
+            $metadata->addField(array(
+                'fieldName'  => 'name',
+                'columnName' => 'cit_name',
+                'type'       => 'string'
+            ));
 
 Quelques précisions :
     - fieldName correspond au nom de la propriété de votre entité
@@ -76,12 +78,12 @@ Vous pouvez injecter votre propre serializer :
         'fieldName'  => 'tags',
         'columnName' => 'tags_name',
         'type'       => 'json',
-        'serializer' => '\Bouh\Awesome\Serializer'
+        'serializer' => Bouh\Awesome\Serializer::class
     ]);
 
-Le type bool est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :
-    - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Bool
-    - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Bool
+Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :
+    - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean
+    - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean
 
 QueryBuilder
 ------------

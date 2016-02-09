@@ -40,6 +40,26 @@ $data contiendra comme structure :
       )
     ]
 
+.. _l-hydrateur-pour-un-seul-objet:
+
+L'hydrateur pour un seul objet
+------------------------------
+L'hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l'on fait une requête qui n'a pour but que de retourner
+un objet, il n'est pas des plus appropriés.
+
+Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre besoin.
+
+.. code-block:: php
+
+  $query = $this->getQuery('SELECT id, name, c.text FROM user WHERE name = :name');
+  $query->setParams(['name' => 'Sylvain']);
+  $collection = $query->query($this->getCollection(new CCMBenchmark\Ting\Repository\HydratorSingleObject()));
+  foreach ($collection as $user) {
+    // ...
+  }
+
+Dans ce cas $user est un objet User.
+
 Jointure avec aucune donnée
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur null
@@ -83,9 +103,9 @@ Pour mapper la colonne "nb_books" dans mon model User via la méthode "setNbBook
 .. code-block:: php
 
   $query = $this->getQuery('SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)');
-  $hydrator = $services->get('Hydrator');
+  $hydrator = new CCMBenchmark\Ting\Repository\Hydrator();
   $hydrator->mapAliasTo('nb_books', 'user', 'setNbBooks')
-  $collection = $query->query(new Collection($hydrator));
+  $collection = $query->query($this->getCollection($hydrator));
   foreach ($collection as $data) {
     // ...
   }
@@ -111,9 +131,9 @@ Datetime.
 .. code-block:: php
 
   $query = $this->getQuery('SELECT title, NOW() as fetchedDate FROM article');
-  $hydrator = $services->get('Hydrator');
-  $hydrator->unserializeAliasWith('fetchedDate', $services->get('SerializerFactory')->get('CCMBenchmark\Ting\Serializer\Datetime'))
-  $collection = $query->query(new Collection($hydrator));
+  $hydrator = new CCMBenchmark\Ting\Repository\Hydrator();
+  $hydrator->unserializeAliasWith('fetchedDate', $services->get('SerializerFactory')->get(CCMBenchmark\Ting\Serializer\Datetime::class))
+  $collection = $query->query($this->getCollection($hydrator));
   foreach ($collection as $data) {
     // ...
   }
@@ -140,9 +160,9 @@ Pour mapper l'objet Country (qui a l'alias "co") dans mon model City (qui a l'al
 .. code-block:: php
 
   $query = $this->getQuery('SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)');
-  $hydrator = $services->get('Hydrator');
-  $hydrator->mapObjectTo('co', 'c', 'setCountry')
-  $collection = $query->query(new Collection($hydrator));
+  $hydrator = new Hydrator();
+  $hydrator->mapObjectTo('co', 'cit', 'setCountry')
+  $collection = $query->query($this->getCollection($hydrator));
   foreach ($collection as $data) {
     // ...
   }
@@ -160,23 +180,3 @@ $data contiendra comme structure :
         )
       )
     ]
-
-.. _l-hydrateur-pour-un-seul-objet:
-
-L'hydrateur pour un seul objet
-------------------------------
-L'hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l'on fait une requête qui n'a pour but que de retourner
-un objet, il n'est pas des plus appropriés.
-
-Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre besoin.
-
-.. code-block:: php
-
-  $query = $this->getQuery('SELECT id, name, c.text FROM user WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
-  $collection = $query->query($this->getCollection(new HydratorSingleObject()));
-  foreach ($collection as $user) {
-    // ...
-  }
-
-Dans ce cas $user est un objet User.

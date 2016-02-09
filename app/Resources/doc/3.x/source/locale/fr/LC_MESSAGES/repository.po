@@ -95,16 +95,16 @@ msgstr ""
 
 #: ../../repository.rst:84
 msgid ""
-"Le type bool est considéré comme un type complexe, car la façon de le "
+"Le type booléen est considéré comme un type complexe, car la façon de le "
 "stocker en base est différent selon chaque sgbd :"
 msgstr ""
 
 #: ../../repository.rst:83
-msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Bool"
+msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
 msgstr ""
 
 #: ../../repository.rst:84
-msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Bool"
+msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Boolean"
 msgstr ""
 
 #: ../../repository.rst:87

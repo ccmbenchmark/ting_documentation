@@ -104,19 +104,19 @@ msgstr "You can inject your own serializer:"
 
 #: ../../repository.rst:84
 msgid ""
-"Le type bool est considéré comme un type complexe, car la façon de le "
+"Le type booléen est considéré comme un type complexe, car la façon de le "
 "stocker en base est différent selon chaque sgbd :"
 msgstr ""
-"The bool type is considered a complex type, because the way they are "
+"The boolean type is considered a complex type, because the way they are "
 "stored in the database differs depending on each RDBMS"
 
 #: ../../repository.rst:83
-msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Bool"
-msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Bool"
+msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
+msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
 
 #: ../../repository.rst:84
-msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Bool"
-msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Bool"
+msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Boolean"
+msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Boolean"
 
 #: ../../repository.rst:87
 msgid "QueryBuilder"

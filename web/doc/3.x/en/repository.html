@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -86,11 +87,11 @@
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.3&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Object composition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.7&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -105,16 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a></li>
 </ul>
 
             
@@ -136,12 +128,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>2&nbsp;&nbsp;&nbsp;Repository</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -159,28 +159,30 @@
 <div class="section" id="creation-des-metadata">
 <h2>2.2&nbsp;&nbsp;&nbsp;Creating Metadata<a class="headerlink" href="#creation-des-metadata" title="Permalink to this headline">¶</a></h2>
 <p>As an example speaks louder than words:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">initMetadata</span><span class="p">(</span><span class="nx">SerializerFactoryInterface</span> <span class="nv">$serializerFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
 <span class="p">{</span>
-    <span class="nv">$metadata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metadata</span><span class="p">(</span><span class="nv">$serializerFactory</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">initMetadata</span><span class="p">(</span><span class="nx">SerializerFactoryInterface</span> <span class="nv">$serializerFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="nv">$metadata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metadata</span><span class="p">(</span><span class="nv">$serializerFactory</span><span class="p">);</span>
 
-    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setEntity</span><span class="p">(</span><span class="s1">&#39;sample\src\model\City&#39;</span><span class="p">);</span>
-    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setConnectionName</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span>
-    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setDatabase</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">);</span>
-    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setTable</span><span class="p">(</span><span class="s1">&#39;t_city_cit&#39;</span><span class="p">);</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setEntity</span><span class="p">(</span><span class="nx">Sample\Model\City</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setConnectionName</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">);</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setDatabase</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">);</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setTable</span><span class="p">(</span><span class="s1">&#39;t_city_cit&#39;</span><span class="p">);</span>
 
-    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;primary&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-        <span class="s1">&#39;autoincrement&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-        <span class="s1">&#39;fieldName&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;columnName&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;cit_id&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;type&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;int&#39;</span>
-    <span class="p">));</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;primary&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;autoincrement&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;fieldName&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;columnName&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;cit_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;int&#39;</span>
+        <span class="p">));</span>
 
-    <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
-    <span class="p">));</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
+        <span class="p">));</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -222,15 +224,15 @@
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;serializer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Bouh\Awesome\Serializer&#39;</span>
+    <span class="s1">&#39;serializer&#39;</span> <span class="o">=&gt;</span> <span class="nx">Bouh\Awesome\Serializer</span><span class="o">::</span><span class="na">class</span>
 <span class="p">]);</span>
 </pre></div>
 </div>
 <dl class="docutils">
-<dt>The bool type is considered a complex type, because the way they are stored in the database differs depending on each RDBMS</dt>
+<dt>The boolean type is considered a complex type, because the way they are stored in the database differs depending on each RDBMS</dt>
 <dd><ul class="first last simple">
-<li>CCMBenchmark\Ting\Driver\Pgsql\Serializer\Bool</li>
-<li>CCMBenchmark\Ting\Driver\Mysqli\Serializer\Bool</li>
+<li>CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean</li>
+<li>CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean</li>
 </ul>
 </dd>
 </dl>

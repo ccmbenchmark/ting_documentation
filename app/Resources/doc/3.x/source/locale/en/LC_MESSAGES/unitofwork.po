@@ -43,7 +43,7 @@ msgid ""
 "Un objet \"managed\" est un objet qui existe déjà en base et qui provoquera "
 "une requête UPDATE lorsque l'on demandera à ce qu'il soit persisté."
 msgstr ""
-" A \"managed\" object is an object that already exists in base and will cause "
+"A \"managed\" object is an object that already exists in base and will cause "
 "UPDATE query when you ask it to be persisted."
 
 #: ../../unitofwork.rst:20

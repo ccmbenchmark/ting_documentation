@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -86,11 +87,11 @@
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.3&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.6&nbsp;&nbsp;&nbsp;Object composition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.7&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -105,16 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a></li>
 </ul>
 
             
@@ -136,12 +128,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>4&nbsp;&nbsp;&nbsp;UnitOfWork</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -157,8 +157,7 @@
 <div class="section" id="fonctionnement-interne">
 <h3>4.1.1&nbsp;&nbsp;&nbsp;Internal process<a class="headerlink" href="#fonctionnement-interne" title="Permalink to this headline">¶</a></h3>
 <p>The UnitOfWork initializes in all objects &#8220;managed&#8221; a property tingUUID which must not in any way be altered by the user.</p>
-<p>Un objet &#8220;managed&#8221; est un objet qui existe déjà en base et qui provoquera une requête UPDATE
-lorsque l&#8217;on demandera à ce qu&#8217;il soit persisté.</p>
+<p>A &#8220;managed&#8221; object is an object that already exists in base and will cause UPDATE query when you ask it to be persisted.</p>
 </div>
 </div>
 <div class="section" id="principe">
