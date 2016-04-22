@@ -18,13 +18,25 @@ et pour valeur l'objet qu'il a réussi à créer par rapport aux metadata.
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
-  $collection = $query->query();
-  foreach ($collection as $data) {
-    // ...
-  }
+  use CCMBenchmark\Ting\Repository\Repository;
+  use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
+  use CCMBenchmark\Ting\Repository\MetadataInitializer;
 
+  class SampleRepository extends Repository implements MetadataInitializer
+  {
+      public function getCommentForSylvain()
+      {
+          $query = $this->getQuery('SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name');
+          $query->setParams(['name' => 'Sylvain']);
+          $collection = $query->query();
+          foreach ($collection as $data) {
+            // ...
+          }
+
+          //....
+      }
+  }
+  
 $data contiendra comme structure :
 
 .. code-block:: php

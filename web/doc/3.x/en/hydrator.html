@@ -158,11 +158,23 @@
 <div class="section" id="l-hydrateur-par-defaut">
 <h2>3.2&nbsp;&nbsp;&nbsp;Default hydrator<a class="headerlink" href="#l-hydrateur-par-defaut" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator will use the metadata to create the right object and will fill an associative array with, as a key, the table name (or alias used) and the object for as a value</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// ...</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCommentForSylvain</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+        <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// ...</span>
+        <span class="p">}</span>
+
+        <span class="c1">//....</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
