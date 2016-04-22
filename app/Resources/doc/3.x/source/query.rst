@@ -110,7 +110,7 @@ Voir la documentation concernant l':ref:`hydration pour un seul objet <l-hydrate
 Compter les éléments d'une collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Il faut savoir qu'une Collection implémente l'interface standard Countable. Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : ``count($collection);``
+Il faut savoir qu'une ``Collection`` implémente l'interface standard ``Countable``. Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : ``count($collection)``
 
 
 Exécuter une requête sur le master

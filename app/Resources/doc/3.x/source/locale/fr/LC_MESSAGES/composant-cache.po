@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 10:54+0200\n"
+"POT-Creation-Date: 2016-04-22 11:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "Le composant cache"
 msgstr ""
 
 #: ../../composant-cache.rst:7
-msgid "Le composant cache est maintenant fourni via `doctrine/Cache`."
+msgid "Le composant cache est maintenant fourni via ``doctrine/Cache``."
 msgstr ""
 
 #: ../../composant-cache.rst:9
@@ -34,9 +34,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Il faut injecter la configuration via"
-#~ " la méthode setConfig Elle est "
-#~ "structurée de la façon suivante:"
 #~ msgstr ""
 
 #~ msgid "Sauvegarder dans le cache"
@@ -58,5 +55,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Il suffit de mettre un ttl de 0 pour sauvegarder de manière infinie"
+#~ msgstr ""
+
+#~ msgid "Le composant cache est maintenant fourni via `doctrine/Cache`."
 #~ msgstr ""
 

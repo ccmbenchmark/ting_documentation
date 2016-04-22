@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 10:54+0200\n"
+"POT-Creation-Date: 2016-04-22 11:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,17 +27,18 @@ msgstr "About the repository"
 #: ../../repository.rst:10
 msgid ""
 "Le Repository va faire le lien entre votre objet entité et votre base de "
-"données, par l'intermédiaire de l'objet Query."
+"données, par l'intermédiaire de l'objet ``Query``."
 msgstr ""
 "The repository is the link between your entity object and your database, "
-"through the Query object."
+"through the ``Query`` object."
 
 #: ../../repository.rst:12
 msgid ""
-"Il est aussi responsable d'initialiser les Metadata qui concernent votre "
-"entité afin de savoir comment mapper votre objet en base de données."
+"Il est aussi responsable d'initialiser les ``Metadata`` qui concernent "
+"votre entité afin de savoir comment mapper votre objet en base de "
+"données."
 msgstr ""
-"It also bear the responsibility to intialize Metadata related to your "
+"It also bear the responsibility to intialize ``Metadata`` related to your "
 "entity, to learn how to map your database object."
 
 #: ../../repository.rst:17
@@ -65,36 +66,36 @@ msgid "type correspond au type de votre variable avec comme valeur possibles :"
 msgstr "type is the type of your variable; among one of the following :"
 
 #: ../../repository.rst:58
-msgid "int"
+msgid "``int``"
 msgstr ""
 
 #: ../../repository.rst:59
-msgid "double"
+msgid "``double``"
 msgstr ""
 
 #: ../../repository.rst:60
-msgid "string"
+msgid "``string``"
 msgstr ""
 
 #: ../../repository.rst:61
-msgid "bool"
+msgid "``bool``"
 msgstr ""
 
 #: ../../repository.rst:62
-msgid "datetime"
+msgid "``datetime``"
 msgstr ""
 
 #: ../../repository.rst:63
-msgid "json"
+msgid "``json``"
 msgstr ""
 
 #: ../../repository.rst:65
 msgid ""
-"Le type bool, datetime et json sont un peu particuliers, car il s'agit de"
-" types considérés complexes et qui acceptent donc d'être "
+"Le type ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car "
+"il s'agit de types considérés complexes et qui acceptent donc d'être "
 "sérializés/désérializés via des options :"
 msgstr ""
-"The type bool, datetime and json are a bit special because they are "
+"The type ``bool``, ``datetime`` and ``json`` are a bit special because they are "
 "dependent of database so they can be serialized / deserialized with some "
 "options:"
 
@@ -119,11 +120,13 @@ msgstr ""
 "stored in the database differs depending on each RDBMS"
 
 #: ../../repository.rst:93
-msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
+#, fuzzy
+msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
 msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
 
 #: ../../repository.rst:94
-msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Boolean"
+#, fuzzy
+msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
 msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Boolean"
 
 #: ../../repository.rst:97
@@ -133,10 +136,10 @@ msgstr ""
 #: ../../repository.rst:99
 msgid ""
 "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté "
-"pour ce cas. Ting le fourni via `aura/sqlquery`."
+"pour ce cas. Ting le fourni via ``aura/sqlquery``."
 msgstr ""
 "We can need chaining queries, a QueryBuilder can be used. Ting provide it"
-" through `aura/sqlquery`."
+" through ``aura/sqlquery``."
 
 #: ../../repository.rst:106 ../../repository.rst:112 ../../repository.rst:118
 msgid "ou"
@@ -151,7 +154,6 @@ msgid "Requêtes"
 msgstr "Queries"
 
 #: ../../repository.rst:129
-#, fuzzy
 msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
 "simples."
@@ -172,4 +174,22 @@ msgstr "An object according to one or more properties of the model"
 #: ../../repository.rst:153
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr "An object collection, according to one or more properties of the model"
+
+#~ msgid "int"
+#~ msgstr ""
+
+#~ msgid "double"
+#~ msgstr ""
+
+#~ msgid "string"
+#~ msgstr ""
+
+#~ msgid "bool"
+#~ msgstr ""
+
+#~ msgid "datetime"
+#~ msgstr ""
+
+#~ msgid "json"
+#~ msgstr ""
 

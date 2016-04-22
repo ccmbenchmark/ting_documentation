@@ -72,9 +72,9 @@
             
             
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Les entités</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
@@ -158,9 +158,8 @@
 <h1>3&nbsp;&nbsp;&nbsp;Repository<a class="headerlink" href="#le-repository" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="au-sujet-du-repository">
 <h2>3.1&nbsp;&nbsp;&nbsp;About the repository<a class="headerlink" href="#au-sujet-du-repository" title="Permalink to this headline">¶</a></h2>
-<p>Le Repository va faire le lien entre votre objet entité et votre base de données, par l&#8217;intermédiaire de l&#8217;objet <code class="docutils literal"><span class="pre">Query</span></code>.</p>
-<p>Il est aussi responsable d&#8217;initialiser les <code class="docutils literal"><span class="pre">Metadata</span></code> qui concernent votre entité afin de savoir comment mapper
-votre objet en base de données.</p>
+<p>The repository is the link between your entity object and your database, through the <code class="docutils literal"><span class="pre">Query</span></code> object.</p>
+<p>It also bear the responsibility to intialize <code class="docutils literal"><span class="pre">Metadata</span></code> related to your entity, to learn how to map your database object.</p>
 </div>
 <div class="section" id="creation-des-metadata">
 <h2>3.2&nbsp;&nbsp;&nbsp;Creating Metadata<a class="headerlink" href="#creation-des-metadata" title="Permalink to this headline">¶</a></h2>
@@ -221,8 +220,7 @@ votre objet en base de données.</p>
 </ul>
 </dd>
 </dl>
-<p>Le type <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code> sont un peu particuliers, car il s&#8217;agit de types considérés complexes et qui acceptent
-donc d&#8217;être sérializés/désérializés via des options :</p>
+<p>The type <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> and <code class="docutils literal"><span class="pre">json</span></code> are a bit special because they are dependent of database so they can be serialized / deserialized with some options:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
@@ -254,8 +252,7 @@ donc d&#8217;être sérializés/désérializés via des options :</p>
 </div>
 <div class="section" id="querybuilder">
 <h2>3.3&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Permalink to this headline">¶</a></h2>
-<p>On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas.
-Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquery</span></code>.</p>
+<p>We can need chaining queries, a QueryBuilder can be used. Ting provide it through <code class="docutils literal"><span class="pre">aura/sqlquery</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -275,7 +272,7 @@ Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquer
 </div>
 <div class="section" id="requetes">
 <h2>3.4&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#requetes" title="Permalink to this headline">¶</a></h2>
-<p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
+<p>The Repository provides several methods to perform common queries easily.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
 <h3>3.4.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>

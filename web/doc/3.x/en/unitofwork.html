@@ -72,9 +72,9 @@
             
             
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Les entités</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
@@ -161,8 +161,7 @@
 <p>The UnitOfWork&#8217;s role is to track object changes to persist it into database.</p>
 <div class="section" id="fonctionnement-interne">
 <h3>5.1.1&nbsp;&nbsp;&nbsp;Internal process<a class="headerlink" href="#fonctionnement-interne" title="Permalink to this headline">¶</a></h3>
-<p>L&#8217;unitOfWork initialise dans tous les objets &#8220;managed&#8221; une propriétée <code class="docutils literal"><span class="pre">tingUUID</span></code> qui ne doit en aucun cas être altérée
-par l&#8217;utilisateur.</p>
+<p>The UnitOfWork initializes in all objects &#8220;managed&#8221; a property <code class="docutils literal"><span class="pre">tingUUID</span></code> which must not in any way be altered by the user.</p>
 <p>A &#8220;managed&#8221; object is an object that already exists in base and will cause UPDATE query when you ask it to be persisted.</p>
 </div>
 </div>
@@ -178,7 +177,7 @@ par l&#8217;utilisateur.</p>
 </div>
 <div class="section" id="particularites">
 <h3>5.2.1&nbsp;&nbsp;&nbsp;Specifity<a class="headerlink" href="#particularites" title="Permalink to this headline">¶</a></h3>
-<p>Que ça soit pour persister la mise à jour ou l&#8217;insertion d&#8217;une entité il faut utiliser <code class="docutils literal"><span class="pre">pushSave</span></code>.</p>
+<p>Whether it&#8217;s to persist updating or inserting an entity you must use <code class="docutils literal"><span class="pre">pushSave</span></code>.</p>
 <p>Upon insertion of an entity which has an autoincrement property (configured in metadata) the autoincrement issued by the database will be set in the entity.</p>
 </div>
 </div>
