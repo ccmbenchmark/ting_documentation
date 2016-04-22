@@ -165,9 +165,19 @@
 <h2>6.2&nbsp;&nbsp;&nbsp;Simple query<a class="headerlink" href="#requete-simple" title="Permalink to this headline">¶</a></h2>
 <p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>To proceed, just call the object and specify the duration it should remain in the cache and the cache key:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUsers</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
@@ -175,9 +185,19 @@
 <h2>6.3&nbsp;&nbsp;&nbsp;Prepared query<a class="headerlink" href="#requete-preparee" title="Permalink to this headline">¶</a></h2>
 <p>Pour une requête préparée il faut récupérer l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>To proceed, just call the object and specify the duration it should remain in the cache and the cache key:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUsers</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>

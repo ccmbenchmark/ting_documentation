@@ -5,7 +5,7 @@ Le cache
 ========
 
 Au sujet du cache
-------------------------
+-----------------
 Le résultat d'une requête effectuée avec les objets de cache sera soit récupéré depuis le cache si l'entrée y existe déjà,
 soit récupéré depuis la base de données puis inséré dans le cache.
 
@@ -19,9 +19,19 @@ Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise en c
 
 .. code-block:: php
 
-  $query = $this->getCachedQuery('SELECT ...');
-  $query->setTtl(300); // 5mn
-  $query->setCacheKey('listOfUser');
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function getUsers()
+        {
+            $query = $this->getCachedQuery('SELECT ...');
+            $query->setTtl(300); // 5mn
+            $query->setCacheKey('listOfUser');
+
+            // ...
 
 Requête préparée
 ----------------
@@ -31,6 +41,16 @@ Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise en c
 
 .. code-block:: php
 
-  $query = $this->getCachedPreparedQuery('SELECT ...');
-  $query->setTtl(300); // 5mn
-  $query->setCacheKey('listOfUser');
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function getUsers()
+        {
+            $query = $this->getCachedPreparedQuery('SELECT ...');
+            $query->setTtl(300); // 5mn
+            $query->setCacheKey('listOfUser');
+
+            // ...

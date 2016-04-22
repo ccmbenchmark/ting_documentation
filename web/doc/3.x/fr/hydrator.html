@@ -166,7 +166,6 @@ par l&#8217;intermédiaire du <a class="reference internal" href="repository.htm
 <p>L&#8217;hydrateur par défaut va retourner pour chaque ligne un tableau associatif avec pour clé le nom de la table (ou l&#8217;alias utilisé)
 et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux metadata.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -205,7 +204,6 @@ et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux met
 un objet, il n&#8217;est pas des plus appropriés.</p>
 <p>Vous pouvez injecter <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code> qui conviendra mieux à votre besoin.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -238,7 +236,6 @@ d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(
 <code class="docutils literal"><span class="pre">stdClass</span></code> avec des propriétés correspondant à ces colonnes.</p>
 <p>Cet objet <code class="docutils literal"><span class="pre">stdClass</span></code> est accessible dans la clée 0 du tableau retourné.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -274,7 +271,6 @@ d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(
 <p>Dans le cas d&#8217;une colonne d&#8217;aggrégation, on peut souhaiter la mapper dans un objet.
 Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books</span></code> dans mon model User via la méthode <code class="docutils literal"><span class="pre">setNbBooks</span></code> il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -313,7 +309,6 @@ Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books
 Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on peut vouloir transformer la date en objet
 <code class="docutils literal"><span class="pre">Datetime</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -354,11 +349,9 @@ Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on 
 <p>On peut vouloir faire de la composition d&#8217;objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
 Pour mapper l&#8217;objet <code class="docutils literal"><span class="pre">Country</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">co</span></code>) dans mon model <code class="docutils literal"><span class="pre">City</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">cit</span></code>) via la méthode <code class="docutils literal"><span class="pre">setCountry</span></code> il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
 <span class="p">{</span>

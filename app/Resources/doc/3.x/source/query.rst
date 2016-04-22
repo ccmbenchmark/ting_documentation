@@ -17,8 +17,17 @@ Pour ce faire il suffit d'appeler :
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT ...');
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
 
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function getUsers()
+        {
+            $query = $this->getQuery('SELECT ...');
+
+            // ...
 
 Les paramètres
 ~~~~~~~~~~~~~~
@@ -27,9 +36,18 @@ Pour mettre des paramètres dynamiques dans la requête il faut utiliser la mét
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT id, name FROM user WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
 
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function getUserSylvain()
+        {
+            $query = $this->getQuery('SELECT id, name FROM user WHERE name = :name');
+            $query->setParams(['name' => 'Sylvain']);
+
+            // ...
 
 Exécuter la requête
 ~~~~~~~~~~~~~~~~~~~
@@ -38,10 +56,19 @@ Pour retourner les données de lecture il faut utiliser la méthode ``query`` :
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT id, name FROM user WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
-  $collection = $query->query();
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
 
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function getUserSylvain()
+        {
+            $query = $this->getQuery('SELECT id, name FROM user WHERE name = :name');
+            $query->setParams(['name' => 'Sylvain']);
+            $collection = $query->query();
+
+            // ...
 
 Récupérer les résultats
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,12 +78,23 @@ Cet objet est un ``Iterator``, vous pouvez donc récupérer les résultats de ce
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT id, name FROM user WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
-  $collection = $query->query();
-  foreach ($collection as $data) {
-      print_r($data);
-  }
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function showUsersSylvain()
+        {
+            $query = $this->getQuery('SELECT id, name FROM user WHERE name = :name');
+            $query->setParams(['name' => 'Sylvain']);
+            $collection = $query->query();
+            foreach ($collection as $data) {
+                print_r($data);
+            }
+        }
+
+        // ...
 
 
 Explication sur le format retourné
@@ -83,8 +121,18 @@ d'effectuer votre requête sur le master, alors il faut appeler la méthode ``se
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT ...');
-  $query->selectMaster(true);
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function selectOnMaster()
+        {
+            $query = $this->getQuery('SELECT ...');
+            $query->selectMaster(true);
+
+            // ...
 
 
 Erreur sur une requête
@@ -101,5 +149,15 @@ Il faut appeler la méthode ``execute`` sur l'objet ``CCMBenchmark\Ting\Query\Qu
 
 .. code-block:: php
 
-  $query = $this->getQuery('INSERT INTO ...');
-  $query->execute();
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+
+        public function insertSomething()
+        {
+            $query = $this->getQuery('INSERT INTO ...');
+            $query->execute();
+
+            // ...

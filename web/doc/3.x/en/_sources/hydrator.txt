@@ -19,7 +19,6 @@ et pour valeur l'objet qu'il a réussi à créer par rapport aux metadata.
 .. code-block:: php
 
     use CCMBenchmark\Ting\Repository\Repository;
-    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
     use CCMBenchmark\Ting\Repository\MetadataInitializer;
 
     class SampleRepository extends Repository implements MetadataInitializer
@@ -64,7 +63,6 @@ Vous pouvez injecter ``CCMBenchmark\Ting\Repository\HydratorSingleObject`` qui c
 .. code-block:: php
 
     use CCMBenchmark\Ting\Repository\Repository;
-    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
     use CCMBenchmark\Ting\Repository\MetadataInitializer;
     use CCMBenchmark\Ting\Repository\CollectionInterface;
 
@@ -100,7 +98,6 @@ Cet objet ``stdClass`` est accessible dans la clée 0 du tableau retourné.
 .. code-block:: php
 
     use CCMBenchmark\Ting\Repository\Repository;
-    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
     use CCMBenchmark\Ting\Repository\MetadataInitializer;
     use CCMBenchmark\Ting\Repository\CollectionInterface;
 
@@ -139,7 +136,6 @@ Pour mapper la colonne ``nb_books`` dans mon model User via la méthode ``setNbB
 .. code-block:: php
 
     use CCMBenchmark\Ting\Repository\Repository;
-    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
     use CCMBenchmark\Ting\Repository\MetadataInitializer;
     use CCMBenchmark\Ting\Repository\CollectionInterface;
     use CCMBenchmark\Ting\Repository\Hydrator;
@@ -181,7 +177,6 @@ Par exemple si on récupère une date qui n'est pas dans des metadata, on peut v
 .. code-block:: php
 
     use CCMBenchmark\Ting\Repository\Repository;
-    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
     use CCMBenchmark\Ting\Repository\MetadataInitializer;
     use CCMBenchmark\Ting\Repository\CollectionInterface;
     use CCMBenchmark\Ting\Repository\Hydrator;
@@ -225,11 +220,9 @@ Pour mapper l'objet ``Country`` (qui a l'alias ``co``) dans mon model ``City`` (
 .. code-block:: php
 
     use CCMBenchmark\Ting\Repository\Repository;
-    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
     use CCMBenchmark\Ting\Repository\MetadataInitializer;
     use CCMBenchmark\Ting\Repository\CollectionInterface;
     use CCMBenchmark\Ting\Repository\Hydrator;
-    use CCMBenchmark\Ting\Serializer;
 
     class SampleRepository extends Repository implements MetadataInitializer
     {
