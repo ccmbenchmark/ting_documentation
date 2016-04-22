@@ -34,19 +34,19 @@ Comme un exemple est plus parlant qu'un long discours :
             $metadata->setDatabase('world');
             $metadata->setTable('t_city_cit');
 
-            $metadata->addField(array(
-                'primary'       => true,
-                'autoincrement' => true,
-                'fieldName'     => 'id',
-                'columnName'    => 'cit_id',
-                'type'          => 'int'
-            ));
-
-            $metadata->addField(array(
-                'fieldName'  => 'name',
-                'columnName' => 'cit_name',
-                'type'       => 'string'
-            ));
+            $metadata
+                ->addField([
+                    'primary'       => true,
+                    'autoincrement' => true,
+                    'fieldName'     => 'id',
+                    'columnName'    => 'cit_id',
+                    'type'          => 'int'
+                ])
+                ->addField([
+                    'fieldName'  => 'name',
+                    'columnName' => 'cit_name',
+                    'type'       => 'string'
+                ]);
 
             return $metadata
         }

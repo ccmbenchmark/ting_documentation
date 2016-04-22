@@ -174,19 +174,19 @@
         <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setDatabase</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">);</span>
         <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">setTable</span><span class="p">(</span><span class="s1">&#39;t_city_cit&#39;</span><span class="p">);</span>
 
-        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;primary&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-            <span class="s1">&#39;autoincrement&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-            <span class="s1">&#39;fieldName&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;columnName&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;cit_id&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;type&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;int&#39;</span>
-        <span class="p">));</span>
-
-        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
-        <span class="p">));</span>
+        <span class="nv">$metadata</span>
+            <span class="o">-&gt;</span><span class="na">addField</span><span class="p">([</span>
+                <span class="s1">&#39;primary&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+                <span class="s1">&#39;autoincrement&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+                <span class="s1">&#39;fieldName&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;columnName&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;cit_id&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;int&#39;</span>
+            <span class="p">])</span>
+            <span class="o">-&gt;</span><span class="na">addField</span><span class="p">([</span>
+                <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
+            <span class="p">]);</span>
 
         <span class="k">return</span> <span class="nv">$metadata</span>
     <span class="p">}</span>
