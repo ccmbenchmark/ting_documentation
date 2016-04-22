@@ -19,7 +19,11 @@ Comme un exemple est plus parlant qu'un long discours :
 
 .. code-block:: php
 
-    class SampleRepository extends CCMBenchmark\Ting\Repository\Repository implements MetadataInitializer
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
     {
         public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
         {
@@ -44,11 +48,15 @@ Comme un exemple est plus parlant qu'un long discours :
                 'type'       => 'string'
             ));
 
+            return $metadata
+        }
+
 Quelques précisions :
     - fieldName correspond au nom de la propriété de votre entité
     - columnName correspond au nom de la colonne dans votre base de données
     - type correspond au type de votre variable avec comme valeur possibles :
         - int
+        - double
         - string
         - bool
         - datetime

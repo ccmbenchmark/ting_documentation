@@ -130,7 +130,7 @@
             <div class="rst-content">
                 
 
-
+ 
 
 
 
@@ -157,14 +157,14 @@
 <h3>1.1.1&nbsp;&nbsp;&nbsp;The Query object<a class="headerlink" href="#l-objet-query" title="Permalink to this headline">¶</a></h3>
 <p>A query is done by retrieving the object CCMBenchmark\Ting\Query\Query from the <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>To do this, just call:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="les-parametres">
 <h3>1.1.2&nbsp;&nbsp;&nbsp;Parameters<a class="headerlink" href="#les-parametres" title="Permalink to this headline">¶</a></h3>
 <p>To define dynamic parameters in the query call the method &#8220;setParams&#8221; which takes as argument an associative array:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
@@ -172,7 +172,7 @@
 <div class="section" id="executer-la-requete">
 <h3>1.1.3&nbsp;&nbsp;&nbsp;Perform the query<a class="headerlink" href="#executer-la-requete" title="Permalink to this headline">¶</a></h3>
 <p>To fetch the data use the method &#8220;query&#8221;:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
 </pre></div>
@@ -181,7 +181,7 @@
 <div class="section" id="recuperer-les-resultats">
 <h3>1.1.4&nbsp;&nbsp;&nbsp;Get the output<a class="headerlink" href="#recuperer-les-resultats" title="Permalink to this headline">¶</a></h3>
 <p>The &#8220;query&#8221; method returns an object CCMBenchmark\Ting\Repository\Collection. This object is an Iterator, you can retrieve the results with an iteration:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
@@ -205,7 +205,7 @@
 <div class="section" id="executer-une-requete-sur-le-master">
 <h3>1.1.8&nbsp;&nbsp;&nbsp;Perform a query on the master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Permalink to this headline">¶</a></h3>
 <p>A read query will be made by default on one of the configured slaves (when some slaves have been configured), if you need to perform your query on the master, then you must call the method &#8220;selectMaster&#8221;:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">selectMaster</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -218,7 +218,7 @@
 <div class="section" id="effectuer-une-requete-d-ecriture">
 <h2>1.2&nbsp;&nbsp;&nbsp;Perform a write query<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Permalink to this headline">¶</a></h2>
 <p>The logic is the same as for a read request. Except that you need to call the method &#8220;execute&#8221; on the object CCMBenchmark\Ting\Query\Query</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 </pre></div>
 </div>

@@ -130,7 +130,7 @@
             <div class="rst-content">
                 
 
-
+ 
 
 
 
@@ -158,7 +158,7 @@
 <div class="section" id="l-hydrateur-par-defaut">
 <h2>3.2&nbsp;&nbsp;&nbsp;Default hydrator<a class="headerlink" href="#l-hydrateur-par-defaut" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator will use the metadata to create the right object and will fill an associative array with, as a key, the table name (or alias used) and the object for as a value</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
@@ -167,7 +167,7 @@
 </pre></div>
 </div>
 <p>$data contain:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
@@ -184,7 +184,7 @@
 <span id="id1"></span><h2>3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator is optimized to return multiple objects when we do a query that is intended to return only one item, it is not the best choice.</p>
 <p>You can inject HydratorSingleObject that suit better your needs</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="k">new</span> <span class="nx">CCMBenchmark\Ting\Repository\HydratorSingleObject</span><span class="p">()));</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
@@ -202,7 +202,7 @@
 <h2>3.4&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
 <p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
 <p>This stdClass object is accessible in the key 0 of the returned array.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, my_extra_column, SUM(price) as total FROM article&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, my_extra_column, SUM(price) as total FROM article&#39;</span><span class="p">);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
@@ -210,7 +210,7 @@
 </pre></div>
 </div>
 <p>$data contain:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">total</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">43</span><span class="p">,</span>
@@ -226,7 +226,7 @@
 <div class="section" id="mapper-des-donnees-sans-metadata">
 <h2>3.5&nbsp;&nbsp;&nbsp;Mapping data without metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
 <p>When you have an aggregate column you might want to mapped it to an object. To map the column &#8220;nb_books&#8221; into my model User througt the method &#8220;setNbBooks&#8221; you can do that:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">();</span>
 <span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">mapAliasTo</span><span class="p">(</span><span class="s1">&#39;nb_books&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;setNbBooks&#39;</span><span class="p">)</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$hydrator</span><span class="p">));</span>
@@ -236,7 +236,7 @@
 </pre></div>
 </div>
 <p>$data contain:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
@@ -249,7 +249,7 @@
 <div class="section" id="deserializer-des-donnees-sans-metadata">
 <h2>3.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
 <p>As a reminder, transform a database type into a PHP type is to deserializing. For example when you retrieve a date which is not in metadata, we may want to transform it to object Datetime.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT title, NOW() as fetchedDate FROM article&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT title, NOW() as fetchedDate FROM article&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">();</span>
 <span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">unserializeAliasWith</span><span class="p">(</span><span class="s1">&#39;fetchedDate&#39;</span><span class="p">,</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;SerializerFactory&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">CCMBenchmark\Ting\Serializer\Datetime</span><span class="o">::</span><span class="na">class</span><span class="p">))</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$hydrator</span><span class="p">));</span>
@@ -259,7 +259,7 @@
 </pre></div>
 </div>
 <p>$data contain:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">fetchedDate</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Datetime</span><span class="p">(</span><span class="s2">&quot;2016-01-13 10:41:36&quot;</span><span class="p">)</span>
@@ -274,7 +274,7 @@
 <div class="section" id="composition-d-objet">
 <h2>3.7&nbsp;&nbsp;&nbsp;Object composition<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
 <p>We may want to do object compositions, injecting one object into one other on many deep levels. To map object Country (which has alias &#8220;co&#8221;) into my model City (which has alias &#8220;cit&#8221;) through the method &#8220;setCountry&#8221; you can do that:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)&#39;</span><span class="p">);</span>
 <span class="nv">$hydrator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hydrator</span><span class="p">();</span>
 <span class="nv">$hydrator</span><span class="o">-&gt;</span><span class="na">mapObjectTo</span><span class="p">(</span><span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;cit&#39;</span><span class="p">,</span> <span class="s1">&#39;setCountry&#39;</span><span class="p">)</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$hydrator</span><span class="p">));</span>
@@ -284,7 +284,7 @@
 </pre></div>
 </div>
 <p>$data contain:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;cit&#39;</span> <span class="o">=&gt;</span> <span class="nx">City</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
