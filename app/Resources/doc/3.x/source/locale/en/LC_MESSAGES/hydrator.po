@@ -45,8 +45,8 @@ msgstr ""
 "used) and the object for as a value"
 
 #: ../../hydrator.rst:28 ../../hydrator.rst:58
-msgid "$data contiendra comme structure :"
-msgstr "$data contain:"
+msgid "La collection retournée est composée de lignes structurées ainsi :"
+msgstr "The returned Collection is composed of rows:"
 
 #: ../../hydrator.rst:39
 msgid "Jointure avec aucune donnée"
@@ -100,8 +100,8 @@ msgid ""
 msgstr "You can inject HydratorSingleObject that suit better your needs"
 
 #: ../../hydrator.rst:89
-msgid "Dans ce cas $user est un objet User."
-msgstr "In that case $user is an object User."
+msgid "La collection retournée est une collection d'objet User."
+msgstr "The returned collection is a collection of object User."
 
 msgid "Mapper des données sans metadata"
 msgstr "Mapping data without metadata"

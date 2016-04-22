@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 2
+    :start: 3
 
 Le Repository
 =============
