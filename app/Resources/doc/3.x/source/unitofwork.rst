@@ -10,7 +10,7 @@ L'unitOfWork a pour rôle de tracker les changements des objets afin de les pers
 
 Fonctionnement interne
 ~~~~~~~~~~~~~~~~~~~~~~
-L'unitOfWork initialise dans tous les objets "managed" une propriétée tingUUID qui ne doit en aucun cas être altérée
+L'unitOfWork initialise dans tous les objets "managed" une propriétée ``tingUUID`` qui ne doit en aucun cas être altérée
 par l'utilisateur.
 
 Un objet "managed" est un objet qui existe déjà en base et qui provoquera une requête UPDATE lorsque l'on demandera à ce qu'il soit persisté.
@@ -31,7 +31,7 @@ traite.
 
 Particularités
 ~~~~~~~~~~~~~~
-Que ça soit pour persister la mise à jour ou l'insertion d'une entité il faut utiliser pushSave.
+Que ça soit pour persister la mise à jour ou l'insertion d'une entité il faut utiliser ``pushSave``.
 
 Lors de l'insertion d'une entité, si celle-ci à une propriété de configuré via les metadata en tant que autoincrement
 alors l'entité aura cette valeur d'initialisé avec l'autoincrement délivré par la base de données.

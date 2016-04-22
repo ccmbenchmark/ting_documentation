@@ -161,7 +161,7 @@
 <p>L&#8217;unitOfWork a pour rôle de tracker les changements des objets afin de les persister en base de données.</p>
 <div class="section" id="fonctionnement-interne">
 <h3>5.1.1&nbsp;&nbsp;&nbsp;Fonctionnement interne<a class="headerlink" href="#fonctionnement-interne" title="Lien permanent vers ce titre">¶</a></h3>
-<p>L&#8217;unitOfWork initialise dans tous les objets &#8220;managed&#8221; une propriétée tingUUID qui ne doit en aucun cas être altérée
+<p>L&#8217;unitOfWork initialise dans tous les objets &#8220;managed&#8221; une propriétée <code class="docutils literal"><span class="pre">tingUUID</span></code> qui ne doit en aucun cas être altérée
 par l&#8217;utilisateur.</p>
 <p>Un objet &#8220;managed&#8221; est un objet qui existe déjà en base et qui provoquera une requête UPDATE lorsque l&#8217;on demandera à ce qu&#8217;il soit persisté.</p>
 </div>
@@ -179,7 +179,7 @@ traite.</p>
 </div>
 <div class="section" id="particularites">
 <h3>5.2.1&nbsp;&nbsp;&nbsp;Particularités<a class="headerlink" href="#particularites" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Que ça soit pour persister la mise à jour ou l&#8217;insertion d&#8217;une entité il faut utiliser pushSave.</p>
+<p>Que ça soit pour persister la mise à jour ou l&#8217;insertion d&#8217;une entité il faut utiliser <code class="docutils literal"><span class="pre">pushSave</span></code>.</p>
 <p>Lors de l&#8217;insertion d&#8217;une entité, si celle-ci à une propriété de configuré via les metadata en tant que autoincrement
 alors l&#8217;entité aura cette valeur d&#8217;initialisé avec l&#8217;autoincrement délivré par la base de données.</p>
 </div>

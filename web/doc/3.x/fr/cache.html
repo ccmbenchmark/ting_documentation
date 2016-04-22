@@ -164,7 +164,7 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-simple">
 <h2>6.2&nbsp;&nbsp;&nbsp;Requête simple<a class="headerlink" href="#requete-simple" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet CCMBenchmark\Ting\Query\Cached\Query via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
@@ -174,7 +174,7 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-preparee">
 <h2>6.3&nbsp;&nbsp;&nbsp;Requête préparée<a class="headerlink" href="#requete-preparee" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour une requête préparée il faut récupérer l&#8217;objet CCMBenchmark\Ting\Query\Cached\PreparedQuery via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>Pour une requête préparée il faut récupérer l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>

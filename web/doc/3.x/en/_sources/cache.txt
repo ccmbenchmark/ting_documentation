@@ -13,7 +13,7 @@ Le résultat de la requête stockée dans le cache n'est pas dépendant du syst�
 
 Requête simple
 --------------
-Une requête destiné à utiliser le cache s'effectue en récupérant l'objet CCMBenchmark\\Ting\\Query\\Cached\\Query via le :doc:`Repository <repository>`.
+Une requête destiné à utiliser le cache s'effectue en récupérant l'objet ``CCMBenchmark\Ting\Query\Cached\Query`` via le :doc:`Repository <repository>`.
 
 Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise en cache et la clé de cache:
 
@@ -25,7 +25,7 @@ Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise en c
 
 Requête préparée
 ----------------
-Pour une requête préparée il faut récupérer l'objet CCMBenchmark\\Ting\\Query\\Cached\\PreparedQuery via le :doc:`Repository <repository>`.
+Pour une requête préparée il faut récupérer l'objet ``CCMBenchmark\Ting\Query\Cached\PreparedQuery`` via le :doc:`Repository <repository>`.
 
 Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise en cache et la clé de cache:
 

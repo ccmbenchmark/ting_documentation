@@ -200,7 +200,7 @@
 <div class="section" id="l-hydrateur-pour-un-seul-objet">
 <span id="id1"></span><h2>4.3&nbsp;&nbsp;&nbsp;The hydrator for a single object<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator is optimized to return multiple objects when we do a query that is intended to return only one item, it is not the best choice.</p>
-<p>You can inject HydratorSingleObject that suit better your needs</p>
+<p>Vous pouvez injecter <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code> qui conviendra mieux à votre besoin.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -230,8 +230,10 @@
 </div>
 <div class="section" id="donnees-sans-metadata">
 <h2>4.4&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as SUM(price) or a column that has not been mapped as my_extra_column the hydrator will create a stdClass object with properties corresponding to those columns.</p>
-<p>This stdClass object is accessible in the key 0 of the returned array.</p>
+<p>Si vous effectuez une requête qui retourne des données qui ne correspondent à aucune metadata, que ce soit une colonne
+d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(price)</span></code> ou une colonne qui n&#8217;a pas été mappée comme <code class="docutils literal"><span class="pre">my_extra_column</span></code> l&#8217;hydrateur va créer un objet
+<code class="docutils literal"><span class="pre">stdClass</span></code> avec des propriétés correspondant à ces colonnes.</p>
+<p>Cet objet <code class="docutils literal"><span class="pre">stdClass</span></code> est accessible dans la clée 0 du tableau retourné.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -266,7 +268,8 @@
 </div>
 <div class="section" id="mapper-des-donnees-sans-metadata">
 <h2>4.5&nbsp;&nbsp;&nbsp;Mapping data without metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>When you have an aggregate column you might want to mapped it to an object. To map the column &#8220;nb_books&#8221; into my model User througt the method &#8220;setNbBooks&#8221; you can do that:</p>
+<p>Dans le cas d&#8217;une colonne d&#8217;aggrégation, on peut souhaiter la mapper dans un objet.
+Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books</span></code> dans mon model User via la méthode <code class="docutils literal"><span class="pre">setNbBooks</span></code> il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -303,7 +306,9 @@
 </div>
 <div class="section" id="deserializer-des-donnees-sans-metadata">
 <h2>4.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>As a reminder, transform a database type into a PHP type is to deserializing. For example when you retrieve a date which is not in metadata, we may want to transform it to object Datetime.</p>
+<p>Pour rappel l&#8217;action de déserializer consiste à transformer un type de base données dans un type PHP.
+Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on peut vouloir transformer la date en objet
+<code class="docutils literal"><span class="pre">Datetime</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -343,7 +348,8 @@
 </div>
 <div class="section" id="composition-d-objet">
 <h2>4.7&nbsp;&nbsp;&nbsp;Object composition<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
-<p>We may want to do object compositions, injecting one object into one other on many deep levels. To map object Country (which has alias &#8220;co&#8221;) into my model City (which has alias &#8220;cit&#8221;) through the method &#8220;setCountry&#8221; you can do that:</p>
+<p>On peut vouloir faire de la composition d&#8217;objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
+Pour mapper l&#8217;objet <code class="docutils literal"><span class="pre">Country</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">co</span></code>) dans mon model <code class="docutils literal"><span class="pre">City</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">cit</span></code>) via la méthode <code class="docutils literal"><span class="pre">setCountry</span></code> il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>

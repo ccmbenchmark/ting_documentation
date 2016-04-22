@@ -160,7 +160,7 @@
 <h2>2.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture<a class="headerlink" href="#effectuer-une-requete-de-lecture" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="l-objet-query">
 <h3>2.1.1&nbsp;&nbsp;&nbsp;L&#8217;objet Query<a class="headerlink" href="#l-objet-query" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une requête s&#8217;effectue en récupérant l&#8217;objet CCMBenchmark\Ting\Query\Query
+<p>Une requête s&#8217;effectue en récupérant l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code>
 via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
@@ -170,7 +170,7 @@ via le <a class="reference internal" href="repository.html"><em>Repository</em><
 <div class="section" id="les-parametres">
 <h3>2.1.2&nbsp;&nbsp;&nbsp;Les paramètres<a class="headerlink" href="#les-parametres" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour mettre des paramètres dynamiques dans la requête il faut utiliser la méthode
-&#8220;setParams&#8221; qui prend en argument un tableau associatif :</p>
+<code class="docutils literal"><span class="pre">setParams</span></code> qui prend en argument un tableau associatif :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
@@ -178,7 +178,7 @@ via le <a class="reference internal" href="repository.html"><em>Repository</em><
 </div>
 <div class="section" id="executer-la-requete">
 <h3>2.1.3&nbsp;&nbsp;&nbsp;Exécuter la requête<a class="headerlink" href="#executer-la-requete" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour retourner les données de lecture il faut utiliser la méthode &#8220;query&#8221; :</p>
+<p>Pour retourner les données de lecture il faut utiliser la méthode <code class="docutils literal"><span class="pre">query</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
@@ -187,8 +187,8 @@ via le <a class="reference internal" href="repository.html"><em>Repository</em><
 </div>
 <div class="section" id="recuperer-les-resultats">
 <h3>2.1.4&nbsp;&nbsp;&nbsp;Récupérer les résultats<a class="headerlink" href="#recuperer-les-resultats" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La méthode &#8220;query&#8221; retourne un objet CCMBenchmark\Ting\Repository\Collection.
-Cet objet est un Iterator, vous pouvez donc récupérer les résultats de cette façon :</p>
+<p>La méthode <code class="docutils literal"><span class="pre">query</span></code> retourne un objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\Collection</span></code>.
+Cet objet est un <code class="docutils literal"><span class="pre">Iterator</span></code>, vous pouvez donc récupérer les résultats de cette façon :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
@@ -208,12 +208,12 @@ Cet objet est un Iterator, vous pouvez donc récupérer les résultats de cette 
 </div>
 <div class="section" id="compter-les-elements-d-une-collection">
 <h3>2.1.7&nbsp;&nbsp;&nbsp;Compter les éléments d&#8217;une collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Il faut savoir qu&#8217;une Collection implémente l&#8217;interface standard Countable. Vous pouvez donc savoir combien elle a d&#8217;éléments comme vous le faites pour un tableau PHP : count($collection);</p>
+<p>Il faut savoir qu&#8217;une Collection implémente l&#8217;interface standard Countable. Vous pouvez donc savoir combien elle a d&#8217;éléments comme vous le faites pour un tableau PHP : <code class="docutils literal"><span class="pre">count($collection);</span></code></p>
 </div>
 <div class="section" id="executer-une-requete-sur-le-master">
 <h3>2.1.8&nbsp;&nbsp;&nbsp;Exécuter une requête sur le master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une requête de lecture s&#8217;effectuera par défaut sur un des slaves configurés (si des slaves ont été configurés), si vous avez besoin
-d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthode &#8220;selectMaster&#8221; :</p>
+d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthode <code class="docutils literal"><span class="pre">selectMaster</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">selectMaster</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
@@ -221,13 +221,13 @@ d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthod
 </div>
 <div class="section" id="erreur-sur-une-requete">
 <h3>2.1.9&nbsp;&nbsp;&nbsp;Erreur sur une requête<a class="headerlink" href="#erreur-sur-une-requete" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Si la requête exécuté ne se termine pas correctement, une exception du type CCMBenchmark\Ting\Driver\QueryException sera levée</p>
+<p>Si la requête exécuté ne se termine pas correctement, une exception du type <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Driver\QueryException</span></code> sera levée</p>
 </div>
 </div>
 <div class="section" id="effectuer-une-requete-d-ecriture">
 <h2>2.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La logique reste la même que pour une requête de lecture, à quelques différences près.
-Il faut appeler la méthode &#8220;execute&#8221; sur l&#8217;objet CCMBenchmark\Ting\Query\Query</p>
+Il faut appeler la méthode <code class="docutils literal"><span class="pre">execute</span></code> sur l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code></p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 </pre></div>

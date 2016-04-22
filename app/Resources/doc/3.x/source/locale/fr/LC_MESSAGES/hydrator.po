@@ -1,16 +1,20 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, CCM Benchmark Group
+# This file is distributed under the same license as the ting package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-13 16:12+0100\n"
+"POT-Creation-Date: 2016-04-22 10:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.1.1\n"
+"Generated-By: Babel 2.2.0\n"
 
 #: ../../hydrator.rst:5
 msgid "Les hydrateurs"
@@ -38,25 +42,47 @@ msgid ""
 "valeur l'objet qu'il a réussi à créer par rapport aux metadata."
 msgstr ""
 
-#: ../../hydrator.rst:28 ../../hydrator.rst:58
-msgid "$data contiendra comme structure :"
+#: ../../hydrator.rst:40 ../../hydrator.rst:119 ../../hydrator.rst:163
+#: ../../hydrator.rst:206 ../../hydrator.rst:250
+msgid "La collection retournée est composée de lignes structurées ainsi :"
 msgstr ""
 
-#: ../../hydrator.rst:39
+#: ../../hydrator.rst:58
+msgid "L'hydrateur pour un seul objet"
+msgstr ""
+
+#: ../../hydrator.rst:59
+msgid ""
+"L'hydrateur par défaut est optimisé pour retourner plusieurs objets, "
+"lorsque l'on fait une requête qui n'a pour but que de retourner un objet,"
+" il n'est pas des plus appropriés."
+msgstr ""
+
+#: ../../hydrator.rst:62
+msgid ""
+"Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre "
+"besoin."
+msgstr ""
+
+#: ../../hydrator.rst:86
+msgid "La collection retournée est une collection d'objet User."
+msgstr ""
+
+#: ../../hydrator.rst:89
 msgid "Jointure avec aucune donnée"
 msgstr ""
 
-#: ../../hydrator.rst:40
+#: ../../hydrator.rst:90
 msgid ""
 "Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour "
 "valeur null"
 msgstr ""
 
-#: ../../hydrator.rst:43
+#: ../../hydrator.rst:93
 msgid "Données sans metadata"
 msgstr ""
 
-#: ../../hydrator.rst:44
+#: ../../hydrator.rst:94
 msgid ""
 "Si vous effectuez une requête qui retourne des données qui ne "
 "correspondent à aucune metadata, que ce soit une colonne d'aggrégation "
@@ -65,29 +91,43 @@ msgid ""
 "propriétés correspondant à ces colonnes."
 msgstr ""
 
-#: ../../hydrator.rst:48
+#: ../../hydrator.rst:98
 msgid "Cet objet stdClass est accessible dans la clée 0 du tableau retourné."
 msgstr ""
 
-#: ../../hydrator.rst:74
-msgid "L'hydrateur pour un seul objet"
+#: ../../hydrator.rst:135
+msgid "Mapper des données sans metadata"
 msgstr ""
 
-#: ../../hydrator.rst:75
+#: ../../hydrator.rst:136
 msgid ""
-"L'hydrateur par défaut est optimisé pour retourner plusieurs objets, "
-"lorsque l'on fait une requête qui n'a pour but que de retourner un objet,"
-" il n'est pas des plus appropriés."
+"Dans le cas d'une colonne d'aggrégation, on peut souhaiter la mapper dans"
+" un objet. Pour mapper la colonne \"nb_books\" dans mon model User via la"
+" méthode \"setNbBooks\" il suffit de faire :"
 msgstr ""
 
-#: ../../hydrator.rst:78
+#: ../../hydrator.rst:176
+msgid "Déserializer des données sans metadata"
+msgstr ""
+
+#: ../../hydrator.rst:177
 msgid ""
-"Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre "
-"besoin."
+"Pour rappel l'action de déserializer consiste à transformer un type de "
+"base données dans un type PHP. Par exemple si on récupère une date qui "
+"n'est pas dans des metadata, on peut vouloir transformer la date en objet"
+" Datetime."
 msgstr ""
 
-#: ../../hydrator.rst:89
-msgid "Dans ce cas $user contient directement un objet User."
+#: ../../hydrator.rst:221
+msgid "Composition d'objet"
+msgstr ""
+
+#: ../../hydrator.rst:222
+msgid ""
+"On peut vouloir faire de la composition d'objet, injecter un objet dans "
+"un autre et ce sur plusieurs niveaux. Pour mapper l'objet Country (qui a "
+"l'alias \"co\") dans mon model City (qui a l'alias \"cit\") via la "
+"méthode \"setCountry\" il suffit de faire :"
 msgstr ""
 
 #~ msgid "Dans ce cas $user contient directement un objet User."
@@ -97,41 +137,17 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "Dans le cas d'une colonne d'aggrégation,"
-#~ " on peut souhaiter la mapper dans "
-#~ "un objet. Pour mapper la colonne "
-#~ "\"nb_books\" dans mon model User via "
-#~ "la méthode \"setNbBooks\" il suffit de"
-#~ " faire :"
 #~ msgstr ""
 
 #~ msgid "Déserializer des données sans metadata"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Pour rappel l'action de déserializer "
-#~ "consiste à transformer un type de "
-#~ "base données dans un type PHP. Par"
-#~ " exemple si on récupère une date "
-#~ "qui n'est pas dans des metadata, "
-#~ "on peut vouloir transformer la date "
-#~ "en objet Datetime."
-#~ msgstr ""
-
 #~ msgid "Composition d'objet"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "On peut vouloir faire de la "
-#~ "composition d'objet, injecter un objet "
-#~ "dans un autre et ce sur plusieurs"
-#~ " niveaux. Pour mapper l'objet Country "
-#~ "(qui a l'alias \"co\") dans mon "
-#~ "model City (qui a l'alias \"cit\") "
-#~ "via la méthode \"setCountry\" il suffit"
-#~ " de faire :"
+#~ msgid "Dans ce cas $user est un objet User."
 #~ msgstr ""
 
-#~ msgid "Dans ce cas $user est un objet User."
+#~ msgid "$data contiendra comme structure :"
 #~ msgstr ""
 
