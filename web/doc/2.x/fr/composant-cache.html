@@ -1,0 +1,315 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>6   Le composant cache &mdash; documentation ting </title>
+    
+
+    <style>
+        .highlight {
+            background: #272822 !important;
+        }
+    </style>
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=footer">
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="top" title="documentation ting " href="index.html"/>
+    <link rel="prev" title="5   Le cache" href="cache.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/ting/" class="fa fa-home"> ting</a>
+            
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;Au sujet du Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Création des Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Requêtes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Le cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;Au sujet du cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Requête simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Requête préparée</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">6&nbsp;&nbsp;&nbsp;Le composant cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">6.1&nbsp;&nbsp;&nbsp;Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Sauvegarder dans le cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Sauvegarder dans le cache plusieurs valeurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Effacer une valeur du cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Effacer plusieurs valeurs du cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Remplacer une valeur dans le cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Sauvegarder de manière infinie</a></li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>6&nbsp;&nbsp;&nbsp;Le composant cache</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <div class="section" id="le-composant-cache">
+<h1>6&nbsp;&nbsp;&nbsp;Le composant cache<a class="headerlink" href="#le-composant-cache" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="configuration">
+<h2>6.1&nbsp;&nbsp;&nbsp;Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il faut injecter la configuration via la méthode setConfig
+Elle est structurée de la façon suivante:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">setConfig</span><span class="p">([</span>
+  <span class="s1">&#39;servers&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="p">[</span><span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">11211</span><span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="c1">// Cache driver specific options</span>
+  <span class="p">],</span>
+  <span class="s1">&#39;persistent_id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ting.test&#39;</span> <span class="c1">// Memcache persistent id</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sauvegarder-dans-le-cache">
+<h2>6.2&nbsp;&nbsp;&nbsp;Sauvegarder dans le cache<a class="headerlink" href="#sauvegarder-dans-le-cache" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sauvegarder-dans-le-cache-plusieurs-valeurs">
+<h2>6.3&nbsp;&nbsp;&nbsp;Sauvegarder dans le cache plusieurs valeurs<a class="headerlink" href="#sauvegarder-dans-le-cache-plusieurs-valeurs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">storeMulti</span><span class="p">(</span><span class="nv">$associativeArray</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="effacer-une-valeur-du-cache">
+<h2>6.4&nbsp;&nbsp;&nbsp;Effacer une valeur du cache<a class="headerlink" href="#effacer-une-valeur-du-cache" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="effacer-plusieurs-valeurs-du-cache">
+<h2>6.5&nbsp;&nbsp;&nbsp;Effacer plusieurs valeurs du cache<a class="headerlink" href="#effacer-plusieurs-valeurs-du-cache" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">deleteMulti</span><span class="p">(</span><span class="nv">$keys</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remplacer-une-valeur-dans-le-cache">
+<h2>6.6&nbsp;&nbsp;&nbsp;Remplacer une valeur dans le cache<a class="headerlink" href="#remplacer-une-valeur-dans-le-cache" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">replace</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sauvegarder-de-maniere-infinie">
+<h2>6.7&nbsp;&nbsp;&nbsp;Sauvegarder de manière infinie<a class="headerlink" href="#sauvegarder-de-maniere-infinie" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il suffit de mettre un ttl de 0 pour sauvegarder de manière infinie</p>
+</div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+<footer role="contentinfo" class="ccmcss_footer ccmcss_footer--dark">
+    <ul class="toollinks">
+        <li><a href="http://www.ccmbenchmark.com/advertising/fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="http://www.ccmbenchmark.com/institut/contact/information">Contact</a></li>
+        <li><a href="http://benchmail.benchmark.fr/magazine/archive_406_1.html">Press</a></li>
+        <li><a href="http://www.journaldunet.com/donneesperso.shtml">Données personnelles</a></li>
+        <li><a href="http://www.ccmbenchmark.com/mentions-legales">Mentions légales</a></li>
+        <li><a href="http://www.ccmbenchmark.com/">&copy; 2015 CCM Benchmark</a></li>
+    </ul>
+    <div class="logo">
+        <a href="#">
+            <hgroup>
+                <span>CCM Benchmark Group</span>
+            </hgroup>
+        </a>
+    </div>
+    <div class="brands">
+        <a href="http://www.commentcamarche.net/" class="group_ccm" original-title="commentçamarche.net"></a>
+        <a href="http://www.journaldunet.com/" class="group_jdn" original-title="Le Journal du Net"></a>
+        <a href="http://droit-finances.commentcamarche.net/" class="group_df" original-title="Droit-finances.net"></a>
+        <a href="http://www.journaldesfemmes.com/" class="group_jdf" original-title="Journal des femmes"></a>
+        <a href="http://www.linternaute.com/" class="group_linter" original-title="linternaute.com"></a>
+        <a href="http://copainsdavant.linternaute.com/" class="group_copains" original-title="Copains d'avant"></a>
+        <a href="http://sante-medecine.commentcamarche.net/" class="group_ms" original-title="Santé-médecine.net"></a>
+    </div>
+    <p class="foot_links">
+        <a href="http://www.linternaute.com/voyage/">Voyage</a>,
+        <a href="http://www.linternaute.com/loisirs/">Loisirs</a>,
+        <a href="http://www.linternaute.com/restaurant/">Restos</a>,
+        <a href="http://www.linternaute.com/cinema/">Cinéma</a>,
+        <a href="http://www.linternaute.com/bricolage/">Bricolage</a>,
+        <a href="http://www.linternaute.com/argent/">Argent</a>,
+        <a href="http://deco.journaldesfemmes.com/">Décoration</a>,
+        <a href="http://cuisine.journaldesfemmes.com/">Cuisine</a>,
+        <a href="http://www.linternaute.com/auto/">Auto</a>,
+        <a href="http://sante.journaldesfemmes.com/">Santé</a>,
+        <a href="http://www.linternaute.com/homme/">Homme</a>,
+        <a href="http://www.linternaute.com/actualite/">Actualités</a>,
+        <a href="http://www.commentcamarche.net/">High-tech</a>,
+        <a href="http://www.journaldunet.com/">Entreprise</a>,
+        <a href="http://expeert.com/fr/">Expeert</a>
+    </p>
+</footer>
+
+</div>
+
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Ting docs</span>
+      v: 2.x
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Language</dt>
+            
+            <dd><a href="/ting/doc/2.x/en/index.html">en</a></dd>
+            
+            <dd><a href="/ting/doc/2.x/fr/index.html">fr</a></dd>
+            
+        </dl>
+        <dl>
+            <dt>Versions</dt>
+            
+            <dd><a href="/ting/doc/2.7/fr/">2.x</a></dd>
+            
+            <dd><a href="/ting/doc/3.0/fr/">3.x</a></dd>
+            
+        </dl>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/translations.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+ 
+
+</body>
+</html>

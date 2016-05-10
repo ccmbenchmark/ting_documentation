@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, CCM Benchmark Group
+# This file is distributed under the same license as the ting package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-22 11:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+
+#: ../../cache.rst:5
+msgid "Le cache"
+msgstr ""
+
+#: ../../cache.rst:8
+msgid "Au sujet du cache"
+msgstr ""
+
+#: ../../cache.rst:9
+msgid ""
+"Le résultat d'une requête effectuée avec les objets de cache sera soit "
+"récupéré depuis le cache si l'entrée y existe déjà, soit récupéré depuis "
+"la base de données puis inséré dans le cache."
+msgstr ""
+
+#: ../../cache.rst:12
+msgid ""
+"Le résultat de la requête stockée dans le cache n'est pas dépendant du "
+"système d'hydration utilisé."
+msgstr ""
+
+#: ../../cache.rst:15
+msgid "Requête simple"
+msgstr ""
+
+#: ../../cache.rst:16
+msgid ""
+"Une requête destiné à utiliser le cache s'effectue en récupérant l'objet "
+"``CCMBenchmark\\Ting\\Query\\Cached\\Query`` via le :doc:`Repository "
+"<repository>`."
+msgstr ""
+
+#: ../../cache.rst:18 ../../cache.rst:40
+msgid ""
+"Pour ce faire il suffit d'appeler l'objet et de préciser la durée de mise"
+" en cache et la clé de cache:"
+msgstr ""
+
+#: ../../cache.rst:37
+msgid "Requête préparée"
+msgstr ""
+
+#: ../../cache.rst:38
+msgid ""
+"Pour une requête préparée il faut récupérer l'objet "
+"``CCMBenchmark\\Ting\\Query\\Cached\\PreparedQuery`` via le "
+":doc:`Repository <repository>`."
+msgstr ""
+
+#~ msgid ""
+#~ "Une requête destiné à utiliser le "
+#~ "cache s'effectue en récupérant l'objet "
+#~ "CCMBenchmark\\\\Ting\\\\Query\\\\Cached\\\\Query via le"
+#~ " :doc:`Repository <repository>`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Pour une requête préparée il faut "
+#~ "récupérer l'objet "
+#~ "CCMBenchmark\\\\Ting\\\\Query\\\\Cached\\\\PreparedQuery via "
+#~ "le :doc:`Repository <repository>`."
+#~ msgstr ""
+

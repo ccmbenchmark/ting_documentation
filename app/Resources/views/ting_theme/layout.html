@@ -9,12 +9,10 @@
 {%- endif %}
 {% set css_files = css_files + ['_static/pygments.css'] %}
 
-{% set versions = [
-    ['en', '/ting/doc/en/index.html'],
-    ['fr', '/ting/doc/fr/index.html']
+{% set languages = [
+    ['en', '/ting/doc/' ~ theme_current_version ~ '/en/index.html'],
+    ['fr', '/ting/doc/' ~ theme_current_version ~ '/fr/index.html']
 ]-%}
-
-{% set current_version = 'latest' %}
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -98,7 +96,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
         <div class="wy-side-nav-search">
             {% block sidebartitle %}
-            <a href="/" class="fa fa-home"> {{ project }}</a>
+            <a href="/ting/" class="fa fa-home"> {{ project }}</a>
             {% endblock %}
             {% include "searchbox.html" %}
         </div>

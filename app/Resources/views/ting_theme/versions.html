@@ -2,14 +2,20 @@
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Ting docs</span>
-      v: {{ current_version }}
+      v: {{ theme_current_version }}
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
-            <dt>Versions</dt>
-            {% for slug, url in versions %}
+            <dt>Language</dt>
+            {% for slug, url in languages %}
             <dd><a href="{{ url }}">{{ slug }}</a></dd>
+            {% endfor %}
+        </dl>
+        <dl>
+            <dt>Versions</dt>
+            {% for slug, url in theme_versions %}
+            <dd><a href="/ting/doc/{{ url }}/{{ language }}/">{{ slug }}</a></dd>
             {% endfor %}
         </dl>
     </div>

@@ -1,0 +1,345 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ting - Documentation &mdash; ting  documentation</title>
+    
+
+    <style>
+        .highlight {
+            background: #272822 !important;
+        }
+    </style>
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=footer">
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="top" title="ting  documentation" href="#"/>
+    <link rel="next" title="1   Queries" href="query.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/ting/" class="fa fa-home"> ting</a>
+            
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="#">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Ting - Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <div class="section" id="ting-documentation">
+<h1>Ting - Documentation<a class="headerlink" href="#ting-documentation" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p class="first"><strong>Simple</strong>: no magic inside : it&#8217;s basically SQL queries</p>
+</li>
+<li><p class="first"><strong>Fast</strong>: with no magic comes no overhead</p>
+</li>
+<li><p class="first"><strong>Supports</strong> Mysql and PostgreSQL</p>
+</li>
+</ul>
+<p><strong>Why another datamapper for PHP?</strong></p>
+<p>Great datamappers for MySQL and PostgreSQL already exist. However the most popular tools are complex and hard to master requiring new skills to query databases or boring xml files to describe the database. Ting has been created with the simplicity as a credo.</p>
+<p>Ting is not an ORM, because it doesn&#8217;t fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Perform a read query</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="query.html#l-objet-query">1.1.1&nbsp;&nbsp;&nbsp;The Query object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#les-parametres">1.1.2&nbsp;&nbsp;&nbsp;Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#executer-la-requete">1.1.3&nbsp;&nbsp;&nbsp;Perform the query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#recuperer-les-resultats">1.1.4&nbsp;&nbsp;&nbsp;Get the output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#explication-sur-le-format-retourne">1.1.5&nbsp;&nbsp;&nbsp;Details about the output format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#format-de-retour-simplifie-pour-des-requetes-sans-jointures">1.1.6&nbsp;&nbsp;&nbsp;Simplified output format for queries without joins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#compter-les-elements-d-une-collection">1.1.7&nbsp;&nbsp;&nbsp;Counting items in a collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#executer-une-requete-sur-le-master">1.1.8&nbsp;&nbsp;&nbsp;Perform a query on the master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html#erreur-sur-une-requete">1.1.9&nbsp;&nbsp;&nbsp;Error on a query</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="repository.html#trouver-un-objet-par-cle-primaire">2.3.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html#tous-les-objets">2.3.2&nbsp;&nbsp;&nbsp;All items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">2.3.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">2.3.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hydrator.html#jointure-avec-aucune-donnee">3.2.1&nbsp;&nbsp;&nbsp;SQL join with no data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.2.2&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;About the unitofwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unitofwork.html#fonctionnement-interne">4.1.1&nbsp;&nbsp;&nbsp;Internal process</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unitofwork.html#particularites">4.2.1&nbsp;&nbsp;&nbsp;Specifity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#configuration">6.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache">6.2&nbsp;&nbsp;&nbsp;Save into cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-dans-le-cache-plusieurs-valeurs">6.3&nbsp;&nbsp;&nbsp;Save several values into the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-une-valeur-du-cache">6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#effacer-plusieurs-valeurs-du-cache">6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#remplacer-une-valeur-dans-le-cache">6.6&nbsp;&nbsp;&nbsp;Update a value in the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composant-cache.html#sauvegarder-de-maniere-infinie">6.7&nbsp;&nbsp;&nbsp;Save with infinite time to live</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+<footer role="contentinfo" class="ccmcss_footer ccmcss_footer--dark">
+    <ul class="toollinks">
+        <li><a href="http://www.ccmbenchmark.com/advertising/fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="http://www.ccmbenchmark.com/institut/contact/information">Contact</a></li>
+        <li><a href="http://benchmail.benchmark.fr/magazine/archive_406_1.html">Press</a></li>
+        <li><a href="http://www.journaldunet.com/donneesperso.shtml">Données personnelles</a></li>
+        <li><a href="http://www.ccmbenchmark.com/mentions-legales">Mentions légales</a></li>
+        <li><a href="http://www.ccmbenchmark.com/">&copy; 2015 CCM Benchmark</a></li>
+    </ul>
+    <div class="logo">
+        <a href="#">
+            <hgroup>
+                <span>CCM Benchmark Group</span>
+            </hgroup>
+        </a>
+    </div>
+    <div class="brands">
+        <a href="http://www.commentcamarche.net/" class="group_ccm" original-title="commentçamarche.net"></a>
+        <a href="http://www.journaldunet.com/" class="group_jdn" original-title="Le Journal du Net"></a>
+        <a href="http://droit-finances.commentcamarche.net/" class="group_df" original-title="Droit-finances.net"></a>
+        <a href="http://www.journaldesfemmes.com/" class="group_jdf" original-title="Journal des femmes"></a>
+        <a href="http://www.linternaute.com/" class="group_linter" original-title="linternaute.com"></a>
+        <a href="http://copainsdavant.linternaute.com/" class="group_copains" original-title="Copains d'avant"></a>
+        <a href="http://sante-medecine.commentcamarche.net/" class="group_ms" original-title="Santé-médecine.net"></a>
+    </div>
+    <p class="foot_links">
+        <a href="http://www.linternaute.com/voyage/">Voyage</a>,
+        <a href="http://www.linternaute.com/loisirs/">Loisirs</a>,
+        <a href="http://www.linternaute.com/restaurant/">Restos</a>,
+        <a href="http://www.linternaute.com/cinema/">Cinéma</a>,
+        <a href="http://www.linternaute.com/bricolage/">Bricolage</a>,
+        <a href="http://www.linternaute.com/argent/">Argent</a>,
+        <a href="http://deco.journaldesfemmes.com/">Décoration</a>,
+        <a href="http://cuisine.journaldesfemmes.com/">Cuisine</a>,
+        <a href="http://www.linternaute.com/auto/">Auto</a>,
+        <a href="http://sante.journaldesfemmes.com/">Santé</a>,
+        <a href="http://www.linternaute.com/homme/">Homme</a>,
+        <a href="http://www.linternaute.com/actualite/">Actualités</a>,
+        <a href="http://www.commentcamarche.net/">High-tech</a>,
+        <a href="http://www.journaldunet.com/">Entreprise</a>,
+        <a href="http://expeert.com/fr/">Expeert</a>
+    </p>
+</footer>
+
+</div>
+
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Ting docs</span>
+      v: 2.x
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Language</dt>
+            
+            <dd><a href="/ting/doc/2.x/en/index.html">en</a></dd>
+            
+            <dd><a href="/ting/doc/2.x/fr/index.html">fr</a></dd>
+            
+        </dl>
+        <dl>
+            <dt>Versions</dt>
+            
+            <dd><a href="/ting/doc/2.7/en/">2.x</a></dd>
+            
+            <dd><a href="/ting/doc/3.0/en/">3.x</a></dd>
+            
+        </dl>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+ 
+
+</body>
+</html>
