@@ -20,6 +20,7 @@ Ting n'est pas un ORM, parce qu'il ne supporte pas un système de relation entre
 .. toctree::
    :maxdepth: 3
 
+   entity
    query
    repository
    hydrator

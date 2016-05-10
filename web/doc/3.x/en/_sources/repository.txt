@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 2
+    :start: 3
 
 Le Repository
 =============
@@ -7,9 +7,9 @@ Le Repository
 
 Au sujet du Repository
 ----------------------
-Le Repository va faire le lien entre votre objet entité et votre base de données, par l'intermédiaire de l'objet Query.
+Le Repository va faire le lien entre votre objet entité et votre base de données, par l'intermédiaire de l'objet ``Query``.
 
-Il est aussi responsable d'initialiser les Metadata qui concernent votre entité afin de savoir comment mapper
+Il est aussi responsable d'initialiser les ``Metadata`` qui concernent votre entité afin de savoir comment mapper
 votre objet en base de données.
 
 
@@ -19,7 +19,11 @@ Comme un exemple est plus parlant qu'un long discours :
 
 .. code-block:: php
 
-    class SampleRepository extends CCMBenchmark\Ting\Repository\Repository implements MetadataInitializer
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Serializer\SerializerFactoryInterface;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+
+    class SampleRepository extends Repository implements MetadataInitializer
     {
         public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
         {
@@ -30,31 +34,35 @@ Comme un exemple est plus parlant qu'un long discours :
             $metadata->setDatabase('world');
             $metadata->setTable('t_city_cit');
 
-            $metadata->addField(array(
-                'primary'       => true,
-                'autoincrement' => true,
-                'fieldName'     => 'id',
-                'columnName'    => 'cit_id',
-                'type'          => 'int'
-            ));
+            $metadata
+                ->addField([
+                    'primary'       => true,
+                    'autoincrement' => true,
+                    'fieldName'     => 'id',
+                    'columnName'    => 'cit_id',
+                    'type'          => 'int'
+                ])
+                ->addField([
+                    'fieldName'  => 'name',
+                    'columnName' => 'cit_name',
+                    'type'       => 'string'
+                ]);
 
-            $metadata->addField(array(
-                'fieldName'  => 'name',
-                'columnName' => 'cit_name',
-                'type'       => 'string'
-            ));
+            return $metadata
+        }
 
 Quelques précisions :
     - fieldName correspond au nom de la propriété de votre entité
     - columnName correspond au nom de la colonne dans votre base de données
     - type correspond au type de votre variable avec comme valeur possibles :
-        - int
-        - string
-        - bool
-        - datetime
-        - json
+        - ``int``
+        - ``double``
+        - ``string``
+        - ``bool``
+        - ``datetime``
+        - ``json``
 
-Le type bool, datetime et json sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent
+Le type ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent
 donc d'être sérializés/désérializés via des options :
 
 .. code-block:: php
@@ -82,14 +90,14 @@ Vous pouvez injecter votre propre serializer :
     ]);
 
 Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :
-    - CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean
-    - CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean
+    - ``CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean``
+    - ``CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean``
 
 QueryBuilder
 ------------
 
 On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas.
-Ting le fourni via `aura/sqlquery`.
+Ting le fourni via ``aura/sqlquery``.
 
 .. code-block:: php
 

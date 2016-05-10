@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 3
+    :start: 4
 
 Les hydrateurs
 ==============
@@ -18,18 +18,29 @@ et pour valeur l'objet qu'il a réussi à créer par rapport aux metadata.
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
-  $collection = $query->query();
-  foreach ($collection as $data) {
-    // ...
-  }
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
 
-$data contiendra comme structure :
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getCommentForSylvain()
+        {
+            $query = $this->getQuery('SELECT id, name, c.text FROM user LEFT JOIN comment c ON (c.user_id = user.id) WHERE name = :name');
+            $query->setParams(['name' => 'Sylvain']);
+
+            return $query->query();
+        }
+
+        // ...
+
+La collection retournée est composée de lignes structurées ainsi :
 
 .. code-block:: php
 
-  $data =
+  $row =
     [
       'user' => User(
         [id] => 3,
@@ -47,18 +58,30 @@ L'hydrateur pour un seul objet
 L'hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l'on fait une requête qui n'a pour but que de retourner
 un objet, il n'est pas des plus appropriés.
 
-Vous pouvez injecter l'HydratorSingleObject qui conviendra mieux à votre besoin.
+Vous pouvez injecter ``CCMBenchmark\Ting\Repository\HydratorSingleObject`` qui conviendra mieux à votre besoin.
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT id, name, c.text FROM user WHERE name = :name');
-  $query->setParams(['name' => 'Sylvain']);
-  $collection = $query->query($this->getCollection(new CCMBenchmark\Ting\Repository\HydratorSingleObject()));
-  foreach ($collection as $user) {
-    // ...
-  }
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
 
-Dans ce cas $user est un objet User.
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getUserSylvain()
+        {
+            $query = $this->getQuery('SELECT id, name, c.text FROM user WHERE name = :name');
+            $query->setParams(['name' => 'Sylvain']);
+
+            return $query->query($this->getCollection(new CCMBenchmark\Ting\Repository\HydratorSingleObject()));
+        }
+
+        // ...
+
+La collection retournée est une collection d'objet User.
 
 Jointure avec aucune donnée
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,24 +90,34 @@ Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur nul
 Données sans metadata
 ---------------------
 Si vous effectuez une requête qui retourne des données qui ne correspondent à aucune metadata, que ce soit une colonne
-d'aggrégation comme SUM(price) ou une colonne qui n'a pas été mappée comme my_extra_column l'hydrateur va créer un objet
-stdClass avec des propriétés correspondant à ces colonnes.
+d'aggrégation comme ``SUM(price)`` ou une colonne qui n'a pas été mappée comme ``my_extra_column`` l'hydrateur va créer un objet
+``stdClass`` avec des propriétés correspondant à ces colonnes.
 
-Cet objet stdClass est accessible dans la clée 0 du tableau retourné.
-
-.. code-block:: php
-
-  $query = $this->getQuery('SELECT name, my_extra_column, SUM(price) as total FROM article');
-  $collection = $query->query();
-  foreach ($collection as $data) {
-    // ...
-  }
-
-$data contiendra comme structure :
+Cet objet ``stdClass`` est accessible dans la clée 0 du tableau retourné.
 
 .. code-block:: php
 
-  $data =
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getArticles()
+        {
+            $query = $this->getQuery('SELECT name, my_extra_column, SUM(price) as total FROM article');
+
+            return $query->query();
+        }
+
+La collection retournée est composée de lignes structurées ainsi :
+
+.. code-block:: php
+
+  $row =
     [
       0 => stdClass(
         [total] => 43,
@@ -98,23 +131,36 @@ $data contiendra comme structure :
 Mapper des données sans metadata
 --------------------------------
 Dans le cas d'une colonne d'aggrégation, on peut souhaiter la mapper dans un objet.
-Pour mapper la colonne "nb_books" dans mon model User via la méthode "setNbBooks" il suffit de faire :
+Pour mapper la colonne ``nb_books`` dans mon model User via la méthode ``setNbBooks`` il suffit de faire :
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)');
-  $hydrator = new CCMBenchmark\Ting\Repository\Hydrator();
-  $hydrator->mapAliasTo('nb_books', 'user', 'setNbBooks')
-  $collection = $query->query($this->getCollection($hydrator));
-  foreach ($collection as $data) {
-    // ...
-  }
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
+    use CCMBenchmark\Ting\Repository\Hydrator;
 
-$data contiendra comme structure :
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getUsersWithNbBooks()
+        {
+            $query = $this->getQuery('SELECT name, SUM(has_book.id) as nb_books FROM user INNER JOIN has_book ON (user.id = has_book.user_id)');
+            $hydrator = new Hydrator();
+            $hydrator->mapAliasTo('nb_books', 'user', 'setNbBooks')
+
+            return $query->query($this->getCollection($hydrator));
+        }
+
+        // ...
+
+La collection retournée est composée de lignes structurées ainsi :
 
 .. code-block:: php
 
-  $data =
+  $row =
     [
       'user' => User(
         [name] => "name",
@@ -126,23 +172,37 @@ Déserializer des données sans metadata
 --------------------------------------
 Pour rappel l'action de déserializer consiste à transformer un type de base données dans un type PHP.
 Par exemple si on récupère une date qui n'est pas dans des metadata, on peut vouloir transformer la date en objet
-Datetime.
+``Datetime``.
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT title, NOW() as fetchedDate FROM article');
-  $hydrator = new CCMBenchmark\Ting\Repository\Hydrator();
-  $hydrator->unserializeAliasWith('fetchedDate', $services->get('SerializerFactory')->get(CCMBenchmark\Ting\Serializer\Datetime::class))
-  $collection = $query->query($this->getCollection($hydrator));
-  foreach ($collection as $data) {
-    // ...
-  }
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
+    use CCMBenchmark\Ting\Repository\Hydrator;
+    use CCMBenchmark\Ting\Serializer;
 
-$data contiendra comme structure :
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getArticlesWithFetchedDate()
+        {
+            $query = $this->getQuery('SELECT title, NOW() as fetchedDate FROM article');
+            $hydrator = new Hydrator();
+            $hydrator->unserializeAliasWith('fetchedDate', $services->get('SerializerFactory')->get(Serializer\Datetime::class))
+
+            return $query->query($this->getCollection($hydrator));
+        }
+
+        // ...
+
+La collection retournée est composée de lignes structurées ainsi :
 
 .. code-block:: php
 
-  $data =
+  $row =
     [
       0 => stdClass(
         [fetchedDate] => Datetime("2016-01-13 10:41:36")
@@ -155,23 +215,36 @@ $data contiendra comme structure :
 Composition d'objet
 -------------------
 On peut vouloir faire de la composition d'objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
-Pour mapper l'objet Country (qui a l'alias "co") dans mon model City (qui a l'alias "cit") via la méthode "setCountry" il suffit de faire :
+Pour mapper l'objet ``Country`` (qui a l'alias ``co``) dans mon model ``City`` (qui a l'alias ``cit``) via la méthode ``setCountry`` il suffit de faire :
 
 .. code-block:: php
 
-  $query = $this->getQuery('SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)');
-  $hydrator = new Hydrator();
-  $hydrator->mapObjectTo('co', 'cit', 'setCountry')
-  $collection = $query->query($this->getCollection($hydrator));
-  foreach ($collection as $data) {
-    // ...
-  }
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
+    use CCMBenchmark\Ting\Repository\Hydrator;
 
-$data contiendra comme structure :
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getCityWithCountry()
+        {
+            $query = $this->getQuery('SELECT cit.name, co.cou_name FROM city cit INNER JOIN t_country_cou co ON (c.cou_code = co.cou_code)');
+            $hydrator = new Hydrator();
+            $hydrator->mapObjectTo('co', 'cit', 'setCountry')
+
+            return $query->query($this->getCollection($hydrator));
+        }
+
+        // ...
+
+La collection retournée est composée de lignes structurées ainsi :
 
 .. code-block:: php
 
-  $data =
+  $row =
     [
       'cit' => City(
         [name] => "Palaiseau",

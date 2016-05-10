@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>1   Queries &mdash; ting 1 documentation</title>
+    <title>2   Queries &mdash; ting 1 documentation</title>
     
 
     <style>
@@ -40,8 +40,8 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <link rel="top" title="ting 1 documentation" href="index.html"/>
-    <link rel="next" title="2   Repository" href="repository.html"/>
-    <link rel="prev" title="Ting - Documentation" href="index.html"/> 
+    <link rel="next" title="3   Repository" href="repository.html"/>
+    <link rel="prev" title="1   Entities" href="entity.html"/> 
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -72,41 +72,46 @@
             
             
             <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">2.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.4&nbsp;&nbsp;&nbsp;Queries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">3.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">3.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">3.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">3.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">3&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">3.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">3.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">3.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">3.4&nbsp;&nbsp;&nbsp;Queries</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">4&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">4.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">4.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">4.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">4.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">4.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">4.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">4.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cache.html">5&nbsp;&nbsp;&nbsp;Cache</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">5.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">5&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">5.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">5.2&nbsp;&nbsp;&nbsp;Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">5.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">6&nbsp;&nbsp;&nbsp;The cache component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">6&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">6.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">6.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">6.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">7&nbsp;&nbsp;&nbsp;The cache component</a></li>
 </ul>
 
             
@@ -130,7 +135,7 @@
             <div class="rst-content">
                 
 
-
+ 
 
 
 
@@ -138,7 +143,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>1&nbsp;&nbsp;&nbsp;Queries</li>
+    <li>2&nbsp;&nbsp;&nbsp;Queries</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -150,76 +155,137 @@
                 <div role="main" class="document">
                     
   <div class="section" id="les-requetes">
-<h1>1&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#les-requetes" title="Permalink to this headline">¶</a></h1>
+<h1>2&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#les-requetes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="effectuer-une-requete-de-lecture">
-<h2>1.1&nbsp;&nbsp;&nbsp;Perform a read query<a class="headerlink" href="#effectuer-une-requete-de-lecture" title="Permalink to this headline">¶</a></h2>
+<h2>2.1&nbsp;&nbsp;&nbsp;Perform a read query<a class="headerlink" href="#effectuer-une-requete-de-lecture" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="l-objet-query">
-<h3>1.1.1&nbsp;&nbsp;&nbsp;The Query object<a class="headerlink" href="#l-objet-query" title="Permalink to this headline">¶</a></h3>
-<p>A query is done by retrieving the object CCMBenchmark\Ting\Query\Query from the <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<h3>2.1.1&nbsp;&nbsp;&nbsp;The Query object<a class="headerlink" href="#l-objet-query" title="Permalink to this headline">¶</a></h3>
+<p>A query is done by retrieving the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code> from the <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
 <p>To do this, just call:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUsers</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="les-parametres">
-<h3>1.1.2&nbsp;&nbsp;&nbsp;Parameters<a class="headerlink" href="#les-parametres" title="Permalink to this headline">¶</a></h3>
-<p>To define dynamic parameters in the query call the method &#8220;setParams&#8221; which takes as argument an associative array:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<h3>2.1.2&nbsp;&nbsp;&nbsp;Parameters<a class="headerlink" href="#les-parametres" title="Permalink to this headline">¶</a></h3>
+<p>To define dynamic parameters in the query call the method <code class="docutils literal"><span class="pre">setParams</span></code> which takes as argument an associative array:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUserSylvain</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="executer-la-requete">
-<h3>1.1.3&nbsp;&nbsp;&nbsp;Perform the query<a class="headerlink" href="#executer-la-requete" title="Permalink to this headline">¶</a></h3>
-<p>To fetch the data use the method &#8220;query&#8221;:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+<h3>2.1.3&nbsp;&nbsp;&nbsp;Perform the query<a class="headerlink" href="#executer-la-requete" title="Permalink to this headline">¶</a></h3>
+<p>To fetch the data use the method <code class="docutils literal"><span class="pre">query</span></code>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUserSylvain</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+        <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="recuperer-les-resultats">
-<h3>1.1.4&nbsp;&nbsp;&nbsp;Get the output<a class="headerlink" href="#recuperer-les-resultats" title="Permalink to this headline">¶</a></h3>
-<p>The &#8220;query&#8221; method returns an object CCMBenchmark\Ting\Repository\Collection. This object is an Iterator, you can retrieve the results with an iteration:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
-<span class="p">}</span>
+<h3>2.1.4&nbsp;&nbsp;&nbsp;Get the output<a class="headerlink" href="#recuperer-les-resultats" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">query</span></code> method returns an object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\Collection</span></code>. This object is an <code class="docutils literal"><span class="pre">Iterator</span></code>, you can retrieve the results with an iteration:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">showUsersSylvain</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+        <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nb">print_r</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="explication-sur-le-format-retourne">
-<h3>1.1.5&nbsp;&nbsp;&nbsp;Details about the output format<a class="headerlink" href="#explication-sur-le-format-retourne" title="Permalink to this headline">¶</a></h3>
+<h3>2.1.5&nbsp;&nbsp;&nbsp;Details about the output format<a class="headerlink" href="#explication-sur-le-format-retourne" title="Permalink to this headline">¶</a></h3>
 <p>See the documentation about the <a class="reference internal" href="hydrator.html"><em>hydrators</em></a></p>
 </div>
 <div class="section" id="format-de-retour-simplifie-pour-des-requetes-sans-jointures">
-<h3>1.1.6&nbsp;&nbsp;&nbsp;Simplified output format for queries without joins<a class="headerlink" href="#format-de-retour-simplifie-pour-des-requetes-sans-jointures" title="Permalink to this headline">¶</a></h3>
+<h3>2.1.6&nbsp;&nbsp;&nbsp;Simplified output format for queries without joins<a class="headerlink" href="#format-de-retour-simplifie-pour-des-requetes-sans-jointures" title="Permalink to this headline">¶</a></h3>
 <p>See the documentation about the <a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><span>hydrator for a single object</span></a></p>
 </div>
 <div class="section" id="compter-les-elements-d-une-collection">
-<h3>1.1.7&nbsp;&nbsp;&nbsp;Counting items in a collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Permalink to this headline">¶</a></h3>
-<p>Knowing that a Collection implements the standard interface Countable. You can find how many elements it contains just as you would do for a PHP array: count($collection);</p>
+<h3>2.1.7&nbsp;&nbsp;&nbsp;Counting items in a collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Permalink to this headline">¶</a></h3>
+<p>Knowing that a <code class="docutils literal"><span class="pre">Collection</span></code> implements the standard interface <code class="docutils literal"><span class="pre">Countable</span></code>. You can find how many elements it contains just as you would do for a PHP array: <code class="docutils literal"><span class="pre">count($collection)</span></code></p>
 </div>
 <div class="section" id="executer-une-requete-sur-le-master">
-<h3>1.1.8&nbsp;&nbsp;&nbsp;Perform a query on the master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Permalink to this headline">¶</a></h3>
-<p>A read query will be made by default on one of the configured slaves (when some slaves have been configured), if you need to perform your query on the master, then you must call the method &#8220;selectMaster&#8221;:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">selectMaster</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<h3>2.1.8&nbsp;&nbsp;&nbsp;Perform a query on the master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Permalink to this headline">¶</a></h3>
+<p>A read query will be made by default on one of the configured slaves (when some slaves have been configured), if you need to perform your query on the master, then you must call the method <code class="docutils literal"><span class="pre">selectMaster</span></code>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">selectOnMaster</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">selectMaster</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="erreur-sur-une-requete">
-<h3>1.1.9&nbsp;&nbsp;&nbsp;Error on a query<a class="headerlink" href="#erreur-sur-une-requete" title="Permalink to this headline">¶</a></h3>
-<p>If the query executed does not complete successfully, an exception of type CCMBenchmark\Ting\Driver\QueryException will be raised</p>
+<h3>2.1.9&nbsp;&nbsp;&nbsp;Error on a query<a class="headerlink" href="#erreur-sur-une-requete" title="Permalink to this headline">¶</a></h3>
+<p>If the query executed does not complete successfully, an exception of type <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Driver\QueryException</span></code> will be raised</p>
 </div>
 </div>
 <div class="section" id="effectuer-une-requete-d-ecriture">
-<h2>1.2&nbsp;&nbsp;&nbsp;Perform a write query<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Permalink to this headline">¶</a></h2>
-<p>The logic is the same as for a read request. Except that you need to call the method &#8220;execute&#8221; on the object CCMBenchmark\Ting\Query\Query</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+<h2>2.2&nbsp;&nbsp;&nbsp;Perform a write query<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Permalink to this headline">¶</a></h2>
+<p>The logic is the same as for a read request. Except that you need to call the method <code class="docutils literal"><span class="pre">execute</span></code> on the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code></p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">insertSomething</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+
+        <span class="c1">// ...</span>
 </pre></div>
 </div>
 </div>
