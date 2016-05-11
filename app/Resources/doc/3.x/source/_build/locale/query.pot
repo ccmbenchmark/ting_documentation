@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, CCM Benchmark Group
+# This file is distributed under the same license as the ting package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-22 11:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../query.rst:5
+msgid "Les requêtes"
+msgstr ""
+
+#: ../../query.rst:8
+msgid "Effectuer une requête de lecture"
+msgstr ""
+
+#: ../../query.rst:12
+msgid "L'objet Query"
+msgstr ""
+
+#: ../../query.rst:13
+msgid "Une requête s'effectue en récupérant l'objet ``CCMBenchmark\\Ting\\Query\\Query`` via le :doc:`Repository <repository>`."
+msgstr ""
+
+#: ../../query.rst:16
+msgid "Pour ce faire il suffit d'appeler :"
+msgstr ""
+
+#: ../../query.rst:33
+msgid "Les paramètres"
+msgstr ""
+
+#: ../../query.rst:34
+msgid "Pour mettre des paramètres dynamiques dans la requête il faut utiliser la méthode ``setParams`` qui prend en argument un tableau associatif :"
+msgstr ""
+
+#: ../../query.rst:53
+msgid "Exécuter la requête"
+msgstr ""
+
+#: ../../query.rst:55
+msgid "Pour retourner les données de lecture il faut utiliser la méthode ``query`` :"
+msgstr ""
+
+#: ../../query.rst:74
+msgid "Récupérer les résultats"
+msgstr ""
+
+#: ../../query.rst:76
+msgid "La méthode ``query`` retourne un objet ``CCMBenchmark\\Ting\\Repository\\Collection``. Cet objet est un ``Iterator``, vous pouvez donc récupérer les résultats de cette façon :"
+msgstr ""
+
+#: ../../query.rst:101
+msgid "Explication sur le format retourné"
+msgstr ""
+
+#: ../../query.rst:103
+msgid "Voir la documentation concernant les :doc:`hydrateurs <hydrator>`"
+msgstr ""
+
+#: ../../query.rst:106
+msgid "Format de retour simplifié pour des requêtes sans jointures"
+msgstr ""
+
+#: ../../query.rst:108
+msgid "Voir la documentation concernant l':ref:`hydration pour un seul objet <l-hydrateur-pour-un-seul-objet>`"
+msgstr ""
+
+#: ../../query.rst:111
+msgid "Compter les éléments d'une collection"
+msgstr ""
+
+#: ../../query.rst:113
+msgid "Il faut savoir qu'une Collection implémente l'interface standard Countable. Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : ``count($collection);``"
+msgstr ""
+
+#: ../../query.rst:117
+msgid "Exécuter une requête sur le master"
+msgstr ""
+
+#: ../../query.rst:119
+msgid "Une requête de lecture s'effectuera par défaut sur un des slaves configurés (si des slaves ont été configurés), si vous avez besoin d'effectuer votre requête sur le master, alors il faut appeler la méthode ``selectMaster`` :"
+msgstr ""
+
+#: ../../query.rst:139
+msgid "Erreur sur une requête"
+msgstr ""
+
+#: ../../query.rst:141
+msgid "Si la requête exécuté ne se termine pas correctement, une exception du type ``CCMBenchmark\\Ting\\Driver\\QueryException`` sera levée"
+msgstr ""
+
+#: ../../query.rst:145
+msgid "Effectuer une requête d'écriture"
+msgstr ""
+
+#: ../../query.rst:147
+msgid "La logique reste la même que pour une requête de lecture, à quelques différences près. Il faut appeler la méthode ``execute`` sur l'objet ``CCMBenchmark\\Ting\\Query\\Query``"
+msgstr ""
+

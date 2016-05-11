@@ -1,0 +1,981 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>1   Démarrer avec Symfony 2.8 &mdash; documentation ting 1</title>
+    
+
+    <style>
+        .highlight {
+            background: #272822 !important;
+        }
+    </style>
+
+    
+    
+
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://static.ccmbg.com/fc/css.php?m=footer">
+
+    
+    
+    
+
+    
+
+    
+    
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="top" title="documentation ting 1" href="index.html"/> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-nav-search">
+            
+            <a href="/ting/" class="fa fa-home"> ting</a>
+            
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+            
+            
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Les entités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">3&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">3.1&nbsp;&nbsp;&nbsp;Au sujet du Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">3.2&nbsp;&nbsp;&nbsp;Création des Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">3.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">3.4&nbsp;&nbsp;&nbsp;Requêtes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">4&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">4.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">4.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">4.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">4.4&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">4.5&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">4.6&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">4.7&nbsp;&nbsp;&nbsp;Composition d&#8217;objet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">5&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">5.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">5.2&nbsp;&nbsp;&nbsp;Principe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">5.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">6&nbsp;&nbsp;&nbsp;Le cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">6.1&nbsp;&nbsp;&nbsp;Au sujet du cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">6.2&nbsp;&nbsp;&nbsp;Requête simple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">6.3&nbsp;&nbsp;&nbsp;Requête préparée</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">7&nbsp;&nbsp;&nbsp;Le composant cache</a></li>
+</ul>
+
+            
+            
+        </div>
+        &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">ting</a>
+        </nav>
+
+
+        
+        <div class="wy-nav-content">
+            
+            <div class="rst-content">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>1&nbsp;&nbsp;&nbsp;Démarrer avec Symfony 2.8</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+                <div role="main" class="document">
+                    
+  <div class="section" id="demarrer-avec-symfony-2-8">
+<h1>1&nbsp;&nbsp;&nbsp;Démarrer avec Symfony 2.8<a class="headerlink" href="#demarrer-avec-symfony-2-8" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="initialisation">
+<h2>1.1&nbsp;&nbsp;&nbsp;Initialisation<a class="headerlink" href="#initialisation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous supposerons dans ce guide que vous avez déjà le Symfony installer (<a class="reference external" href="http://symfony.com/download">http://symfony.com/download</a>).
+Commencer par créer un nouveau projet : <code class="docutils literal"><span class="pre">symfony</span> <span class="pre">new</span> <span class="pre">world_site</span> <span class="pre">2.8</span></code></p>
+</div>
+<div class="section" id="supprimer-les-dependances-a-doctrine-inutiles">
+<h2>1.2&nbsp;&nbsp;&nbsp;Supprimer les dépendances à Doctrine inutiles<a class="headerlink" href="#supprimer-les-dependances-a-doctrine-inutiles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ting remplace Doctrine, il faut donc retirer les références à Doctrine devenues inutiles.</p>
+<p>Dans le fichier <code class="docutils literal"><span class="pre">app/AppKernel.php</span></code> supprimer la ligne <code class="docutils literal"><span class="pre">new</span> <span class="pre">Doctrine\Bundle\DoctrineBundle\DoctrineBundle()</span></code></p>
+<p>Dans <code class="docutils literal"><span class="pre">app/config/config.yml</span></code> supprimer tout le bloc de configuration Doctrine :</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="c1"># Doctrine Configuration</span>
+<span class="l l-Scalar l-Scalar-Plain">doctrine</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">dbal</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">driver</span><span class="p p-Indicator">:</span>   <span class="l l-Scalar l-Scalar-Plain">pdo_mysql</span>
+        <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span>     <span class="s">&quot;%database_host%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span>     <span class="s">&quot;%database_port%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">dbname</span><span class="p p-Indicator">:</span>   <span class="s">&quot;%database_name%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">user</span><span class="p p-Indicator">:</span>     <span class="s">&quot;%database_user%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="s">&quot;%database_password%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">charset</span><span class="p p-Indicator">:</span>  <span class="l l-Scalar l-Scalar-Plain">UTF8</span>
+        <span class="c1"># if using pdo_sqlite as your database driver:</span>
+        <span class="c1">#   1. add the path in parameters.yml</span>
+        <span class="c1">#     e.g. database_path: &quot;%kernel.root_dir%/data/data.db3&quot;</span>
+        <span class="c1">#   2. Uncomment database_path in parameters.yml.dist</span>
+        <span class="c1">#   3. Uncomment next line:</span>
+        <span class="c1">#     path:     &quot;%database_path%&quot;</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">orm</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">auto_generate_proxy_classes</span><span class="p p-Indicator">:</span> <span class="s">&quot;%kernel.debug%&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">naming_strategy</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">doctrine.orm.naming_strategy.underscore</span>
+        <span class="l l-Scalar l-Scalar-Plain">auto_mapping</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>Retirer les librairies Doctrine :</p>
+<p><code class="docutils literal"><span class="pre">composer</span> <span class="pre">remove</span> <span class="pre">doctrine/orm</span></code></p>
+<p><code class="docutils literal"><span class="pre">composer</span> <span class="pre">remove</span> <span class="pre">doctrine/doctrine-bundle</span></code></p>
+</div>
+<div class="section" id="installer-ting">
+<h2>1.3&nbsp;&nbsp;&nbsp;Installer Ting<a class="headerlink" href="#installer-ting" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ting a besoin de PHP 5.4, donc il faut modifier <cite>composer.json</cite> et remplacer :</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>&quot;config&quot;: {
+    &quot;bin-dir&quot;: &quot;bin&quot;,
+    &quot;platform&quot;: {
+        &quot;php&quot;: &quot;5.3.9&quot;
+    }
+},
+</pre></div>
+</div>
+<p>Par</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>&quot;config&quot;: {
+    &quot;bin-dir&quot;: &quot;bin&quot;,
+    &quot;platform&quot;: {
+        &quot;php&quot;: &quot;5.4&quot;
+    }
+},
+</pre></div>
+</div>
+<p>On peut maintenant installer Ting Bundle, qui permet d&#8217;utiliser Ting sur Symfony :
+<cite>composer require ccmbenchmark/ting_bundle</cite></p>
+</div>
+<div class="section" id="initialisation-de-la-base-de-donnees">
+<h2>1.4&nbsp;&nbsp;&nbsp;Initialisation de la base de données<a class="headerlink" href="#initialisation-de-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour ce guide on utilise <code class="docutils literal"><span class="pre">world</span> <span class="pre">database</span></code> (<a class="reference external" href="http://downloads.mysql.com/docs/world.sql.gz">http://downloads.mysql.com/docs/world.sql.gz</a>) qu&#8217;il faut
+installer dans une base de données MySQL.
+Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="reference external" href="https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html">https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html</a></p>
+</div>
+<div class="section" id="creation-des-repository">
+<h2>1.5&nbsp;&nbsp;&nbsp;Création des repository<a class="headerlink" href="#creation-des-repository" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La base de données <code class="docutils literal"><span class="pre">world</span> <span class="pre">database</span></code> à trois tables composées ainsi :</p>
+</div>
+<div class="section" id="city">
+<h2>1.6&nbsp;&nbsp;&nbsp;City<a class="headerlink" href="#city" title="Lien permanent vers ce titre">¶</a></h2>
+<p>ID          | int(11)
+Name        | char(35)
+CountryCode | char(3)
+Population  | int(11)</p>
+</div>
+<div class="section" id="country">
+<h2>1.7&nbsp;&nbsp;&nbsp;Country<a class="headerlink" href="#country" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Code       | int(3)
+Name       | char(52)
+Region     | char(26)
+Population | int(11)</p>
+</div>
+<div class="section" id="countrylanguage">
+<h2>1.8&nbsp;&nbsp;&nbsp;CountryLanguage<a class="headerlink" href="#countrylanguage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>CountryCode | char(3)
+Language    | char(30)
+Percentage  | float(4, 1)</p>
+<p>Note : dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide</p>
+</div>
+<div class="section" id="creation-du-repository-city">
+<h2>1.9&nbsp;&nbsp;&nbsp;Création du repository City<a class="headerlink" href="#creation-du-repository-city" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans <cite>src/AppBundle/Repository</cite> ajouter un fichier nommé <cite>City.php</cite> avec le contenu suivant :
+`
+&lt;?php</p>
+<p>namespace AppBundleRepository;</p>
+<p>use CCMBenchmarkTingException;
+use CCMBenchmarkTingRepositoryMetadata;
+use CCMBenchmarkTingRepositoryMetadataInitializer;
+use CCMBenchmarkTingRepositoryRepository;
+use CCMBenchmarkTingSerializerSerializerFactoryInterface;</p>
+<p>class City extends Repository implements MetadataInitializer
+{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param SerializerFactoryInterface $serializerFactory</li>
+<li></li>
+<li>&#64;return Metadata</li>
+<li>&#64;throws Exception</li>
+</ul>
+<p class="last"><a href="#id1"><span class="problematic" id="id2">*</span></a>/</p>
+</dd>
+</dl>
+<p>public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
+{</p>
+<blockquote>
+<div><p>$metadata = new Metadata($serializerFactory);
+$metadata-&gt;setEntity(&#8216;AppBundleEntityCity&#8217;);
+$metadata-&gt;setConnectionName($options[&#8216;connection&#8217;]);
+$metadata-&gt;setDatabase($options[&#8216;database&#8217;]);
+$metadata-&gt;setTable(&#8216;City&#8217;);</p>
+<dl class="docutils">
+<dt>$metadata</dt>
+<dd><dl class="first docutils">
+<dt>-&gt;addField([</dt>
+<dd>&#8216;primary&#8217;       =&gt; true,
+&#8216;autoincrement&#8217; =&gt; true,
+&#8216;fieldName&#8217;     =&gt; &#8216;id&#8217;,
+&#8216;columnName&#8217;    =&gt; &#8216;ID&#8217;,
+&#8216;type&#8217;          =&gt; &#8216;int&#8217;</dd>
+</dl>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;name&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Name&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;string&#8217;</div></blockquote>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;countryCode&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;CountryCode&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;string&#8217;</div></blockquote>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;population&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Population&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;int&#8217;</div></blockquote>
+<p class="last">]);</p>
+</dd>
+</dl>
+<p>return $metadata;</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p><a href="#id3"><span class="problematic" id="id4">`</span></a></p>
+</div>
+<div class="section" id="creation-du-repository-country">
+<h2>1.10&nbsp;&nbsp;&nbsp;Création du repository Country<a class="headerlink" href="#creation-du-repository-country" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans <cite>src/AppBundle/Repository</cite> ajouter un fichier nommé <cite>Country.php</cite> avec le contenu suivant :
+`
+&lt;?php</p>
+<p>namespace AppBundleRepository;</p>
+<p>use CCMBenchmarkTingException;
+use CCMBenchmarkTingRepositoryMetadata;
+use CCMBenchmarkTingRepositoryMetadataInitializer;
+use CCMBenchmarkTingRepositoryRepository;
+use CCMBenchmarkTingSerializerSerializerFactoryInterface;</p>
+<p>class Country extends Repository implements MetadataInitializer
+{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param SerializerFactoryInterface $serializerFactory</li>
+<li></li>
+<li>&#64;return Metadata</li>
+<li>&#64;throws Exception</li>
+</ul>
+<p class="last"><a href="#id5"><span class="problematic" id="id6">*</span></a>/</p>
+</dd>
+</dl>
+<p>public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
+{</p>
+<blockquote>
+<div><p>$metadata = new Metadata($serializerFactory);
+$metadata-&gt;setEntity(&#8216;AppBundleEntityCountry&#8217;);
+$metadata-&gt;setConnectionName($options[&#8216;connection&#8217;]);
+$metadata-&gt;setDatabase($options[&#8216;database&#8217;]);
+$metadata-&gt;setTable(&#8216;Country&#8217;);</p>
+<dl class="docutils">
+<dt>$metadata</dt>
+<dd><dl class="first docutils">
+<dt>-&gt;addField([</dt>
+<dd>&#8216;primary&#8217;       =&gt; true,
+&#8216;fieldName&#8217;     =&gt; &#8216;code&#8217;,
+&#8216;columnName&#8217;    =&gt; &#8216;Code&#8217;,
+&#8216;type&#8217;          =&gt; &#8216;string&#8217;</dd>
+</dl>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;name&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Name&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;string&#8217;</div></blockquote>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;region&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Region&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;string&#8217;</div></blockquote>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;population&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Population&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;int&#8217;</div></blockquote>
+<p class="last">]);</p>
+</dd>
+</dl>
+<p>return $metadata;</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+</div>
+<div class="section" id="creation-du-repository-countrylanguage">
+<h2>1.11&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage<a class="headerlink" href="#creation-du-repository-countrylanguage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans <cite>src/AppBundle/Repository</cite> ajouter un fichier nommé <cite>CountryLanguage.php</cite> avec le contenu suivant :
+`
+&lt;?php</p>
+<p>namespace AppBundleRepository;</p>
+<p>use CCMBenchmarkTingException;
+use CCMBenchmarkTingRepositoryMetadata;
+use CCMBenchmarkTingRepositoryMetadataInitializer;
+use CCMBenchmarkTingRepositoryRepository;
+use CCMBenchmarkTingSerializerSerializerFactoryInterface;</p>
+<p>class CountryLanguage extends Repository implements MetadataInitializer
+{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param SerializerFactoryInterface $serializerFactory</li>
+<li></li>
+<li>&#64;return Metadata</li>
+<li>&#64;throws Exception</li>
+</ul>
+<p class="last"><a href="#id9"><span class="problematic" id="id10">*</span></a>/</p>
+</dd>
+</dl>
+<p>public static function initMetadata(SerializerFactoryInterface $serializerFactory, array $options = [])
+{</p>
+<blockquote>
+<div><p>$metadata = new Metadata($serializerFactory);
+$metadata-&gt;setEntity(&#8216;AppBundleEntityCountry&#8217;);
+$metadata-&gt;setConnectionName($options[&#8216;connection&#8217;]);
+$metadata-&gt;setDatabase($options[&#8216;database&#8217;]);
+$metadata-&gt;setTable(&#8216;CountryLanguage&#8217;);</p>
+<dl class="docutils">
+<dt>$metadata</dt>
+<dd><dl class="first docutils">
+<dt>-&gt;addField([</dt>
+<dd>&#8216;fieldName&#8217;     =&gt; &#8216;countryCode&#8217;,
+&#8216;columnName&#8217;    =&gt; &#8216;CountryCode&#8217;,
+&#8216;type&#8217;          =&gt; &#8216;string&#8217;</dd>
+</dl>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;language&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Language&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;string&#8217;</div></blockquote>
+<p>])
+-&gt;addField([</p>
+<blockquote>
+<div>&#8216;fieldName&#8217;  =&gt; &#8216;percentage&#8217;,
+&#8216;columnName&#8217; =&gt; &#8216;Percentage&#8217;,
+&#8216;type&#8217;       =&gt; &#8216;double&#8217;</div></blockquote>
+<p class="last">]);</p>
+</dd>
+</dl>
+<p>return $metadata;</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+</div>
+<div class="section" id="configuration-de-la-connexion-a-la-base-de-donnees">
+<h2>1.12&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données<a class="headerlink" href="#configuration-de-la-connexion-a-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On va maintenant configurer l&#8217;accès à la base de données. Dans <cite>app/config/config.yml</cite> il faut ajouter :
+`
+ting:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>connections:</dt>
+<dd><dl class="first last docutils">
+<dt>main:</dt>
+<dd><p class="first">namespace: CCMBenchmarkTingDriverMysqli
+master:</p>
+<blockquote class="last">
+<div>host:     localhost
+user:     root
+password: &#8220;&#8221;
+port:     3306</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><a href="#id13"><span class="problematic" id="id14">`</span></a></p>
+</div>
+<div class="section" id="configuration-pour-indiquer-l-emplacement-des-repository">
+<h2>1.13&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository<a class="headerlink" href="#configuration-pour-indiquer-l-emplacement-des-repository" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On configure l&#8217;emplacement des repository dans <cite>app/config/config.yml</cite> :
+`
+ting:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>repositories:</dt>
+<dd><dl class="first last docutils">
+<dt>World:</dt>
+<dd><p class="first">namespace: AppBundleRepository
+directory: &#8220;&#64;AppBundle/Repository&#8221;
+options:</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>default:</dt>
+<dd>connection: main
+database: world</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
+</div>
+<div class="section" id="creation-des-entitees">
+<h2>1.14&nbsp;&nbsp;&nbsp;Création des entitées<a class="headerlink" href="#creation-des-entitees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsque l&#8217;on a créé les repository, on a indiqué avec quel entité il travaille :<cite>$metadata-&gt;setEntity(&#8216;AppBundleEntityCountry&#8217;);</cite>
+On va donc maintenant créer une entité pour chaque repository.</p>
+<p>Dans <cite>/src/AppBundle/Entity/City.php</cite> :
+<a href="#id17"><span class="problematic" id="id18">`</span></a>&lt;?php</p>
+<p>namespace AppBundleEntity;</p>
+<p>use CCMBenchmarkTingEntityNotifyProperty;
+use CCMBenchmarkTingEntityNotifyPropertyInterface;</p>
+<p>class City implements NotifyPropertyInterface
+{</p>
+<blockquote>
+<div><p>use NotifyProperty;</p>
+<p>private $id;
+private $name = &#8216;&#8217;;
+private $countryCode = &#8216;&#8217;;
+private $population = 0;</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param int $id</li>
+</ul>
+<p class="last"><a href="#id19"><span class="problematic" id="id20">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setId($id)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;id&#8217;, $this-&gt;id, (int) $id);
+$this-&gt;id = (int) $id;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return int|null</li>
+</ul>
+<p class="last"><a href="#id21"><span class="problematic" id="id22">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getId()
+{</p>
+<blockquote>
+<div>return $this-&gt;id;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $name</li>
+</ul>
+<p class="last"><a href="#id23"><span class="problematic" id="id24">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setName($name)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;name&#8217;, $this-&gt;name, (string) $name);
+$this-&gt;name = (string) $name;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id25"><span class="problematic" id="id26">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getName()
+{</p>
+<blockquote>
+<div>return $this-&gt;name;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $countryCode</li>
+</ul>
+<p class="last"><a href="#id27"><span class="problematic" id="id28">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setCountryCode($countryCode)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;countryCode&#8217;, $this-&gt;countryCode, (string) $countryCode);
+$this-&gt;countryCode = (string) $countryCode;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id29"><span class="problematic" id="id30">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getCountryCode()
+{</p>
+<blockquote>
+<div>return $this-&gt;countryCode;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param int $population</li>
+</ul>
+<p class="last"><a href="#id31"><span class="problematic" id="id32">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setPopulation($population)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;population&#8217;, $this-&gt;population, (int) $population);
+$this-&gt;population = (int) $population;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return int</li>
+</ul>
+<p class="last"><a href="#id33"><span class="problematic" id="id34">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getPopulation()
+{</p>
+<blockquote>
+<div>return $this-&gt;population;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<div class="section" id="id35">
+<h3>1.14.1&nbsp;&nbsp;&nbsp;}<a class="headerlink" href="#id35" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Dans <cite>/src/AppBundle/Entity/Country.php</cite> :
+<a href="#id36"><span class="problematic" id="id37">`</span></a>&lt;?php</p>
+<p>namespace AppBundleEntity;</p>
+<p>use CCMBenchmarkTingEntityNotifyProperty;
+use CCMBenchmarkTingEntityNotifyPropertyInterface;</p>
+<p>class Country implements NotifyPropertyInterface
+{</p>
+<blockquote>
+<div><p>use NotifyProperty;</p>
+<p>private $code = &#8216;&#8217;;
+private $name = &#8216;&#8217;;
+private $region = &#8216;&#8217;;
+private $population = 0;</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $code</li>
+</ul>
+<p class="last"><a href="#id38"><span class="problematic" id="id39">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setCode($code)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;code&#8217;, $this-&gt;code, (string) $code);
+$this-&gt;code = (string) $code;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id40"><span class="problematic" id="id41">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getCode()
+{</p>
+<blockquote>
+<div>return $this-&gt;code;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $name</li>
+</ul>
+<p class="last"><a href="#id42"><span class="problematic" id="id43">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setName($name)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;name&#8217;, $this-&gt;name, (string) $name);
+$this-&gt;name = (string) $name;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id44"><span class="problematic" id="id45">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getName()
+{</p>
+<blockquote>
+<div>return $this-&gt;name;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $region</li>
+</ul>
+<p class="last"><a href="#id46"><span class="problematic" id="id47">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setRegion($region)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;region&#8217;, $this-&gt;region, (string) $region);
+$this-&gt;region = (string) $region;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id48"><span class="problematic" id="id49">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getRegion()
+{</p>
+<blockquote>
+<div>return $this-&gt;region;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param int $population</li>
+</ul>
+<p class="last"><a href="#id50"><span class="problematic" id="id51">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setPopulation($population)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;population&#8217;, $this-&gt;population, (int) $population);
+$this-&gt;population = (int) $population;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return int</li>
+</ul>
+<p class="last"><a href="#id52"><span class="problematic" id="id53">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getPopulation()
+{</p>
+<blockquote>
+<div>return $this-&gt;population;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id54">
+<h3>1.14.2&nbsp;&nbsp;&nbsp;}<a class="headerlink" href="#id54" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Dans <cite>/src/AppBundle/Entity/CountryLanguage.php</cite> :
+<a href="#id55"><span class="problematic" id="id56">`</span></a>&lt;?php</p>
+<p>namespace AppBundleEntity;</p>
+<p>use CCMBenchmarkTingEntityNotifyProperty;
+use CCMBenchmarkTingEntityNotifyPropertyInterface;</p>
+<p>class CountryLanguage implements NotifyPropertyInterface
+{</p>
+<blockquote>
+<div><p>use NotifyProperty;</p>
+<p>private $countryCode = &#8216;&#8217;;
+private $language = &#8216;&#8217;;
+private $percentage = 0.0;</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $countryCode</li>
+</ul>
+<p class="last"><a href="#id57"><span class="problematic" id="id58">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setCountryCode($countryCode)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;countryCode&#8217;, $this-&gt;countryCode, (string) $countryCode);
+$this-&gt;countryCode = (string) $countryCode;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id59"><span class="problematic" id="id60">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getCountryCode()
+{</p>
+<blockquote>
+<div>return $this-&gt;countryCode;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param string $language</li>
+</ul>
+<p class="last"><a href="#id61"><span class="problematic" id="id62">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setLanguage($language)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;language&#8217;, $this-&gt;language, (string) $language);
+$this-&gt;language = (string) $language;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return string</li>
+</ul>
+<p class="last"><a href="#id63"><span class="problematic" id="id64">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getLanguage()
+{</p>
+<blockquote>
+<div>return $this-&gt;language;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;param double $percentage</li>
+</ul>
+<p class="last"><a href="#id65"><span class="problematic" id="id66">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function setPercentage($percentage)
+{</p>
+<blockquote>
+<div>$this-&gt;propertyChanged(&#8216;percentage&#8217;, $this-&gt;percentage, (double) $percentage);
+$this-&gt;percentage = (double) $percentage;</div></blockquote>
+<p>}</p>
+<dl class="docutils">
+<dt>/**</dt>
+<dd><ul class="first simple">
+<li>&#64;return double</li>
+</ul>
+<p class="last"><a href="#id67"><span class="problematic" id="id68">*</span></a>/</p>
+</dd>
+</dl>
+<p>public function getPercentage()
+{</p>
+<blockquote>
+<div>return $this-&gt;percentage;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id69">
+<h3>1.14.3&nbsp;&nbsp;&nbsp;}<a class="headerlink" href="#id69" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On a maintenant les repository et les entitées correspondantes, on va pouvoir faire des requêtes.</p>
+</div>
+</div>
+<div class="section" id="requete-simple-pour-verifier-le-bon-fonctionnement">
+<h2>1.15&nbsp;&nbsp;&nbsp;Requête simple pour vérifier le bon fonctionnement<a class="headerlink" href="#requete-simple-pour-verifier-le-bon-fonctionnement" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans <cite>DefaultController::indexAction</cite> :
+`
+$city = $this-&gt;get(&#8216;ting&#8217;)-&gt;get(&#8216;AppBundleRepositoryCity&#8217;)-&gt;get([&#8216;name&#8217; =&gt; &#8216;Paris&#8217;]);
+dump($city);
+`</p>
+</div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+<footer role="contentinfo" class="ccmcss_footer ccmcss_footer--dark">
+    <ul class="toollinks">
+        <li><a href="http://www.ccmbenchmark.com/advertising/fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="http://www.ccmbenchmark.com/institut/contact/information">Contact</a></li>
+        <li><a href="http://benchmail.benchmark.fr/magazine/archive_406_1.html">Press</a></li>
+        <li><a href="http://www.journaldunet.com/donneesperso.shtml">Données personnelles</a></li>
+        <li><a href="http://www.ccmbenchmark.com/mentions-legales">Mentions légales</a></li>
+        <li><a href="http://www.ccmbenchmark.com/">&copy; 2015 CCM Benchmark</a></li>
+    </ul>
+    <div class="logo">
+        <a href="#">
+            <hgroup>
+                <span>CCM Benchmark Group</span>
+            </hgroup>
+        </a>
+    </div>
+    <div class="brands">
+        <a href="http://www.commentcamarche.net/" class="group_ccm" original-title="commentçamarche.net"></a>
+        <a href="http://www.journaldunet.com/" class="group_jdn" original-title="Le Journal du Net"></a>
+        <a href="http://droit-finances.commentcamarche.net/" class="group_df" original-title="Droit-finances.net"></a>
+        <a href="http://www.journaldesfemmes.com/" class="group_jdf" original-title="Journal des femmes"></a>
+        <a href="http://www.linternaute.com/" class="group_linter" original-title="linternaute.com"></a>
+        <a href="http://copainsdavant.linternaute.com/" class="group_copains" original-title="Copains d'avant"></a>
+        <a href="http://sante-medecine.commentcamarche.net/" class="group_ms" original-title="Santé-médecine.net"></a>
+    </div>
+    <p class="foot_links">
+        <a href="http://www.linternaute.com/voyage/">Voyage</a>,
+        <a href="http://www.linternaute.com/loisirs/">Loisirs</a>,
+        <a href="http://www.linternaute.com/restaurant/">Restos</a>,
+        <a href="http://www.linternaute.com/cinema/">Cinéma</a>,
+        <a href="http://www.linternaute.com/bricolage/">Bricolage</a>,
+        <a href="http://www.linternaute.com/argent/">Argent</a>,
+        <a href="http://deco.journaldesfemmes.com/">Décoration</a>,
+        <a href="http://cuisine.journaldesfemmes.com/">Cuisine</a>,
+        <a href="http://www.linternaute.com/auto/">Auto</a>,
+        <a href="http://sante.journaldesfemmes.com/">Santé</a>,
+        <a href="http://www.linternaute.com/homme/">Homme</a>,
+        <a href="http://www.linternaute.com/actualite/">Actualités</a>,
+        <a href="http://www.commentcamarche.net/">High-tech</a>,
+        <a href="http://www.journaldunet.com/">Entreprise</a>,
+        <a href="http://expeert.com/fr/">Expeert</a>
+    </p>
+</footer>
+
+</div>
+
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Ting docs</span>
+      v: 3.x
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Language</dt>
+            
+            <dd><a href="/ting/doc/3.x/en/index.html">en</a></dd>
+            
+            <dd><a href="/ting/doc/3.x/fr/index.html">fr</a></dd>
+            
+        </dl>
+        <dl>
+            <dt>Versions</dt>
+            
+            <dd><a href="/ting/doc/2.x/fr/">2.x</a></dd>
+            
+            <dd><a href="/ting/doc/3.x/fr/">3.x</a></dd>
+            
+        </dl>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+    };
+</script>
+<script type="text/javascript" src="_static/jquery.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/translations.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="_static/js/theme.js"></script>
+
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        SphinxRtdTheme.StickyNav.enable();
+    });
+</script>
+ 
+
+</body>
+</html>

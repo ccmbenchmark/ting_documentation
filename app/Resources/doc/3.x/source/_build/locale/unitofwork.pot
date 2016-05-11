@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, CCM Benchmark Group
+# This file is distributed under the same license as the ting package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-22 11:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../unitofwork.rst:5
+msgid "L'unitOfWork"
+msgstr ""
+
+#: ../../unitofwork.rst:8
+msgid "Au sujet de l'unitOfWork"
+msgstr ""
+
+#: ../../unitofwork.rst:9
+msgid "L'unitOfWork a pour rôle de tracker les changements des objets afin de les persister en base de données."
+msgstr ""
+
+#: ../../unitofwork.rst:12
+msgid "Fonctionnement interne"
+msgstr ""
+
+#: ../../unitofwork.rst:13
+msgid "L'unitOfWork initialise dans tous les objets \"managed\" une propriétée ``tingUUID`` qui ne doit en aucun cas être altérée par l'utilisateur."
+msgstr ""
+
+#: ../../unitofwork.rst:16
+msgid "Un objet \"managed\" est un objet qui existe déjà en base et qui provoquera une requête UPDATE lorsque l'on demandera à ce qu'il soit persisté."
+msgstr ""
+
+#: ../../unitofwork.rst:19
+msgid "Principe"
+msgstr ""
+
+#: ../../unitofwork.rst:20
+msgid "On demande à l'unitOfWork de persister les données, que ça soit pour une mise à jour, ou une suppression."
+msgstr ""
+
+#: ../../unitofwork.rst:22
+msgid "On empile généralement les ordres dans la file d'attente de l'unitOfWork puis on lui demande de traiter l'ensemble d'une traite."
+msgstr ""
+
+#: ../../unitofwork.rst:33
+msgid "Particularités"
+msgstr ""
+
+#: ../../unitofwork.rst:34
+msgid "Que ça soit pour persister la mise à jour ou l'insertion d'une entité il faut utiliser ``pushSave``."
+msgstr ""
+
+#: ../../unitofwork.rst:36
+msgid "Lors de l'insertion d'une entité, si celle-ci à une propriété de configuré via les metadata en tant que autoincrement alors l'entité aura cette valeur d'initialisé avec l'autoincrement délivré par la base de données."
+msgstr ""
+
+#: ../../unitofwork.rst:40
+msgid "Remarques pour les batchs"
+msgstr ""
+
+#: ../../unitofwork.rst:41
+msgid "Lors de traitement sur un grand nombre d'objet il est impératif de détacher les objets dont on a plus l'usage afin que l'unitOfWork libère de la mémoire :"
+msgstr ""
+
+#: ../../unitofwork.rst:48
+msgid "On peut aussi détacher tous les objets lorsque ceux-ci ont été persistés :"
+msgstr ""
+
