@@ -57,9 +57,8 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+            <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -72,11 +71,6 @@
             
             
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Les entités</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
@@ -133,20 +127,12 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                
-
- 
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
+                <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>3&nbsp;&nbsp;&nbsp;Le Repository</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
         
       </li>
   </ul>
@@ -165,7 +151,7 @@ votre objet en base de données.</p>
 <div class="section" id="creation-des-metadata">
 <h2>3.2&nbsp;&nbsp;&nbsp;Création des Metadata<a class="headerlink" href="#creation-des-metadata" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme un exemple est plus parlant qu&#8217;un long discours :</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
@@ -223,7 +209,7 @@ votre objet en base de données.</p>
 </dl>
 <p>Le type <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code> sont un peu particuliers, car il s&#8217;agit de types considérés complexes et qui acceptent
 donc d&#8217;être sérializés/désérializés via des options :</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>               <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
@@ -235,7 +221,7 @@ donc d&#8217;être sérializés/désérializés via des options :</p>
 </div>
 <p>Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.</p>
 <p>Vous pouvez injecter votre propre serializer :</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
@@ -256,19 +242,19 @@ donc d&#8217;être sérializés/désérializés via des options :</p>
 <h2>3.3&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas.
 Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquery</span></code>.</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ou</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_INSERT</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_INSERT</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ou</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_UPDATE</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_UPDATE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ou</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_DELETE</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_DELETE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Documentation disponible sur <a class="reference external" href="https://github.com/auraphp/Aura.SqlQuery">https://github.com/auraphp/Aura.SqlQuery</a></p>
@@ -278,25 +264,25 @@ Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquer
 <p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
 <h3>3.4.1&nbsp;&nbsp;&nbsp;Trouver un objet par clé primaire<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="tous-les-objets">
 <h3>3.4.2&nbsp;&nbsp;&nbsp;Tous les objets<a class="headerlink" href="#tous-les-objets" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
 <h3>3.4.3&nbsp;&nbsp;&nbsp;Un objet d&#8217;après une ou plusieurs propriété(s) du modèle<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
 <h3>3.4.4&nbsp;&nbsp;&nbsp;Une collection d&#8217;objet d&#8217;après une ou plusieurs propriété(s) du modèle<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
