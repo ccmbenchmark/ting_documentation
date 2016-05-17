@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -71,12 +72,17 @@
             
             
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">3&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3&nbsp;&nbsp;&nbsp;Repository</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-repository">3.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-des-metadata">3.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#querybuilder">3.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
@@ -127,12 +133,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>3&nbsp;&nbsp;&nbsp;Repository</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -150,7 +164,7 @@
 <div class="section" id="creation-des-metadata">
 <h2>3.2&nbsp;&nbsp;&nbsp;Creating Metadata<a class="headerlink" href="#creation-des-metadata" title="Permalink to this headline">¶</a></h2>
 <p>As an example speaks louder than words:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Serializer\SerializerFactoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
@@ -207,7 +221,7 @@
 </dd>
 </dl>
 <p>The type <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> and <code class="docutils literal"><span class="pre">json</span></code> are a bit special because they are dependent of database so they can be serialized / deserialized with some options:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>               <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
@@ -219,7 +233,7 @@
 </div>
 <p>Please take a look at the source code of each Serializer to see available options.</p>
 <p>You can inject your own serializer:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
@@ -239,19 +253,19 @@
 <div class="section" id="querybuilder">
 <h2>3.3&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Permalink to this headline">¶</a></h2>
 <p>We can need chaining queries, a QueryBuilder can be used. Ting provide it through <code class="docutils literal"><span class="pre">aura/sqlquery</span></code>.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_INSERT</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_INSERT</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_UPDATE</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_UPDATE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_DELETE</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_DELETE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Documentation available on <a class="reference external" href="https://github.com/auraphp/Aura.SqlQuery">https://github.com/auraphp/Aura.SqlQuery</a></p>
@@ -261,25 +275,25 @@
 <p>The Repository provides several methods to perform common queries easily.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
 <h3>3.4.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="tous-les-objets">
 <h3>3.4.2&nbsp;&nbsp;&nbsp;All items<a class="headerlink" href="#tous-les-objets" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
 <h3>3.4.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
 <h3>3.4.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>

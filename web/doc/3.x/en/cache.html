@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -71,6 +72,11 @@
             
             
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
@@ -99,7 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">5.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">6&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6&nbsp;&nbsp;&nbsp;Cache</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-cache">6.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requete-simple">6.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requete-preparee">6.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
@@ -127,12 +133,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>6&nbsp;&nbsp;&nbsp;Cache</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -149,9 +163,9 @@
 </div>
 <div class="section" id="requete-simple">
 <h2>6.2&nbsp;&nbsp;&nbsp;Simple query<a class="headerlink" href="#requete-simple" title="Permalink to this headline">¶</a></h2>
-<p>A query intended to use the cache is done by retrieving the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> from the <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>A query intended to use the cache is done by retrieving the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> from the <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>To proceed, just call the object and specify the duration it should remain in the cache and the cache key:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -169,9 +183,9 @@
 </div>
 <div class="section" id="requete-preparee">
 <h2>6.3&nbsp;&nbsp;&nbsp;Prepared query<a class="headerlink" href="#requete-preparee" title="Permalink to this headline">¶</a></h2>
-<p>For a prepared statement you must retrieve the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> from the <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>For a prepared statement you must retrieve the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> from the <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>To proceed, just call the object and specify the duration it should remain in the cache and the cache key:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>

@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -71,6 +72,11 @@
             
             
             <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Les entités</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
@@ -83,7 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">3.4&nbsp;&nbsp;&nbsp;Requêtes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">4&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-des-hydrateurs">4.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">4.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">4.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
@@ -127,12 +133,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>4&nbsp;&nbsp;&nbsp;Les hydrateurs</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -145,13 +159,13 @@
 <div class="section" id="au-sujet-des-hydrateurs">
 <h2>4.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs<a class="headerlink" href="#au-sujet-des-hydrateurs" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L&#8217;hydrateur va être chargé de transformer le résultat d&#8217;une requête SQL dans les objets qui ont été configurés dans les metadata
-par l&#8217;intermédiaire du <a class="reference internal" href="repository.html"><em>Repository</em></a></p>
+par l&#8217;intermédiaire du <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a></p>
 </div>
 <div class="section" id="l-hydrateur-par-defaut">
 <h2>4.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut<a class="headerlink" href="#l-hydrateur-par-defaut" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L&#8217;hydrateur par défaut va retourner pour chaque ligne un tableau associatif avec pour clé le nom de la table (ou l&#8217;alias utilisé)
 et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux metadata.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -171,7 +185,7 @@ et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux met
 </pre></div>
 </div>
 <p>La collection retournée est composée de lignes structurées ainsi :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
@@ -189,7 +203,7 @@ et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux met
 <p>L&#8217;hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l&#8217;on fait une requête qui n&#8217;a pour but que de retourner
 un objet, il n&#8217;est pas des plus appropriés.</p>
 <p>Vous pouvez injecter <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code> qui conviendra mieux à votre besoin.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -221,7 +235,7 @@ un objet, il n&#8217;est pas des plus appropriés.</p>
 d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(price)</span></code> ou une colonne qui n&#8217;a pas été mappée comme <code class="docutils literal"><span class="pre">my_extra_column</span></code> l&#8217;hydrateur va créer un objet
 <code class="docutils literal"><span class="pre">stdClass</span></code> avec des propriétés correspondant à ces colonnes.</p>
 <p>Cet objet <code class="docutils literal"><span class="pre">stdClass</span></code> est accessible dans la clée 0 du tableau retourné.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -239,7 +253,7 @@ d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(
 </pre></div>
 </div>
 <p>La collection retournée est composée de lignes structurées ainsi :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">total</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">43</span><span class="p">,</span>
@@ -256,7 +270,7 @@ d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(
 <h2>4.5&nbsp;&nbsp;&nbsp;Mapper des données sans metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans le cas d&#8217;une colonne d&#8217;aggrégation, on peut souhaiter la mapper dans un objet.
 Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books</span></code> dans mon model User via la méthode <code class="docutils literal"><span class="pre">setNbBooks</span></code> il suffit de faire :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -279,10 +293,10 @@ Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books
 </pre></div>
 </div>
 <p>La collection retournée est composée de lignes structurées ainsi :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">nbBooks</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span>
     <span class="p">)</span>
   <span class="p">]</span>
@@ -294,7 +308,7 @@ Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books
 <p>Pour rappel l&#8217;action de déserializer consiste à transformer un type de base données dans un type PHP.
 Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on peut vouloir transformer la date en objet
 <code class="docutils literal"><span class="pre">Datetime</span></code>.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -318,13 +332,13 @@ Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on 
 </pre></div>
 </div>
 <p>La collection retournée est composée de lignes structurées ainsi :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">fetchedDate</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Datetime</span><span class="p">(</span><span class="s2">&quot;2016-01-13 10:41:36&quot;</span><span class="p">)</span>
     <span class="p">),</span>
     <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
     <span class="p">)</span>
   <span class="p">]</span>
 </pre></div>
@@ -334,7 +348,7 @@ Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on 
 <h2>4.7&nbsp;&nbsp;&nbsp;Composition d&#8217;objet<a class="headerlink" href="#composition-d-objet" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut vouloir faire de la composition d&#8217;objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
 Pour mapper l&#8217;objet <code class="docutils literal"><span class="pre">Country</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">co</span></code>) dans mon model <code class="docutils literal"><span class="pre">City</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">cit</span></code>) via la méthode <code class="docutils literal"><span class="pre">setCountry</span></code> il suffit de faire :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -357,10 +371,10 @@ Pour mapper l&#8217;objet <code class="docutils literal"><span class="pre">Count
 </pre></div>
 </div>
 <p>La collection retournée est composée de lignes structurées ainsi :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;cit&#39;</span> <span class="o">=&gt;</span> <span class="nx">City</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">country</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Country</span><span class="p">(</span>
         <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span>
       <span class="p">)</span>

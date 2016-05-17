@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -76,7 +77,7 @@
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2&nbsp;&nbsp;&nbsp;Repository</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a></li>
@@ -131,12 +132,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>2&nbsp;&nbsp;&nbsp;Repository</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -154,7 +163,7 @@
 <div class="section" id="creation-des-metadata">
 <h2>2.2&nbsp;&nbsp;&nbsp;Creating Metadata<a class="headerlink" href="#creation-des-metadata" title="Permalink to this headline">¶</a></h2>
 <p>As an example speaks louder than words:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">initMetadata</span><span class="p">(</span><span class="nx">SerializerFactoryInterface</span> <span class="nv">$serializerFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">initMetadata</span><span class="p">(</span><span class="nx">SerializerFactoryInterface</span> <span class="nv">$serializerFactory</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$options</span> <span class="o">=</span> <span class="p">[])</span>
 <span class="p">{</span>
     <span class="nv">$metadata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metadata</span><span class="p">(</span><span class="nv">$serializerFactory</span><span class="p">);</span>
 
@@ -201,7 +210,7 @@
 </dd>
 </dl>
 <p>The type bool, datetime and json are a bit special because they are dependent of database so they can be serialized / deserialized with some options:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>               <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
@@ -213,7 +222,7 @@
 </div>
 <p>Please take a look at the source code of each Serializer to see available options.</p>
 <p>You can inject your own serializer:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nx">addField</span><span class="p">([</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
@@ -235,25 +244,25 @@
 <p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
 <h3>2.3.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="tous-les-objets">
 <h3>2.3.2&nbsp;&nbsp;&nbsp;All items<a class="headerlink" href="#tous-les-objets" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
 <h3>2.3.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
 <h3>2.3.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>

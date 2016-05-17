@@ -41,7 +41,7 @@
     
     <link rel="top" title="ting 1 documentation" href="index.html"/>
     <link rel="next" title="3   Repository" href="repository.html"/>
-    <link rel="prev" title="Ting - Documentation" href="index.html"/> 
+    <link rel="prev" title="1   Entities" href="entity.html"/> 
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -71,7 +72,12 @@
             
             
             <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
 </ul>
@@ -127,12 +133,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>2&nbsp;&nbsp;&nbsp;Queries</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -146,9 +160,9 @@
 <h2>2.1&nbsp;&nbsp;&nbsp;Perform a read query<a class="headerlink" href="#effectuer-une-requete-de-lecture" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="l-objet-query">
 <h3>2.1.1&nbsp;&nbsp;&nbsp;The Query object<a class="headerlink" href="#l-objet-query" title="Permalink to this headline">¶</a></h3>
-<p>A query is done by retrieving the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code> from the <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>A query is done by retrieving the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code> from the <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>To do this, just call:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -165,7 +179,7 @@
 <div class="section" id="les-parametres">
 <h3>2.1.2&nbsp;&nbsp;&nbsp;Parameters<a class="headerlink" href="#les-parametres" title="Permalink to this headline">¶</a></h3>
 <p>To define dynamic parameters in the query call the method <code class="docutils literal"><span class="pre">setParams</span></code> which takes as argument an associative array:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -183,7 +197,7 @@
 <div class="section" id="executer-la-requete">
 <h3>2.1.3&nbsp;&nbsp;&nbsp;Perform the query<a class="headerlink" href="#executer-la-requete" title="Permalink to this headline">¶</a></h3>
 <p>To fetch the data use the method <code class="docutils literal"><span class="pre">query</span></code>:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -202,7 +216,7 @@
 <div class="section" id="recuperer-les-resultats">
 <h3>2.1.4&nbsp;&nbsp;&nbsp;Get the output<a class="headerlink" href="#recuperer-les-resultats" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">query</span></code> method returns an object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\Collection</span></code>. This object is an <code class="docutils literal"><span class="pre">Iterator</span></code>, you can retrieve the results with an iteration:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -224,11 +238,11 @@
 </div>
 <div class="section" id="explication-sur-le-format-retourne">
 <h3>2.1.5&nbsp;&nbsp;&nbsp;Details about the output format<a class="headerlink" href="#explication-sur-le-format-retourne" title="Permalink to this headline">¶</a></h3>
-<p>See the documentation about the <a class="reference internal" href="hydrator.html"><em>hydrators</em></a></p>
+<p>See the documentation about the <a class="reference internal" href="hydrator.html"><span class="doc">hydrators</span></a></p>
 </div>
 <div class="section" id="format-de-retour-simplifie-pour-des-requetes-sans-jointures">
 <h3>2.1.6&nbsp;&nbsp;&nbsp;Simplified output format for queries without joins<a class="headerlink" href="#format-de-retour-simplifie-pour-des-requetes-sans-jointures" title="Permalink to this headline">¶</a></h3>
-<p>See the documentation about the <a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><em>hydrator for a single object</em></a></p>
+<p>See the documentation about the <a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><span class="std std-ref">hydrator for a single object</span></a></p>
 </div>
 <div class="section" id="compter-les-elements-d-une-collection">
 <h3>2.1.7&nbsp;&nbsp;&nbsp;Counting items in a collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Permalink to this headline">¶</a></h3>
@@ -237,7 +251,7 @@
 <div class="section" id="executer-une-requete-sur-le-master">
 <h3>2.1.8&nbsp;&nbsp;&nbsp;Perform a query on the master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Permalink to this headline">¶</a></h3>
 <p>A read query will be made by default on one of the configured slaves (when some slaves have been configured), if you need to perform your query on the master, then you must call the method <code class="docutils literal"><span class="pre">selectMaster</span></code>:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -260,7 +274,7 @@
 <div class="section" id="effectuer-une-requete-d-ecriture">
 <h2>2.2&nbsp;&nbsp;&nbsp;Perform a write query<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Permalink to this headline">¶</a></h2>
 <p>The logic is the same as for a read request. Except that you need to call the method <code class="docutils literal"><span class="pre">execute</span></code> on the object <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code></p>
-<div class="highlight-php"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
