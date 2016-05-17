@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -94,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">5&nbsp;&nbsp;&nbsp;Le cache</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5&nbsp;&nbsp;&nbsp;Le cache</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-cache">5.1&nbsp;&nbsp;&nbsp;Au sujet du cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requete-simple">5.2&nbsp;&nbsp;&nbsp;Requête simple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requete-preparee">5.3&nbsp;&nbsp;&nbsp;Requête préparée</a></li>
@@ -131,12 +132,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>5&nbsp;&nbsp;&nbsp;Le cache</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -154,9 +163,9 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-simple">
 <h2>5.2&nbsp;&nbsp;&nbsp;Requête simple<a class="headerlink" href="#requete-simple" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet CCMBenchmark\Ting\Query\Cached\Query via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet CCMBenchmark\Ting\Query\Cached\Query via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
 </pre></div>
@@ -164,9 +173,9 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-preparee">
 <h2>5.3&nbsp;&nbsp;&nbsp;Requête préparée<a class="headerlink" href="#requete-preparee" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour une requête préparée il faut récupérer l&#8217;objet CCMBenchmark\Ting\Query\Cached\PreparedQuery via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+<p>Pour une requête préparée il faut récupérer l&#8217;objet CCMBenchmark\Ting\Query\Cached\PreparedQuery via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
 </pre></div>
@@ -247,9 +256,9 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
         <dl>
             <dt>Versions</dt>
             
-            <dd><a href="/ting/doc/2.7/fr/">2.x</a></dd>
+            <dd><a href="/ting/doc/2.x/fr/">2.x</a></dd>
             
-            <dd><a href="/ting/doc/3.0/fr/">3.x</a></dd>
+            <dd><a href="/ting/doc/3.x/fr/">3.x</a></dd>
             
         </dl>
     </div>

@@ -57,8 +57,9 @@
             
             <a href="/ting/" class="fa fa-home"> ting</a>
             
-            <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+            
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -71,7 +72,7 @@
             
             
             <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">1&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
 </ul>
@@ -131,12 +132,20 @@
         <div class="wy-nav-content">
             
             <div class="rst-content">
-                <div role="navigation" aria-label="breadcrumbs navigation">
+                
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
     <li>1&nbsp;&nbsp;&nbsp;Les requêtes</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -151,9 +160,9 @@
 <div class="section" id="l-objet-query">
 <h3>1.1.1&nbsp;&nbsp;&nbsp;L&#8217;objet Query<a class="headerlink" href="#l-objet-query" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une requête s&#8217;effectue en récupérant l&#8217;objet CCMBenchmark\Ting\Query\Query
-via le <a class="reference internal" href="repository.html"><em>Repository</em></a>.</p>
+via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -161,7 +170,7 @@ via le <a class="reference internal" href="repository.html"><em>Repository</em><
 <h3>1.1.2&nbsp;&nbsp;&nbsp;Les paramètres<a class="headerlink" href="#les-parametres" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour mettre des paramètres dynamiques dans la requête il faut utiliser la méthode
 &#8220;setParams&#8221; qui prend en argument un tableau associatif :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
@@ -169,7 +178,7 @@ via le <a class="reference internal" href="repository.html"><em>Repository</em><
 <div class="section" id="executer-la-requete">
 <h3>1.1.3&nbsp;&nbsp;&nbsp;Exécuter la requête<a class="headerlink" href="#executer-la-requete" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour retourner les données de lecture il faut utiliser la méthode &#8220;query&#8221; :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
 </pre></div>
@@ -179,7 +188,7 @@ via le <a class="reference internal" href="repository.html"><em>Repository</em><
 <h3>1.1.4&nbsp;&nbsp;&nbsp;Récupérer les résultats<a class="headerlink" href="#recuperer-les-resultats" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La méthode &#8220;query&#8221; retourne un objet CCMBenchmark\Ting\Repository\Collection.
 Cet objet est un Iterator, vous pouvez donc récupérer les résultats de cette façon :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM user WHERE name = :name&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">();</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span> <span class="k">as</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
@@ -190,11 +199,11 @@ Cet objet est un Iterator, vous pouvez donc récupérer les résultats de cette 
 </div>
 <div class="section" id="explication-sur-le-format-retourne">
 <h3>1.1.5&nbsp;&nbsp;&nbsp;Explication sur le format retourné<a class="headerlink" href="#explication-sur-le-format-retourne" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Voir la documentation concernant les <a class="reference internal" href="hydrator.html"><em>hydrateurs</em></a></p>
+<p>Voir la documentation concernant les <a class="reference internal" href="hydrator.html"><span class="doc">hydrateurs</span></a></p>
 </div>
 <div class="section" id="format-de-retour-simplifie-pour-des-requetes-sans-jointures">
 <h3>1.1.6&nbsp;&nbsp;&nbsp;Format de retour simplifié pour des requêtes sans jointures<a class="headerlink" href="#format-de-retour-simplifie-pour-des-requetes-sans-jointures" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Voir la documentation concernant l&#8217;<a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><em>hydration pour un seul objet</em></a></p>
+<p>Voir la documentation concernant l&#8217;<a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><span class="std std-ref">hydration pour un seul objet</span></a></p>
 </div>
 <div class="section" id="compter-les-elements-d-une-collection">
 <h3>1.1.7&nbsp;&nbsp;&nbsp;Compter les éléments d&#8217;une collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Lien permanent vers ce titre">¶</a></h3>
@@ -204,7 +213,7 @@ Cet objet est un Iterator, vous pouvez donc récupérer les résultats de cette 
 <h3>1.1.8&nbsp;&nbsp;&nbsp;Exécuter une requête sur le master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une requête de lecture s&#8217;effectuera par défaut sur un des slaves configurés (si des slaves ont été configurés), si vous avez besoin
 d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthode &#8220;selectMaster&#8221; :</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">selectMaster</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -218,7 +227,7 @@ d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthod
 <h2>1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La logique reste la même que pour une requête de lecture, à quelques différences près.
 Il faut appeler la méthode &#8220;execute&#8221; sur l&#8217;objet CCMBenchmark\Ting\Query\Query</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -298,9 +307,9 @@ Il faut appeler la méthode &#8220;execute&#8221; sur l&#8217;objet CCMBenchmark
         <dl>
             <dt>Versions</dt>
             
-            <dd><a href="/ting/doc/2.7/fr/">2.x</a></dd>
+            <dd><a href="/ting/doc/2.x/fr/">2.x</a></dd>
             
-            <dd><a href="/ting/doc/3.0/fr/">3.x</a></dd>
+            <dd><a href="/ting/doc/3.x/fr/">3.x</a></dd>
             
         </dl>
     </div>
