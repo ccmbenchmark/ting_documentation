@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 11:25+0200\n"
+"POT-Creation-Date: 2016-06-02 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgid "Compter les éléments d'une collection"
 msgstr ""
 
 #: ../../query.rst:113
-msgid "Il faut savoir qu'une Collection implémente l'interface standard Countable. Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : ``count($collection);``"
+msgid "Il faut savoir qu'une ``Collection`` implémente l'interface standard ``Countable``. Vous pouvez donc savoir combien elle a d'éléments comme vous le faites pour un tableau PHP : ``count($collection)``"
 msgstr ""
 
 #: ../../query.rst:117

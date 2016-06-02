@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 4
+    :start: 6
 
 Les hydrateurs
 ==============
