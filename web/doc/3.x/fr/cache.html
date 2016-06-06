@@ -165,17 +165,10 @@
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">7.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
 </li>
-<<<<<<< HEAD
 <li class="toctree-l1 current"><a class="current reference internal" href="#">8&nbsp;&nbsp;&nbsp;Le cache</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-cache">8.1&nbsp;&nbsp;&nbsp;Au sujet du cache</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requete-simple">8.2&nbsp;&nbsp;&nbsp;Requête simple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requete-preparee">8.3&nbsp;&nbsp;&nbsp;Requête préparée</a></li>
-=======
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6&nbsp;&nbsp;&nbsp;Le cache</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-cache">6.1&nbsp;&nbsp;&nbsp;Au sujet du cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requete-simple">6.2&nbsp;&nbsp;&nbsp;Requête simple</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requete-preparee">6.3&nbsp;&nbsp;&nbsp;Requête préparée</a></li>
->>>>>>> master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="composant-cache.html">9&nbsp;&nbsp;&nbsp;Le composant cache</a></li>
@@ -230,11 +223,7 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 <p>Le résultat de la requête stockée dans le cache n&#8217;est pas dépendant du système d&#8217;hydration utilisé.</p>
 </div>
 <div class="section" id="requete-simple">
-<<<<<<< HEAD
 <h2>8.2&nbsp;&nbsp;&nbsp;Requête simple<a class="headerlink" href="#requete-simple" title="Lien permanent vers ce titre">¶</a></h2>
-=======
-<h2>6.2&nbsp;&nbsp;&nbsp;Requête simple<a class="headerlink" href="#requete-simple" title="Lien permanent vers ce titre">¶</a></h2>
->>>>>>> master
 <p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
@@ -254,11 +243,7 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 </div>
 <div class="section" id="requete-preparee">
-<<<<<<< HEAD
 <h2>8.3&nbsp;&nbsp;&nbsp;Requête préparée<a class="headerlink" href="#requete-preparee" title="Lien permanent vers ce titre">¶</a></h2>
-=======
-<h2>6.3&nbsp;&nbsp;&nbsp;Requête préparée<a class="headerlink" href="#requete-preparee" title="Lien permanent vers ce titre">¶</a></h2>
->>>>>>> master
 <p>Pour une requête préparée il faut récupérer l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>

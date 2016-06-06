@@ -1,9 +1,5 @@
 .. sectnum::
-<<<<<<< HEAD
     :start: 3
-=======
-    :start: 1
->>>>>>> master
 
 Les entités
 ===========
