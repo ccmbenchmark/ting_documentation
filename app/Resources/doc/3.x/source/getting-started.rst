@@ -7,7 +7,7 @@ Utilisation sans framework
 Initialisation
 --------------
 
-Nous supposerons dans ce guide que vous avez déjà installé ``composer`` (https://getcomposer.org/)
+Nous supposerons dans ce guide que vous avez déjà installé `composer <https://getcomposer.org/>`_.
 Les sources pour cet example se situerons dans ``src/VendorName/ApplicationName`` il faut donc penser à bien ajouter
 ce chemin dans l'autoload du composer.json :
 
@@ -28,9 +28,9 @@ Il suffit d'ajouter en tant que dépendance Ting à notre projet :
 Initialisation de la base de données
 ------------------------------------
 
-Pour ce guide on utilise ``world database`` (http://downloads.mysql.com/docs/world.sql.gz) qu'il faut
+Pour ce guide on utilise `world database <http://downloads.mysql.com/docs/world.sql.gz>`_ qu'il faut
 installer dans une base de données MySQL.
-Vous pouvez vous référer à ce guide pour savoir comment procéder https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html
+Vous pouvez vous référer au `guide officiel <https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html>`_ pour savoir comment procéder.
 
 Création des repository
 -----------------------
@@ -71,14 +71,15 @@ La base de données ``world database`` à trois tables composées ainsi :
 | Percentage  | float(4, 1) |
 +-------------+-------------+
 
-Note : dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide
+.. note::
+
+    Dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide
 
 Création du repository City
 ---------------------------
 
-``src/VendorName/ApplicationName/Repository/City.php`` :
-
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/Repository/City.php
 
     <?php
 
@@ -139,9 +140,8 @@ Création du repository City
 Création du repository Country
 ------------------------------
 
-``src/VendorName/ApplicationName/Repository/Country.php`` :
-
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/Repository/Country.php
 
     <?php
 
@@ -200,9 +200,8 @@ Création du repository Country
 Création du repository CountryLanguage
 --------------------------------------
 
-``src/VendorName/ApplicationName/Repository/CountryLanguage.php`` :
-
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/Repository/CountryLanguage.php
 
     <?php
 
@@ -255,9 +254,8 @@ Création du repository CountryLanguage
 Configuration de la connexion à la base de données
 --------------------------------------------------
 
-On va maintenant configurer l'accès à la base de données. Ajouter le fichier ``src/VendorName/ApplicationName/bootstrap.php`` avec le contenu suivant :
-
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/bootstrap.php
 
     <?php
 
@@ -281,9 +279,10 @@ On va maintenant configurer l'accès à la base de données. Ajouter le fichier 
 Configuration pour indiquer l'emplacement des repository
 --------------------------------------------------------
 
-On configure l'emplacement des repository en ajoutant le contenu suivant dans ``src/VendorName/ApplicationName/bootstrap.php`` :
+On configure l'emplacement des repository en complétant le fichier ``bootstrap.php``
 
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/bootstrap.php
 
     <?php
 
@@ -294,12 +293,11 @@ On configure l'emplacement des repository en ajoutant le contenu suivant dans ``
 Création des entitées
 ---------------------
 
-Lorsque l'on a créé les repository, on a indiqué avec quel entité il travaille : ``$metadata->setEntity(\VendorName\ApplicationName\Entity\Country::class);``
+Lorsque l'on a créé les repository, on a indiqué avec quelle entité il travaille : ``$metadata->setEntity(\VendorName\ApplicationName\Entity\Country::class);``
 On va donc maintenant créer une entité pour chaque repository.
 
-``src/VendorName/ApplicationName/Entity/City.php`` :
-
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/Entity/City.php
 
     <?php
 
@@ -386,9 +384,9 @@ On va donc maintenant créer une entité pour chaque repository.
         }
     }
 
-``src/VendorName/ApplicationName/Entity/Country.php`` :
 
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/Entity/Country.php
 
     <?php
 
@@ -475,9 +473,9 @@ On va donc maintenant créer une entité pour chaque repository.
         }
     }
 
-``src/VendorName/ApplicationName/Entity/CountryLanguage.php`` :
 
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/Entity/CountryLanguage.php
 
     <?php
 
@@ -551,9 +549,8 @@ On a maintenant les repository et les entitées correspondantes, on va pouvoir f
 Vous pouvez maintenant utiliser Ting
 ------------------------------------
 
-``src/VendorName/ApplicationName/bootstrap.php`` :
-
 .. code-block:: php
+    :caption: src/VendorName/ApplicationName/bootstrap.php
 
     $debug = new \CCMBenchmark\Ting\Util\Debug();
 

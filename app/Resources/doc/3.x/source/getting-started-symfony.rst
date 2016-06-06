@@ -6,10 +6,7 @@ Utilisation avec Symfony 2.8
 
 Initialisation
 --------------
-Nous supposerons dans ce guide que vous avez déjà installé ``Symfony installer`` (http://symfony.com/download).
-
-Ainsi que ``composer`` (https://getcomposer.org/)
-
+Nous supposerons dans ce guide que vous avez déjà installé `Symfony installer <http://symfony.com/download>`_, ainsi que `composer <https://getcomposer.org/>`_
 Commencer par créer un nouveau projet : ``symfony new world_site 2.8``
 
 Supprimer les dépendances à Doctrine inutiles
@@ -46,13 +43,15 @@ Dans ``app/config/config.yml`` supprimer tout le bloc de configuration Doctrine 
 
 Retirer les librairies Doctrine :
 
-``composer remove doctrine/orm``
+.. code-block:: text
 
-``composer remove doctrine/doctrine-bundle``
+    composer remove doctrine/orm
+    composer remove doctrine/doctrine-bundle
+
 
 Installer Ting
 --------------
-Ting a besoin de PHP 5.5, donc il faut modifier `composer.json` et remplacer :
+Ting a besoin de PHP 5.5, donc il faut modifier ``composer.json`` et remplacer :
 
 .. code-block:: json
 
@@ -78,9 +77,9 @@ On peut maintenant installer Ting Bundle, qui permet d'utiliser Ting sur Symfony
 Initialisation de la base de données
 ------------------------------------
 
-Pour ce guide on utilise ``world database`` (http://downloads.mysql.com/docs/world.sql.gz) qu'il faut
+Pour ce guide on utilise `world database <http://downloads.mysql.com/docs/world.sql.gz>`_ qu'il faut
 installer dans une base de données MySQL.
-Vous pouvez vous référer à ce guide pour savoir comment procéder https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html
+Vous pouvez vous référer au `guide officiel <https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html>`_ pour savoir comment procéder
 
 Création des repository
 -----------------------
@@ -121,14 +120,15 @@ La base de données ``world database`` à trois tables composées ainsi :
 | Percentage  | float(4, 1) |
 +-------------+-------------+
 
-Note : dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide
+.. note::
+
+    Dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide
 
 Création du repository City
 ---------------------------
 
-Dans ``src/AppBundle/Repository`` ajouter un fichier nommé ``City.php`` avec le contenu suivant :
-
 .. code-block:: php
+    :caption: src/AppBundle/Repository/City.php
 
     <?php
 
@@ -189,9 +189,8 @@ Dans ``src/AppBundle/Repository`` ajouter un fichier nommé ``City.php`` avec le
 Création du repository Country
 ------------------------------
 
-Dans ``src/AppBundle/Repository`` ajouter un fichier nommé ``Country.php`` avec le contenu suivant :
-
 .. code-block:: php
+    :caption: src/AppBundle/Repository/Country.php
 
     <?php
 
@@ -250,9 +249,8 @@ Dans ``src/AppBundle/Repository`` ajouter un fichier nommé ``Country.php`` avec
 Création du repository CountryLanguage
 --------------------------------------
 
-Dans ``src/AppBundle/Repository`` ajouter un fichier nommé ``CountryLanguage.php`` avec le contenu suivant :
-
 .. code-block:: php
+    :caption: src/AppBundle/Repository/CountryLanguage.php
 
     <?php
 
@@ -305,9 +303,8 @@ Dans ``src/AppBundle/Repository`` ajouter un fichier nommé ``CountryLanguage.ph
 Configuration de la connexion à la base de données
 --------------------------------------------------
 
-On va maintenant configurer l'accès à la base de données. Dans ``app/config/config.yml`` il faut ajouter :
-
 .. code-block:: yaml
+    :caption: app/config/config.yml
 
     ting:
         connections:
@@ -319,12 +316,17 @@ On va maintenant configurer l'accès à la base de données. Dans ``app/config/c
                     password: ""
                     port:     3306
 
+.. note::
+
+    On nomme ici la connexion ``main`` on va l'utiliser ci-dessous lors de la configuration des repository.
+
 Configuration pour indiquer l'emplacement des repository
 --------------------------------------------------------
 
-On configure l'emplacement des repository dans ``app/config/config.yml`` :
+On configure l'emplacement des repository.
 
 .. code-block:: yaml
+    :caption: app/config/config.yml
 
     ting:
         repositories:
@@ -342,9 +344,8 @@ Création des entitées
 Lorsque l'on a créé les repository, on a indiqué avec quel entité il travaille : ``$metadata->setEntity('AppBundle\Entity\Country');``
 On va donc maintenant créer une entité pour chaque repository.
 
-Dans ``/src/AppBundle/Entity/City.php`` :
-
 .. code-block:: php
+    :caption: src/AppBundle/Entity/City.php
 
     <?php
 
@@ -431,9 +432,9 @@ Dans ``/src/AppBundle/Entity/City.php`` :
         }
     }
 
-Dans ``/src/AppBundle/Entity/Country.php`` :
 
 .. code-block:: php
+    :caption: src/AppBundle/Entity/Country.php
 
     <?php
 
@@ -520,9 +521,9 @@ Dans ``/src/AppBundle/Entity/Country.php`` :
         }
     }
 
-Dans ``/src/AppBundle/Entity/CountryLanguage.php`` :
 
 .. code-block:: php
+    :caption: src/AppBundle/Entity/CountryLanguage.php
 
     <?php
 

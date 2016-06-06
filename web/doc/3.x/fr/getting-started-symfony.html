@@ -16,6 +16,37 @@
         .highlight {
             background: #272822 !important;
         }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
+        }
     </style>
 
     
@@ -187,9 +218,8 @@
 <h1>2&nbsp;&nbsp;&nbsp;Utilisation avec Symfony 2.8<a class="headerlink" href="#utilisation-avec-symfony-2-8" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="initialisation">
 <h2>2.1&nbsp;&nbsp;&nbsp;Initialisation<a class="headerlink" href="#initialisation" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Nous supposerons dans ce guide que vous avez déjà installé <code class="docutils literal"><span class="pre">Symfony</span> <span class="pre">installer</span></code> (<a class="reference external" href="http://symfony.com/download">http://symfony.com/download</a>).</p>
-<p>Ainsi que <code class="docutils literal"><span class="pre">composer</span></code> (<a class="reference external" href="https://getcomposer.org/">https://getcomposer.org/</a>)</p>
-<p>Commencer par créer un nouveau projet : <code class="docutils literal"><span class="pre">symfony</span> <span class="pre">new</span> <span class="pre">world_site</span> <span class="pre">2.8</span></code></p>
+<p>Nous supposerons dans ce guide que vous avez déjà installé <a class="reference external" href="http://symfony.com/download">Symfony installer</a>, ainsi que <a class="reference external" href="https://getcomposer.org/">composer</a>
+Commencer par créer un nouveau projet : <code class="docutils literal"><span class="pre">symfony</span> <span class="pre">new</span> <span class="pre">world_site</span> <span class="pre">2.8</span></code></p>
 </div>
 <div class="section" id="supprimer-les-dependances-a-doctrine-inutiles">
 <h2>2.2&nbsp;&nbsp;&nbsp;Supprimer les dépendances à Doctrine inutiles<a class="headerlink" href="#supprimer-les-dependances-a-doctrine-inutiles" title="Lien permanent vers ce titre">¶</a></h2>
@@ -220,12 +250,14 @@
 </pre></div>
 </div>
 <p>Retirer les librairies Doctrine :</p>
-<p><code class="docutils literal"><span class="pre">composer</span> <span class="pre">remove</span> <span class="pre">doctrine/orm</span></code></p>
-<p><code class="docutils literal"><span class="pre">composer</span> <span class="pre">remove</span> <span class="pre">doctrine/doctrine-bundle</span></code></p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>composer remove doctrine/orm
+composer remove doctrine/doctrine-bundle
+</pre></div>
+</div>
 </div>
 <div class="section" id="installer-ting">
 <h2>2.3&nbsp;&nbsp;&nbsp;Installer Ting<a class="headerlink" href="#installer-ting" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ting a besoin de PHP 5.5, donc il faut modifier <cite>composer.json</cite> et remplacer :</p>
+<p>Ting a besoin de PHP 5.5, donc il faut modifier <code class="docutils literal"><span class="pre">composer.json</span></code> et remplacer :</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;platform&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;5.3.9&quot;</span>
@@ -246,9 +278,9 @@
 </div>
 <div class="section" id="initialisation-de-la-base-de-donnees">
 <h2>2.4&nbsp;&nbsp;&nbsp;Initialisation de la base de données<a class="headerlink" href="#initialisation-de-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour ce guide on utilise <code class="docutils literal"><span class="pre">world</span> <span class="pre">database</span></code> (<a class="reference external" href="http://downloads.mysql.com/docs/world.sql.gz">http://downloads.mysql.com/docs/world.sql.gz</a>) qu&#8217;il faut
+<p>Pour ce guide on utilise <a class="reference external" href="http://downloads.mysql.com/docs/world.sql.gz">world database</a> qu&#8217;il faut
 installer dans une base de données MySQL.
-Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="reference external" href="https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html">https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html</a></p>
+Vous pouvez vous référer au <a class="reference external" href="https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html">guide officiel</a> pour savoir comment procéder</p>
 </div>
 <div class="section" id="creation-des-repository">
 <h2>2.5&nbsp;&nbsp;&nbsp;Création des repository<a class="headerlink" href="#creation-des-repository" title="Lien permanent vers ce titre">¶</a></h2>
@@ -322,11 +354,15 @@ Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="r
 </tr>
 </tbody>
 </table>
-<p>Note : dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide</p>
+</div>
 </div>
 <div class="section" id="creation-du-repository-city">
 <h2>2.6&nbsp;&nbsp;&nbsp;Création du repository City<a class="headerlink" href="#creation-du-repository-city" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans <code class="docutils literal"><span class="pre">src/AppBundle/Repository</span></code> ajouter un fichier nommé <code class="docutils literal"><span class="pre">City.php</span></code> avec le contenu suivant :</p>
+<div class="literal-block-wrapper container" id="src-appbundle-repository-city-php">
+<div class="code-block-caption"><span class="caption-text">src/AppBundle/Repository/City.php</span><a class="headerlink" href="#src-appbundle-repository-city-php" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">AppBundle\Repository</span><span class="p">;</span>
@@ -384,9 +420,11 @@ Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="r
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="creation-du-repository-country">
 <h2>2.7&nbsp;&nbsp;&nbsp;Création du repository Country<a class="headerlink" href="#creation-du-repository-country" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans <code class="docutils literal"><span class="pre">src/AppBundle/Repository</span></code> ajouter un fichier nommé <code class="docutils literal"><span class="pre">Country.php</span></code> avec le contenu suivant :</p>
+<div class="literal-block-wrapper container" id="src-appbundle-repository-country-php">
+<div class="code-block-caption"><span class="caption-text">src/AppBundle/Repository/Country.php</span><a class="headerlink" href="#src-appbundle-repository-country-php" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">AppBundle\Repository</span><span class="p">;</span>
@@ -443,9 +481,11 @@ Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="r
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="creation-du-repository-countrylanguage">
 <h2>2.8&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage<a class="headerlink" href="#creation-du-repository-countrylanguage" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans <code class="docutils literal"><span class="pre">src/AppBundle/Repository</span></code> ajouter un fichier nommé <code class="docutils literal"><span class="pre">CountryLanguage.php</span></code> avec le contenu suivant :</p>
+<div class="literal-block-wrapper container" id="src-appbundle-repository-countrylanguage-php">
+<div class="code-block-caption"><span class="caption-text">src/AppBundle/Repository/CountryLanguage.php</span><a class="headerlink" href="#src-appbundle-repository-countrylanguage-php" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">AppBundle\Repository</span><span class="p">;</span>
@@ -496,9 +536,11 @@ Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="r
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="configuration-de-la-connexion-a-la-base-de-donnees">
 <h2>2.9&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données<a class="headerlink" href="#configuration-de-la-connexion-a-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On va maintenant configurer l&#8217;accès à la base de données. Dans <code class="docutils literal"><span class="pre">app/config/config.yml</span></code> il faut ajouter :</p>
+<div class="literal-block-wrapper container" id="app-config-config-yml">
+<div class="code-block-caption"><span class="caption-text">app/config/config.yml</span><a class="headerlink" href="#app-config-config-yml" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ting</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">connections</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">main</span><span class="p p-Indicator">:</span>
@@ -511,9 +553,16 @@ Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="r
 </pre></div>
 </div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On nomme ici la connexion <code class="docutils literal"><span class="pre">main</span></code> on va l&#8217;utiliser ci-dessous lors de la configuration des repository.</p>
+</div>
+</div>
 <div class="section" id="configuration-pour-indiquer-l-emplacement-des-repository">
 <h2>2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository<a class="headerlink" href="#configuration-pour-indiquer-l-emplacement-des-repository" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On configure l&#8217;emplacement des repository dans <code class="docutils literal"><span class="pre">app/config/config.yml</span></code> :</p>
+<p>On configure l&#8217;emplacement des repository.</p>
+<div class="literal-block-wrapper container" id="id1">
+<div class="code-block-caption"><span class="caption-text">app/config/config.yml</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ting</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">repositories</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">World</span><span class="p p-Indicator">:</span>
@@ -526,11 +575,13 @@ Vous pouvez vous référer à ce guide pour savoir comment procéder <a class="r
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="creation-des-entitees">
 <h2>2.11&nbsp;&nbsp;&nbsp;Création des entitées<a class="headerlink" href="#creation-des-entitees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Lorsque l&#8217;on a créé les repository, on a indiqué avec quel entité il travaille : <code class="docutils literal"><span class="pre">$metadata-&gt;setEntity('AppBundle\Entity\Country');</span></code>
 On va donc maintenant créer une entité pour chaque repository.</p>
-<p>Dans <code class="docutils literal"><span class="pre">/src/AppBundle/Entity/City.php</span></code> :</p>
+<div class="literal-block-wrapper container" id="src-appbundle-entity-city-php">
+<div class="code-block-caption"><span class="caption-text">src/AppBundle/Entity/City.php</span><a class="headerlink" href="#src-appbundle-entity-city-php" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">AppBundle\Entity</span><span class="p">;</span>
@@ -617,7 +668,9 @@ On va donc maintenant créer une entité pour chaque repository.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Dans <code class="docutils literal"><span class="pre">/src/AppBundle/Entity/Country.php</span></code> :</p>
+</div>
+<div class="literal-block-wrapper container" id="src-appbundle-entity-country-php">
+<div class="code-block-caption"><span class="caption-text">src/AppBundle/Entity/Country.php</span><a class="headerlink" href="#src-appbundle-entity-country-php" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">AppBundle\Entity</span><span class="p">;</span>
@@ -704,7 +757,9 @@ On va donc maintenant créer une entité pour chaque repository.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Dans <code class="docutils literal"><span class="pre">/src/AppBundle/Entity/CountryLanguage.php</span></code> :</p>
+</div>
+<div class="literal-block-wrapper container" id="src-appbundle-entity-countrylanguage-php">
+<div class="code-block-caption"><span class="caption-text">src/AppBundle/Entity/CountryLanguage.php</span><a class="headerlink" href="#src-appbundle-entity-countrylanguage-php" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">AppBundle\Entity</span><span class="p">;</span>
@@ -772,6 +827,7 @@ On va donc maintenant créer une entité pour chaque repository.</p>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 <p>On a maintenant les repository et les entitées correspondantes, on va pouvoir faire des requêtes.</p>
 </div>
