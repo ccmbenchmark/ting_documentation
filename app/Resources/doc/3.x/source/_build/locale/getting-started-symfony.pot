@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, CCM Benchmark Group
+# This file is distributed under the same license as the ting package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-06 09:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../getting-started-symfony.rst:5
+msgid "Utilisation avec Symfony 2.8"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:8
+msgid "Initialisation"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:9
+msgid "Nous supposerons dans ce guide que vous avez déjà installé `Symfony installer <http://symfony.com/download>`_, ainsi que `composer <https://getcomposer.org/>`_ Commencer par créer un nouveau projet : ``symfony new world_site 2.8``"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:13
+msgid "Supprimer les dépendances à Doctrine inutiles"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:14
+msgid "Ting remplace Doctrine, il faut donc retirer les références à Doctrine devenues inutiles."
+msgstr ""
+
+#: ../../getting-started-symfony.rst:16
+msgid "Dans le fichier ``app/AppKernel.php`` supprimer la ligne ``new Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle()``"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:18
+msgid "Dans ``app/config/config.yml`` supprimer tout le bloc de configuration Doctrine :"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:44
+msgid "Retirer les librairies Doctrine :"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:53
+msgid "Installer Ting"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:54
+msgid "Ting a besoin de PHP 5.5, donc il faut modifier ``composer.json`` et remplacer :"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:64
+msgid "Par"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:74
+msgid "On peut maintenant installer Ting Bundle, qui permet d'utiliser Ting sur Symfony : ``composer require ccmbenchmark/ting_bundle``"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:78
+msgid "Initialisation de la base de données"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:80
+msgid "Pour ce guide on utilise `world database <http://downloads.mysql.com/docs/world.sql.gz>`_ qu'il faut installer dans une base de données MySQL. Vous pouvez vous référer au `guide officiel <https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html>`_ pour savoir comment procéder"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:85
+msgid "Création des repository"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:87
+msgid "La base de données ``world database`` à trois tables composées ainsi :"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:90
+msgid "City"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:92
+msgid "ID"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:92
+#: ../../getting-started-symfony.rst:98
+#: ../../getting-started-symfony.rst:110
+msgid "int(11)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:94
+#: ../../getting-started-symfony.rst:106
+msgid "Name"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:94
+msgid "char(35)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:96
+#: ../../getting-started-symfony.rst:116
+msgid "CountryCode"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:96
+#: ../../getting-started-symfony.rst:116
+msgid "char(3)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:98
+#: ../../getting-started-symfony.rst:110
+msgid "Population"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:102
+msgid "Country"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:104
+msgid "Code"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:104
+msgid "int(3)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:106
+msgid "char(52)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:108
+msgid "Region"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:108
+msgid "char(26)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:114
+msgid "CountryLanguage"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:118
+msgid "Language"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:118
+msgid "char(30)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:120
+msgid "Percentage"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:120
+msgid "float(4, 1)"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:125
+msgid "Dans cet exemple nous ne prenons pas toutes les colonnes des tables pour alléger le guide"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:128
+msgid "Création du repository City"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+msgid "src/AppBundle/Repository/City.php"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:190
+msgid "Création du repository Country"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+msgid "src/AppBundle/Repository/Country.php"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:250
+msgid "Création du repository CountryLanguage"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+msgid "src/AppBundle/Repository/CountryLanguage.php"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:304
+msgid "Configuration de la connexion à la base de données"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:0
+msgid "app/config/config.yml"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:321
+msgid "On nomme ici la connection ``main`` on va l'utiliser ci-dessous lors de la configuration des repository."
+msgstr ""
+
+#: ../../getting-started-symfony.rst:324
+msgid "Configuration pour indiquer l'emplacement des repository"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:326
+msgid "On configure l'emplacement des repository."
+msgstr ""
+
+#: ../../getting-started-symfony.rst:342
+msgid "Création des entitées"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:344
+msgid "Lorsque l'on a créé les repository, on a indiqué avec quel entité il travaille : ``$metadata->setEntity('AppBundle\\Entity\\Country');`` On va donc maintenant créer une entité pour chaque repository."
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+msgid "src/AppBundle/Entity/City.php"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+msgid "src/AppBundle/Entity/Country.php"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:0
+msgid "src/AppBundle/Entity/CountryLanguage.php"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:595
+msgid "On a maintenant les repository et les entitées correspondantes, on va pouvoir faire des requêtes."
+msgstr ""
+
+#: ../../getting-started-symfony.rst:598
+msgid "Vous pouvez maintenant utiliser Ting"
+msgstr ""
+
+#: ../../getting-started-symfony.rst:600
+msgid "Dans ``DefaultController::indexAction`` :"
+msgstr ""
+

@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, CCM Benchmark Group
+# This file is distributed under the same license as the ting package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ting 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-06 09:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../repository.rst:5
+msgid "Le Repository"
+msgstr ""
+
+#: ../../repository.rst:9
+msgid "Au sujet du Repository"
+msgstr ""
+
+#: ../../repository.rst:10
+msgid "Le Repository va faire le lien entre votre objet entité et votre base de données, par l'intermédiaire de l'objet ``Query``."
+msgstr ""
+
+#: ../../repository.rst:12
+msgid "Il est aussi responsable d'initialiser les ``Metadata`` qui concernent votre entité afin de savoir comment mapper votre objet en base de données."
+msgstr ""
+
+#: ../../repository.rst:17
+msgid "Création des Metadata"
+msgstr ""
+
+#: ../../repository.rst:18
+msgid "Comme un exemple est plus parlant qu'un long discours :"
+msgstr ""
+
+#: ../../repository.rst:63
+msgid "Quelques précisions :"
+msgstr ""
+
+#: ../../repository.rst:55
+msgid "fieldName correspond au nom de la propriété de votre entité"
+msgstr ""
+
+#: ../../repository.rst:56
+msgid "columnName correspond au nom de la colonne dans votre base de données"
+msgstr ""
+
+#: ../../repository.rst:63
+msgid "type correspond au type de votre variable avec comme valeur possibles :"
+msgstr ""
+
+#: ../../repository.rst:58
+msgid "``int``"
+msgstr ""
+
+#: ../../repository.rst:59
+msgid "``double``"
+msgstr ""
+
+#: ../../repository.rst:60
+msgid "``string``"
+msgstr ""
+
+#: ../../repository.rst:61
+msgid "``bool``"
+msgstr ""
+
+#: ../../repository.rst:62
+msgid "``datetime``"
+msgstr ""
+
+#: ../../repository.rst:63
+msgid "``json``"
+msgstr ""
+
+#: ../../repository.rst:65
+msgid "Le type ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent donc d'être sérializés/désérializés via des options :"
+msgstr ""
+
+#: ../../repository.rst:79
+msgid "Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles."
+msgstr ""
+
+#: ../../repository.rst:81
+msgid "Vous pouvez injecter votre propre serializer :"
+msgstr ""
+
+#: ../../repository.rst:94
+msgid "Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :"
+msgstr ""
+
+#: ../../repository.rst:93
+msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
+msgstr ""
+
+#: ../../repository.rst:94
+msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
+msgstr ""
+
+#: ../../repository.rst:97
+msgid "QueryBuilder"
+msgstr ""
+
+#: ../../repository.rst:99
+msgid "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas. Ting le fourni via ``aura/sqlquery``."
+msgstr ""
+
+#: ../../repository.rst:106
+#: ../../repository.rst:112
+#: ../../repository.rst:118
+msgid "ou"
+msgstr ""
+
+#: ../../repository.rst:124
+msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
+msgstr ""
+
+#: ../../repository.rst:127
+msgid "Requêtes"
+msgstr ""
+
+#: ../../repository.rst:129
+msgid "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples."
+msgstr ""
+
+#: ../../repository.rst:132
+msgid "Trouver un objet par clé primaire"
+msgstr ""
+
+#: ../../repository.rst:139
+msgid "Tous les objets"
+msgstr ""
+
+#: ../../repository.rst:146
+msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
+msgstr ""
+
+#: ../../repository.rst:153
+msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
+msgstr ""
+

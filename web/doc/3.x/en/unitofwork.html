@@ -9,12 +9,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>5   UnitOfWork &mdash; ting 1 documentation</title>
+    <title>7   UnitOfWork &mdash; ting 1 documentation</title>
     
 
     <style>
         .highlight {
             background: #272822 !important;
+        }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
         }
     </style>
 
@@ -40,8 +71,8 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <link rel="top" title="ting 1 documentation" href="index.html"/>
-    <link rel="next" title="6   Cache" href="cache.html"/>
-    <link rel="prev" title="4   About the hydrators" href="hydrator.html"/> 
+    <link rel="next" title="8   Cache" href="cache.html"/>
+    <link rel="prev" title="6   About the hydrators" href="hydrator.html"/> 
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -72,46 +103,82 @@
             
             
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="entity.html">1&nbsp;&nbsp;&nbsp;Entities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">1.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">1.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">1&nbsp;&nbsp;&nbsp;Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#initialisation">1.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installer-ting">1.2&nbsp;&nbsp;&nbsp;Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#initialisation-de-la-base-de-donnees">1.3&nbsp;&nbsp;&nbsp;Setup database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-repository">1.4&nbsp;&nbsp;&nbsp;Creating repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-city">1.5&nbsp;&nbsp;&nbsp;Creating City repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Creating Country repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Creating CountryLanguage repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Repositories settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Creating entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;You can now use Ting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="query.html">2&nbsp;&nbsp;&nbsp;Queries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">2.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">2.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started-symfony.html">2&nbsp;&nbsp;&nbsp;Getting started with Symfony 2.8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#initialisation">2.1&nbsp;&nbsp;&nbsp;Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#supprimer-les-dependances-a-doctrine-inutiles">2.2&nbsp;&nbsp;&nbsp;Delete Doctrine dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#installer-ting">2.3&nbsp;&nbsp;&nbsp;Install Ting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#initialisation-de-la-base-de-donnees">2.4&nbsp;&nbsp;&nbsp;Setup database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-des-repository">2.5&nbsp;&nbsp;&nbsp;Creating repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-city">2.6&nbsp;&nbsp;&nbsp;Creating City repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-country">2.7&nbsp;&nbsp;&nbsp;Creating Country repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-countrylanguage">2.8&nbsp;&nbsp;&nbsp;Creating CountryLanguage repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-de-la-connexion-a-la-base-de-donnees">2.9&nbsp;&nbsp;&nbsp;Database connection settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Repositories settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-des-entitees">2.11&nbsp;&nbsp;&nbsp;Creating entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#vous-pouvez-maintenant-utiliser-ting">2.12&nbsp;&nbsp;&nbsp;You can now use Ting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="repository.html">3&nbsp;&nbsp;&nbsp;Repository</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">3.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">3.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">3.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">3.4&nbsp;&nbsp;&nbsp;Queries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity.html">3&nbsp;&nbsp;&nbsp;Entities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">3.1&nbsp;&nbsp;&nbsp;About the entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="hydrator.html">4&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">4.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">4.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">4.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">4.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">4.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">4.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">4.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query.html">4&nbsp;&nbsp;&nbsp;Queries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">4.1&nbsp;&nbsp;&nbsp;Perform a read query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Perform a write query</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">5&nbsp;&nbsp;&nbsp;Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">5.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">5.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">5.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">5.4&nbsp;&nbsp;&nbsp;Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hydrator.html">6&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+</ul>
+</li>
+<<<<<<< HEAD
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#principe">7.2&nbsp;&nbsp;&nbsp;Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remarques-pour-les-batchs">7.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+=======
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-de-l-unitofwork">5.1&nbsp;&nbsp;&nbsp;About the unitofwork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#principe">5.2&nbsp;&nbsp;&nbsp;Principle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#remarques-pour-les-batchs">5.3&nbsp;&nbsp;&nbsp;Notes for batch process</a></li>
+>>>>>>> master
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cache.html">6&nbsp;&nbsp;&nbsp;Cache</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">6.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">6.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">6.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">8&nbsp;&nbsp;&nbsp;Cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#au-sujet-du-cache">8.1&nbsp;&nbsp;&nbsp;About the cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-simple">8.2&nbsp;&nbsp;&nbsp;Simple query</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html#requete-preparee">8.3&nbsp;&nbsp;&nbsp;Prepared query</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">7&nbsp;&nbsp;&nbsp;The cache component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="composant-cache.html">9&nbsp;&nbsp;&nbsp;The cache component</a></li>
 </ul>
 
             
@@ -143,7 +210,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>5&nbsp;&nbsp;&nbsp;UnitOfWork</li>
+    <li>7&nbsp;&nbsp;&nbsp;UnitOfWork</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -155,18 +222,18 @@
                 <div role="main" class="document">
                     
   <div class="section" id="l-unitofwork">
-<h1>5&nbsp;&nbsp;&nbsp;UnitOfWork<a class="headerlink" href="#l-unitofwork" title="Permalink to this headline">¶</a></h1>
+<h1>7&nbsp;&nbsp;&nbsp;UnitOfWork<a class="headerlink" href="#l-unitofwork" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="au-sujet-de-l-unitofwork">
-<h2>5.1&nbsp;&nbsp;&nbsp;About the unitofwork<a class="headerlink" href="#au-sujet-de-l-unitofwork" title="Permalink to this headline">¶</a></h2>
+<h2>7.1&nbsp;&nbsp;&nbsp;About the unitofwork<a class="headerlink" href="#au-sujet-de-l-unitofwork" title="Permalink to this headline">¶</a></h2>
 <p>The UnitOfWork&#8217;s role is to track object changes to persist it into database.</p>
 <div class="section" id="fonctionnement-interne">
-<h3>5.1.1&nbsp;&nbsp;&nbsp;Internal process<a class="headerlink" href="#fonctionnement-interne" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.1&nbsp;&nbsp;&nbsp;Internal process<a class="headerlink" href="#fonctionnement-interne" title="Permalink to this headline">¶</a></h3>
 <p>The UnitOfWork initializes in all objects &#8220;managed&#8221; a property <code class="docutils literal"><span class="pre">tingUUID</span></code> which must not in any way be altered by the user.</p>
 <p>A &#8220;managed&#8221; object is an object that already exists in base and will cause UPDATE query when you ask it to be persisted.</p>
 </div>
 </div>
 <div class="section" id="principe">
-<h2>5.2&nbsp;&nbsp;&nbsp;Principle<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h2>
+<h2>7.2&nbsp;&nbsp;&nbsp;Principle<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h2>
 <p>We ask the UnitOfWork to persist the data. It can be an update, or a deletion.</p>
 <p>The orders are generally stacked in the queue of UnitOfWork then you ask it to treat the whole in a single process.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$unitOfWork</span><span class="o">-&gt;</span><span class="na">pushSave</span><span class="p">(</span><span class="nv">$user1</span><span class="p">);</span>
@@ -176,13 +243,13 @@
 </pre></div>
 </div>
 <div class="section" id="particularites">
-<h3>5.2.1&nbsp;&nbsp;&nbsp;Specifity<a class="headerlink" href="#particularites" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.1&nbsp;&nbsp;&nbsp;Specifity<a class="headerlink" href="#particularites" title="Permalink to this headline">¶</a></h3>
 <p>Whether it&#8217;s to persist updating or inserting an entity you must use <code class="docutils literal"><span class="pre">pushSave</span></code>.</p>
 <p>Upon insertion of an entity which has an autoincrement property (configured in metadata) the autoincrement issued by the database will be set in the entity.</p>
 </div>
 </div>
 <div class="section" id="remarques-pour-les-batchs">
-<h2>5.3&nbsp;&nbsp;&nbsp;Notes for batch process<a class="headerlink" href="#remarques-pour-les-batchs" title="Permalink to this headline">¶</a></h2>
+<h2>7.3&nbsp;&nbsp;&nbsp;Notes for batch process<a class="headerlink" href="#remarques-pour-les-batchs" title="Permalink to this headline">¶</a></h2>
 <p>When processing a large number of items it is imperative to detach items that we don&#8217;t use anymore to free memory:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$unitOfWork</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
 </pre></div>

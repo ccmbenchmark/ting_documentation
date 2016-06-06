@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 7
+    :start: 9
 
 Le composant cache
 ==================
