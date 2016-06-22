@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 09:30+0200\n"
+"POT-Creation-Date: 2016-06-22 15:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,11 +86,15 @@ msgid ""
 "Symfony : ``composer require ccmbenchmark/ting_bundle``"
 msgstr "Install Ting Bundle: ``composer require ccmbenchmark/ting_bundle``"
 
-#: ../../getting-started-symfony.rst:78
+#: ../../getting-started-symfony.rst:77
+msgid "Il faut ensuite register les bundles dans ``app/AppKernel.php`` :"
+msgstr "Don't forget to register bundles in ``app/AppKernel.php``:"
+
+#: ../../getting-started-symfony.rst:86
 msgid "Initialisation de la base de données"
 msgstr "Setup database"
 
-#: ../../getting-started-symfony.rst:80
+#: ../../getting-started-symfony.rst:88
 msgid ""
 "Pour ce guide on utilise `world database "
 "<http://downloads.mysql.com/docs/world.sql.gz>`_ qu'il faut installer "
@@ -104,98 +108,98 @@ msgstr ""
 "<https://dev.mysql.com/doc/world-setup/en/world-setup-"
 "installation.html>`_."
 
-#: ../../getting-started-symfony.rst:85
+#: ../../getting-started-symfony.rst:93
 msgid "Création des repository"
 msgstr "Creating repositories"
 
-#: ../../getting-started-symfony.rst:87
+#: ../../getting-started-symfony.rst:95
 msgid "La base de données ``world database`` à trois tables composées ainsi :"
 msgstr "``world database`` is composed of three tables :"
 
-#: ../../getting-started-symfony.rst:90
+#: ../../getting-started-symfony.rst:98
 msgid "City"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:92
+#: ../../getting-started-symfony.rst:100
 msgid "ID"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:92 ../../getting-started-symfony.rst:98
-#: ../../getting-started-symfony.rst:110
+#: ../../getting-started-symfony.rst:100 ../../getting-started-symfony.rst:106
+#: ../../getting-started-symfony.rst:118
 msgid "int(11)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:94 ../../getting-started-symfony.rst:106
+#: ../../getting-started-symfony.rst:102 ../../getting-started-symfony.rst:114
 msgid "Name"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:94
+#: ../../getting-started-symfony.rst:102
 msgid "char(35)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:96 ../../getting-started-symfony.rst:116
+#: ../../getting-started-symfony.rst:104 ../../getting-started-symfony.rst:124
 msgid "CountryCode"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:96 ../../getting-started-symfony.rst:116
+#: ../../getting-started-symfony.rst:104 ../../getting-started-symfony.rst:124
 msgid "char(3)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:98 ../../getting-started-symfony.rst:110
+#: ../../getting-started-symfony.rst:106 ../../getting-started-symfony.rst:118
 msgid "Population"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:102
+#: ../../getting-started-symfony.rst:110
 msgid "Country"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:104
+#: ../../getting-started-symfony.rst:112
 msgid "Code"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:104
+#: ../../getting-started-symfony.rst:112
 msgid "int(3)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:106
+#: ../../getting-started-symfony.rst:114
 msgid "char(52)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:108
+#: ../../getting-started-symfony.rst:116
 msgid "Region"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:108
+#: ../../getting-started-symfony.rst:116
 msgid "char(26)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:114
+#: ../../getting-started-symfony.rst:122
 msgid "CountryLanguage"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:118
+#: ../../getting-started-symfony.rst:126
 msgid "Language"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:118
+#: ../../getting-started-symfony.rst:126
 msgid "char(30)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:120
+#: ../../getting-started-symfony.rst:128
 msgid "Percentage"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:120
+#: ../../getting-started-symfony.rst:128
 msgid "float(4, 1)"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:125
+#: ../../getting-started-symfony.rst:133
 msgid ""
 "Dans cet exemple nous ne prenons pas toutes les colonnes des tables pour "
 "alléger le guide"
 msgstr "In this tutorial we don't take all columns of tables"
 
-#: ../../getting-started-symfony.rst:128
+#: ../../getting-started-symfony.rst:136
 msgid "Création du repository City"
 msgstr "Creating City repository"
 
@@ -203,7 +207,7 @@ msgstr "Creating City repository"
 msgid "src/AppBundle/Repository/City.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:190
+#: ../../getting-started-symfony.rst:198
 msgid "Création du repository Country"
 msgstr "Creating Country repository"
 
@@ -211,7 +215,7 @@ msgstr "Creating Country repository"
 msgid "src/AppBundle/Repository/Country.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:250
+#: ../../getting-started-symfony.rst:258
 msgid "Création du repository CountryLanguage"
 msgstr "Creating CountryLanguage repository"
 
@@ -219,7 +223,7 @@ msgstr "Creating CountryLanguage repository"
 msgid "src/AppBundle/Repository/CountryLanguage.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:304
+#: ../../getting-started-symfony.rst:312
 msgid "Configuration de la connexion à la base de données"
 msgstr "Database connection settings"
 
@@ -227,32 +231,32 @@ msgstr "Database connection settings"
 msgid "app/config/config.yml"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:321
+#: ../../getting-started-symfony.rst:329
 msgid ""
-"On nomme ici la connexion ``main`` on va l'utiliser ci-dessous lors de "
-"la configuration des repository."
-msgstr ""
-"We named the connection ``main`` we gonna used it below."
+"On nomme ici la connexion ``main`` on va l'utiliser ci-dessous lors de la"
+" configuration des repository."
+msgstr "We named the connection ``main`` we gonna used it below."
 
-#: ../../getting-started-symfony.rst:324
+#: ../../getting-started-symfony.rst:332
 msgid "Configuration pour indiquer l'emplacement des repository"
 msgstr "Repositories settings"
 
-#: ../../getting-started-symfony.rst:326
+#: ../../getting-started-symfony.rst:334
 msgid "On configure l'emplacement des repository."
 msgstr "We configure the location and connection of repositories."
 
-#: ../../getting-started-symfony.rst:342
+#: ../../getting-started-symfony.rst:350
 msgid "Création des entitées"
 msgstr "Creating entities"
 
-#: ../../getting-started-symfony.rst:344
+#: ../../getting-started-symfony.rst:352
 msgid ""
 "Lorsque l'on a créé les repository, on a indiqué avec quel entité il "
 "travaille : ``$metadata->setEntity('AppBundle\\Entity\\Country');`` On va"
 " donc maintenant créer une entité pour chaque repository."
 msgstr ""
-"Previously we created the repository and linked each one with one entity : "
+"Previously we created the repository and linked each one with one entity "
+": "
 "``$metadata->setEntity(\\VendorName\\ApplicationName\\Entity\\Country::class);``"
 " Now we create entity for each repository."
 
@@ -268,16 +272,17 @@ msgstr ""
 msgid "src/AppBundle/Entity/CountryLanguage.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:595
+#: ../../getting-started-symfony.rst:603
 msgid ""
 "On a maintenant les repository et les entitées correspondantes, on va "
 "pouvoir faire des requêtes."
 msgstr "Now repositories and entities are configured we can do queries."
 
-#: ../../getting-started-symfony.rst:598
+#: ../../getting-started-symfony.rst:606
 msgid "Vous pouvez maintenant utiliser Ting"
 msgstr "You can now use Ting"
 
-#: ../../getting-started-symfony.rst:600
+#: ../../getting-started-symfony.rst:608
 msgid "Dans ``DefaultController::indexAction`` :"
 msgstr "In ``DefaultController::indexAction``:"
+

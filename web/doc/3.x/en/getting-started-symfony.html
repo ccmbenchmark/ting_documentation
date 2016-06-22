@@ -273,6 +273,11 @@ composer remove doctrine/doctrine-bundle
 </pre></div>
 </div>
 <p>Install Ting Bundle: <code class="docutils literal"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">ccmbenchmark/ting_bundle</span></code></p>
+<p>Don&#8217;t forget to register bundles in <code class="docutils literal"><span class="pre">app/AppKernel.php</span></code>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="nx">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</span><span class="p">(),</span>
+<span class="k">new</span> <span class="nx">CCMBenchmark\TingBundle\TingBundle</span><span class="p">(),</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="initialisation-de-la-base-de-donnees">
 <h2>2.4&nbsp;&nbsp;&nbsp;Setup database<a class="headerlink" href="#initialisation-de-la-base-de-donnees" title="Permalink to this headline">¶</a></h2>
