@@ -74,6 +74,14 @@ Par
 On peut maintenant installer Ting Bundle, qui permet d'utiliser Ting sur Symfony :
 ``composer require ccmbenchmark/ting_bundle``
 
+Il faut ensuite register les bundles dans ``app/AppKernel.php`` :
+
+.. code-block:: php
+
+    new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+    new CCMBenchmark\TingBundle\TingBundle(),
+
+
 Initialisation de la base de données
 ------------------------------------
 
