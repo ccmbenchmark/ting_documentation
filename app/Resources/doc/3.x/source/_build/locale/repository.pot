@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-22 15:35+0200\n"
+"POT-Creation-Date: 2016-08-16 17:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,68 +81,104 @@ msgid "``json``"
 msgstr ""
 
 #: ../../repository.rst:65
-msgid "Le type ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent donc d'être sérializés/désérializés via des options :"
+msgid "Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent donc d'être sérializés/désérializés via les options du serializer"
 msgstr ""
 
-#: ../../repository.rst:79
-msgid "Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles."
+#: ../../repository.rst:70
+msgid "Le Serializer"
 msgstr ""
 
-#: ../../repository.rst:81
-msgid "Vous pouvez injecter votre propre serializer :"
+#: ../../repository.rst:73
+msgid "Au sujet du serializer"
 msgstr ""
 
-#: ../../repository.rst:94
-msgid "Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :"
+#: ../../repository.rst:74
+msgid "Le serializer permet de gérer les types complexes tels que les types suivants ``bool``, ``datetime`` et ``json``."
 msgstr ""
 
-#: ../../repository.rst:93
+#: ../../repository.rst:78
+msgid "Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :"
+msgstr ""
+
+#: ../../repository.rst:77
 msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
 msgstr ""
 
-#: ../../repository.rst:94
+#: ../../repository.rst:78
 msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
 msgstr ""
 
-#: ../../repository.rst:97
-msgid "QueryBuilder"
+#: ../../repository.rst:80
+msgid "Le type datetime est considéré comme complexe car il permet de transformer un objet DateTime dans un format compréhensible pour le SGBD."
 msgstr ""
 
-#: ../../repository.rst:99
-msgid "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas. Ting le fourni via ``aura/sqlquery``."
+#: ../../repository.rst:82
+msgid "Le type json est complexe car il permet de transformer un tableau de données en chaîne de caractère compréhensible par le SGBD."
+msgstr ""
+
+#: ../../repository.rst:86
+msgid "Configuration du serializer"
+msgstr ""
+
+#: ../../repository.rst:88
+msgid "Le serializer peut être configurer via la clé `̀ serializer_options``"
+msgstr ""
+
+#: ../../repository.rst:101
+msgid "Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles."
+msgstr ""
+
+#: ../../repository.rst:104
+msgid "Ecrire son serializer"
 msgstr ""
 
 #: ../../repository.rst:106
-#: ../../repository.rst:112
-#: ../../repository.rst:118
-msgid "ou"
+msgid "Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``. Le serializer doit implémenter l'interface serialize et/ou unserialize."
+msgstr ""
+
+#: ../../repository.rst:109
+msgid "L'interface serialize permet de transformer une valeur en donnée stockable en base de donnée. L'interface unserialize permet de faire l'opération inverse."
 msgstr ""
 
 #: ../../repository.rst:124
+msgid "QueryBuilder"
+msgstr ""
+
+#: ../../repository.rst:126
+msgid "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas. Ting le fourni via ``aura/sqlquery``."
+msgstr ""
+
+#: ../../repository.rst:133
+#: ../../repository.rst:139
+#: ../../repository.rst:145
+msgid "ou"
+msgstr ""
+
+#: ../../repository.rst:151
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
 msgstr ""
 
-#: ../../repository.rst:127
+#: ../../repository.rst:154
 msgid "Requêtes"
 msgstr ""
 
-#: ../../repository.rst:129
+#: ../../repository.rst:156
 msgid "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples."
 msgstr ""
 
-#: ../../repository.rst:132
+#: ../../repository.rst:159
 msgid "Trouver un objet par clé primaire"
 msgstr ""
 
-#: ../../repository.rst:139
+#: ../../repository.rst:166
 msgid "Tous les objets"
 msgstr ""
 
-#: ../../repository.rst:146
+#: ../../repository.rst:173
 msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
-#: ../../repository.rst:153
+#: ../../repository.rst:180
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 

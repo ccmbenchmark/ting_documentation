@@ -62,8 +62,30 @@ Quelques précisions :
         - ``datetime``
         - ``json``
 
-Le type ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent
-donc d'être sérializés/désérializés via des options :
+Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent
+donc d'être sérializés/désérializés via les options du serializer
+
+
+Le Serializer
+-------------
+
+Au sujet du serializer
+~~~~~~~~~~~~~~~~~~~~~~
+Le serializer permet de gérer les types complexes tels que les types suivants ``bool``, ``datetime`` et ``json``.
+
+Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :
+    - ``CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean``
+    - ``CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean``
+
+Le type datetime est considéré comme complexe car il permet de transformer un objet DateTime dans un format compréhensible pour le SGBD.
+
+Le type json est complexe car il permet de transformer un tableau de données en chaîne de caractère compréhensible par le SGBD.
+
+
+Configuration du serializer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Le serializer peut être configurer via la clé `̀ serializer_options``
 
 .. code-block:: php
 
@@ -78,7 +100,15 @@ donc d'être sérializés/désérializés via des options :
 
 Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.
 
-Vous pouvez injecter votre propre serializer :
+Ecrire son serializer
+~~~~~~~~~~~~~~~~~~~~~
+
+Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``.
+Le serializer doit implémenter l'interface serialize et/ou unserialize.
+
+L'interface serialize permet de transformer une valeur en donnée stockable en base de donnée.
+L'interface unserialize permet de faire l'opération inverse.
+
 
 .. code-block:: php
 
@@ -89,9 +119,6 @@ Vous pouvez injecter votre propre serializer :
         'serializer' => Bouh\Awesome\Serializer::class
     ]);
 
-Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :
-    - ``CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean``
-    - ``CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean``
 
 QueryBuilder
 ------------

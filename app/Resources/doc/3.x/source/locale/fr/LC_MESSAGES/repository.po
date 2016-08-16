@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../repository.rst:65
 msgid ""
-"Le type ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car "
+"Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car "
 "il s'agit de types considérés complexes et qui acceptent donc d'être "
 "sérializés/désérializés via des options :"
 msgstr ""

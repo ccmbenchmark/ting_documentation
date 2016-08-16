@@ -145,8 +145,9 @@
 <li class="toctree-l1"><a class="reference internal" href="repository.html">5&nbsp;&nbsp;&nbsp;Repository</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">5.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">5.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">5.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">5.4&nbsp;&nbsp;&nbsp;Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#le-serializer">5.3&nbsp;&nbsp;&nbsp;Le Serializer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">5.4&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">5.5&nbsp;&nbsp;&nbsp;Queries</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
@@ -350,7 +351,7 @@
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">nbBooks</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span>
     <span class="p">)</span>
   <span class="p">]</span>
@@ -390,7 +391,7 @@
       <span class="p">[</span><span class="nx">fetchedDate</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Datetime</span><span class="p">(</span><span class="s2">&quot;2016-01-13 10:41:36&quot;</span><span class="p">)</span>
     <span class="p">),</span>
     <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
     <span class="p">)</span>
   <span class="p">]</span>
 </pre></div>
@@ -425,7 +426,7 @@
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;cit&#39;</span> <span class="o">=&gt;</span> <span class="nx">City</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">country</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Country</span><span class="p">(</span>
         <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span>
       <span class="p">)</span>
