@@ -85,7 +85,7 @@ Le type json est complexe car il permet de transformer un tableau de données en
 Configuration du serializer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Le serializer peut être configurer via la clé `̀ serializer_options``
+Le serializer peut être configurer via la clé ``serializer_options``
 
 .. code-block:: php
 
@@ -104,10 +104,13 @@ Ecrire son serializer
 ~~~~~~~~~~~~~~~~~~~~~
 
 Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``.
-Le serializer doit implémenter l'interface serialize et/ou unserialize.
 
-L'interface serialize permet de transformer une valeur en donnée stockable en base de donnée.
-L'interface unserialize permet de faire l'opération inverse.
+Le serializer doit implémenter l'interface ``CCMBenchmark\Ting\Serializer\SerializeInterface`` et/ou ``CCMBenchmark\Ting\Serializer\UnserializeInterface``.
+Si l'on souhaite implémenter les 2 interfaces, on préfèrera utiliser ``CCMBenchmark\Ting\Serializer\SerializerInterface``
+
+
+L'interface ``CCMBenchmark\Ting\Serializer\SerializeInterface`` permet de transformer une valeur en donnée stockable en base de donnée.
+L'interface ``CCMBenchmark\Ting\Serializer\UnserializeInterface`` permet de faire l'opération inverse.
 
 
 .. code-block:: php

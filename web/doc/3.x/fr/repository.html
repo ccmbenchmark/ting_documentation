@@ -303,7 +303,7 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 </div>
 <div class="section" id="configuration-du-serializer">
 <h3>5.3.2&nbsp;&nbsp;&nbsp;Configuration du serializer<a class="headerlink" href="#configuration-du-serializer" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Le serializer peut être configurer via la clé <cite>̀&nbsp;serializer_options`</cite></p>
+<p>Le serializer peut être configurer via la clé <code class="docutils literal"><span class="pre">serializer_options</span></code></p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
@@ -318,10 +318,11 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 </div>
 <div class="section" id="ecrire-son-serializer">
 <h3>5.3.3&nbsp;&nbsp;&nbsp;Ecrire son serializer<a class="headerlink" href="#ecrire-son-serializer" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé <code class="docutils literal"><span class="pre">serializer</span></code>.
-Le serializer doit implémenter l&#8217;interface serialize et/ou unserialize.</p>
-<p>L&#8217;interface serialize permet de transformer une valeur en donnée stockable en base de donnée.
-L&#8217;interface unserialize permet de faire l&#8217;opération inverse.</p>
+<p>Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé <code class="docutils literal"><span class="pre">serializer</span></code>.</p>
+<p>Le serializer doit implémenter l&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> et/ou <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code>.
+Si l&#8217;on souhaite implémenter les 2 interfaces, on préfèrera utiliser <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializerInterface</span></code></p>
+<p>L&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> permet de transformer une valeur en donnée stockable en base de donnée.
+L&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code> permet de faire l&#8217;opération inverse.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
