@@ -106,7 +106,7 @@ msgstr "Serializer"
 
 #: ../../repository.rst:73
 msgid "Au sujet du serializer"
-msgstr "About the repository"
+msgstr "About the serializer"
 
 #: ../../repository.rst:74
 msgid ""
