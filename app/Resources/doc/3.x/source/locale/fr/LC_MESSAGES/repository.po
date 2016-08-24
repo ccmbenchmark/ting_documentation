@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 11:25+0200\n"
+"POT-Creation-Date: 2016-08-24 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.2.0\n"
+"Generated-By: Babel 2.3.4\n"
 
 #: ../../repository.rst:5
 msgid "Le Repository"
@@ -87,76 +87,133 @@ msgstr ""
 
 #: ../../repository.rst:65
 msgid ""
-"Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car "
-"il s'agit de types considérés complexes et qui acceptent donc d'être "
-"sérializés/désérializés via des options :"
+"Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, "
+"car il s'agit de types considérés complexes et qui acceptent donc d'être "
+"sérializés/désérializés via les options du serializer"
 msgstr ""
 
-#: ../../repository.rst:79
+#: ../../repository.rst:70
+msgid "Le Serializer"
+msgstr ""
+
+#: ../../repository.rst:73
+msgid "Au sujet du serializer"
+msgstr ""
+
+#: ../../repository.rst:74
+msgid ""
+"Le serializer permet de gérer les types complexes tels que les types "
+"suivants ``bool``, ``datetime`` et ``json``."
+msgstr ""
+
+#: ../../repository.rst:78
+msgid ""
+"Le type booléen est considéré comme un type complexe, car la façon de le "
+"stocker en base est différent selon chaque SGBD :"
+msgstr ""
+
+#: ../../repository.rst:77
+msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
+msgstr ""
+
+#: ../../repository.rst:78
+msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
+msgstr ""
+
+#: ../../repository.rst:80
+msgid ""
+"Le type datetime est considéré comme complexe car il permet de "
+"transformer un objet DateTime dans un format compréhensible pour le SGBD."
+msgstr ""
+
+#: ../../repository.rst:82
+msgid ""
+"Le type json est complexe car il permet de transformer un tableau de "
+"données en chaîne de caractère compréhensible par le SGBD."
+msgstr ""
+
+#: ../../repository.rst:86
+msgid "Configuration du serializer"
+msgstr ""
+
+#: ../../repository.rst:88
+msgid "Le serializer peut être configurer via la clé ``serializer_options``"
+msgstr ""
+
+#: ../../repository.rst:101
 msgid ""
 "Je vous invite à regarder le code source de chaque Serializer pour voir "
 "les configurations possibles."
 msgstr ""
 
-#: ../../repository.rst:81
-msgid "Vous pouvez injecter votre propre serializer :"
+#: ../../repository.rst:104
+msgid "Ecrire son serializer"
 msgstr ""
 
-#: ../../repository.rst:94
+#: ../../repository.rst:106
 msgid ""
-"Le type booléen est considéré comme un type complexe, car la façon de le "
-"stocker en base est différent selon chaque sgbd :"
+"Vous pouvez écrire vos propres serializers et les injecter dans la "
+"définition du repository via la clé ``serializer``."
 msgstr ""
 
-#: ../../repository.rst:93
-msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
+#: ../../repository.rst:108
+msgid ""
+"Le serializer doit implémenter l'interface "
+"``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` et/ou "
+"``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface``. Si l'on "
+"souhaite implémenter les 2 interfaces, on préfèrera utiliser "
+"``CCMBenchmark\\Ting\\Serializer\\SerializerInterface``"
 msgstr ""
 
-#: ../../repository.rst:94
-msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
+#: ../../repository.rst:112
+msgid ""
+"L'interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` permet"
+" de transformer une valeur en donnée stockable en base de donnée. "
+"L'interface ``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface`` "
+"permet de faire l'opération inverse."
 msgstr ""
 
-#: ../../repository.rst:97
+#: ../../repository.rst:127
 msgid "QueryBuilder"
 msgstr ""
 
-#: ../../repository.rst:99
+#: ../../repository.rst:129
 msgid ""
 "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté "
 "pour ce cas. Ting le fourni via ``aura/sqlquery``."
 msgstr ""
 
-#: ../../repository.rst:106 ../../repository.rst:112 ../../repository.rst:118
+#: ../../repository.rst:136 ../../repository.rst:142 ../../repository.rst:148
 msgid "ou"
 msgstr ""
 
-#: ../../repository.rst:124
+#: ../../repository.rst:154
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
 msgstr ""
 
-#: ../../repository.rst:127
+#: ../../repository.rst:157
 msgid "Requêtes"
 msgstr ""
 
-#: ../../repository.rst:129
+#: ../../repository.rst:159
 msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
 "simples."
 msgstr ""
 
-#: ../../repository.rst:132
+#: ../../repository.rst:162
 msgid "Trouver un objet par clé primaire"
 msgstr ""
 
-#: ../../repository.rst:139
+#: ../../repository.rst:169
 msgid "Tous les objets"
 msgstr ""
 
-#: ../../repository.rst:146
+#: ../../repository.rst:176
 msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
-#: ../../repository.rst:153
+#: ../../repository.rst:183
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
@@ -164,20 +221,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Documentation sur https://github.com/auraphp/Aura.SqlQuery"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Le Repository va faire le lien "
-#~ "entre votre objet entité et votre "
-#~ "base de données, par l'intermédiaire de"
-#~ " l'objet Query."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Il est aussi responsable d'initialiser "
-#~ "les Metadata qui concernent votre entité"
-#~ " afin de savoir comment mapper votre"
-#~ " objet en base de données."
 #~ msgstr ""
 
 #~ msgid "int"
@@ -198,14 +241,6 @@ msgstr ""
 #~ msgid "json"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Le type bool, datetime et json "
-#~ "sont un peu particuliers, car il "
-#~ "s'agit de types considérés complexes et"
-#~ " qui acceptent donc d'être "
-#~ "sérializés/désérializés via des options :"
-#~ msgstr ""
-
 #~ msgid "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
 #~ msgstr ""
 
@@ -213,9 +248,20 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "On peut avoir besoin de chaîner "
-#~ "des requêtes, un QueryBuilder est adapté"
-#~ " pour ce cas. Ting le fourni "
-#~ "via `aura/sqlquery`."
+#~ "Les types ``bool``, ``datetime`` et "
+#~ "``json`` sont un peu particuliers, car"
+#~ " il s'agit de types considérés "
+#~ "complexes et qui acceptent donc d'être"
+#~ " sérializés/désérializés via des options :"
+#~ msgstr ""
+
+#~ msgid "Vous pouvez injecter votre propre serializer :"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Le type booléen est considéré comme "
+#~ "un type complexe, car la façon de"
+#~ " le stocker en base est différent "
+#~ "selon chaque sgbd :"
 #~ msgstr ""
 

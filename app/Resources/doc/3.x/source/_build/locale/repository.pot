@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-16 17:37+0200\n"
+"POT-Creation-Date: 2016-08-24 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgid "Configuration du serializer"
 msgstr ""
 
 #: ../../repository.rst:88
-msgid "Le serializer peut être configurer via la clé `̀ serializer_options``"
+msgid "Le serializer peut être configurer via la clé ``serializer_options``"
 msgstr ""
 
 #: ../../repository.rst:101
@@ -133,52 +133,56 @@ msgid "Ecrire son serializer"
 msgstr ""
 
 #: ../../repository.rst:106
-msgid "Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``. Le serializer doit implémenter l'interface serialize et/ou unserialize."
+msgid "Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``."
 msgstr ""
 
-#: ../../repository.rst:109
-msgid "L'interface serialize permet de transformer une valeur en donnée stockable en base de donnée. L'interface unserialize permet de faire l'opération inverse."
+#: ../../repository.rst:108
+msgid "Le serializer doit implémenter l'interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` et/ou ``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface``. Si l'on souhaite implémenter les 2 interfaces, on préfèrera utiliser ``CCMBenchmark\\Ting\\Serializer\\SerializerInterface``"
 msgstr ""
 
-#: ../../repository.rst:124
+#: ../../repository.rst:112
+msgid "L'interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` permet de transformer une valeur en donnée stockable en base de donnée. L'interface ``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface`` permet de faire l'opération inverse."
+msgstr ""
+
+#: ../../repository.rst:127
 msgid "QueryBuilder"
 msgstr ""
 
-#: ../../repository.rst:126
+#: ../../repository.rst:129
 msgid "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas. Ting le fourni via ``aura/sqlquery``."
 msgstr ""
 
-#: ../../repository.rst:133
-#: ../../repository.rst:139
-#: ../../repository.rst:145
+#: ../../repository.rst:136
+#: ../../repository.rst:142
+#: ../../repository.rst:148
 msgid "ou"
 msgstr ""
 
-#: ../../repository.rst:151
+#: ../../repository.rst:154
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
 msgstr ""
 
-#: ../../repository.rst:154
+#: ../../repository.rst:157
 msgid "Requêtes"
 msgstr ""
 
-#: ../../repository.rst:156
+#: ../../repository.rst:159
 msgid "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples."
 msgstr ""
 
-#: ../../repository.rst:159
+#: ../../repository.rst:162
 msgid "Trouver un objet par clé primaire"
 msgstr ""
 
-#: ../../repository.rst:166
+#: ../../repository.rst:169
 msgid "Tous les objets"
 msgstr ""
 
-#: ../../repository.rst:173
+#: ../../repository.rst:176
 msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
-#: ../../repository.rst:180
+#: ../../repository.rst:183
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
