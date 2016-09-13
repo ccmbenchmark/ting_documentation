@@ -288,6 +288,8 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 <h2>5.3&nbsp;&nbsp;&nbsp;Serializer<a class="headerlink" href="#le-serializer" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="au-sujet-du-serializer">
 <h3>5.3.1&nbsp;&nbsp;&nbsp;About the serializer<a class="headerlink" href="#au-sujet-du-serializer" title="Permalink to this headline">¶</a></h3>
+<p>La serialisation est l&#8217;opération qui permet de passer d&#8217;une donnée PHP vers une donnée au format SGBD.
+La déserialisation est l&#8217;opération inverse.</p>
 <p>Serializer allow complex type management like <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> and <code class="docutils literal"><span class="pre">json</span></code>.</p>
 <dl class="docutils">
 <dt>The boolean type is considered a complex type, because the way they are stored in the database differs depending on each RDBMS</dt>
@@ -315,8 +317,8 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 </div>
 <p>Please take a look at the source code of each Serializer to see available options.</p>
 </div>
-<div class="section" id="ecrire-son-serializer">
-<h3>5.3.3&nbsp;&nbsp;&nbsp;Writing his serializer<a class="headerlink" href="#ecrire-son-serializer" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ecrire-un-serializer">
+<h3>5.3.3&nbsp;&nbsp;&nbsp;Ecrire un serializer<a class="headerlink" href="#ecrire-un-serializer" title="Permalink to this headline">¶</a></h3>
 <p>You can write your own serializers and inject it into the repository definition by using <code class="docutils literal"><span class="pre">serializer</span></code> key</p>
 <p>The serializer must implements interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> and/or <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code>. If you want implents both interfaces, you must use <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializerInterface</span></code></p>
 <p>Interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> transform a value into a data understandable by DMBSInterface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code> authorize the reverse operation</p>

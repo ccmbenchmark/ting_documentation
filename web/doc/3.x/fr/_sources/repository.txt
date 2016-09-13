@@ -71,6 +71,9 @@ Le Serializer
 
 Au sujet du serializer
 ~~~~~~~~~~~~~~~~~~~~~~
+La serialisation est l'opération qui permet de passer d'une donnée PHP vers une donnée au format SGBD.
+La déserialisation est l'opération inverse.
+
 Le serializer permet de gérer les types complexes tels que les types suivants ``bool``, ``datetime`` et ``json``.
 
 Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :
@@ -100,7 +103,7 @@ Le serializer peut être configurer via la clé ``serializer_options``
 
 Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.
 
-Ecrire son serializer
+Ecrire un serializer
 ~~~~~~~~~~~~~~~~~~~~~
 
 Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``.

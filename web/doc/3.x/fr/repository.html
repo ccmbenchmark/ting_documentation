@@ -289,6 +289,8 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 <h2>5.3&nbsp;&nbsp;&nbsp;Le Serializer<a class="headerlink" href="#le-serializer" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="au-sujet-du-serializer">
 <h3>5.3.1&nbsp;&nbsp;&nbsp;Au sujet du serializer<a class="headerlink" href="#au-sujet-du-serializer" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La serialisation est l&#8217;opération qui permet de passer d&#8217;une donnée PHP vers une donnée au format SGBD.
+La déserialisation est l&#8217;opération inverse.</p>
 <p>Le serializer permet de gérer les types complexes tels que les types suivants <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code>.</p>
 <dl class="docutils">
 <dt>Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :</dt>
@@ -316,8 +318,8 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 </div>
 <p>Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.</p>
 </div>
-<div class="section" id="ecrire-son-serializer">
-<h3>5.3.3&nbsp;&nbsp;&nbsp;Ecrire son serializer<a class="headerlink" href="#ecrire-son-serializer" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="ecrire-un-serializer">
+<h3>5.3.3&nbsp;&nbsp;&nbsp;Ecrire un serializer<a class="headerlink" href="#ecrire-un-serializer" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé <code class="docutils literal"><span class="pre">serializer</span></code>.</p>
 <p>Le serializer doit implémenter l&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> et/ou <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code>.
 Si l&#8217;on souhaite implémenter les 2 interfaces, on préfèrera utiliser <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializerInterface</span></code></p>
