@@ -281,8 +281,7 @@
 </ul>
 </dd>
 </dl>
-<p>Les types <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code> sont un peu particuliers, car il s&#8217;agit de types considérés complexes et qui acceptent
-donc d&#8217;être sérializés/désérializés via les options du serializer</p>
+<p>The types <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> and <code class="docutils literal"><span class="pre">json</span></code> are a bit special because they are dependent of database so they can be serialized / deserialized with some options:</p>
 </div>
 <div class="section" id="le-serializer">
 <h2>5.3&nbsp;&nbsp;&nbsp;Serializer<a class="headerlink" href="#le-serializer" title="Permalink to this headline">¶</a></h2>
@@ -298,12 +297,12 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 </ul>
 </dd>
 </dl>
-<p>datetime type is considered as complex because it transform DateTime object into understandable format by RDBMS</p>
-<p>json type is complex because it translate data array into string understandable by RDBMS</p>
+<p>The datetime type is considered as complex because it transform DateTime object into understandable format by RDBMS</p>
+<p>The json type is complex because it translate data array into string understandable by RDBMS</p>
 </div>
 <div class="section" id="configuration-du-serializer">
 <h3>5.3.2&nbsp;&nbsp;&nbsp;Serializer configuration<a class="headerlink" href="#configuration-du-serializer" title="Permalink to this headline">¶</a></h3>
-<p>Serializer is configured by <a href="#id1"><span class="problematic" id="id2">``</span></a>serializer_options`̀  key</p>
+<p>Serializer is configured by <code class="docutils literal"><span class="pre">serializer_options</span></code>  key</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
@@ -320,7 +319,7 @@ donc d&#8217;être sérializés/désérializés via les options du serializer</p
 <h3>5.3.3&nbsp;&nbsp;&nbsp;Writing a serializer<a class="headerlink" href="#ecrire-un-serializer" title="Permalink to this headline">¶</a></h3>
 <p>You can write your own serializers and inject it into the repository definition by using <code class="docutils literal"><span class="pre">serializer</span></code> key</p>
 <p>The serializer must implements interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> and/or <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code>. If you want implents both interfaces, you must use <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializerInterface</span></code></p>
-<p>Interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> transform a value into a data understandable by DMBSInterface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code> authorize the reverse operation</p>
+<p>The interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> transform a value into a data understandable by DMBS. The interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code> authorize the reverse operation</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>

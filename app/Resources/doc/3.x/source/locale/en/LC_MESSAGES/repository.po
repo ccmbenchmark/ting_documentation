@@ -90,7 +90,6 @@ msgid "``json``"
 msgstr ""
 
 #: ../../repository.rst:65
-#, fuzzy
 msgid ""
 "Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, "
 "car il s'agit de types considérés complexes et qui acceptent donc d'être "
@@ -147,7 +146,7 @@ msgid ""
 "Le type datetime est considéré comme complexe car il permet de "
 "transformer un objet DateTime dans un format compréhensible pour le SGBD."
 msgstr ""
-"datetime type is considered as complex because it transform DateTime "
+"The datetime type is considered as complex because it transform DateTime "
 "object into understandable format by RDBMS"
 
 #: ../../repository.rst:85
@@ -155,7 +154,7 @@ msgid ""
 "Le type json est complexe car il permet de transformer un tableau de "
 "données en chaîne de caractère compréhensible par le SGBD."
 msgstr ""
-"json type is complex because it translate data array into string "
+"The json type is complex because it translate data array into string "
 "understandable by RDBMS"
 
 #: ../../repository.rst:89
@@ -164,7 +163,7 @@ msgstr "Serializer configuration"
 
 #: ../../repository.rst:91
 msgid "Le serializer peut être configurer via la clé ``serializer_options``"
-msgstr "Serializer is configured by ``serializer_options`̀  key"
+msgstr "Serializer is configured by ``serializer_options``  key"
 
 #: ../../repository.rst:104
 msgid ""
@@ -207,8 +206,8 @@ msgid ""
 "L'interface ``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface`` "
 "permet de faire l'opération inverse."
 msgstr ""
-"Interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` "
-"transform a value into a data understandable by DMBSInterface "
+"The interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` "
+"transform a value into a data understandable by DMBS. The interface "
 "``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface`` authorize the "
 "reverse operation"
 
