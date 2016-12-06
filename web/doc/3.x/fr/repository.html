@@ -145,8 +145,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-du-repository">5.1&nbsp;&nbsp;&nbsp;Au sujet du Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-des-metadata">5.2&nbsp;&nbsp;&nbsp;Création des Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#querybuilder">5.3&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requetes">5.4&nbsp;&nbsp;&nbsp;Requêtes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-serializer">5.3&nbsp;&nbsp;&nbsp;Le Serializer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#querybuilder">5.4&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requetes">5.5&nbsp;&nbsp;&nbsp;Requêtes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">6&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
@@ -281,8 +282,30 @@ votre objet en base de données.</p>
 </ul>
 </dd>
 </dl>
-<p>Le type <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code> sont un peu particuliers, car il s&#8217;agit de types considérés complexes et qui acceptent
-donc d&#8217;être sérializés/désérializés via des options :</p>
+<p>Les types <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code> sont un peu particuliers, car il s&#8217;agit de types considérés complexes et qui acceptent
+donc d&#8217;être sérializés/désérializés via les options du serializer</p>
+</div>
+<div class="section" id="le-serializer">
+<h2>5.3&nbsp;&nbsp;&nbsp;Le Serializer<a class="headerlink" href="#le-serializer" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="au-sujet-du-serializer">
+<h3>5.3.1&nbsp;&nbsp;&nbsp;Au sujet du serializer<a class="headerlink" href="#au-sujet-du-serializer" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La serialisation est l&#8217;opération qui permet de passer d&#8217;une donnée PHP vers une donnée au format SGBD.
+La déserialisation est l&#8217;opération inverse.</p>
+<p>Le serializer permet de gérer les types complexes tels que les types suivants <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code>.</p>
+<dl class="docutils">
+<dt>Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean</span></code></li>
+<li><code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean</span></code></li>
+</ul>
+</dd>
+</dl>
+<p>Le type datetime est considéré comme complexe car il permet de transformer un objet DateTime dans un format compréhensible pour le SGBD.</p>
+<p>Le type json est complexe car il permet de transformer un tableau de données en chaîne de caractère compréhensible par le SGBD.</p>
+</div>
+<div class="section" id="configuration-du-serializer">
+<h3>5.3.2&nbsp;&nbsp;&nbsp;Configuration du serializer<a class="headerlink" href="#configuration-du-serializer" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le serializer peut être configurer via la clé <code class="docutils literal"><span class="pre">serializer_options</span></code></p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
@@ -294,7 +317,14 @@ donc d&#8217;être sérializés/désérializés via des options :</p>
 </pre></div>
 </div>
 <p>Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.</p>
-<p>Vous pouvez injecter votre propre serializer :</p>
+</div>
+<div class="section" id="ecrire-un-serializer">
+<h3>5.3.3&nbsp;&nbsp;&nbsp;Ecrire un serializer<a class="headerlink" href="#ecrire-un-serializer" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé <code class="docutils literal"><span class="pre">serializer</span></code>.</p>
+<p>Le serializer doit implémenter l&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> et/ou <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code>.
+Si l&#8217;on souhaite implémenter les 2 interfaces, on préfèrera utiliser <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializerInterface</span></code></p>
+<p>L&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\SerializeInterface</span></code> permet de transformer une valeur en donnée stockable en base de donnée.
+L&#8217;interface <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Serializer\UnserializeInterface</span></code> permet de faire l&#8217;opération inverse.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nx">addField</span><span class="p">([</span>
     <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span>
     <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;tags_name&#39;</span><span class="p">,</span>
@@ -303,17 +333,10 @@ donc d&#8217;être sérializés/désérializés via des options :</p>
 <span class="p">]);</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque sgbd :</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean</span></code></li>
-<li><code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean</span></code></li>
-</ul>
-</dd>
-</dl>
+</div>
 </div>
 <div class="section" id="querybuilder">
-<h2>5.3&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>5.4&nbsp;&nbsp;&nbsp;QueryBuilder<a class="headerlink" href="#querybuilder" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas.
 Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquery</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getQueryBuilder</span><span class="p">(</span><span class="nx">Repository</span><span class="o">::</span><span class="na">QUERY_SELECT</span><span class="p">);</span>
@@ -334,28 +357,28 @@ Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquer
 <p>Documentation disponible sur <a class="reference external" href="https://github.com/auraphp/Aura.SqlQuery">https://github.com/auraphp/Aura.SqlQuery</a></p>
 </div>
 <div class="section" id="requetes">
-<h2>5.4&nbsp;&nbsp;&nbsp;Requêtes<a class="headerlink" href="#requetes" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>5.5&nbsp;&nbsp;&nbsp;Requêtes<a class="headerlink" href="#requetes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
-<h3>5.4.1&nbsp;&nbsp;&nbsp;Trouver un objet par clé primaire<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>5.5.1&nbsp;&nbsp;&nbsp;Trouver un objet par clé primaire<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="tous-les-objets">
-<h3>5.4.2&nbsp;&nbsp;&nbsp;Tous les objets<a class="headerlink" href="#tous-les-objets" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>5.5.2&nbsp;&nbsp;&nbsp;Tous les objets<a class="headerlink" href="#tous-les-objets" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getAll</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
-<h3>5.4.3&nbsp;&nbsp;&nbsp;Un objet d&#8217;après une ou plusieurs propriété(s) du modèle<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>5.5.3&nbsp;&nbsp;&nbsp;Un objet d&#8217;après une ou plusieurs propriété(s) du modèle<a class="headerlink" href="#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getOneBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">
-<h3>5.4.4&nbsp;&nbsp;&nbsp;Une collection d&#8217;objet d&#8217;après une ou plusieurs propriété(s) du modèle<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>5.5.4&nbsp;&nbsp;&nbsp;Une collection d&#8217;objet d&#8217;après une ou plusieurs propriété(s) du modèle<a class="headerlink" href="#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">getBy</span><span class="p">([</span><span class="s1">&#39;propertyName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>

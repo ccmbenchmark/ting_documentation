@@ -1,0 +1,57 @@
+.. sectnum::
+    :start: 5
+
+Le Serializer
+=============
+
+
+Au sujet du serializer
+----------------------
+Le serializer permet de gérer les types complexes tels que les types suivants ``bool``, ``datetime`` et ``json``.
+
+Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :
+    - ``CCMBenchmark\Ting\Driver\Pgsql\Serializer\Boolean``
+    - ``CCMBenchmark\Ting\Driver\Mysqli\Serializer\Boolean``
+
+Le type datetime est considéré comme complexe car il permet de transformer un objet DateTime dans un format compréhensible pour le SGBD.
+
+Le type json est complexe car il permet de transformer un tableau de données en chaîne de caractère compréhensible par le SGBD.
+
+
+Configuration du serializer
+---------------------------
+
+Le serializer peut être configurer via la clé `̀ serializer_options``
+
+.. code-block:: php
+
+    addField([
+        'fieldName'          => 'tags',
+        'columnName'         => 'tags_name',
+        'type'               => 'json',
+        'serializer_options' => [
+            'unserialize' => ['assoc' => true]
+        ]
+    ]);
+
+Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles.
+
+Ecrire son serializer
+---------------------
+
+Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``.
+Le serializer doit implémenter l'interface serialize et/ou unserialize.
+
+L'interface serialize permet de transformer une valeur en donnée stockable en base de donnée.
+L'interface unserialize permet de faire l'opération inverse.
+
+
+.. code-block:: php
+
+    addField([
+        'fieldName'  => 'tags',
+        'columnName' => 'tags_name',
+        'type'       => 'json',
+        'serializer' => Bouh\Awesome\Serializer::class
+    ]);
+
