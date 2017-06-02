@@ -83,9 +83,7 @@
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     {% endif %}
 
-    {% for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-    {% endfor %}
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 
     {%- block linktags %}
     {%- if hasdoc('about') %}

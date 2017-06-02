@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ting 1 documentation" href="index.html"/>
     <link rel="next" title="8   Cache" href="cache.html"/>
     <link rel="prev" title="6   About the hydrators" href="hydrator.html"/> 
@@ -111,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-city">1.5&nbsp;&nbsp;&nbsp;Creating City repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Creating Country repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Creating CountryLanguage repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Database connection settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Repositories settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Creating entities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;You can now use Ting</a></li>
@@ -154,10 +153,11 @@
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;The aggregator hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -196,21 +196,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>7&nbsp;&nbsp;&nbsp;UnitOfWork</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>7&nbsp;&nbsp;&nbsp;UnitOfWork</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -219,11 +236,11 @@
 <h1>7&nbsp;&nbsp;&nbsp;UnitOfWork<a class="headerlink" href="#l-unitofwork" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="au-sujet-de-l-unitofwork">
 <h2>7.1&nbsp;&nbsp;&nbsp;About the unitofwork<a class="headerlink" href="#au-sujet-de-l-unitofwork" title="Permalink to this headline">¶</a></h2>
-<p>The UnitOfWork&#8217;s role is to track object changes to persist it into database.</p>
+<p>The UnitOfWork’s role is to track object changes to persist it into database.</p>
 <div class="section" id="fonctionnement-interne">
 <h3>7.1.1&nbsp;&nbsp;&nbsp;Internal process<a class="headerlink" href="#fonctionnement-interne" title="Permalink to this headline">¶</a></h3>
-<p>The UnitOfWork initializes in all objects &#8220;managed&#8221; a property <code class="docutils literal"><span class="pre">tingUUID</span></code> which must not in any way be altered by the user.</p>
-<p>A &#8220;managed&#8221; object is an object that already exists in base and will cause UPDATE query when you ask it to be persisted.</p>
+<p>The UnitOfWork initializes in all objects “managed” a property <code class="docutils literal"><span class="pre">tingUUID</span></code> which must not in any way be altered by the user.</p>
+<p>A “managed” object is an object that already exists in base and will cause UPDATE query when you ask it to be persisted.</p>
 </div>
 </div>
 <div class="section" id="principe">
@@ -238,13 +255,13 @@
 </div>
 <div class="section" id="particularites">
 <h3>7.2.1&nbsp;&nbsp;&nbsp;Specifity<a class="headerlink" href="#particularites" title="Permalink to this headline">¶</a></h3>
-<p>Whether it&#8217;s to persist updating or inserting an entity you must use <code class="docutils literal"><span class="pre">pushSave</span></code>.</p>
+<p>Whether it’s to persist updating or inserting an entity you must use <code class="docutils literal"><span class="pre">pushSave</span></code>.</p>
 <p>Upon insertion of an entity which has an autoincrement property (configured in metadata) the autoincrement issued by the database will be set in the entity.</p>
 </div>
 </div>
 <div class="section" id="remarques-pour-les-batchs">
 <h2>7.3&nbsp;&nbsp;&nbsp;Notes for batch process<a class="headerlink" href="#remarques-pour-les-batchs" title="Permalink to this headline">¶</a></h2>
-<p>When processing a large number of items it is imperative to detach items that we don&#8217;t use anymore to free memory:</p>
+<p>When processing a large number of items it is imperative to detach items that we don’t use anymore to free memory:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$unitOfWork</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
 </pre></div>
 </div>

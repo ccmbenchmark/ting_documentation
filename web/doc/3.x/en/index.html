@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ting 1 documentation" href="#"/>
     <link rel="next" title="1   Getting started" href="getting-started.html"/> 
 
@@ -110,7 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-city">1.5&nbsp;&nbsp;&nbsp;Creating City repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Creating Country repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Creating CountryLanguage repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Database connection settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Repositories settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Creating entities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;You can now use Ting</a></li>
@@ -153,10 +152,11 @@
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;The aggregator hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -195,21 +195,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Ting - Documentation</li>
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Ting - Documentation</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -217,16 +234,13 @@
   <div class="section" id="ting-documentation">
 <h1>Ting - Documentation<a class="headerlink" href="#ting-documentation" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p class="first"><strong>Simple</strong>: no magic inside : it&#8217;s basically SQL queries</p>
-</li>
-<li><p class="first"><strong>Fast</strong>: with no magic comes no overhead</p>
-</li>
-<li><p class="first"><strong>Supports</strong> Mysql and PostgreSQL</p>
-</li>
+<li><strong>Simple</strong>: no magic inside : it’s basically SQL queries</li>
+<li><strong>Fast</strong>: with no magic comes no overhead</li>
+<li><strong>Supports</strong> Mysql and PostgreSQL</li>
 </ul>
 <p><strong>Why another datamapper for PHP?</strong></p>
 <p>Great datamappers for MySQL and PostgreSQL already exist. However the most popular tools are complex and hard to master requiring new skills to query databases or boring xml files to describe the database. Ting has been created with the simplicity as a credo.</p>
-<p>Ting is not an ORM, because it doesn&#8217;t fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.</p>
+<p>Ting is not an ORM, because it doesn’t fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">1&nbsp;&nbsp;&nbsp;Getting started</a><ul>
@@ -237,7 +251,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-city">1.5&nbsp;&nbsp;&nbsp;Creating City repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Creating Country repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Creating CountryLanguage repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Database connection settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Repositories settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Creating entities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;You can now use Ting</a></li>
@@ -290,7 +304,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#querybuilder">5.4&nbsp;&nbsp;&nbsp;QueryBuilder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">5.5&nbsp;&nbsp;&nbsp;Queries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="repository.html#trouver-un-objet-par-cle-primaire">5.5.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html#trouver-un-objet-par-cle-primaire">5.5.1&nbsp;&nbsp;&nbsp;Find an object by it’s primary key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repository.html#tous-les-objets">5.5.2&nbsp;&nbsp;&nbsp;All items</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repository.html#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">5.5.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repository.html#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">5.5.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model</a></li>
@@ -300,15 +314,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">6&nbsp;&nbsp;&nbsp;About the hydrators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="hydrator.html#jointure-avec-aucune-donnee">6.3.1&nbsp;&nbsp;&nbsp;SQL join with no data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hydrator.html#jointure-avec-aucune-donnee">6.2.1&nbsp;&nbsp;&nbsp;SQL join with no data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;The aggregator hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>

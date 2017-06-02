@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ting 1 documentation" href="index.html"/>
     <link rel="next" title="6   About the hydrators" href="hydrator.html"/>
     <link rel="prev" title="4   Queries" href="query.html"/> 
@@ -111,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-city">1.5&nbsp;&nbsp;&nbsp;Creating City repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Creating Country repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Creating CountryLanguage repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Database connection settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Repositories settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Creating entities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;You can now use Ting</a></li>
@@ -154,10 +153,11 @@
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;About hydrators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;The aggregator hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -196,21 +196,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>5&nbsp;&nbsp;&nbsp;Repository</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>5&nbsp;&nbsp;&nbsp;Repository</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -260,14 +277,12 @@
 </div>
 <dl class="docutils">
 <dt>Some details:</dt>
-<dd><ul class="first last">
-<li><p class="first">fieldName is the name of the property of your entity</p>
-</li>
-<li><p class="first">columnName is the name of the column in your database</p>
-</li>
+<dd><ul class="first last simple">
+<li>fieldName is the name of the property of your entity</li>
+<li>columnName is the name of the column in your database</li>
 <li><dl class="first docutils">
 <dt>type is the type of your variable; among one of the following :</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li><code class="docutils literal"><span class="pre">int</span></code></li>
 <li><code class="docutils literal"><span class="pre">double</span></code></li>
 <li><code class="docutils literal"><span class="pre">string</span></code></li>
@@ -354,7 +369,7 @@
 <h2>5.5&nbsp;&nbsp;&nbsp;Queries<a class="headerlink" href="#requetes" title="Permalink to this headline">¶</a></h2>
 <p>The Repository provides several methods to perform common queries easily.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
-<h3>5.5.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.1&nbsp;&nbsp;&nbsp;Find an object by it’s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>

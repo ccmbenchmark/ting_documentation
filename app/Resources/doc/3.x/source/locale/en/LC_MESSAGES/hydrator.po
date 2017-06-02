@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 11:25+0200\n"
+"POT-Creation-Date: 2017-06-02 11:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.2.0\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: ../../hydrator.rst:5
 msgid "Les hydrateurs"
@@ -48,16 +48,26 @@ msgstr ""
 " will fill an associative array with, as a key, the table name (or alias "
 "used) and the object for as a value"
 
-#: ../../hydrator.rst:39 ../../hydrator.rst:116 ../../hydrator.rst:159
-#: ../../hydrator.rst:201 ../../hydrator.rst:243
+#: ../../hydrator.rst:39 ../../hydrator.rst:173 ../../hydrator.rst:221
+#: ../../hydrator.rst:264 ../../hydrator.rst:306 ../../hydrator.rst:348
 msgid "La collection retournée est composée de lignes structurées ainsi :"
 msgstr "The returned collection is composed of rows:"
 
-#: ../../hydrator.rst:57
+#: ../../hydrator.rst:55
+msgid "Jointure avec aucune donnée"
+msgstr "SQL join with no data"
+
+#: ../../hydrator.rst:56
+msgid ""
+"Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour "
+"valeur null"
+msgstr "When the join returns no data, the key 'c' will be null"
+
+#: ../../hydrator.rst:61
 msgid "L'hydrateur pour un seul objet"
 msgstr "The hydrator for a single object"
 
-#: ../../hydrator.rst:58
+#: ../../hydrator.rst:62
 msgid ""
 "L'hydrateur par défaut est optimisé pour retourner plusieurs objets, "
 "lorsque l'on fait une requête qui n'a pour but que de retourner un objet,"
@@ -67,32 +77,83 @@ msgstr ""
 " query that is intended to return only one item, it is not the best "
 "choice."
 
-#: ../../hydrator.rst:61
+#: ../../hydrator.rst:65
 msgid ""
 "Vous pouvez injecter "
 "``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` qui conviendra "
 "mieux à votre besoin."
-msgstr "You can inject ``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` that suit better your needs"
+msgstr ""
+"You can inject ``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` "
+"that suit better your needs"
 
-#: ../../hydrator.rst:84
+#: ../../hydrator.rst:88
 msgid "La collection retournée est une collection d'objet User."
 msgstr "The returned collection is a collection of object User."
 
-#: ../../hydrator.rst:87
-msgid "Jointure avec aucune donnée"
-msgstr "SQL join with no data"
+#: ../../hydrator.rst:93
+msgid "L'hydrateur d'aggrégation"
+msgstr "The aggregator hydrator"
 
-#: ../../hydrator.rst:88
+#: ../../hydrator.rst:97
+msgid "Disponible uniquement à partir de la version 3.3"
+msgstr "Available since version 3.3"
+
+#: ../../hydrator.rst:99
 msgid ""
-"Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour "
-"valeur null"
-msgstr "When the join returns no data, the key 'c' will be null"
+"Celui-ci permet d'aggréger un ensemble de résultats, par exemple "
+"retourner une collection d'objet User et que chaque objet User ai la "
+"liste de tous les livres possédés par ce dernier."
+msgstr "This one can aggregate data. "
+"You can regroup all books from one user and put them into this one."
 
-#: ../../hydrator.rst:91
+#: ../../hydrator.rst:101
+msgid "Voici un exemple d'utilisation"
+msgstr "Here example of use"
+
+#: ../../hydrator.rst:140
+msgid "Rentrons un peu dans les détails :"
+msgstr "Look deeper"
+
+#: ../../hydrator.rst:148
+msgid ""
+"La closure injectée via ``callableIdIs`` permet de retourner "
+"l'identifiant qui sera utilisé comme clée d'aggrégation (ici "
+"l'identifiant de l'utilisateur)"
+msgstr "The closure injected through ``callableIdIs`` allows you to "
+"return the identifier we gonna use as aggregate key (user's identifier here)"
+
+#: ../../hydrator.rst:152
+msgid ""
+"Il est très important d'effectuer un tri dans votre requête SQL sur cette"
+" clée d'aggrégation sinon vous aurez des résultats partiels."
+msgstr "It's very important to sort your data on this aggregate key in your SQL query "
+"otherwise you will have partial result."
+
+#: ../../hydrator.rst:160
+msgid ""
+"La closure injectée via ``callableDataIs`` permet de retourner la donnée "
+"qui doit être aggrégée (ici un Livre)"
+msgstr "The closure injected through ``callableDataIs`` allows you to "
+"return the data that should be aggregated (here a book)"
+
+#: ../../hydrator.rst:169
+msgid ""
+"Cette dernière partie est facultative, si elle est omise, le résultat de "
+"l'aggrégation se trouvera dans la clée ``aggregate`` de la collection. "
+"Elle vous permet d'effectuer une opération de finalisation et de choisir "
+"ce que vous voulez faire des données qui viennent d'être aggrégées, ici "
+"il s'agit d'une liste de livre que nous injectons dans l'utilisateur via "
+"la méthode ``setBooks``"
+msgstr "This last part is optional, when you ommit it, the aggregated result will "
+"be put into ``aggregate`` key of the collection. "
+"You can finalize the aggregate with this closure and choose what to do with "
+"the data aggregated, here we have a list of book and we inject them into user through ``setBooks``"
+
+#: ../../hydrator.rst:196
 msgid "Données sans metadata"
 msgstr "Data without metadata"
 
-#: ../../hydrator.rst:92
+#: ../../hydrator.rst:197
 msgid ""
 "Si vous effectuez une requête qui retourne des données qui ne "
 "correspondent à aucune metadata, que ce soit une colonne d'aggrégation "
@@ -101,19 +162,19 @@ msgid ""
 "propriétés correspondant à ces colonnes."
 msgstr ""
 "If you perform a query that returns data that do not match any metadata, "
-"whether an aggregation column as ``SUM(price)`` or a column that has not been"
-" mapped as ``my_extra_column`` the hydrator will create a ``stdClass`` object "
-"with properties corresponding to those columns."
+"whether an aggregation column as ``SUM(price)`` or a column that has not "
+"been mapped as ``my_extra_column`` the hydrator will create a "
+"``stdClass`` object with properties corresponding to those columns."
 
-#: ../../hydrator.rst:96
+#: ../../hydrator.rst:201
 msgid "Cet objet ``stdClass`` est accessible dans la clée 0 du tableau retourné."
 msgstr "This ``stdClass`` object is accessible in the key 0 of the returned array."
 
-#: ../../hydrator.rst:132
+#: ../../hydrator.rst:237
 msgid "Mapper des données sans metadata"
 msgstr "Mapping data without metadata"
 
-#: ../../hydrator.rst:133
+#: ../../hydrator.rst:238
 msgid ""
 "Dans le cas d'une colonne d'aggrégation, on peut souhaiter la mapper dans"
 " un objet. Pour mapper la colonne ``nb_books`` dans mon model User via la"
@@ -123,11 +184,11 @@ msgstr ""
 "object. To map the column ``nb_books`` into my model User througt the "
 "method ``setNbBooks`` you can do that:"
 
-#: ../../hydrator.rst:172
+#: ../../hydrator.rst:277
 msgid "Déserializer des données sans metadata"
 msgstr "Deserialize data without metadata"
 
-#: ../../hydrator.rst:173
+#: ../../hydrator.rst:278
 msgid ""
 "Pour rappel l'action de déserializer consiste à transformer un type de "
 "base données dans un type PHP. Par exemple si on récupère une date qui "
@@ -138,11 +199,11 @@ msgstr ""
 "deserializing. For example when you retrieve a date which is not in "
 "metadata, we may want to transform it to object ``Datetime``."
 
-#: ../../hydrator.rst:216
+#: ../../hydrator.rst:321
 msgid "Composition d'objet"
 msgstr "Object composition"
 
-#: ../../hydrator.rst:217
+#: ../../hydrator.rst:322
 msgid ""
 "On peut vouloir faire de la composition d'objet, injecter un objet dans "
 "un autre et ce sur plusieurs niveaux. Pour mapper l'objet ``Country`` "
@@ -150,7 +211,7 @@ msgid ""
 "via la méthode ``setCountry`` il suffit de faire :"
 msgstr ""
 "We may want to do object compositions, injecting one object into one "
-"other on many deep levels. To map object ``Country`` (which has alias ``co``)"
-" into my model ``City`` (which has alias ``cit``) through the method "
-"``setCountry`` you can do that:"
+"other on many deep levels. To map object ``Country`` (which has alias "
+"``co``) into my model ``City`` (which has alias ``cit``) through the "
+"method ``setCountry`` you can do that:"
 

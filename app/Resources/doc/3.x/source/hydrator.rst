@@ -51,6 +51,10 @@ La collection retournée est composée de lignes structurées ainsi :
       )
     ]
 
+Jointure avec aucune donnée
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur null
+
 .. _l-hydrateur-pour-un-seul-objet:
 
 L'hydrateur pour un seul objet
@@ -73,7 +77,7 @@ Vous pouvez injecter ``CCMBenchmark\Ting\Repository\HydratorSingleObject`` qui c
          */
         public function getUserSylvain()
         {
-            $query = $this->getQuery('SELECT id, name, c.text FROM user WHERE name = :name');
+            $query = $this->getQuery('SELECT id, name, FROM user WHERE name = :name');
             $query->setParams(['name' => 'Sylvain']);
 
             return $query->query($this->getCollection(new CCMBenchmark\Ting\Repository\HydratorSingleObject()));
@@ -83,9 +87,110 @@ Vous pouvez injecter ``CCMBenchmark\Ting\Repository\HydratorSingleObject`` qui c
 
 La collection retournée est une collection d'objet User.
 
-Jointure avec aucune donnée
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur null
+.. _l-hydrateur-d-aggregation:
+
+L'hydrateur d'aggrégation
+-------------------------
+
+.. note::
+
+    Disponible uniquement à partir de la version 3.3
+
+Celui-ci permet d'aggréger un ensemble de résultats, par exemple retourner une collection d'objet User et que chaque objet User ai la liste de tous les livres possédés par ce dernier.
+
+Voici un exemple d'utilisation
+
+.. code-block:: php
+
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getUsersWithBooks()
+        {
+            $query = $this->getQuery('SELECT user.id, user.name, book.id, book.name
+                    FROM user
+                    INNER JOIN book ON (book.user_id = user.id)
+                    ORDER BY user.id');
+
+            $hydratorAggregator = new \CCMBenchmark\Ting\Repository\HydratorAggregator();
+            $hydratorAggregator->callableIdIs(function ($result) {
+                return $result['user']->getId();
+            });
+
+            $hydratorAggregator->callableDataIs(function ($result) {
+                return $result['book'];
+            });
+
+            $hydratorAggregator->callableFinalizeAggregate(function ($result, $books) {
+                $result['user']->setBooks($books);
+                return $result['user'];
+            });
+
+            return $query->query($this->getCollection($hydratorAggregator));
+    }
+
+        // ...
+
+Rentrons un peu dans les détails :
+
+.. code-block:: php
+
+    $hydratorAggregator->callableIdIs(function ($result) {
+        return $result['user']->getId();
+    });
+
+La closure injectée via ``callableIdIs`` permet de retourner l'identifiant qui sera utilisé comme clée d'aggrégation (ici l'identifiant de l'utilisateur)
+
+.. note::
+
+    Il est très important d'effectuer un tri dans votre requête SQL sur cette clée d'aggrégation sinon vous aurez des résultats partiels.
+
+.. code-block:: php
+
+    $hydratorAggregator->callableDataIs(function ($result) {
+        return $result['book'];
+    });
+
+La closure injectée via ``callableDataIs`` permet de retourner la donnée qui doit être aggrégée (ici un Livre)
+
+.. code-block:: php
+
+    $hydratorAggregator->callableFinalizeAggregate(function ($result, $books) {
+        $result['user']->setBooks($books);
+        return $result['user'];
+    });
+
+Cette dernière partie est facultative, si elle est omise, le résultat de l'aggrégation se trouvera dans la clée ``aggregate`` de la collection.
+Elle vous permet d'effectuer une opération de finalisation et de choisir ce que vous voulez faire des données qui viennent d'être aggrégées, ici
+il s'agit d'une liste de livre que nous injectons dans l'utilisateur via la méthode ``setBooks``
+
+La collection retournée est composée de lignes structurées ainsi :
+
+.. code-block:: php
+
+    $row =
+      [
+        0 => User(
+          [id] => 1,
+          [name] => 'Sylvain'
+          [books] => [
+            Book(
+              [id] => 1
+              [name] => "Tintin au tibet"
+            ),
+            Book(
+              [id] => 2
+              [name] => "L'Oreille cassée"
+            )
+          ]
+        )
+      ]
 
 Données sans metadata
 ---------------------
@@ -117,16 +222,16 @@ La collection retournée est composée de lignes structurées ainsi :
 
 .. code-block:: php
 
-  $row =
-    [
-      0 => stdClass(
-        [total] => 43,
-        [my_extra_column] => 'Bic'
-      ),
-      'article' => Article(
-        [name] => "Stylo"
-      )
-    ]
+    $row =
+      [
+        0 => stdClass(
+          [total] => 43,
+          [my_extra_column] => 'Bic'
+        ),
+        'article' => Article(
+          [name] => "Stylo"
+        )
+      ]
 
 Mapper des données sans metadata
 --------------------------------

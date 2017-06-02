@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Recherche" href="search.html"/>
     <link rel="top" title="documentation ting 1" href="index.html"/>
     <link rel="next" title="2   Utilisation avec Symfony 2.8" href="getting-started-symfony.html"/>
     <link rel="prev" title="Ting - Documentation" href="index.html"/> 
@@ -112,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Création du repository Country</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Création des entitées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting</a></li>
 </ul>
@@ -127,19 +126,19 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-country">2.7&nbsp;&nbsp;&nbsp;Création du repository Country</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-countrylanguage">2.8&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-de-la-connexion-a-la-base-de-donnees">2.9&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-des-entitees">2.11&nbsp;&nbsp;&nbsp;Création des entitées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#vous-pouvez-maintenant-utiliser-ting">2.12&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="entity.html">3&nbsp;&nbsp;&nbsp;Les entités</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">3.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Les entités et l’UnitOfWork</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">4&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">4.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d’écriture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="repository.html">5&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
@@ -152,16 +151,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">6&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Composition d&#8217;objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;L’hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;L’hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;L’hydrateur d’aggrégation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Composition d’objet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;L’unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;Au sujet de l’unitOfWork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">7.2&nbsp;&nbsp;&nbsp;Principe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">7.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
@@ -196,21 +196,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>1&nbsp;&nbsp;&nbsp;Utilisation sans framework</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1&nbsp;&nbsp;&nbsp;Utilisation sans framework</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -221,7 +238,7 @@
 <h2>1.1&nbsp;&nbsp;&nbsp;Initialisation<a class="headerlink" href="#initialisation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous supposerons dans ce guide que vous avez déjà installé <a class="reference external" href="https://getcomposer.org/">composer</a>.
 Les sources pour cet example se situerons dans <code class="docutils literal"><span class="pre">src/VendorName/ApplicationName</span></code> il faut donc penser à bien ajouter
-ce chemin dans l&#8217;autoload du composer.json :</p>
+ce chemin dans l’autoload du composer.json :</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;VendorName\\ApplicationName\\&quot;</span><span class="p">:</span> <span class="s2">&quot;src/VendorName/ApplicationName&quot;</span><span class="p">}</span>
@@ -232,12 +249,12 @@ ce chemin dans l&#8217;autoload du composer.json :</p>
 </div>
 <div class="section" id="installer-ting">
 <h2>1.2&nbsp;&nbsp;&nbsp;Installer Ting<a class="headerlink" href="#installer-ting" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Il suffit d&#8217;ajouter en tant que dépendance Ting à notre projet :
+<p>Il suffit d’ajouter en tant que dépendance Ting à notre projet :
 <code class="docutils literal"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">ccmbenchmark/ting</span></code></p>
 </div>
 <div class="section" id="initialisation-de-la-base-de-donnees">
 <h2>1.3&nbsp;&nbsp;&nbsp;Initialisation de la base de données<a class="headerlink" href="#initialisation-de-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour ce guide on utilise <a class="reference external" href="http://downloads.mysql.com/docs/world.sql.gz">world database</a> qu&#8217;il faut
+<p>Pour ce guide on utilise <a class="reference external" href="http://downloads.mysql.com/docs/world.sql.gz">world database</a> qu’il faut
 installer dans une base de données MySQL.
 Vous pouvez vous référer au <a class="reference external" href="https://dev.mysql.com/doc/world-setup/en/world-setup-installation.html">guide officiel</a> pour savoir comment procéder.</p>
 </div>
@@ -320,8 +337,8 @@ Vous pouvez vous référer au <a class="reference external" href="https://dev.my
 </div>
 <div class="section" id="creation-du-repository-city">
 <h2>1.5&nbsp;&nbsp;&nbsp;Création du repository City<a class="headerlink" href="#creation-du-repository-city" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-repository-city-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Repository/City.php</span><a class="headerlink" href="#src-vendorname-applicationname-repository-city-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Repository/City.php</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName\Repository</span><span class="p">;</span>
@@ -382,8 +399,8 @@ Vous pouvez vous référer au <a class="reference external" href="https://dev.my
 </div>
 <div class="section" id="creation-du-repository-country">
 <h2>1.6&nbsp;&nbsp;&nbsp;Création du repository Country<a class="headerlink" href="#creation-du-repository-country" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-repository-country-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Repository/Country.php</span><a class="headerlink" href="#src-vendorname-applicationname-repository-country-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Repository/Country.php</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName\Repository</span><span class="p">;</span>
@@ -443,8 +460,8 @@ Vous pouvez vous référer au <a class="reference external" href="https://dev.my
 </div>
 <div class="section" id="creation-du-repository-countrylanguage">
 <h2>1.7&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage<a class="headerlink" href="#creation-du-repository-countrylanguage" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-repository-countrylanguage-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Repository/CountryLanguage.php</span><a class="headerlink" href="#src-vendorname-applicationname-repository-countrylanguage-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Repository/CountryLanguage.php</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName\Repository</span><span class="p">;</span>
@@ -498,13 +515,13 @@ Vous pouvez vous référer au <a class="reference external" href="https://dev.my
 </div>
 <div class="section" id="configuration-de-la-connexion-a-la-base-de-donnees">
 <h2>1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données<a class="headerlink" href="#configuration-de-la-connexion-a-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-bootstrap-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/bootstrap.php</span><a class="headerlink" href="#src-vendorname-applicationname-bootstrap-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/bootstrap.php</span><a class="headerlink" href="#id4" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName</span><span class="p">;</span>
 
-<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../../../vendor/autoload.php&#39;</span><span class="p">;</span>
+<span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../../../vendor/autoload.php&#39;</span><span class="p">;</span>
 
 <span class="nv">$services</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CCMBenchmark\Ting\Services</span><span class="p">();</span>
 <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;ConnectionPool&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setConfig</span><span class="p">([</span>
@@ -523,25 +540,25 @@ Vous pouvez vous référer au <a class="reference external" href="https://dev.my
 </div>
 </div>
 <div class="section" id="configuration-pour-indiquer-l-emplacement-des-repository">
-<h2>1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository<a class="headerlink" href="#configuration-pour-indiquer-l-emplacement-des-repository" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On configure l&#8217;emplacement des repository en complétant le fichier <code class="docutils literal"><span class="pre">bootstrap.php</span></code></p>
-<div class="literal-block-wrapper container" id="id1">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/bootstrap.php</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<h2>1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository<a class="headerlink" href="#configuration-pour-indiquer-l-emplacement-des-repository" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On configure l’emplacement des repository en complétant le fichier <code class="docutils literal"><span class="pre">bootstrap.php</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/bootstrap.php</span><a class="headerlink" href="#id5" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$services</span>
     <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;MetadataRepository&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">batchLoadMetadata</span><span class="p">(</span><span class="s1">&#39;VendorName\ApplicationName\Repository&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/Repository/*.php&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">batchLoadMetadata</span><span class="p">(</span><span class="s1">&#39;VendorName\ApplicationName\Repository&#39;</span><span class="p">,</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/Repository/*.php&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="creation-des-entitees">
 <h2>1.10&nbsp;&nbsp;&nbsp;Création des entitées<a class="headerlink" href="#creation-des-entitees" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Lorsque l&#8217;on a créé les repository, on a indiqué avec quelle entité il travaille : <code class="docutils literal"><span class="pre">$metadata-&gt;setEntity(\VendorName\ApplicationName\Entity\Country::class);</span></code>
+<p>Lorsque l’on a créé les repository, on a indiqué avec quelle entité il travaille : <code class="docutils literal"><span class="pre">$metadata-&gt;setEntity(\VendorName\ApplicationName\Entity\Country::class);</span></code>
 On va donc maintenant créer une entité pour chaque repository.</p>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-entity-city-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Entity/City.php</span><a class="headerlink" href="#src-vendorname-applicationname-entity-city-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Entity/City.php</span><a class="headerlink" href="#id6" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName\Entity</span><span class="p">;</span>
@@ -629,8 +646,8 @@ On va donc maintenant créer une entité pour chaque repository.</p>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-entity-country-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Entity/Country.php</span><a class="headerlink" href="#src-vendorname-applicationname-entity-country-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Entity/Country.php</span><a class="headerlink" href="#id7" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName\Entity</span><span class="p">;</span>
@@ -718,8 +735,8 @@ On va donc maintenant créer une entité pour chaque repository.</p>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper container" id="src-vendorname-applicationname-entity-countrylanguage-php">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Entity/CountryLanguage.php</span><a class="headerlink" href="#src-vendorname-applicationname-entity-countrylanguage-php" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/Entity/CountryLanguage.php</span><a class="headerlink" href="#id8" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">VendorName\ApplicationName\Entity</span><span class="p">;</span>
@@ -793,8 +810,8 @@ On va donc maintenant créer une entité pour chaque repository.</p>
 </div>
 <div class="section" id="vous-pouvez-maintenant-utiliser-ting">
 <h2>1.11&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting<a class="headerlink" href="#vous-pouvez-maintenant-utiliser-ting" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="literal-block-wrapper container" id="id2">
-<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/bootstrap.php</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">src/VendorName/ApplicationName/bootstrap.php</span><a class="headerlink" href="#id9" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$debug</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CCMBenchmark\Ting\Util\Debug</span><span class="p">();</span>
 
 <span class="nv">$cityRepository</span> <span class="o">=</span> <span class="nv">$services</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;RepositoryFactory&#39;</span><span class="p">)</span>
