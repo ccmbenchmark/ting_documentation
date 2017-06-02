@@ -103,16 +103,16 @@ msgid ""
 "Celui-ci permet d'aggréger un ensemble de résultats, par exemple "
 "retourner une collection d'objet User et que chaque objet User ai la "
 "liste de tous les livres possédés par ce dernier."
-msgstr "This one can aggregate data. "
-"You can regroup all books from one user and put them into this one."
+msgstr "This one allows us to aggregate a set of results, for example, "
+"we can return a collection of users and for each User object we can have its list of books."
 
 #: ../../hydrator.rst:101
 msgid "Voici un exemple d'utilisation"
-msgstr "Here example of use"
+msgstr "Here is an example of use"
 
 #: ../../hydrator.rst:140
 msgid "Rentrons un peu dans les détails :"
-msgstr "Look deeper"
+msgstr "If we take a deeper look"
 
 #: ../../hydrator.rst:148
 msgid ""

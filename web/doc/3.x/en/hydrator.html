@@ -310,8 +310,8 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Available since version 3.3</p>
 </div>
-<p>This one can aggregate data. You can regroup all books from one user and put them into this one.</p>
-<p>Here example of use</p>
+<p>This one allows us to aggregate a set of results, for example, we can return a collection of users and for each User object we can have its list of books.</p>
+<p>Here is an example of use</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
@@ -348,7 +348,7 @@
     <span class="c1">// ...</span>
 </pre></div>
 </div>
-<p>Look deeper</p>
+<p>If we take a deeper look</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableIdIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">();</span>
 <span class="p">});</span>
