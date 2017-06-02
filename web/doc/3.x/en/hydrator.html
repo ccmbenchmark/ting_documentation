@@ -281,7 +281,7 @@
 <div class="section" id="l-hydrateur-pour-un-seul-objet">
 <span id="id1"></span><h2>6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator is optimized to return multiple objects when we do a query that is intended to return only one item, it is not the best choice.</p>
-<p>You can inject <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code> that suit better your needs</p>
+<p>You can inject <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code>, to suit your needs</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
@@ -354,17 +354,17 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>The closure injected through <code class="docutils literal"><span class="pre">callableIdIs</span></code> allow you to return the identifier we gonna use as aggregate key (user’s identifier here)</p>
+<p>The closure injected through <code class="docutils literal"><span class="pre">callableIdIs</span></code> allows you to return the identifier we gonna use as aggregate key (user’s identifier here)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It’s very important to sort your data on this aggregate key in your SQL query otherwise you should have partial result.</p>
+<p class="last">It’s very important to sort your data on this aggregate key in your SQL query otherwise you will have partial result.</p>
 </div>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableDataIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;book&#39;</span><span class="p">];</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>The closure injected through <code class="docutils literal"><span class="pre">callableDataIs</span></code> allow you to return the data that should be aggregated (here a book)</p>
+<p>The closure injected through <code class="docutils literal"><span class="pre">callableDataIs</span></code> allows you to return the data that should be aggregated (here a book)</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nv">$books</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">setBooks</span><span class="p">(</span><span class="nv">$books</span><span class="p">);</span>
     <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>

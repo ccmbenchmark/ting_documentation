@@ -83,8 +83,8 @@ msgid ""
 "``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` qui conviendra "
 "mieux à votre besoin."
 msgstr ""
-"You can inject ``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` "
-"that suit better your needs"
+"You can inject ``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject``, "
+"to suit your needs"
 
 #: ../../hydrator.rst:88
 msgid "La collection retournée est une collection d'objet User."
