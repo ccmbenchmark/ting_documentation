@@ -184,7 +184,7 @@ msgstr ""
 #: ../../getting-started.rst:255
 msgid "Configuration de la connexion à la base de données"
 msgstr "Database connection settings"
-msgstr
+
 #: ../../getting-started.rst
 msgid "src/VendorName/ApplicationName/bootstrap.php"
 msgstr ""

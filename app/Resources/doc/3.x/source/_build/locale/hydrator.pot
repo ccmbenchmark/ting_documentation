@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 14:54+0200\n"
+"POT-Creation-Date: 2017-06-02 11:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,70 +37,107 @@ msgid "L'hydrateur par défaut va retourner pour chaque ligne un tableau associa
 msgstr ""
 
 #: ../../hydrator.rst:39
-#: ../../hydrator.rst:116
-#: ../../hydrator.rst:159
-#: ../../hydrator.rst:201
-#: ../../hydrator.rst:243
+#: ../../hydrator.rst:173
+#: ../../hydrator.rst:221
+#: ../../hydrator.rst:264
+#: ../../hydrator.rst:306
+#: ../../hydrator.rst:348
 msgid "La collection retournée est composée de lignes structurées ainsi :"
 msgstr ""
 
-#: ../../hydrator.rst:57
-msgid "L'hydrateur pour un seul objet"
-msgstr ""
-
-#: ../../hydrator.rst:58
-msgid "L'hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l'on fait une requête qui n'a pour but que de retourner un objet, il n'est pas des plus appropriés."
-msgstr ""
-
-#: ../../hydrator.rst:61
-msgid "Vous pouvez injecter ``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` qui conviendra mieux à votre besoin."
-msgstr ""
-
-#: ../../hydrator.rst:84
-msgid "La collection retournée est une collection d'objet User."
-msgstr ""
-
-#: ../../hydrator.rst:87
+#: ../../hydrator.rst:55
 msgid "Jointure avec aucune donnée"
 msgstr ""
 
-#: ../../hydrator.rst:88
+#: ../../hydrator.rst:56
 msgid "Lorsque la jointure ne retourne aucune donnée, la clé 'c' aura pour valeur null"
 msgstr ""
 
-#: ../../hydrator.rst:91
+#: ../../hydrator.rst:61
+msgid "L'hydrateur pour un seul objet"
+msgstr ""
+
+#: ../../hydrator.rst:62
+msgid "L'hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l'on fait une requête qui n'a pour but que de retourner un objet, il n'est pas des plus appropriés."
+msgstr ""
+
+#: ../../hydrator.rst:65
+msgid "Vous pouvez injecter ``CCMBenchmark\\Ting\\Repository\\HydratorSingleObject`` qui conviendra mieux à votre besoin."
+msgstr ""
+
+#: ../../hydrator.rst:88
+msgid "La collection retournée est une collection d'objet User."
+msgstr ""
+
+#: ../../hydrator.rst:93
+msgid "L'hydrateur d'aggrégation"
+msgstr ""
+
+#: ../../hydrator.rst:97
+msgid "Disponible uniquement à partir de la version 3.3"
+msgstr ""
+
+#: ../../hydrator.rst:99
+msgid "Celui-ci permet d'aggréger un ensemble de résultats, par exemple retourner une collection d'objet User et que chaque objet User ai la liste de tous les livres possédés par ce dernier."
+msgstr ""
+
+#: ../../hydrator.rst:101
+msgid "Voici un exemple d'utilisation"
+msgstr ""
+
+#: ../../hydrator.rst:140
+msgid "Rentrons un peu dans les détails :"
+msgstr ""
+
+#: ../../hydrator.rst:148
+msgid "La closure injectée via ``callableIdIs`` permet de retourner l'identifiant qui sera utilisé comme clée d'aggrégation (ici l'identifiant de l'utilisateur)"
+msgstr ""
+
+#: ../../hydrator.rst:152
+msgid "Il est très important d'effectuer un tri dans votre requête SQL sur cette clée d'aggrégation sinon vous aurez des résultats partiels."
+msgstr ""
+
+#: ../../hydrator.rst:160
+msgid "La closure injectée via ``callableDataIs`` permet de retourner la donnée qui doit être aggrégée (ici un Livre)"
+msgstr ""
+
+#: ../../hydrator.rst:169
+msgid "Cette dernière partie est facultative, si elle est omise, le résultat de l'aggrégation se trouvera dans la clée ``aggregate`` de la collection. Elle vous permet d'effectuer une opération de finalisation et de choisir ce que vous voulez faire des données qui viennent d'être aggrégées, ici il s'agit d'une liste de livre que nous injectons dans l'utilisateur via la méthode ``setBooks``"
+msgstr ""
+
+#: ../../hydrator.rst:196
 msgid "Données sans metadata"
 msgstr ""
 
-#: ../../hydrator.rst:92
+#: ../../hydrator.rst:197
 msgid "Si vous effectuez une requête qui retourne des données qui ne correspondent à aucune metadata, que ce soit une colonne d'aggrégation comme ``SUM(price)`` ou une colonne qui n'a pas été mappée comme ``my_extra_column`` l'hydrateur va créer un objet ``stdClass`` avec des propriétés correspondant à ces colonnes."
 msgstr ""
 
-#: ../../hydrator.rst:96
+#: ../../hydrator.rst:201
 msgid "Cet objet ``stdClass`` est accessible dans la clée 0 du tableau retourné."
 msgstr ""
 
-#: ../../hydrator.rst:132
+#: ../../hydrator.rst:237
 msgid "Mapper des données sans metadata"
 msgstr ""
 
-#: ../../hydrator.rst:133
+#: ../../hydrator.rst:238
 msgid "Dans le cas d'une colonne d'aggrégation, on peut souhaiter la mapper dans un objet. Pour mapper la colonne ``nb_books`` dans mon model User via la méthode ``setNbBooks`` il suffit de faire :"
 msgstr ""
 
-#: ../../hydrator.rst:172
+#: ../../hydrator.rst:277
 msgid "Déserializer des données sans metadata"
 msgstr ""
 
-#: ../../hydrator.rst:173
+#: ../../hydrator.rst:278
 msgid "Pour rappel l'action de déserializer consiste à transformer un type de base données dans un type PHP. Par exemple si on récupère une date qui n'est pas dans des metadata, on peut vouloir transformer la date en objet ``Datetime``."
 msgstr ""
 
-#: ../../hydrator.rst:216
+#: ../../hydrator.rst:321
 msgid "Composition d'objet"
 msgstr ""
 
-#: ../../hydrator.rst:217
+#: ../../hydrator.rst:322
 msgid "On peut vouloir faire de la composition d'objet, injecter un objet dans un autre et ce sur plusieurs niveaux. Pour mapper l'objet ``Country`` (qui a l'alias ``co``) dans mon model ``City`` (qui a l'alias ``cit``) via la méthode ``setCountry`` il suffit de faire :"
 msgstr ""
 

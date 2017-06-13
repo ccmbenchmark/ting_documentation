@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 14:54+0200\n"
+"POT-Creation-Date: 2017-06-02 11:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Création du repository City"
 msgstr ""
 
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:81
 msgid "src/VendorName/ApplicationName/Repository/City.php"
 msgstr ""
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Création du repository Country"
 msgstr ""
 
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:143
 msgid "src/VendorName/ApplicationName/Repository/Country.php"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Création du repository CountryLanguage"
 msgstr ""
 
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:203
 msgid "src/VendorName/ApplicationName/Repository/CountryLanguage.php"
 msgstr ""
 
@@ -166,9 +166,9 @@ msgstr ""
 msgid "Configuration de la connexion à la base de données"
 msgstr ""
 
-#: ../../getting-started.rst:0
-#: ../../getting-started.rst:0
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:257
+#: ../../getting-started.rst:284
+#: ../../getting-started.rst:552
 msgid "src/VendorName/ApplicationName/bootstrap.php"
 msgstr ""
 
@@ -188,15 +188,15 @@ msgstr ""
 msgid "Lorsque l'on a créé les repository, on a indiqué avec quelle entité il travaille : ``$metadata->setEntity(\\VendorName\\ApplicationName\\Entity\\Country::class);`` On va donc maintenant créer une entité pour chaque repository."
 msgstr ""
 
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:299
 msgid "src/VendorName/ApplicationName/Entity/City.php"
 msgstr ""
 
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:388
 msgid "src/VendorName/ApplicationName/Entity/Country.php"
 msgstr ""
 
-#: ../../getting-started.rst:0
+#: ../../getting-started.rst:477
 msgid "src/VendorName/ApplicationName/Entity/CountryLanguage.php"
 msgstr ""
 

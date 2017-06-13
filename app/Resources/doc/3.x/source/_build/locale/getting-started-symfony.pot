@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 14:54+0200\n"
+"POT-Creation-Date: 2017-06-02 11:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -174,7 +174,7 @@ msgstr ""
 msgid "Création du repository City"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:138
 msgid "src/AppBundle/Repository/City.php"
 msgstr ""
 
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Création du repository Country"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:200
 msgid "src/AppBundle/Repository/Country.php"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Création du repository CountryLanguage"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:260
 msgid "src/AppBundle/Repository/CountryLanguage.php"
 msgstr ""
 
@@ -198,8 +198,8 @@ msgstr ""
 msgid "Configuration de la connexion à la base de données"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:314
+#: ../../getting-started-symfony.rst:336
 msgid "app/config/config.yml"
 msgstr ""
 
@@ -223,15 +223,15 @@ msgstr ""
 msgid "Lorsque l'on a créé les repository, on a indiqué avec quel entité il travaille : ``$metadata->setEntity('AppBundle\\Entity\\Country');`` On va donc maintenant créer une entité pour chaque repository."
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:355
 msgid "src/AppBundle/Entity/City.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:444
 msgid "src/AppBundle/Entity/Country.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:0
+#: ../../getting-started-symfony.rst:533
 msgid "src/AppBundle/Entity/CountryLanguage.php"
 msgstr ""
 

@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Recherche" href="search.html"/>
     <link rel="top" title="documentation ting 1" href="index.html"/>
     <link rel="next" title="7   L’unitOfWork" href="unitofwork.html"/>
     <link rel="prev" title="5   Le Repository" href="repository.html"/> 
@@ -112,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Création du repository Country</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Création des entitées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting</a></li>
 </ul>
@@ -127,19 +126,19 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-country">2.7&nbsp;&nbsp;&nbsp;Création du repository Country</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-countrylanguage">2.8&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-de-la-connexion-a-la-base-de-donnees">2.9&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-des-entitees">2.11&nbsp;&nbsp;&nbsp;Création des entitées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#vous-pouvez-maintenant-utiliser-ting">2.12&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="entity.html">3&nbsp;&nbsp;&nbsp;Les entités</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">3.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Les entités et l’UnitOfWork</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="query.html">4&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">4.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d’écriture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="repository.html">5&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
@@ -152,16 +151,17 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Composition d&#8217;objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;L’hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;L’hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;L’hydrateur d’aggrégation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Composition d’objet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;L’unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;Au sujet de l’unitOfWork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">7.2&nbsp;&nbsp;&nbsp;Principe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">7.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
@@ -196,21 +196,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>6&nbsp;&nbsp;&nbsp;Les hydrateurs</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6&nbsp;&nbsp;&nbsp;Les hydrateurs</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -219,13 +236,13 @@
 <h1>6&nbsp;&nbsp;&nbsp;Les hydrateurs<a class="headerlink" href="#les-hydrateurs" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="au-sujet-des-hydrateurs">
 <h2>6.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs<a class="headerlink" href="#au-sujet-des-hydrateurs" title="Lien permanent vers ce titre">¶</a></h2>
-<p>L&#8217;hydrateur va être chargé de transformer le résultat d&#8217;une requête SQL dans les objets qui ont été configurés dans les metadata
-par l&#8217;intermédiaire du <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a></p>
+<p>L’hydrateur va être chargé de transformer le résultat d’une requête SQL dans les objets qui ont été configurés dans les metadata
+par l’intermédiaire du <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a></p>
 </div>
 <div class="section" id="l-hydrateur-par-defaut">
-<h2>6.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut<a class="headerlink" href="#l-hydrateur-par-defaut" title="Lien permanent vers ce titre">¶</a></h2>
-<p>L&#8217;hydrateur par défaut va retourner pour chaque ligne un tableau associatif avec pour clé le nom de la table (ou l&#8217;alias utilisé)
-et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux metadata.</p>
+<h2>6.2&nbsp;&nbsp;&nbsp;L’hydrateur par défaut<a class="headerlink" href="#l-hydrateur-par-defaut" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’hydrateur par défaut va retourner pour chaque ligne un tableau associatif avec pour clé le nom de la table (ou l’alias utilisé)
+et pour valeur l’objet qu’il a réussi à créer par rapport aux metadata.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
@@ -258,11 +275,15 @@ et pour valeur l&#8217;objet qu&#8217;il a réussi à créer par rapport aux met
   <span class="p">]</span>
 </pre></div>
 </div>
+<div class="section" id="jointure-avec-aucune-donnee">
+<h3>6.2.1&nbsp;&nbsp;&nbsp;Jointure avec aucune donnée<a class="headerlink" href="#jointure-avec-aucune-donnee" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Lorsque la jointure ne retourne aucune donnée, la clé “c” aura pour valeur null</p>
+</div>
 </div>
 <div class="section" id="l-hydrateur-pour-un-seul-objet">
-<span id="id1"></span><h2>6.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Lien permanent vers ce titre">¶</a></h2>
-<p>L&#8217;hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l&#8217;on fait une requête qui n&#8217;a pour but que de retourner
-un objet, il n&#8217;est pas des plus appropriés.</p>
+<span id="id1"></span><h2>6.3&nbsp;&nbsp;&nbsp;L’hydrateur pour un seul objet<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’hydrateur par défaut est optimisé pour retourner plusieurs objets, lorsque l’on fait une requête qui n’a pour but que de retourner
+un objet, il n’est pas des plus appropriés.</p>
 <p>Vous pouvez injecter <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code> qui conviendra mieux à votre besoin.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -275,7 +296,7 @@ un objet, il n&#8217;est pas des plus appropriés.</p>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getUserSylvain</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, c.text FROM user WHERE name = :name&#39;</span><span class="p">);</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT id, name, FROM user WHERE name = :name&#39;</span><span class="p">);</span>
         <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span><span class="p">]);</span>
 
         <span class="k">return</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="k">new</span> <span class="nx">CCMBenchmark\Ting\Repository\HydratorSingleObject</span><span class="p">()));</span>
@@ -284,16 +305,103 @@ un objet, il n&#8217;est pas des plus appropriés.</p>
     <span class="c1">// ...</span>
 </pre></div>
 </div>
-<p>La collection retournée est une collection d&#8217;objet User.</p>
-<div class="section" id="jointure-avec-aucune-donnee">
-<h3>6.3.1&nbsp;&nbsp;&nbsp;Jointure avec aucune donnée<a class="headerlink" href="#jointure-avec-aucune-donnee" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Lorsque la jointure ne retourne aucune donnée, la clé &#8216;c&#8217; aura pour valeur null</p>
+<p>La collection retournée est une collection d’objet User.</p>
+</div>
+<div class="section" id="l-hydrateur-d-aggregation">
+<span id="id2"></span><h2>6.4&nbsp;&nbsp;&nbsp;L’hydrateur d’aggrégation<a class="headerlink" href="#l-hydrateur-d-aggregation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Disponible uniquement à partir de la version 3.3</p>
+</div>
+<p>Celui-ci permet d’aggréger un ensemble de résultats, par exemple retourner une collection d’objet User et que chaque objet User ai la liste de tous les livres possédés par ce dernier.</p>
+<p>Voici un exemple d’utilisation</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return CollectionInterface</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUsersWithBooks</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT user.id, user.name, book.id, book.name</span>
+<span class="s1">                FROM user</span>
+<span class="s1">                INNER JOIN book ON (book.user_id = user.id)</span>
+<span class="s1">                ORDER BY user.id&#39;</span><span class="p">);</span>
+
+        <span class="nv">$hydratorAggregator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CCMBenchmark\Ting\Repository\HydratorAggregator</span><span class="p">();</span>
+        <span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableIdIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">();</span>
+        <span class="p">});</span>
+
+        <span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableDataIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;book&#39;</span><span class="p">];</span>
+        <span class="p">});</span>
+
+        <span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nv">$books</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">setBooks</span><span class="p">(</span><span class="nv">$books</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
+        <span class="p">});</span>
+
+        <span class="k">return</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$hydratorAggregator</span><span class="p">));</span>
+<span class="p">}</span>
+
+    <span class="c1">// ...</span>
+</pre></div>
+</div>
+<p>Rentrons un peu dans les détails :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableIdIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>La closure injectée via <code class="docutils literal"><span class="pre">callableIdIs</span></code> permet de retourner l’identifiant qui sera utilisé comme clée d’aggrégation (ici l’identifiant de l’utilisateur)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Il est très important d’effectuer un tri dans votre requête SQL sur cette clée d’aggrégation sinon vous aurez des résultats partiels.</p>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableDataIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;book&#39;</span><span class="p">];</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>La closure injectée via <code class="docutils literal"><span class="pre">callableDataIs</span></code> permet de retourner la donnée qui doit être aggrégée (ici un Livre)</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nv">$books</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">setBooks</span><span class="p">(</span><span class="nv">$books</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Cette dernière partie est facultative, si elle est omise, le résultat de l’aggrégation se trouvera dans la clée <code class="docutils literal"><span class="pre">aggregate</span></code> de la collection.
+Elle vous permet d’effectuer une opération de finalisation et de choisir ce que vous voulez faire des données qui viennent d’être aggrégées, ici
+il s’agit d’une liste de livre que nous injectons dans l’utilisateur via la méthode <code class="docutils literal"><span class="pre">setBooks</span></code></p>
+<p>La collection retournée est composée de lignes structurées ainsi :</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span>
+      <span class="p">[</span><span class="nx">books</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="nx">Book</span><span class="p">(</span>
+          <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+          <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Tintin au tibet&quot;</span>
+        <span class="p">),</span>
+        <span class="nx">Book</span><span class="p">(</span>
+          <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">2</span>
+          <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;L&#39;Oreille cassée&quot;</span>
+        <span class="p">)</span>
+      <span class="p">]</span>
+    <span class="p">)</span>
+  <span class="p">]</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="donnees-sans-metadata">
-<h2>6.4&nbsp;&nbsp;&nbsp;Données sans metadata<a class="headerlink" href="#donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>6.5&nbsp;&nbsp;&nbsp;Données sans metadata<a class="headerlink" href="#donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Si vous effectuez une requête qui retourne des données qui ne correspondent à aucune metadata, que ce soit une colonne
-d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(price)</span></code> ou une colonne qui n&#8217;a pas été mappée comme <code class="docutils literal"><span class="pre">my_extra_column</span></code> l&#8217;hydrateur va créer un objet
+d’aggrégation comme <code class="docutils literal"><span class="pre">SUM(price)</span></code> ou une colonne qui n’a pas été mappée comme <code class="docutils literal"><span class="pre">my_extra_column</span></code> l’hydrateur va créer un objet
 <code class="docutils literal"><span class="pre">stdClass</span></code> avec des propriétés correspondant à ces colonnes.</p>
 <p>Cet objet <code class="docutils literal"><span class="pre">stdClass</span></code> est accessible dans la clée 0 du tableau retourné.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
@@ -328,8 +436,8 @@ d&#8217;aggrégation comme <code class="docutils literal"><span class="pre">SUM(
 </div>
 </div>
 <div class="section" id="mapper-des-donnees-sans-metadata">
-<h2>6.5&nbsp;&nbsp;&nbsp;Mapper des données sans metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans le cas d&#8217;une colonne d&#8217;aggrégation, on peut souhaiter la mapper dans un objet.
+<h2>6.6&nbsp;&nbsp;&nbsp;Mapper des données sans metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans le cas d’une colonne d’aggrégation, on peut souhaiter la mapper dans un objet.
 Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books</span></code> dans mon model User via la méthode <code class="docutils literal"><span class="pre">setNbBooks</span></code> il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -357,7 +465,7 @@ Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">nbBooks</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span>
     <span class="p">)</span>
   <span class="p">]</span>
@@ -365,9 +473,9 @@ Pour mapper la colonne <code class="docutils literal"><span class="pre">nb_books
 </div>
 </div>
 <div class="section" id="deserializer-des-donnees-sans-metadata">
-<h2>6.6&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour rappel l&#8217;action de déserializer consiste à transformer un type de base données dans un type PHP.
-Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on peut vouloir transformer la date en objet
+<h2>6.7&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour rappel l’action de déserializer consiste à transformer un type de base données dans un type PHP.
+Par exemple si on récupère une date qui n’est pas dans des metadata, on peut vouloir transformer la date en objet
 <code class="docutils literal"><span class="pre">Datetime</span></code>.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -399,16 +507,16 @@ Par exemple si on récupère une date qui n&#8217;est pas dans des metadata, on 
       <span class="p">[</span><span class="nx">fetchedDate</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Datetime</span><span class="p">(</span><span class="s2">&quot;2016-01-13 10:41:36&quot;</span><span class="p">)</span>
     <span class="p">),</span>
     <span class="s1">&#39;article&#39;</span> <span class="o">=&gt;</span> <span class="nx">Article</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;My Awesome Book&quot;</span><span class="p">,</span>
     <span class="p">)</span>
   <span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="composition-d-objet">
-<h2>6.7&nbsp;&nbsp;&nbsp;Composition d&#8217;objet<a class="headerlink" href="#composition-d-objet" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On peut vouloir faire de la composition d&#8217;objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
-Pour mapper l&#8217;objet <code class="docutils literal"><span class="pre">Country</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">co</span></code>) dans mon model <code class="docutils literal"><span class="pre">City</span></code> (qui a l&#8217;alias <code class="docutils literal"><span class="pre">cit</span></code>) via la méthode <code class="docutils literal"><span class="pre">setCountry</span></code> il suffit de faire :</p>
+<h2>6.8&nbsp;&nbsp;&nbsp;Composition d’objet<a class="headerlink" href="#composition-d-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut vouloir faire de la composition d’objet, injecter un objet dans un autre et ce sur plusieurs niveaux.
+Pour mapper l’objet <code class="docutils literal"><span class="pre">Country</span></code> (qui a l’alias <code class="docutils literal"><span class="pre">co</span></code>) dans mon model <code class="docutils literal"><span class="pre">City</span></code> (qui a l’alias <code class="docutils literal"><span class="pre">cit</span></code>) via la méthode <code class="docutils literal"><span class="pre">setCountry</span></code> il suffit de faire :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
@@ -435,7 +543,7 @@ Pour mapper l&#8217;objet <code class="docutils literal"><span class="pre">Count
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;cit&#39;</span> <span class="o">=&gt;</span> <span class="nx">City</span><span class="p">(</span>
-      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span><span class="nx"> </span><span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>
       <span class="p">[</span><span class="nx">country</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Country</span><span class="p">(</span>
         <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span>
       <span class="p">)</span>

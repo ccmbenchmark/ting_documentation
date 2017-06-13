@@ -67,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Recherche" href="search.html"/>
     <link rel="top" title="documentation ting 1" href="index.html"/>
     <link rel="next" title="5   Le Repository" href="repository.html"/>
     <link rel="prev" title="3   Les entités" href="entity.html"/> 
@@ -112,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-country">1.6&nbsp;&nbsp;&nbsp;Création du repository Country</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-du-repository-countrylanguage">1.7&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-de-la-connexion-a-la-base-de-donnees">1.8&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#configuration-pour-indiquer-l-emplacement-des-repository">1.9&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#creation-des-entitees">1.10&nbsp;&nbsp;&nbsp;Création des entitées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#vous-pouvez-maintenant-utiliser-ting">1.11&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting</a></li>
 </ul>
@@ -127,19 +126,19 @@
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-country">2.7&nbsp;&nbsp;&nbsp;Création du repository Country</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-du-repository-countrylanguage">2.8&nbsp;&nbsp;&nbsp;Création du repository CountryLanguage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-de-la-connexion-a-la-base-de-donnees">2.9&nbsp;&nbsp;&nbsp;Configuration de la connexion à la base de données</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l&#8217;emplacement des repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#configuration-pour-indiquer-l-emplacement-des-repository">2.10&nbsp;&nbsp;&nbsp;Configuration pour indiquer l’emplacement des repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#creation-des-entitees">2.11&nbsp;&nbsp;&nbsp;Création des entitées</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started-symfony.html#vous-pouvez-maintenant-utiliser-ting">2.12&nbsp;&nbsp;&nbsp;Vous pouvez maintenant utiliser Ting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="entity.html">3&nbsp;&nbsp;&nbsp;Les entités</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="entity.html#au-sujet-des-entites">3.1&nbsp;&nbsp;&nbsp;Au sujet des entités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Les entités et l&#8217;UnitOfWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entity.html#les-entites-et-l-unitofwork">3.2&nbsp;&nbsp;&nbsp;Les entités et l’UnitOfWork</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-de-lecture">4.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#effectuer-une-requete-d-ecriture">4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d’écriture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="repository.html">5&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
@@ -152,16 +151,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">6&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">6.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.4&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.7&nbsp;&nbsp;&nbsp;Composition d&#8217;objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;L’hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;L’hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;L’hydrateur d’aggrégation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapper des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Déserializer des données sans metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Composition d’objet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;L’unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">7.1&nbsp;&nbsp;&nbsp;Au sujet de l’unitOfWork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">7.2&nbsp;&nbsp;&nbsp;Principe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">7.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
@@ -196,21 +196,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>4&nbsp;&nbsp;&nbsp;Les requêtes</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>4&nbsp;&nbsp;&nbsp;Les requêtes</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -220,10 +237,10 @@
 <div class="section" id="effectuer-une-requete-de-lecture">
 <h2>4.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture<a class="headerlink" href="#effectuer-une-requete-de-lecture" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="l-objet-query">
-<h3>4.1.1&nbsp;&nbsp;&nbsp;L&#8217;objet Query<a class="headerlink" href="#l-objet-query" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une requête s&#8217;effectue en récupérant l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code>
+<h3>4.1.1&nbsp;&nbsp;&nbsp;L’objet Query<a class="headerlink" href="#l-objet-query" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Une requête s’effectue en récupérant l’objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code>
 via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
-<p>Pour ce faire il suffit d&#8217;appeler :</p>
+<p>Pour ce faire il suffit d’appeler :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
@@ -306,16 +323,16 @@ Cet objet est un <code class="docutils literal"><span class="pre">Iterator</span
 </div>
 <div class="section" id="format-de-retour-simplifie-pour-des-requetes-sans-jointures">
 <h3>4.1.6&nbsp;&nbsp;&nbsp;Format de retour simplifié pour des requêtes sans jointures<a class="headerlink" href="#format-de-retour-simplifie-pour-des-requetes-sans-jointures" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Voir la documentation concernant l&#8217;<a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><span class="std std-ref">hydration pour un seul objet</span></a></p>
+<p>Voir la documentation concernant l”<a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet"><span class="std std-ref">hydration pour un seul objet</span></a></p>
 </div>
 <div class="section" id="compter-les-elements-d-une-collection">
-<h3>4.1.7&nbsp;&nbsp;&nbsp;Compter les éléments d&#8217;une collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Il faut savoir qu&#8217;une <code class="docutils literal"><span class="pre">Collection</span></code> implémente l&#8217;interface standard <code class="docutils literal"><span class="pre">Countable</span></code>. Vous pouvez donc savoir combien elle a d&#8217;éléments comme vous le faites pour un tableau PHP : <code class="docutils literal"><span class="pre">count($collection)</span></code></p>
+<h3>4.1.7&nbsp;&nbsp;&nbsp;Compter les éléments d’une collection<a class="headerlink" href="#compter-les-elements-d-une-collection" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il faut savoir qu’une <code class="docutils literal"><span class="pre">Collection</span></code> implémente l’interface standard <code class="docutils literal"><span class="pre">Countable</span></code>. Vous pouvez donc savoir combien elle a d’éléments comme vous le faites pour un tableau PHP : <code class="docutils literal"><span class="pre">count($collection)</span></code></p>
 </div>
 <div class="section" id="executer-une-requete-sur-le-master">
 <h3>4.1.8&nbsp;&nbsp;&nbsp;Exécuter une requête sur le master<a class="headerlink" href="#executer-une-requete-sur-le-master" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une requête de lecture s&#8217;effectuera par défaut sur un des slaves configurés (si des slaves ont été configurés), si vous avez besoin
-d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthode <code class="docutils literal"><span class="pre">selectMaster</span></code> :</p>
+<p>Une requête de lecture s’effectuera par défaut sur un des slaves configurés (si des slaves ont été configurés), si vous avez besoin
+d’effectuer votre requête sur le master, alors il faut appeler la méthode <code class="docutils literal"><span class="pre">selectMaster</span></code> :</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
@@ -337,9 +354,9 @@ d&#8217;effectuer votre requête sur le master, alors il faut appeler la méthod
 </div>
 </div>
 <div class="section" id="effectuer-une-requete-d-ecriture">
-<h2>4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>4.2&nbsp;&nbsp;&nbsp;Effectuer une requête d’écriture<a class="headerlink" href="#effectuer-une-requete-d-ecriture" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La logique reste la même que pour une requête de lecture, à quelques différences près.
-Il faut appeler la méthode <code class="docutils literal"><span class="pre">execute</span></code> sur l&#8217;objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code></p>
+Il faut appeler la méthode <code class="docutils literal"><span class="pre">execute</span></code> sur l’objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Query</span></code></p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
