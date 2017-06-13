@@ -120,7 +120,7 @@ msgid ""
 "l'identifiant qui sera utilisé comme clée d'aggrégation (ici "
 "l'identifiant de l'utilisateur)"
 msgstr "The closure injected through ``callableIdIs`` allows you to "
-"return the identifier we gonna use as aggregate key (user's identifier here)"
+"return the identifier we're gonna use as aggregate key (user's identifier here)"
 
 #: ../../hydrator.rst:152
 msgid ""
