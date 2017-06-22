@@ -269,6 +269,13 @@
                 <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
+            <span class="p">])</span>
+            <span class="o">-&gt;</span><span class="na">addField</span><span class="p">([</span>
+                <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;capitalCity&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;capital_city&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;bool&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;getter&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;isCapitalCity&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;setter&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;capitalCityIs&#39;</span>
             <span class="p">]);</span>
 
         <span class="k">return</span> <span class="nv">$metadata</span>
@@ -297,6 +304,14 @@
 </dd>
 </dl>
 <p>The types <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> and <code class="docutils literal"><span class="pre">json</span></code> are a bit special because they are dependent of database so they can be serialized / deserialized with some options:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Available since version 3.2</p>
+</div>
+<ul class="simple">
+<li>the getter key allows to change name of the getter, by default it is getFieldName</li>
+<li>the setter key allows to change name of the setter, by default it is setFieldName</li>
+</ul>
 </div>
 <div class="section" id="le-serializer">
 <h2>5.3&nbsp;&nbsp;&nbsp;Serializer<a class="headerlink" href="#le-serializer" title="Permalink to this headline">¶</a></h2>
@@ -370,7 +385,7 @@
 <p>The Repository provides several methods to perform common queries easily.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
 <h3>5.5.1&nbsp;&nbsp;&nbsp;Find an object by it’s primary key<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

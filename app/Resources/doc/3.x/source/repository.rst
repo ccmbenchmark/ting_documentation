@@ -46,6 +46,13 @@ Comme un exemple est plus parlant qu'un long discours :
                     'fieldName'  => 'name',
                     'columnName' => 'cit_name',
                     'type'       => 'string'
+                ])
+                ->addField([
+                    'fieldName'  => 'capitalCity',
+                    'columnName' => 'capital_city',
+                    'type'       => 'bool',
+                    'getter'     => 'isCapitalCity',
+                    'setter'     => 'capitalCityIs'
                 ]);
 
             return $metadata
@@ -65,6 +72,12 @@ Quelques précisions :
 Les types ``bool``, ``datetime`` et ``json`` sont un peu particuliers, car il s'agit de types considérés complexes et qui acceptent
 donc d'être sérializés/désérializés via les options du serializer
 
+.. note::
+
+    Disponible uniquement à partir de la version 3.2
+
+- getter permet de redéfinir le nom du getter (par defaut, le getter est getFieldName)
+- setter permet de redéfinir le nom du setter (par defaut, le setter est setFieldName)
 
 Le Serializer
 -------------
@@ -166,7 +179,7 @@ Trouver un objet par clé primaire
 
 .. code-block:: php
 
-    $repository->get(['id' => 3])
+    $repository->get(3)
 
 Tous les objets
 ~~~~~~~~~~~~~~~
