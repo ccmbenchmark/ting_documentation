@@ -96,7 +96,7 @@ L'hydrateur d'aggrégation
 
     Disponible uniquement à partir de la version 3.3
 
-Celui-ci permet d'aggréger un ensemble de résultats, par exemple retourner une collection d'objet User et que chaque objet User ai la liste de tous les livres possédés par ce dernier.
+Celui-ci permet d'aggréger un ensemble de résultats, par exemple retourner une collection d'objet User et que chaque objet User ait la liste de tous les livres possédés par ce dernier.
 
 Voici un exemple d'utilisation
 
@@ -145,11 +145,11 @@ Rentrons un peu dans les détails :
         return $result['user']->getId();
     });
 
-La closure injectée via ``callableIdIs`` permet de retourner l'identifiant qui sera utilisé comme clée d'aggrégation (ici l'identifiant de l'utilisateur)
+La closure injectée via ``callableIdIs`` permet de retourner l'identifiant qui sera utilisé comme clé d'aggrégation (ici l'identifiant de l'utilisateur)
 
 .. note::
 
-    Il est très important d'effectuer un tri dans votre requête SQL sur cette clée d'aggrégation sinon vous aurez des résultats partiels.
+    Il est très important d'effectuer un tri dans votre requête SQL sur cette clé d'aggrégation sinon vous aurez des résultats partiels.
 
 .. code-block:: php
 
@@ -166,7 +166,7 @@ La closure injectée via ``callableDataIs`` permet de retourner la donnée qui d
         return $result['user'];
     });
 
-Cette dernière partie est facultative, si elle est omise, le résultat de l'aggrégation se trouvera dans la clée ``aggregate`` de la collection.
+Cette dernière partie est facultative, si elle est omise, le résultat de l'aggrégation se trouvera dans la clé ``aggregate`` de la collection.
 Elle vous permet d'effectuer une opération de finalisation et de choisir ce que vous voulez faire des données qui viennent d'être aggrégées, ici
 il s'agit d'une liste de livre que nous injectons dans l'utilisateur via la méthode ``setBooks``
 
@@ -198,7 +198,7 @@ Si vous effectuez une requête qui retourne des données qui ne correspondent à
 d'aggrégation comme ``SUM(price)`` ou une colonne qui n'a pas été mappée comme ``my_extra_column`` l'hydrateur va créer un objet
 ``stdClass`` avec des propriétés correspondant à ces colonnes.
 
-Cet objet ``stdClass`` est accessible dans la clée 0 du tableau retourné.
+Cet objet ``stdClass`` est accessible dans la clé 0 du tableau retourné.
 
 .. code-block:: php
 

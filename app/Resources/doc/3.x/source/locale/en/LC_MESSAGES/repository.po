@@ -129,7 +129,7 @@ msgid ""
 "vers une donnée au format SGBD. La déserialisation est l'opération "
 "inverse."
 msgstr ""
-"Serialization is the operation which transform PHP data into "
+"Serialization is the operation which transforms PHP data into "
 "understandable data for RDBMS. The reverse operation is called "
 "unserialization"
 
