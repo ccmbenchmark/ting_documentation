@@ -270,6 +270,13 @@ votre objet en base de données.</p>
                 <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cit_name&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;string&#39;</span>
+            <span class="p">])</span>
+            <span class="o">-&gt;</span><span class="na">addField</span><span class="p">([</span>
+                <span class="s1">&#39;fieldName&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;capitalCity&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;columnName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;capital_city&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;bool&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;getter&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;isCapitalCity&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;setter&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;capitalCityIs&#39;</span>
             <span class="p">]);</span>
 
         <span class="k">return</span> <span class="nv">$metadata</span>
@@ -299,6 +306,14 @@ votre objet en base de données.</p>
 </dl>
 <p>Les types <code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">datetime</span></code> et <code class="docutils literal"><span class="pre">json</span></code> sont un peu particuliers, car il s’agit de types considérés complexes et qui acceptent
 donc d’être sérializés/désérializés via les options du serializer</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Disponible uniquement à partir de la version 3.2</p>
+</div>
+<ul class="simple">
+<li>getter permet de redéfinir le nom du getter (par defaut, le getter est getFieldName)</li>
+<li>setter permet de redéfinir le nom du setter (par defaut, le setter est setFieldName)</li>
+</ul>
 </div>
 <div class="section" id="le-serializer">
 <h2>5.3&nbsp;&nbsp;&nbsp;Le Serializer<a class="headerlink" href="#le-serializer" title="Lien permanent vers ce titre">¶</a></h2>
@@ -376,7 +391,7 @@ Ting le fourni via <code class="docutils literal"><span class="pre">aura/sqlquer
 <p>Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.</p>
 <div class="section" id="trouver-un-objet-par-cle-primaire">
 <h3>5.5.1&nbsp;&nbsp;&nbsp;Trouver un objet par clé primaire<a class="headerlink" href="#trouver-un-objet-par-cle-primaire" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">([</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
