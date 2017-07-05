@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-22 11:59+0200\n"
+"POT-Creation-Date: 2017-07-05 17:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,109 +96,117 @@ msgstr ""
 msgid "setter permet de redéfinir le nom du setter (par defaut, le setter est setFieldName)"
 msgstr ""
 
-#: ../../repository.rst:83
-msgid "Le Serializer"
+#: ../../repository.rst:84
+msgid "Disponible uniquement à partir de la version 3.4 avec le driver Pgsql"
 msgstr ""
 
 #: ../../repository.rst:86
-msgid "Au sujet du serializer"
-msgstr ""
-
-#: ../../repository.rst:87
-msgid "La serialisation est l'opération qui permet de passer d'une donnée PHP vers une donnée au format SGBD. La déserialisation est l'opération inverse."
+msgid "sequenceName permet de préciser le nom de la séquence à utiliser pour récupérer la valeur de l'autoincrément"
 msgstr ""
 
 #: ../../repository.rst:90
-msgid "Le serializer permet de gérer les types complexes tels que les types suivants ``bool``, ``datetime`` et ``json``."
-msgstr ""
-
-#: ../../repository.rst:94
-msgid "Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :"
+msgid "Le Serializer"
 msgstr ""
 
 #: ../../repository.rst:93
-msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
+msgid "Au sujet du serializer"
 msgstr ""
 
 #: ../../repository.rst:94
+msgid "La serialisation est l'opération qui permet de passer d'une donnée PHP vers une donnée au format SGBD. La déserialisation est l'opération inverse."
+msgstr ""
+
+#: ../../repository.rst:97
+msgid "Le serializer permet de gérer les types complexes tels que les types suivants ``bool``, ``datetime`` et ``json``."
+msgstr ""
+
+#: ../../repository.rst:101
+msgid "Le type booléen est considéré comme un type complexe, car la façon de le stocker en base est différent selon chaque SGBD :"
+msgstr ""
+
+#: ../../repository.rst:100
+msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
+msgstr ""
+
+#: ../../repository.rst:101
 msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
 msgstr ""
 
-#: ../../repository.rst:96
+#: ../../repository.rst:103
 msgid "Le type datetime est considéré comme complexe car il permet de transformer un objet DateTime dans un format compréhensible pour le SGBD."
 msgstr ""
 
-#: ../../repository.rst:98
+#: ../../repository.rst:105
 msgid "Le type json est complexe car il permet de transformer un tableau de données en chaîne de caractère compréhensible par le SGBD."
 msgstr ""
 
-#: ../../repository.rst:102
+#: ../../repository.rst:109
 msgid "Configuration du serializer"
 msgstr ""
 
-#: ../../repository.rst:104
+#: ../../repository.rst:111
 msgid "Le serializer peut être configurer via la clé ``serializer_options``"
 msgstr ""
 
-#: ../../repository.rst:117
+#: ../../repository.rst:124
 msgid "Je vous invite à regarder le code source de chaque Serializer pour voir les configurations possibles."
 msgstr ""
 
-#: ../../repository.rst:120
+#: ../../repository.rst:127
 msgid "Ecrire un serializer"
 msgstr ""
 
-#: ../../repository.rst:122
+#: ../../repository.rst:129
 msgid "Vous pouvez écrire vos propres serializers et les injecter dans la définition du repository via la clé ``serializer``."
 msgstr ""
 
-#: ../../repository.rst:124
+#: ../../repository.rst:131
 msgid "Le serializer doit implémenter l'interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` et/ou ``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface``. Si l'on souhaite implémenter les 2 interfaces, on préfèrera utiliser ``CCMBenchmark\\Ting\\Serializer\\SerializerInterface``"
 msgstr ""
 
-#: ../../repository.rst:128
+#: ../../repository.rst:135
 msgid "L'interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` permet de transformer une valeur en donnée stockable en base de donnée. L'interface ``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface`` permet de faire l'opération inverse."
 msgstr ""
 
-#: ../../repository.rst:143
+#: ../../repository.rst:150
 msgid "QueryBuilder"
 msgstr ""
 
-#: ../../repository.rst:145
+#: ../../repository.rst:152
 msgid "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté pour ce cas. Ting le fourni via ``aura/sqlquery``."
 msgstr ""
 
-#: ../../repository.rst:152
-#: ../../repository.rst:158
-#: ../../repository.rst:164
+#: ../../repository.rst:159
+#: ../../repository.rst:165
+#: ../../repository.rst:171
 msgid "ou"
 msgstr ""
 
-#: ../../repository.rst:170
+#: ../../repository.rst:177
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
 msgstr ""
 
-#: ../../repository.rst:173
+#: ../../repository.rst:180
 msgid "Requêtes"
 msgstr ""
 
-#: ../../repository.rst:175
+#: ../../repository.rst:182
 msgid "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples."
 msgstr ""
 
-#: ../../repository.rst:178
+#: ../../repository.rst:185
 msgid "Trouver un objet par clé primaire"
 msgstr ""
 
-#: ../../repository.rst:185
+#: ../../repository.rst:192
 msgid "Tous les objets"
 msgstr ""
 
-#: ../../repository.rst:192
+#: ../../repository.rst:199
 msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 
-#: ../../repository.rst:199
+#: ../../repository.rst:206
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr ""
 

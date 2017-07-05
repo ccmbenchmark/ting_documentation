@@ -79,6 +79,13 @@ donc d'être sérializés/désérializés via les options du serializer
 - getter permet de redéfinir le nom du getter (par defaut, le getter est getFieldName)
 - setter permet de redéfinir le nom du setter (par defaut, le setter est setFieldName)
 
+.. note::
+
+    Disponible uniquement à partir de la version 3.4 avec le driver Pgsql
+
+- sequenceName permet de préciser le nom de la séquence à utiliser pour récupérer la valeur de l'autoincrément
+
+
 Le Serializer
 -------------
 

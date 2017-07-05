@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-22 11:59+0200\n"
+"POT-Creation-Date: 2017-07-05 17:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,23 +107,38 @@ msgstr "Available since version 3.2"
 msgid ""
 "getter permet de redéfinir le nom du getter (par defaut, le getter est "
 "getFieldName)"
-msgstr "the getter key allows to change name of the getter, by default it is getFieldName"
+msgstr ""
+"the getter key allows to change name of the getter, by default it is "
+"getFieldName"
 
 #: ../../repository.rst:80
 msgid ""
 "setter permet de redéfinir le nom du setter (par defaut, le setter est "
 "setFieldName)"
-msgstr "the setter key allows to change name of the setter, by default it is setFieldName"
+msgstr ""
+"the setter key allows to change name of the setter, by default it is "
+"setFieldName"
 
-#: ../../repository.rst:83
+#: ../../repository.rst:84
+#
+msgid "Disponible uniquement à partir de la version 3.4 avec le driver Pgsql"
+msgstr "Available since version 3.4 only with the Pgsql driver"
+
+#: ../../repository.rst:86
+msgid ""
+"sequenceName permet de préciser le nom de la séquence à utiliser pour "
+"récupérer la valeur de l'autoincrément"
+msgstr "sequenceName allows to choose which sequence to use to retrieve the autoincrement value"
+
+#: ../../repository.rst:90
 msgid "Le Serializer"
 msgstr "Serializer"
 
-#: ../../repository.rst:86
+#: ../../repository.rst:93
 msgid "Au sujet du serializer"
 msgstr "About the serializer"
 
-#: ../../repository.rst:87
+#: ../../repository.rst:94
 msgid ""
 "La serialisation est l'opération qui permet de passer d'une donnée PHP "
 "vers une donnée au format SGBD. La déserialisation est l'opération "
@@ -133,7 +148,7 @@ msgstr ""
 "understandable data for RDBMS. The reverse operation is called "
 "unserialization"
 
-#: ../../repository.rst:90
+#: ../../repository.rst:97
 msgid ""
 "Le serializer permet de gérer les types complexes tels que les types "
 "suivants ``bool``, ``datetime`` et ``json``."
@@ -141,7 +156,7 @@ msgstr ""
 "Serializer allow complex type management like ``bool``, ``datetime`` and "
 "``json``."
 
-#: ../../repository.rst:94
+#: ../../repository.rst:101
 msgid ""
 "Le type booléen est considéré comme un type complexe, car la façon de le "
 "stocker en base est différent selon chaque SGBD :"
@@ -149,17 +164,17 @@ msgstr ""
 "The boolean type is considered a complex type, because the way they are "
 "stored in the database differs depending on each RDBMS"
 
-#: ../../repository.rst:93
+#: ../../repository.rst:100
 #, fuzzy
 msgid "``CCMBenchmark\\Ting\\Driver\\Pgsql\\Serializer\\Boolean``"
 msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Pgsql\\\\Serializer\\\\Boolean"
 
-#: ../../repository.rst:94
+#: ../../repository.rst:101
 #, fuzzy
 msgid "``CCMBenchmark\\Ting\\Driver\\Mysqli\\Serializer\\Boolean``"
 msgstr "CCMBenchmark\\\\Ting\\\\Driver\\\\Mysqli\\\\Serializer\\\\Boolean"
 
-#: ../../repository.rst:96
+#: ../../repository.rst:103
 msgid ""
 "Le type datetime est considéré comme complexe car il permet de "
 "transformer un objet DateTime dans un format compréhensible pour le SGBD."
@@ -167,7 +182,7 @@ msgstr ""
 "The datetime type is considered as complex because it transform DateTime "
 "object into understandable format by RDBMS"
 
-#: ../../repository.rst:98
+#: ../../repository.rst:105
 msgid ""
 "Le type json est complexe car il permet de transformer un tableau de "
 "données en chaîne de caractère compréhensible par le SGBD."
@@ -175,15 +190,15 @@ msgstr ""
 "The json type is complex because it translate data array into string "
 "understandable by RDBMS"
 
-#: ../../repository.rst:102
+#: ../../repository.rst:109
 msgid "Configuration du serializer"
 msgstr "Serializer configuration"
 
-#: ../../repository.rst:104
+#: ../../repository.rst:111
 msgid "Le serializer peut être configurer via la clé ``serializer_options``"
 msgstr "Serializer is configured by ``serializer_options``  key"
 
-#: ../../repository.rst:117
+#: ../../repository.rst:124
 msgid ""
 "Je vous invite à regarder le code source de chaque Serializer pour voir "
 "les configurations possibles."
@@ -191,11 +206,11 @@ msgstr ""
 "Please take a look at the source code of each Serializer to see available"
 " options."
 
-#: ../../repository.rst:120
+#: ../../repository.rst:127
 msgid "Ecrire un serializer"
 msgstr "Writing a serializer"
 
-#: ../../repository.rst:122
+#: ../../repository.rst:129
 msgid ""
 "Vous pouvez écrire vos propres serializers et les injecter dans la "
 "définition du repository via la clé ``serializer``."
@@ -203,7 +218,7 @@ msgstr ""
 "You can write your own serializers and inject it into the repository "
 "definition by using ``serializer`` key"
 
-#: ../../repository.rst:124
+#: ../../repository.rst:131
 msgid ""
 "Le serializer doit implémenter l'interface "
 "``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` et/ou "
@@ -217,7 +232,7 @@ msgstr ""
 "implents both interfaces, you must use "
 "``CCMBenchmark\\Ting\\Serializer\\SerializerInterface``"
 
-#: ../../repository.rst:128
+#: ../../repository.rst:135
 msgid ""
 "L'interface ``CCMBenchmark\\Ting\\Serializer\\SerializeInterface`` permet"
 " de transformer une valeur en donnée stockable en base de donnée. "
@@ -229,11 +244,11 @@ msgstr ""
 "``CCMBenchmark\\Ting\\Serializer\\UnserializeInterface`` authorize the "
 "reverse operation"
 
-#: ../../repository.rst:143
+#: ../../repository.rst:150
 msgid "QueryBuilder"
 msgstr ""
 
-#: ../../repository.rst:145
+#: ../../repository.rst:152
 msgid ""
 "On peut avoir besoin de chaîner des requêtes, un QueryBuilder est adapté "
 "pour ce cas. Ting le fourni via ``aura/sqlquery``."
@@ -241,37 +256,37 @@ msgstr ""
 "We can need chaining queries, a QueryBuilder can be used. Ting provide it"
 " through ``aura/sqlquery``."
 
-#: ../../repository.rst:152 ../../repository.rst:158 ../../repository.rst:164
+#: ../../repository.rst:159 ../../repository.rst:165 ../../repository.rst:171
 msgid "ou"
 msgstr "or"
 
-#: ../../repository.rst:170
+#: ../../repository.rst:177
 msgid "Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery"
 msgstr "Documentation available on https://github.com/auraphp/Aura.SqlQuery"
 
-#: ../../repository.rst:173
+#: ../../repository.rst:180
 msgid "Requêtes"
 msgstr "Queries"
 
-#: ../../repository.rst:175
+#: ../../repository.rst:182
 msgid ""
 "Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
 "simples."
 msgstr "The Repository provides several methods to perform common queries easily."
 
-#: ../../repository.rst:178
+#: ../../repository.rst:185
 msgid "Trouver un objet par clé primaire"
 msgstr "Find an object by it's primary key"
 
-#: ../../repository.rst:185
+#: ../../repository.rst:192
 msgid "Tous les objets"
 msgstr "All items"
 
-#: ../../repository.rst:192
+#: ../../repository.rst:199
 msgid "Un objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr "An object according to one or more properties of the model"
 
-#: ../../repository.rst:199
+#: ../../repository.rst:206
 msgid "Une collection d'objet d'après une ou plusieurs propriété(s) du modèle"
 msgstr "An object collection, according to one or more properties of the model"
 
