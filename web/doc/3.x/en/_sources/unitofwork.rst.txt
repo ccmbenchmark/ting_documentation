@@ -10,7 +10,7 @@ L'unitOfWork a pour rôle de tracker les changements des objets afin de les pers
 
 Fonctionnement interne
 ~~~~~~~~~~~~~~~~~~~~~~
-L'unitOfWork initialise dans tous les objets "managed" une propriétée ``tingUUID`` qui ne doit en aucun cas être altérée
+L'unitOfWork initialise dans tous les objets "managed" une propriété ``tingUUID`` qui ne doit en aucun cas être altérée
 par l'utilisateur.
 
 Un objet "managed" est un objet qui existe déjà en base et qui provoquera une requête UPDATE lorsque l'on demandera à ce qu'il soit persisté.
@@ -38,7 +38,7 @@ alors l'entité aura cette valeur d'initialisé avec l'autoincrement délivré p
 
 Remarques pour les batchs
 -------------------------
-Lors de traitement sur un grand nombre d'objet il est impératif de détacher les objets dont on a plus l'usage afin
+Lors d'un traitement sur un grand nombre d'objets il est impératif de détacher les objets dont on a plus l'usage afin
 que l'unitOfWork libère de la mémoire :
 
 .. code-block:: php

@@ -138,7 +138,7 @@ d'effectuer votre requête sur le master, alors il faut appeler la méthode ``se
 Erreur sur une requête
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Si la requête exécuté ne se termine pas correctement, une exception du type ``CCMBenchmark\Ting\Driver\QueryException`` sera levée
+Si la requête exécutée ne se termine pas correctement, une exception du type ``CCMBenchmark\Ting\Driver\QueryException`` sera levée
 
 
 Effectuer une requête d'écriture

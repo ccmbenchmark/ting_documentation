@@ -168,7 +168,7 @@ La closure injectée via ``callableDataIs`` permet de retourner la donnée qui d
 
 Cette dernière partie est facultative, si elle est omise, le résultat de l'aggrégation se trouvera dans la clé ``aggregate`` de la collection.
 Elle vous permet d'effectuer une opération de finalisation et de choisir ce que vous voulez faire des données qui viennent d'être aggrégées, ici
-il s'agit d'une liste de livre que nous injectons dans l'utilisateur via la méthode ``setBooks``
+il s'agit d'une liste de livres que nous injectons dans l'utilisateur via la méthode ``setBooks``
 
 La collection retournée est composée de lignes structurées ainsi :
 

@@ -25,7 +25,7 @@ msgid "Initialisation"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:9
-msgid "Nous supposerons dans ce guide que vous avez déjà installé `Symfony installer <http://symfony.com/download>`_, ainsi que `composer <https://getcomposer.org/>`_ Commencer par créer un nouveau projet : ``symfony new world_site 2.8``"
+msgid "Nous supposerons dans ce guide que vous avez déjà installé `Symfony installer <http://symfony.com/download>`_, ainsi que `composer <https://getcomposer.org/>`_ Commencez par créer un nouveau projet : ``symfony new world_site 2.8``"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:13
@@ -37,15 +37,15 @@ msgid "Ting remplace Doctrine, il faut donc retirer les références à Doctrine
 msgstr ""
 
 #: ../../getting-started-symfony.rst:16
-msgid "Dans le fichier ``app/AppKernel.php`` supprimer la ligne ``new Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle()``"
+msgid "Dans le fichier ``app/AppKernel.php`` supprimez la ligne ``new Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle()``"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:18
-msgid "Dans ``app/config/config.yml`` supprimer tout le bloc de configuration Doctrine :"
+msgid "Dans ``app/config/config.yml`` supprimez tout le bloc de configuration Doctrine :"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:44
-msgid "Retirer les librairies Doctrine :"
+msgid "Retirez les librairies Doctrine :"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:53
@@ -65,7 +65,7 @@ msgid "On peut maintenant installer Ting Bundle, qui permet d'utiliser Ting sur 
 msgstr ""
 
 #: ../../getting-started-symfony.rst:77
-msgid "Il faut ensuite register les bundles dans ``app/AppKernel.php`` :"
+msgid "Il faut ensuite enregistrer les bundles dans ``app/AppKernel.php`` :"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:86
@@ -81,7 +81,7 @@ msgid "Création des repository"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:95
-msgid "La base de données ``world database`` à trois tables composées ainsi :"
+msgid "La base de données ``world database`` a trois tables composées ainsi :"
 msgstr ""
 
 #: ../../getting-started-symfony.rst:98

@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../../unitofwork.rst:13
 msgid ""
-"L'unitOfWork initialise dans tous les objets \"managed\" une propriétée "
+"L'unitOfWork initialise dans tous les objets \"managed\" une propriété "
 "tingUUID qui ne doit en aucun cas être altérée par l'utilisateur."
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../../unitofwork.rst:42
 msgid ""
-"Lors de traitement sur un grand nombre d'objet il est impératif de détacher "
+"Lors d'un traitement sur un grand nombre d'objets il est impératif de détacher "
 "les objets dont on a plus l'usage afin que l'unitOfWork libère de la mémoire"
 " :"
 msgstr ""

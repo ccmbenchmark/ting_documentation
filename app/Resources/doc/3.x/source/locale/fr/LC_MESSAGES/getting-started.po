@@ -28,7 +28,7 @@ msgstr ""
 #: ../../getting-started.rst:10
 msgid ""
 "Nous supposerons dans ce guide que vous avez déjà installé `composer "
-"<https://getcomposer.org/>`_. Les sources pour cet example se situerons "
+"<https://getcomposer.org/>`_. Les sources pour cet exemple se situerons "
 "dans ``src/VendorName/ApplicationName`` il faut donc penser à bien "
 "ajouter ce chemin dans l'autoload du composer.json :"
 msgstr ""
@@ -61,7 +61,7 @@ msgid "Création des repository"
 msgstr ""
 
 #: ../../getting-started.rst:38
-msgid "La base de données ``world database`` à trois tables composées ainsi :"
+msgid "La base de données ``world database`` a trois tables composées ainsi :"
 msgstr ""
 
 #: ../../getting-started.rst:41

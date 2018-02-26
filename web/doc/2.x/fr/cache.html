@@ -9,12 +9,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>5   Le cache &mdash; documentation ting </title>
+    <title>5   Le cache &mdash; Documentation ting </title>
     
 
     <style>
         .highlight {
             background: #272822 !important;
+        }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
         }
     </style>
 
@@ -36,10 +67,9 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <link rel="top" title="documentation ting " href="index.html"/>
+    <link rel="search" title="Recherche" href="search.html"/>
+    <link rel="top" title="Documentation ting " href="index.html"/>
     <link rel="next" title="6   Le composant cache" href="composant-cache.html"/>
     <link rel="prev" title="4   L’unitOfWork" href="unitofwork.html"/> 
 
@@ -74,7 +104,7 @@
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d’écriture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
@@ -85,12 +115,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;L’hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;L’hydrateur pour un seul objet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;L’unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;Au sujet de l’unitOfWork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
@@ -134,21 +164,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>5&nbsp;&nbsp;&nbsp;Le cache</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>5&nbsp;&nbsp;&nbsp;Le cache</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -157,15 +204,15 @@
 <h1>5&nbsp;&nbsp;&nbsp;Le cache<a class="headerlink" href="#le-cache" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="au-sujet-du-cache">
 <h2>5.1&nbsp;&nbsp;&nbsp;Au sujet du cache<a class="headerlink" href="#au-sujet-du-cache" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Le résultat d&#8217;une requête effectuée avec les objets de cache sera soit récupéré depuis le cache si l&#8217;entrée y existe déjà,
+<p>Le résultat d’une requête effectuée avec les objets de cache sera soit récupéré depuis le cache si l’entrée y existe déjà,
 soit récupéré depuis la base de données puis inséré dans le cache.</p>
-<p>Le résultat de la requête stockée dans le cache n&#8217;est pas dépendant du système d&#8217;hydration utilisé.</p>
+<p>Le résultat de la requête stockée dans le cache n’est pas dépendant du système d’hydration utilisé.</p>
 </div>
 <div class="section" id="requete-simple">
 <h2>5.2&nbsp;&nbsp;&nbsp;Requête simple<a class="headerlink" href="#requete-simple" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Une requête destiné à utiliser le cache s&#8217;effectue en récupérant l&#8217;objet CCMBenchmark\Ting\Query\Cached\Query via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
-<p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<p>Une requête destiné à utiliser le cache s’effectue en récupérant l’objet CCMBenchmark\Ting\Query\Cached\Query via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
+<p>Pour ce faire il suffit d’appeler l’objet et de préciser la durée de mise en cache et la clé de cache:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
 </pre></div>
@@ -173,9 +220,9 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-preparee">
 <h2>5.3&nbsp;&nbsp;&nbsp;Requête préparée<a class="headerlink" href="#requete-preparee" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour une requête préparée il faut récupérer l&#8217;objet CCMBenchmark\Ting\Query\Cached\PreparedQuery via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
-<p>Pour ce faire il suffit d&#8217;appeler l&#8217;objet et de préciser la durée de mise en cache et la clé de cache:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<p>Pour une requête préparée il faut récupérer l’objet CCMBenchmark\Ting\Query\Cached\PreparedQuery via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
+<p>Pour ce faire il suffit d’appeler l’objet et de préciser la durée de mise en cache et la clé de cache:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
 </pre></div>

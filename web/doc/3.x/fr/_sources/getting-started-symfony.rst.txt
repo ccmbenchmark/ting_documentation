@@ -7,15 +7,15 @@ Utilisation avec Symfony 2.8
 Initialisation
 --------------
 Nous supposerons dans ce guide que vous avez déjà installé `Symfony installer <http://symfony.com/download>`_, ainsi que `composer <https://getcomposer.org/>`_
-Commencer par créer un nouveau projet : ``symfony new world_site 2.8``
+Commencez par créer un nouveau projet : ``symfony new world_site 2.8``
 
 Supprimer les dépendances à Doctrine inutiles
 ---------------------------------------------
 Ting remplace Doctrine, il faut donc retirer les références à Doctrine devenues inutiles.
 
-Dans le fichier ``app/AppKernel.php`` supprimer la ligne ``new Doctrine\Bundle\DoctrineBundle\DoctrineBundle()``
+Dans le fichier ``app/AppKernel.php`` supprimez la ligne ``new Doctrine\Bundle\DoctrineBundle\DoctrineBundle()``
 
-Dans ``app/config/config.yml`` supprimer tout le bloc de configuration Doctrine :
+Dans ``app/config/config.yml`` supprimez tout le bloc de configuration Doctrine :
 
 .. code-block:: yaml
 
@@ -41,7 +41,7 @@ Dans ``app/config/config.yml`` supprimer tout le bloc de configuration Doctrine 
             naming_strategy: doctrine.orm.naming_strategy.underscore
             auto_mapping: true
 
-Retirer les librairies Doctrine :
+Retirez les librairies Doctrine :
 
 .. code-block:: text
 
@@ -74,7 +74,7 @@ Par
 On peut maintenant installer Ting Bundle, qui permet d'utiliser Ting sur Symfony :
 ``composer require ccmbenchmark/ting_bundle``
 
-Il faut ensuite register les bundles dans ``app/AppKernel.php`` :
+Il faut ensuite enregistrer les bundles dans ``app/AppKernel.php`` :
 
 .. code-block:: php
 
@@ -92,7 +92,7 @@ Vous pouvez vous référer au `guide officiel <https://dev.mysql.com/doc/world-s
 Création des repository
 -----------------------
 
-La base de données ``world database`` à trois tables composées ainsi :
+La base de données ``world database`` a trois tables composées ainsi :
 
 +------------------------+
 | City                   |

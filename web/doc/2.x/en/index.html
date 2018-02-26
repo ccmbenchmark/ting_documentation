@@ -16,6 +16,37 @@
         .highlight {
             background: #272822 !important;
         }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
+        }
     </style>
 
     
@@ -36,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ting  documentation" href="#"/>
     <link rel="next" title="1   Queries" href="query.html"/> 
 
@@ -133,21 +163,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Ting - Documentation</li>
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Ting - Documentation</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -155,16 +202,13 @@
   <div class="section" id="ting-documentation">
 <h1>Ting - Documentation<a class="headerlink" href="#ting-documentation" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p class="first"><strong>Simple</strong>: no magic inside : it&#8217;s basically SQL queries</p>
-</li>
-<li><p class="first"><strong>Fast</strong>: with no magic comes no overhead</p>
-</li>
-<li><p class="first"><strong>Supports</strong> Mysql and PostgreSQL</p>
-</li>
+<li><strong>Simple</strong>: no magic inside : it’s basically SQL queries</li>
+<li><strong>Fast</strong>: with no magic comes no overhead</li>
+<li><strong>Supports</strong> Mysql and PostgreSQL</li>
 </ul>
 <p><strong>Why another datamapper for PHP?</strong></p>
 <p>Great datamappers for MySQL and PostgreSQL already exist. However the most popular tools are complex and hard to master requiring new skills to query databases or boring xml files to describe the database. Ting has been created with the simplicity as a credo.</p>
-<p>Ting is not an ORM, because it doesn&#8217;t fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.</p>
+<p>Ting is not an ORM, because it doesn’t fully support relations between objects. But you can easily build join queries and retrieve every objects involved in your query.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Queries</a><ul>
@@ -187,7 +231,7 @@
 <li class="toctree-l2"><a class="reference internal" href="repository.html#au-sujet-du-repository">2.1&nbsp;&nbsp;&nbsp;About the repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#creation-des-metadata">2.2&nbsp;&nbsp;&nbsp;Creating Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repository.html#requetes">2.3&nbsp;&nbsp;&nbsp;Queries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="repository.html#trouver-un-objet-par-cle-primaire">2.3.1&nbsp;&nbsp;&nbsp;Find an object by it&#8217;s primary key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repository.html#trouver-un-objet-par-cle-primaire">2.3.1&nbsp;&nbsp;&nbsp;Find an object by it’s primary key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repository.html#tous-les-objets">2.3.2&nbsp;&nbsp;&nbsp;All items</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repository.html#un-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">2.3.3&nbsp;&nbsp;&nbsp;An object according to one or more properties of the model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="repository.html#une-collection-d-objet-d-apres-une-ou-plusieurs-propriete-s-du-modele">2.3.4&nbsp;&nbsp;&nbsp;An object collection, according to one or more properties of the model</a></li>

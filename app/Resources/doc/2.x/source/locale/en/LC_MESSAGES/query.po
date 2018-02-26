@@ -127,7 +127,7 @@ msgstr "Error on a query"
 
 #: ../../query.rst:93
 msgid ""
-"Si la requête exécuté ne se termine pas correctement, une exception du type "
+"Si la requête exécutée ne se termine pas correctement, une exception du type "
 "CCMBenchmark\\\\Ting\\\\Driver\\\\QueryException sera levée"
 msgstr ""
 "If the query executed does not complete successfully, an exception of type "

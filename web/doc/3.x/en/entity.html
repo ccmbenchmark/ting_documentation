@@ -242,8 +242,8 @@
 <h2>3.2&nbsp;&nbsp;&nbsp;Entities and UnitOfWork<a class="headerlink" href="#les-entites-et-l-unitofwork" title="Permalink to this headline">¶</a></h2>
 <p>However <a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> needs to know which data have been changed in the object to  persist. Then <a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> can update the columns needed.</p>
 <p>Your entity need to implement the pattern Observer to notify the <a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> about changes.</p>
-<p>Ting provides the trait <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Entity\NotifyProperty</span></code> to help you.</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Entity\NotifyProperty</span><span class="p">;</span>
+<p>Ting provides the trait <code class="docutils literal notranslate"><span class="pre">CCMBenchmark\Ting\Entity\NotifyProperty</span></code> to help you.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Entity\NotifyProperty</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">implements</span> <span class="nx">NotifyPropertyInterface</span>
 <span class="p">{</span>
@@ -267,7 +267,7 @@
     <span class="c1">// ...</span>
 </pre></div>
 </div>
-<p>Each time a property is changed we notify the <a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> through the method <code class="docutils literal"><span class="pre">propertyChanged</span></code>.</p>
+<p>Each time a property is changed we notify the <a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> through the method <code class="docutils literal notranslate"><span class="pre">propertyChanged</span></code>.</p>
 </div>
 </div>
 
