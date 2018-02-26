@@ -8,7 +8,7 @@ Initialisation
 --------------
 
 Nous supposerons dans ce guide que vous avez déjà installé `composer <https://getcomposer.org/>`_.
-Les sources pour cet example se situerons dans ``src/VendorName/ApplicationName`` il faut donc penser à bien ajouter
+Les sources pour cet exemple se situerons dans ``src/VendorName/ApplicationName`` il faut donc penser à bien ajouter
 ce chemin dans l'autoload du composer.json :
 
 .. code-block:: json
@@ -35,7 +35,7 @@ Vous pouvez vous référer au `guide officiel <https://dev.mysql.com/doc/world-s
 Création des repository
 -----------------------
 
-La base de données ``world database`` à trois tables composées ainsi :
+La base de données ``world database`` a trois tables composées ainsi :
 
 +------------------------+
 | City                   |

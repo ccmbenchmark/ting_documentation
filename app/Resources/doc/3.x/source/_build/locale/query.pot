@@ -97,7 +97,7 @@ msgid "Erreur sur une requête"
 msgstr ""
 
 #: ../../query.rst:141
-msgid "Si la requête exécuté ne se termine pas correctement, une exception du type ``CCMBenchmark\\Ting\\Driver\\QueryException`` sera levée"
+msgid "Si la requête exécutée ne se termine pas correctement, une exception du type ``CCMBenchmark\\Ting\\Driver\\QueryException`` sera levée"
 msgstr ""
 
 #: ../../query.rst:145

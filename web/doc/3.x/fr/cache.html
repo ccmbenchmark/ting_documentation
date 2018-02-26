@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>8   Le cache &mdash; documentation ting 1</title>
+    <title>8   Le cache &mdash; Documentation ting 1</title>
     
 
     <style>
@@ -69,7 +69,7 @@
 
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="search" title="Recherche" href="search.html"/>
-    <link rel="top" title="documentation ting 1" href="index.html"/>
+    <link rel="top" title="Documentation ting 1" href="index.html"/>
     <link rel="next" title="9   Le composant cache" href="composant-cache.html"/>
     <link rel="prev" title="7   L’unitOfWork" href="unitofwork.html"/> 
 
@@ -242,9 +242,9 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-simple">
 <h2>8.2&nbsp;&nbsp;&nbsp;Requête simple<a class="headerlink" href="#requete-simple" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Une requête destiné à utiliser le cache s’effectue en récupérant l’objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
+<p>Une requête destiné à utiliser le cache s’effectue en récupérant l’objet <code class="docutils literal notranslate"><span class="pre">CCMBenchmark\Ting\Query\Cached\Query</span></code> via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d’appeler l’objet et de préciser la durée de mise en cache et la clé de cache:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -262,9 +262,9 @@ soit récupéré depuis la base de données puis inséré dans le cache.</p>
 </div>
 <div class="section" id="requete-preparee">
 <h2>8.3&nbsp;&nbsp;&nbsp;Requête préparée<a class="headerlink" href="#requete-preparee" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour une requête préparée il faut récupérer l’objet <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
+<p>Pour une requête préparée il faut récupérer l’objet <code class="docutils literal notranslate"><span class="pre">CCMBenchmark\Ting\Query\Cached\PreparedQuery</span></code> via le <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>Pour ce faire il suffit d’appeler l’objet et de préciser la durée de mise en cache et la clé de cache:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>

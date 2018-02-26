@@ -16,6 +16,37 @@
         .highlight {
             background: #272822 !important;
         }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
+        }
     </style>
 
     
@@ -36,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ting  documentation" href="index.html"/>
     <link rel="prev" title="5   Cache" href="cache.html"/> 
 
@@ -133,21 +163,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>6&nbsp;&nbsp;&nbsp;The cache component</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6&nbsp;&nbsp;&nbsp;The cache component</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -157,7 +204,7 @@
 <div class="section" id="configuration">
 <h2>6.1&nbsp;&nbsp;&nbsp;Setup<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>The settings should be injected with the setConfig. It is structured as follows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">setConfig</span><span class="p">([</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">setConfig</span><span class="p">([</span>
   <span class="s1">&#39;servers&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
       <span class="p">[</span><span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">11211</span><span class="p">]</span>
   <span class="p">],</span>
@@ -171,31 +218,31 @@
 </div>
 <div class="section" id="sauvegarder-dans-le-cache">
 <h2>6.2&nbsp;&nbsp;&nbsp;Save into cache<a class="headerlink" href="#sauvegarder-dans-le-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sauvegarder-dans-le-cache-plusieurs-valeurs">
 <h2>6.3&nbsp;&nbsp;&nbsp;Save several values into the cache<a class="headerlink" href="#sauvegarder-dans-le-cache-plusieurs-valeurs" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">storeMulti</span><span class="p">(</span><span class="nv">$associativeArray</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">storeMulti</span><span class="p">(</span><span class="nv">$associativeArray</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="effacer-une-valeur-du-cache">
 <h2>6.4&nbsp;&nbsp;&nbsp;Delete a value from the cache<a class="headerlink" href="#effacer-une-valeur-du-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="effacer-plusieurs-valeurs-du-cache">
 <h2>6.5&nbsp;&nbsp;&nbsp;Delete several values from the cache<a class="headerlink" href="#effacer-plusieurs-valeurs-du-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">deleteMulti</span><span class="p">(</span><span class="nv">$keys</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">deleteMulti</span><span class="p">(</span><span class="nv">$keys</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="remplacer-une-valeur-dans-le-cache">
 <h2>6.6&nbsp;&nbsp;&nbsp;Update a value in the cache<a class="headerlink" href="#remplacer-une-valeur-dans-le-cache" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">replace</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">replace</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$ttl</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

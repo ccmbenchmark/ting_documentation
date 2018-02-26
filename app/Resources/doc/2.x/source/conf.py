@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'ting'
-copyright = '2015, CCM Benchmark Group'
+copyright = '2018, CCM Benchmark Group'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

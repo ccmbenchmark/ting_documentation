@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>3   Les entités &mdash; documentation ting 1</title>
+    <title>3   Les entités &mdash; Documentation ting 1</title>
     
 
     <style>
@@ -69,7 +69,7 @@
 
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="search" title="Recherche" href="search.html"/>
-    <link rel="top" title="documentation ting 1" href="index.html"/>
+    <link rel="top" title="Documentation ting 1" href="index.html"/>
     <link rel="next" title="4   Les requêtes" href="query.html"/>
     <link rel="prev" title="2   Utilisation avec Symfony 2.8" href="getting-started-symfony.html"/> 
 
@@ -243,8 +243,8 @@
 <p>Cependant pour que l”<a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> puisse persister l’objet il doit savoir ce qui a été modifié dans l’objet
 depuis la dernière récupération en base de données afin de mettre à jour uniquement les colonnes nécessaires.</p>
 <p>Votre entité doit donc implémenter le pattern Observateur pour notifier l”<a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> des changements.</p>
-<p>Ting fourni le trait <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Entity\NotifyProperty</span></code> pour faciliter le travail.</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Entity\NotifyProperty</span><span class="p">;</span>
+<p>Ting fourni le trait <code class="docutils literal notranslate"><span class="pre">CCMBenchmark\Ting\Entity\NotifyProperty</span></code> pour faciliter le travail.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Entity\NotifyProperty</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">implements</span> <span class="nx">NotifyPropertyInterface</span>
 <span class="p">{</span>
@@ -268,7 +268,7 @@ depuis la dernière récupération en base de données afin de mettre à jour un
     <span class="c1">// ...</span>
 </pre></div>
 </div>
-<p>A chaque fois qu’une propriété est changée on notifie l”<a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> via la méthode <code class="docutils literal"><span class="pre">propertyChanged</span></code>.</p>
+<p>A chaque fois qu’une propriété est changée on notifie l”<a class="reference internal" href="unitofwork.html"><span class="doc">UnitofWork</span></a> via la méthode <code class="docutils literal notranslate"><span class="pre">propertyChanged</span></code>.</p>
 </div>
 </div>
 

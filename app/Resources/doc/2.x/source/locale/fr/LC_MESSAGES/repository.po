@@ -53,7 +53,7 @@ msgstr ""
 
 #: ../../repository.rst:53
 msgid ""
-"type correspond au type de votre variable avec comme valeur possibles :"
+"type correspond au type de votre variable avec comme valeurs possibles :"
 msgstr ""
 
 #: ../../repository.rst:49
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../../repository.rst:89
 msgid ""
-"Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
+"Le Repository fournit plusieurs méthodes afin de faciliter les requêtes "
 "courantes."
 msgstr ""
 

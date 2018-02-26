@@ -241,7 +241,7 @@
 <div class="section" id="l-hydrateur-par-defaut">
 <h2>6.2&nbsp;&nbsp;&nbsp;Default hydrator<a class="headerlink" href="#l-hydrateur-par-defaut" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator will use the metadata to create the right object and will fill an associative array with, as a key, the table name (or alias used) and the object for as a value</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
@@ -261,7 +261,7 @@
 </pre></div>
 </div>
 <p>The returned collection is composed of rows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
@@ -281,8 +281,8 @@
 <div class="section" id="l-hydrateur-pour-un-seul-objet">
 <span id="id1"></span><h2>6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object<a class="headerlink" href="#l-hydrateur-pour-un-seul-objet" title="Permalink to this headline">¶</a></h2>
 <p>The default hydrator is optimized to return multiple objects when we do a query that is intended to return only one item, it is not the best choice.</p>
-<p>You can inject <code class="docutils literal"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code>, to suit your needs</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<p>You can inject <code class="docutils literal notranslate"><span class="pre">CCMBenchmark\Ting\Repository\HydratorSingleObject</span></code>, to suit your needs</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -312,7 +312,7 @@
 </div>
 <p>This one allows us to aggregate a set of results, for example, we can return a collection of users and for each User object we can have its list of books.</p>
 <p>Here is an example of use</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -349,31 +349,31 @@
 </pre></div>
 </div>
 <p>If we take a deeper look</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableIdIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableIdIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>The closure injected through <code class="docutils literal"><span class="pre">callableIdIs</span></code> allows you to return the identifier we’re gonna use as aggregate key (user’s identifier here)</p>
+<p>The closure injected through <code class="docutils literal notranslate"><span class="pre">callableIdIs</span></code> allows you to return the identifier we’re gonna use as aggregate key (user’s identifier here)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">It’s very important to sort your data on this aggregate key in your SQL query otherwise you will have partial result.</p>
 </div>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableDataIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableDataIs</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;book&#39;</span><span class="p">];</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>The closure injected through <code class="docutils literal"><span class="pre">callableDataIs</span></code> allows you to return the data that should be aggregated (here a book)</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nv">$books</span><span class="p">)</span> <span class="p">{</span>
+<p>The closure injected through <code class="docutils literal notranslate"><span class="pre">callableDataIs</span></code> allows you to return the data that should be aggregated (here a book)</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$hydratorAggregator</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nv">$books</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">setBooks</span><span class="p">(</span><span class="nv">$books</span><span class="p">);</span>
     <span class="k">return</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>This last part is optional, when you ommit it, the aggregated result will be put into <code class="docutils literal"><span class="pre">aggregate</span></code> key of the collection. You can finalize the aggregate with this closure and choose what to do with the data aggregated, here we have a list of book and we inject them into user through <code class="docutils literal"><span class="pre">setBooks</span></code></p>
+<p>This last part is optional, when you ommit it, the aggregated result will be put into <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> key of the collection. You can finalize the aggregate with this closure and choose what to do with the data aggregated, here we have a list of book and we inject them into user through <code class="docutils literal notranslate"><span class="pre">setBooks</span></code></p>
 <p>The returned collection is composed of rows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -395,9 +395,9 @@
 </div>
 <div class="section" id="donnees-sans-metadata">
 <h2>6.5&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as <code class="docutils literal"><span class="pre">SUM(price)</span></code> or a column that has not been mapped as <code class="docutils literal"><span class="pre">my_extra_column</span></code> the hydrator will create a <code class="docutils literal"><span class="pre">stdClass</span></code> object with properties corresponding to those columns.</p>
-<p>This <code class="docutils literal"><span class="pre">stdClass</span></code> object is accessible in the key 0 of the returned array.</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as <code class="docutils literal notranslate"><span class="pre">SUM(price)</span></code> or a column that has not been mapped as <code class="docutils literal notranslate"><span class="pre">my_extra_column</span></code> the hydrator will create a <code class="docutils literal notranslate"><span class="pre">stdClass</span></code> object with properties corresponding to those columns.</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">stdClass</span></code> object is accessible in the key 0 of the returned array.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 
@@ -415,7 +415,7 @@
 </pre></div>
 </div>
 <p>The returned collection is composed of rows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">total</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">43</span><span class="p">,</span>
@@ -430,8 +430,8 @@
 </div>
 <div class="section" id="mapper-des-donnees-sans-metadata">
 <h2>6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>When you have an aggregate column you might want to mapped it to an object. To map the column <code class="docutils literal"><span class="pre">nb_books</span></code> into my model User througt the method <code class="docutils literal"><span class="pre">setNbBooks</span></code> you can do that:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<p>When you have an aggregate column you might want to mapped it to an object. To map the column <code class="docutils literal notranslate"><span class="pre">nb_books</span></code> into my model User througt the method <code class="docutils literal notranslate"><span class="pre">setNbBooks</span></code> you can do that:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -454,7 +454,7 @@
 </pre></div>
 </div>
 <p>The returned collection is composed of rows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
@@ -466,8 +466,8 @@
 </div>
 <div class="section" id="deserializer-des-donnees-sans-metadata">
 <h2>6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>As a reminder, transform a database type into a PHP type is to deserializing. For example when you retrieve a date which is not in metadata, we may want to transform it to object <code class="docutils literal"><span class="pre">Datetime</span></code>.</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<p>As a reminder, transform a database type into a PHP type is to deserializing. For example when you retrieve a date which is not in metadata, we may want to transform it to object <code class="docutils literal notranslate"><span class="pre">Datetime</span></code>.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -491,7 +491,7 @@
 </pre></div>
 </div>
 <p>The returned collection is composed of rows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">stdClass</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">fetchedDate</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Datetime</span><span class="p">(</span><span class="s2">&quot;2016-01-13 10:41:36&quot;</span><span class="p">)</span>
@@ -505,8 +505,8 @@
 </div>
 <div class="section" id="composition-d-objet">
 <h2>6.8&nbsp;&nbsp;&nbsp;Object composition<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
-<p>We may want to do object compositions, injecting one object into one other on many deep levels. To map object <code class="docutils literal"><span class="pre">Country</span></code> (which has alias <code class="docutils literal"><span class="pre">co</span></code>) into my model <code class="docutils literal"><span class="pre">City</span></code> (which has alias <code class="docutils literal"><span class="pre">cit</span></code>) through the method <code class="docutils literal"><span class="pre">setCountry</span></code> you can do that:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<p>We may want to do object compositions, injecting one object into one other on many deep levels. To map object <code class="docutils literal notranslate"><span class="pre">Country</span></code> (which has alias <code class="docutils literal notranslate"><span class="pre">co</span></code>) into my model <code class="docutils literal notranslate"><span class="pre">City</span></code> (which has alias <code class="docutils literal notranslate"><span class="pre">cit</span></code>) through the method <code class="docutils literal notranslate"><span class="pre">setCountry</span></code> you can do that:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
@@ -529,7 +529,7 @@
 </pre></div>
 </div>
 <p>The returned collection is composed of rows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
   <span class="p">[</span>
     <span class="s1">&#39;cit&#39;</span> <span class="o">=&gt;</span> <span class="nx">City</span><span class="p">(</span>
       <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Palaiseau&quot;</span><span class="p">,</span>

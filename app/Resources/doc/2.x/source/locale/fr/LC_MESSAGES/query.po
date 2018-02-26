@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
@@ -111,7 +111,7 @@ msgstr ""
 
 #: ../../query.rst:93
 msgid ""
-"Si la requête exécuté ne se termine pas correctement, une exception du type "
+"Si la requête exécutée ne se termine pas correctement, une exception du type "
 "CCMBenchmark\\\\Ting\\\\Driver\\\\QueryException sera levée"
 msgstr ""
 

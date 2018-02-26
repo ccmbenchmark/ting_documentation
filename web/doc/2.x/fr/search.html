@@ -9,12 +9,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Recherche &mdash; documentation ting </title>
+    <title>Recherche &mdash; Documentation ting </title>
     
 
     <style>
         .highlight {
             background: #272822 !important;
+        }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
         }
     </style>
 
@@ -36,10 +67,9 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <link rel="top" title="documentation ting " href="index.html"/> 
+    <link rel="search" title="Recherche" href="#"/>
+    <link rel="top" title="Documentation ting " href="index.html"/> 
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -72,7 +102,7 @@
             <ul>
 <li class="toctree-l1"><a class="reference internal" href="query.html">1&nbsp;&nbsp;&nbsp;Les requêtes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-de-lecture">1.1&nbsp;&nbsp;&nbsp;Effectuer une requête de lecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d&#8217;écriture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query.html#effectuer-une-requete-d-ecriture">1.2&nbsp;&nbsp;&nbsp;Effectuer une requête d’écriture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="repository.html">2&nbsp;&nbsp;&nbsp;Le Repository</a><ul>
@@ -83,12 +113,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="hydrator.html">3&nbsp;&nbsp;&nbsp;Les hydrateurs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hydrator.html#au-sujet-des-hydrateurs">3.1&nbsp;&nbsp;&nbsp;Au sujet des hydrateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;L&#8217;hydrateur par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;L&#8217;hydrateur pour un seul objet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-par-defaut">3.2&nbsp;&nbsp;&nbsp;L’hydrateur par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrator.html#l-hydrateur-pour-un-seul-objet">3.3&nbsp;&nbsp;&nbsp;L’hydrateur pour un seul objet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;L&#8217;unitOfWork</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;Au sujet de l&#8217;unitOfWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitofwork.html">4&nbsp;&nbsp;&nbsp;L’unitOfWork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unitofwork.html#au-sujet-de-l-unitofwork">4.1&nbsp;&nbsp;&nbsp;Au sujet de l’unitOfWork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#principe">4.2&nbsp;&nbsp;&nbsp;Principe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unitofwork.html#remarques-pour-les-batchs">4.3&nbsp;&nbsp;&nbsp;Remarques pour les batchs</a></li>
 </ul>
@@ -136,15 +166,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li></li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Recherche</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">

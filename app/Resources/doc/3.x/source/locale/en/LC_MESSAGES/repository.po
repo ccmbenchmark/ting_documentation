@@ -62,7 +62,7 @@ msgid "columnName correspond au nom de la colonne dans votre base de données"
 msgstr "columnName is the name of the column in your database"
 
 #: ../../repository.rst:70
-msgid "type correspond au type de votre variable avec comme valeur possibles :"
+msgid "type correspond au type de votre variable avec comme valeurs possibles :"
 msgstr "type is the type of your variable; among one of the following :"
 
 #: ../../repository.rst:65
@@ -270,7 +270,7 @@ msgstr "Queries"
 
 #: ../../repository.rst:182
 msgid ""
-"Le Repository fourni plusieurs méthodes afin de faciliter les requêtes "
+"Le Repository fournit plusieurs méthodes afin de faciliter les requêtes "
 "simples."
 msgstr "The Repository provides several methods to perform common queries easily."
 

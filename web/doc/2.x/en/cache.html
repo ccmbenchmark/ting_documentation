@@ -16,6 +16,37 @@
         .highlight {
             background: #272822 !important;
         }
+
+        div[class^='highlight'] {
+            border: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        div[class='highlight-text'] pre {
+            color: #fff !important;
+        }
+
+        .code-block-caption {
+            padding: 6px 12px !important;
+            background: #171812 !important;
+            color: white !important;
+        }
+
+        .code-block-caption .headerlink {
+            display: none;
+            visibility: hidden;
+        }
+
+        .code-block-caption .headerlink:after {
+            visibility: visible;
+            content: "";
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .code-block-caption:hover .headerlink {
+            display: inline-block;
+        }
     </style>
 
     
@@ -36,9 +67,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     
 
-    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+    <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ting  documentation" href="index.html"/>
     <link rel="next" title="6   The cache component" href="composant-cache.html"/>
     <link rel="prev" title="4   UnitOfWork" href="unitofwork.html"/> 
@@ -134,21 +164,38 @@
             <div class="rst-content">
                 
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>5&nbsp;&nbsp;&nbsp;Cache</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>5&nbsp;&nbsp;&nbsp;Cache</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
                 <div role="main" class="document">
@@ -164,7 +211,7 @@
 <h2>5.2&nbsp;&nbsp;&nbsp;Simple query<a class="headerlink" href="#requete-simple" title="Permalink to this headline">¶</a></h2>
 <p>A query intended to use the cache is done by retrieving the object CCMBenchmark\Ting\Query\Cached\Query from the <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>To proceed, just call the object and specify the duration it should remain in the cache and the cache key:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
 </pre></div>
@@ -174,7 +221,7 @@
 <h2>5.3&nbsp;&nbsp;&nbsp;Prepared query<a class="headerlink" href="#requete-preparee" title="Permalink to this headline">¶</a></h2>
 <p>For a prepared statement you must retrieve the object CCMBenchmark\Ting\Query\Cached\PreparedQuery from the <a class="reference internal" href="repository.html"><span class="doc">Repository</span></a>.</p>
 <p>To proceed, just call the object and specify the duration it should remain in the cache and the cache key:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCachedPreparedQuery</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">);</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// 5mn</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">setCacheKey</span><span class="p">(</span><span class="s1">&#39;listOfUser&#39;</span><span class="p">);</span>
 </pre></div>

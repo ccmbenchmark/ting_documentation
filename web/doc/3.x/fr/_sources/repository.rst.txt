@@ -61,7 +61,7 @@ Comme un exemple est plus parlant qu'un long discours :
 Quelques précisions :
     - fieldName correspond au nom de la propriété de votre entité
     - columnName correspond au nom de la colonne dans votre base de données
-    - type correspond au type de votre variable avec comme valeur possibles :
+    - type correspond au type de votre variable avec comme valeurs possibles :
         - ``int``
         - ``double``
         - ``string``
@@ -179,7 +179,7 @@ Documentation disponible sur https://github.com/auraphp/Aura.SqlQuery
 Requêtes
 --------
 
-Le Repository fourni plusieurs méthodes afin de faciliter les requêtes simples.
+Le Repository fournit plusieurs méthodes afin de faciliter les requêtes simples.
 
 Trouver un objet par clé primaire
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
