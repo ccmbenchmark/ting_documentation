@@ -341,6 +341,7 @@ On configure l'emplacement des repository.
             World:
                 namespace: AppBundle\Repository
                 directory: "@AppBundle/Repository"
+                glob: "*.php"
                 options:
                     default:
                         connection: main

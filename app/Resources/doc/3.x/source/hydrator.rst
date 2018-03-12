@@ -96,7 +96,11 @@ L'hydrateur d'aggrégation
 
     Disponible uniquement à partir de la version 3.3
 
-Celui-ci permet d'aggréger un ensemble de résultats, par exemple retourner une collection d'objet User et que chaque objet User ait la liste de tous les livres possédés par ce dernier.
+.. warning::
+
+    Déprécié en 3.5, ce dernier à été remplacé par l':ref:`hydrateur relationnel <l-hydrateur-relationnel>`
+
+Celui-ci permet d'aggréger un ensemble de résultats, par exemple retourner une collection d'objet ``User`` et que chaque objet ``User`` ait la liste de tous les livres possédés par ce dernier.
 
 Voici un exemple d'utilisation
 
@@ -133,7 +137,7 @@ Voici un exemple d'utilisation
             });
 
             return $query->query($this->getCollection($hydratorAggregator));
-    }
+        }
 
         // ...
 
@@ -187,6 +191,129 @@ La collection retournée est composée de lignes structurées ainsi :
             Book(
               [id] => 2
               [name] => "L'Oreille cassée"
+            )
+          ]
+        )
+      ]
+
+.. _l-hydrateur-relationnel:
+
+L'hydrateur relationnel
+-----------------------
+
+.. note::
+
+    Disponible uniquement à partir de la version 3.5
+
+Celui-ci permet d'aggréger un ensemble de résultats sur N niveaux, par exemple retourner une collection d’objet ``User`` et
+que chaque objet ``User`` ait la liste de tous les livres possédés par ce dernier, qui eux même ont un objet ``Author``.
+
+Voici un exemple d’utilisation
+
+.. code-block:: php
+
+    use CCMBenchmark\Ting\Repository\Hydrator;
+    use CCMBenchmark\Ting\Repository\HydratorRelational;
+    use CCMBenchmark\Ting\Repository\Repository;
+    use CCMBenchmark\Ting\Repository\MetadataInitializer;
+    use CCMBenchmark\Ting\Repository\CollectionInterface;
+
+    class SampleRepository extends Repository implements MetadataInitializer
+    {
+        /**
+         * @return CollectionInterface
+         */
+        public function getUsersWithBooksAndAuthor()
+        {
+            $query = $this->getQuery('SELECT user.id, user.name, book.id, book.name, author.id, author.name
+                    FROM user
+                    INNER JOIN book ON (book.user_id = user.id)
+                    INNER JOIN author ON (author.id = book.author_id)
+                    ORDER BY user.id');
+
+            $hydratorRelational = new HydratorRelational();
+            $hydratorRelational->addRelation(new Hydrator\RelationMany(
+                new Hydrator\AggregateFrom('book'),
+                new Hydrator\AggregateTo('user'),
+                'setBooks'
+            ));
+
+            $hydratorRelational->addRelation(new Hydrator\RelationOne(
+                new Hydrator\AggregateFrom('author'),
+                new Hydrator\AggregateTo('book'),
+                'setAuthor'
+            ));
+
+            $hydratorRelational->callableFinalizeAggregate(function ($row) {
+                return $row['user'];
+            });
+
+            return $query->query($this->getCollection($hydratorRelational));
+        }
+
+        // ...
+
+.. note::
+
+    Cet hydration va parcourir toutes les lignes retournées par votre requête et les hydrater, vous ne bénéficiez plus d'une lazy hydration.
+
+Rentrons un peu dans les détails :
+
+.. code-block:: php
+
+    $hydratorRelational->addRelation(new Hydrator\RelationMany(
+        new Hydrator\AggregateFrom('book'),
+        new Hydrator\AggregateTo('user'),
+        'setBooks'
+    ));
+
+On ajoute une relation du type many qui consiste à injecter les objets ``Book`` dans l'objet ``User`` par la méthode ``setBooks``
+
+.. code-block:: php
+
+    $hydratorRelational->callableFinalizeAggregate(function ($row) {
+        return $row['user'];
+    });
+
+
+Cette dernière partie est facultative, dans cet exemple si elle est omise, le résultat sera le suivant :
+
+.. code-block:: php
+
+    $row =
+      [
+        'user' => [
+          0 => User(
+            [id] => 1,
+            // ...
+
+Si cependant le callable est présent, la collection retournée sera la suivante :
+
+.. code-block:: php
+
+    $row =
+      [
+        0 => User(
+          [id] => 1,
+          [name] => 'Sylvain'
+          [books] => [
+            Book(
+              [id] => 1
+              [name] => "Tintin au tibet",
+              [author] =>
+                Author(
+                  [id] => 1
+                  [name] => "Hergé"
+                )
+            ),
+            Book(
+              [id] => 2
+              [name] => "L'Oreille cassée",
+              [author] =>
+                Author(
+                  [id] => 1
+                  [name] => "Hergé"
+                )
             )
           ]
         )

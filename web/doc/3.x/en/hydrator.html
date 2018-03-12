@@ -154,10 +154,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-par-defaut">6.2&nbsp;&nbsp;&nbsp;Default hydrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-pour-un-seul-objet">6.3&nbsp;&nbsp;&nbsp;The hydrator for a single object</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-d-aggregation">6.4&nbsp;&nbsp;&nbsp;The aggregator hydrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#donnees-sans-metadata">6.5&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">6.8&nbsp;&nbsp;&nbsp;Object composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-hydrateur-relationnel">6.5&nbsp;&nbsp;&nbsp;The relational hydrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#donnees-sans-metadata">6.6&nbsp;&nbsp;&nbsp;Data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapper-des-donnees-sans-metadata">6.7&nbsp;&nbsp;&nbsp;Mapping data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deserializer-des-donnees-sans-metadata">6.8&nbsp;&nbsp;&nbsp;Deserialize data without metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#composition-d-objet">6.9&nbsp;&nbsp;&nbsp;Object composition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unitofwork.html">7&nbsp;&nbsp;&nbsp;UnitOfWork</a><ul>
@@ -310,7 +311,11 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Available since version 3.3</p>
 </div>
-<p>This one allows us to aggregate a set of results, for example, we can return a collection of users and for each User object we can have its list of books.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Deprecated in 3.5, replaced by the <a class="reference internal" href="#l-hydrateur-relationnel"><span class="std std-ref">relational hydrator</span></a></p>
+</div>
+<p>This one allows us to aggregate a set of results, for example, we can return a collection of users and for each <code class="docutils literal notranslate"><span class="pre">User</span></code> object we can have its list of books.</p>
 <p>Here is an example of use</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -343,7 +348,7 @@
         <span class="p">});</span>
 
         <span class="k">return</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$hydratorAggregator</span><span class="p">));</span>
-<span class="p">}</span>
+    <span class="p">}</span>
 
     <span class="c1">// ...</span>
 </pre></div>
@@ -354,7 +359,7 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>The closure injected through <code class="docutils literal notranslate"><span class="pre">callableIdIs</span></code> allows you to return the identifier we’re gonna use as aggregate key (user’s identifier here)</p>
+<p>The closure injected through <code class="docutils literal notranslate"><span class="pre">callableIdIs</span></code> allows you to return the identifier we’re going to use as aggregate key (user’s identifier here)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">It’s very important to sort your data on this aggregate key in your SQL query otherwise you will have partial result.</p>
@@ -393,8 +398,116 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="l-hydrateur-relationnel">
+<span id="id3"></span><h2>6.5&nbsp;&nbsp;&nbsp;The relational hydrator<a class="headerlink" href="#l-hydrateur-relationnel" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Available since version 3.5</p>
+</div>
+<p>This one allows us to aggregate a set of results with N depths, for example, we can return a collection of users and for each <code class="docutils literal notranslate"><span class="pre">User</span></code> object we can have its list of books, which themselves have an <code class="docutils literal notranslate"><span class="pre">Author</span></code>.</p>
+<p>Here is an example of use</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Hydrator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\HydratorRelational</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SampleRepository</span> <span class="k">extends</span> <span class="nx">Repository</span> <span class="k">implements</span> <span class="nx">MetadataInitializer</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return CollectionInterface</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getUsersWithBooksAndAuthor</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getQuery</span><span class="p">(</span><span class="s1">&#39;SELECT user.id, user.name, book.id, book.name, author.id, author.name</span>
+<span class="s1">                FROM user</span>
+<span class="s1">                INNER JOIN book ON (book.user_id = user.id)</span>
+<span class="s1">                INNER JOIN author ON (author.id = book.author_id)</span>
+<span class="s1">                ORDER BY user.id&#39;</span><span class="p">);</span>
+
+        <span class="nv">$hydratorRelational</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HydratorRelational</span><span class="p">();</span>
+        <span class="nv">$hydratorRelational</span><span class="o">-&gt;</span><span class="na">addRelation</span><span class="p">(</span><span class="k">new</span> <span class="nx">Hydrator\RelationMany</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nx">Hydrator\AggregateFrom</span><span class="p">(</span><span class="s1">&#39;book&#39;</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nx">Hydrator\AggregateTo</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;setBooks&#39;</span>
+        <span class="p">));</span>
+
+        <span class="nv">$hydratorRelational</span><span class="o">-&gt;</span><span class="na">addRelation</span><span class="p">(</span><span class="k">new</span> <span class="nx">Hydrator\RelationOne</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nx">Hydrator\AggregateFrom</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nx">Hydrator\AggregateTo</span><span class="p">(</span><span class="s1">&#39;book&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;setAuthor&#39;</span>
+        <span class="p">));</span>
+
+        <span class="nv">$hydratorRelational</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$row</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
+        <span class="p">});</span>
+
+        <span class="k">return</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$hydratorRelational</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This hydrator going to fetch every rows and hydrate them, you’re no longer in a lazy hydration.</p>
+</div>
+<p>If we take a deeper look</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$hydratorRelational</span><span class="o">-&gt;</span><span class="na">addRelation</span><span class="p">(</span><span class="k">new</span> <span class="nx">Hydrator\RelationMany</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">Hydrator\AggregateFrom</span><span class="p">(</span><span class="s1">&#39;book&#39;</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Hydrator\AggregateTo</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;setBooks&#39;</span>
+<span class="p">));</span>
+</pre></div>
+</div>
+<p>We add the relation many which going to say to push <code class="docutils literal notranslate"><span class="pre">Book</span></code> within the object <code class="docutils literal notranslate"><span class="pre">User</span></code> through the method <code class="docutils literal notranslate"><span class="pre">setBooks</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$hydratorRelational</span><span class="o">-&gt;</span><span class="na">callableFinalizeAggregate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>This last part is optional, when you ommit it, the result will be:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+      <span class="mi">0</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
+        <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="c1">// ...</span>
+</pre></div>
+</div>
+<p>However if the closure is there, the result will be:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span>
+  <span class="p">[</span>
+    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="nx">User</span><span class="p">(</span>
+      <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sylvain&#39;</span>
+      <span class="p">[</span><span class="nx">books</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="nx">Book</span><span class="p">(</span>
+          <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+          <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Tintin au tibet&quot;</span><span class="p">,</span>
+          <span class="p">[</span><span class="nx">author</span><span class="p">]</span> <span class="o">=&gt;</span>
+            <span class="nx">Author</span><span class="p">(</span>
+              <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+              <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Hergé&quot;</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="nx">Book</span><span class="p">(</span>
+          <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">2</span>
+          <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;L&#39;Oreille cassée&quot;</span><span class="p">,</span>
+          <span class="p">[</span><span class="nx">author</span><span class="p">]</span> <span class="o">=&gt;</span>
+            <span class="nx">Author</span><span class="p">(</span>
+              <span class="p">[</span><span class="nx">id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+              <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s2">&quot;Hergé&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+      <span class="p">]</span>
+    <span class="p">)</span>
+  <span class="p">]</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="donnees-sans-metadata">
-<h2>6.5&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
+<h2>6.6&nbsp;&nbsp;&nbsp;Data without metadata<a class="headerlink" href="#donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
 <p>If you perform a query that returns data that do not match any metadata, whether an aggregation column as <code class="docutils literal notranslate"><span class="pre">SUM(price)</span></code> or a column that has not been mapped as <code class="docutils literal notranslate"><span class="pre">my_extra_column</span></code> the hydrator will create a <code class="docutils literal notranslate"><span class="pre">stdClass</span></code> object with properties corresponding to those columns.</p>
 <p>This <code class="docutils literal notranslate"><span class="pre">stdClass</span></code> object is accessible in the key 0 of the returned array.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
@@ -429,8 +542,8 @@
 </div>
 </div>
 <div class="section" id="mapper-des-donnees-sans-metadata">
-<h2>6.6&nbsp;&nbsp;&nbsp;Mapping data without metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
-<p>When you have an aggregate column you might want to mapped it to an object. To map the column <code class="docutils literal notranslate"><span class="pre">nb_books</span></code> into my model User througt the method <code class="docutils literal notranslate"><span class="pre">setNbBooks</span></code> you can do that:</p>
+<h2>6.7&nbsp;&nbsp;&nbsp;Mapping data without metadata<a class="headerlink" href="#mapper-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
+<p>When you have an aggregate column you might want to mapped it to an object. To map the column <code class="docutils literal notranslate"><span class="pre">nb_books</span></code> into my model User through the method <code class="docutils literal notranslate"><span class="pre">setNbBooks</span></code> you can do that:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\CollectionInterface</span><span class="p">;</span>
@@ -465,7 +578,7 @@
 </div>
 </div>
 <div class="section" id="deserializer-des-donnees-sans-metadata">
-<h2>6.7&nbsp;&nbsp;&nbsp;Deserialize data without metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
+<h2>6.8&nbsp;&nbsp;&nbsp;Deserialize data without metadata<a class="headerlink" href="#deserializer-des-donnees-sans-metadata" title="Permalink to this headline">¶</a></h2>
 <p>As a reminder, transform a database type into a PHP type is to deserializing. For example when you retrieve a date which is not in metadata, we may want to transform it to object <code class="docutils literal notranslate"><span class="pre">Datetime</span></code>.</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>
@@ -504,7 +617,7 @@
 </div>
 </div>
 <div class="section" id="composition-d-objet">
-<h2>6.8&nbsp;&nbsp;&nbsp;Object composition<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
+<h2>6.9&nbsp;&nbsp;&nbsp;Object composition<a class="headerlink" href="#composition-d-objet" title="Permalink to this headline">¶</a></h2>
 <p>We may want to do object compositions, injecting one object into one other on many deep levels. To map object <code class="docutils literal notranslate"><span class="pre">Country</span></code> (which has alias <code class="docutils literal notranslate"><span class="pre">co</span></code>) into my model <code class="docutils literal notranslate"><span class="pre">City</span></code> (which has alias <code class="docutils literal notranslate"><span class="pre">cit</span></code>) through the method <code class="docutils literal notranslate"><span class="pre">setCountry</span></code> you can do that:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\Repository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CCMBenchmark\Ting\Repository\MetadataInitializer</span><span class="p">;</span>

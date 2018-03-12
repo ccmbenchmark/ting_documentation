@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 11:09+0200\n"
+"POT-Creation-Date: 2018-03-12 10:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.5.3\n"
 
 #: ../../hydrator.rst:5
 msgid "Les hydrateurs"
@@ -48,8 +48,8 @@ msgstr ""
 " will fill an associative array with, as a key, the table name (or alias "
 "used) and the object for as a value"
 
-#: ../../hydrator.rst:39 ../../hydrator.rst:173 ../../hydrator.rst:221
-#: ../../hydrator.rst:264 ../../hydrator.rst:306 ../../hydrator.rst:348
+#: ../../hydrator.rst:39 ../../hydrator.rst:177 ../../hydrator.rst:348
+#: ../../hydrator.rst:391 ../../hydrator.rst:433 ../../hydrator.rst:475
 msgid "La collection retournée est composée de lignes structurées ainsi :"
 msgstr "The returned collection is composed of rows:"
 
@@ -98,62 +98,126 @@ msgstr "The aggregator hydrator"
 msgid "Disponible uniquement à partir de la version 3.3"
 msgstr "Available since version 3.3"
 
-#: ../../hydrator.rst:99
+#: ../../hydrator.rst:101
+msgid ""
+"Déprécié en 3.5, ce dernier à été remplacé par l':ref:`hydrateur "
+"relationnel <l-hydrateur-relationnel>`"
+msgstr ""
+"Deprecated in 3.5, replaced by the :ref:`relational hydrator <l-hydrateur-relationnel>`"
+
+#: ../../hydrator.rst:103
 msgid ""
 "Celui-ci permet d'aggréger un ensemble de résultats, par exemple "
-"retourner une collection d'objet User et que chaque objet User ait la "
-"liste de tous les livres possédés par ce dernier."
-msgstr "This one allows us to aggregate a set of results, for example, "
-"we can return a collection of users and for each User object we can have its list of books."
+"retourner une collection d'objet ``User`` et que chaque objet ``User`` "
+"ait la liste de tous les livres possédés par ce dernier."
+msgstr ""
+"This one allows us to aggregate a set of results, for example, we can "
+"return a collection of users and for each ``User`` object we can have its "
+"list of books."
 
-#: ../../hydrator.rst:101
+#: ../../hydrator.rst:105
 msgid "Voici un exemple d'utilisation"
 msgstr "Here is an example of use"
 
-#: ../../hydrator.rst:140
+#: ../../hydrator.rst:144 ../../hydrator.rst:260
 msgid "Rentrons un peu dans les détails :"
 msgstr "If we take a deeper look"
 
-#: ../../hydrator.rst:148
+#: ../../hydrator.rst:152
 msgid ""
 "La closure injectée via ``callableIdIs`` permet de retourner "
-"l'identifiant qui sera utilisé comme clé d'aggrégation (ici "
-"l'identifiant de l'utilisateur)"
-msgstr "The closure injected through ``callableIdIs`` allows you to "
-"return the identifier we're gonna use as aggregate key (user's identifier here)"
+"l'identifiant qui sera utilisé comme clé d'aggrégation (ici l'identifiant"
+" de l'utilisateur)"
+msgstr ""
+"The closure injected through ``callableIdIs`` allows you to return the "
+"identifier we're going to use as aggregate key (user's identifier here)"
 
-#: ../../hydrator.rst:152
+#: ../../hydrator.rst:156
 msgid ""
 "Il est très important d'effectuer un tri dans votre requête SQL sur cette"
 " clé d'aggrégation sinon vous aurez des résultats partiels."
-msgstr "It's very important to sort your data on this aggregate key in your SQL query "
-"otherwise you will have partial result."
+msgstr ""
+"It's very important to sort your data on this aggregate key in your SQL "
+"query otherwise you will have partial result."
 
-#: ../../hydrator.rst:160
+#: ../../hydrator.rst:164
 msgid ""
 "La closure injectée via ``callableDataIs`` permet de retourner la donnée "
 "qui doit être aggrégée (ici un Livre)"
-msgstr "The closure injected through ``callableDataIs`` allows you to "
-"return the data that should be aggregated (here a book)"
+msgstr ""
+"The closure injected through ``callableDataIs`` allows you to return the "
+"data that should be aggregated (here a book)"
 
-#: ../../hydrator.rst:169
+#: ../../hydrator.rst:173
 msgid ""
 "Cette dernière partie est facultative, si elle est omise, le résultat de "
 "l'aggrégation se trouvera dans la clé ``aggregate`` de la collection. "
 "Elle vous permet d'effectuer une opération de finalisation et de choisir "
 "ce que vous voulez faire des données qui viennent d'être aggrégées, ici "
-"il s'agit d'une liste de livres que nous injectons dans l'utilisateur via "
-"la méthode ``setBooks``"
-msgstr "This last part is optional, when you ommit it, the aggregated result will "
-"be put into ``aggregate`` key of the collection. "
-"You can finalize the aggregate with this closure and choose what to do with "
-"the data aggregated, here we have a list of book and we inject them into user through ``setBooks``"
+"il s'agit d'une liste de livres que nous injectons dans l'utilisateur via"
+" la méthode ``setBooks``"
+msgstr ""
+"This last part is optional, when you ommit it, the aggregated result will"
+" be put into ``aggregate`` key of the collection. You can finalize the "
+"aggregate with this closure and choose what to do with the data "
+"aggregated, here we have a list of book and we inject them into user "
+"through ``setBooks``"
 
-#: ../../hydrator.rst:196
+#: ../../hydrator.rst:202
+msgid "L'hydrateur relationnel"
+msgstr "The relational hydrator"
+
+#: ../../hydrator.rst:206
+msgid "Disponible uniquement à partir de la version 3.5"
+msgstr "Available since version 3.5"
+
+#: ../../hydrator.rst:208
+msgid ""
+"Celui-ci permet d'aggréger un ensemble de résultats sur N niveaux, par "
+"exemple retourner une collection d’objet ``User`` et que chaque objet "
+"``User`` ait la liste de tous les livres possédés par ce dernier, qui eux"
+" même ont un objet ``Author``."
+msgstr ""
+"This one allows us to aggregate a set of results with N depths, for example, we can "
+"return a collection of users and for each ``User`` object we can have its "
+"list of books, which themselves have an ``Author``."
+
+#: ../../hydrator.rst:211
+msgid "Voici un exemple d’utilisation"
+msgstr "Here is an example of use"
+
+#: ../../hydrator.rst:258
+msgid ""
+"Cet hydration va parcourir toutes les lignes retournées par votre requête"
+" et les hydrater, vous ne bénéficiez plus d'une lazy hydration."
+msgstr ""
+"This hydrator going to fetch every rows and hydrate them, you're no longer in a lazy hydration."
+
+#: ../../hydrator.rst:270
+msgid ""
+"On ajoute une relation du type many qui consiste à injecter les objets "
+"``Book`` dans l'objet ``User`` par la méthode ``setBooks``"
+msgstr ""
+"We add the relation many which going to say to push ``Book`` within "
+"the object ``User`` through the method ``setBooks``"
+
+#: ../../hydrator.rst:279
+msgid ""
+"Cette dernière partie est facultative, dans cet exemple si elle est "
+"omise, le résultat sera le suivant :"
+msgstr "This last part is optional, when you ommit it, the result will be:"
+
+#: ../../hydrator.rst:290
+msgid ""
+"Si cependant le callable est présent, la collection retournée sera la "
+"suivante :"
+msgstr "However if the closure is there, the result will be:"
+
+#: ../../hydrator.rst:323
 msgid "Données sans metadata"
 msgstr "Data without metadata"
 
-#: ../../hydrator.rst:197
+#: ../../hydrator.rst:324
 msgid ""
 "Si vous effectuez une requête qui retourne des données qui ne "
 "correspondent à aucune metadata, que ce soit une colonne d'aggrégation "
@@ -166,29 +230,29 @@ msgstr ""
 "been mapped as ``my_extra_column`` the hydrator will create a "
 "``stdClass`` object with properties corresponding to those columns."
 
-#: ../../hydrator.rst:201
+#: ../../hydrator.rst:328
 msgid "Cet objet ``stdClass`` est accessible dans la clé 0 du tableau retourné."
 msgstr "This ``stdClass`` object is accessible in the key 0 of the returned array."
 
-#: ../../hydrator.rst:237
+#: ../../hydrator.rst:364
 msgid "Mapper des données sans metadata"
 msgstr "Mapping data without metadata"
 
-#: ../../hydrator.rst:238
+#: ../../hydrator.rst:365
 msgid ""
 "Dans le cas d'une colonne d'aggrégation, on peut souhaiter la mapper dans"
 " un objet. Pour mapper la colonne ``nb_books`` dans mon model User via la"
 " méthode ``setNbBooks`` il suffit de faire :"
 msgstr ""
 "When you have an aggregate column you might want to mapped it to an "
-"object. To map the column ``nb_books`` into my model User througt the "
+"object. To map the column ``nb_books`` into my model User through the "
 "method ``setNbBooks`` you can do that:"
 
-#: ../../hydrator.rst:277
+#: ../../hydrator.rst:404
 msgid "Déserializer des données sans metadata"
 msgstr "Deserialize data without metadata"
 
-#: ../../hydrator.rst:278
+#: ../../hydrator.rst:405
 msgid ""
 "Pour rappel l'action de déserializer consiste à transformer un type de "
 "base données dans un type PHP. Par exemple si on récupère une date qui "
@@ -199,11 +263,11 @@ msgstr ""
 "deserializing. For example when you retrieve a date which is not in "
 "metadata, we may want to transform it to object ``Datetime``."
 
-#: ../../hydrator.rst:321
+#: ../../hydrator.rst:448
 msgid "Composition d'objet"
 msgstr "Object composition"
 
-#: ../../hydrator.rst:322
+#: ../../hydrator.rst:449
 msgid ""
 "On peut vouloir faire de la composition d'objet, injecter un objet dans "
 "un autre et ce sur plusieurs niveaux. Pour mapper l'objet ``Country`` "

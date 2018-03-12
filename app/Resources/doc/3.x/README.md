@@ -14,8 +14,8 @@ Générer la documentation :
     dans ce même répertoire taper :
         make html
 
-Mettre à jour les po :
-    sphinx-intl update -p source/_build/locale
-
 Create pot (for new files, update po etc) :
     make gettext
+
+Mettre à jour les po :
+    sphinx-intl update -p source/_build/locale
