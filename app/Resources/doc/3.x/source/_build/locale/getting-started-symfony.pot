@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2015, CCM Benchmark Group
+# Copyright (C) 2018, CCM Benchmark Group
 # This file is distributed under the same license as the ting package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ting 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 11:09+0200\n"
+"POT-Creation-Date: 2018-03-12 10:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -215,35 +215,35 @@ msgstr ""
 msgid "On configure l'emplacement des repository."
 msgstr ""
 
-#: ../../getting-started-symfony.rst:350
+#: ../../getting-started-symfony.rst:351
 msgid "Création des entitées"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:352
+#: ../../getting-started-symfony.rst:353
 msgid "Lorsque l'on a créé les repository, on a indiqué avec quel entité il travaille : ``$metadata->setEntity('AppBundle\\Entity\\Country');`` On va donc maintenant créer une entité pour chaque repository."
 msgstr ""
 
-#: ../../getting-started-symfony.rst:355
+#: ../../getting-started-symfony.rst:356
 msgid "src/AppBundle/Entity/City.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:444
+#: ../../getting-started-symfony.rst:445
 msgid "src/AppBundle/Entity/Country.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:533
+#: ../../getting-started-symfony.rst:534
 msgid "src/AppBundle/Entity/CountryLanguage.php"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:603
+#: ../../getting-started-symfony.rst:604
 msgid "On a maintenant les repository et les entitées correspondantes, on va pouvoir faire des requêtes."
 msgstr ""
 
-#: ../../getting-started-symfony.rst:606
+#: ../../getting-started-symfony.rst:607
 msgid "Vous pouvez maintenant utiliser Ting"
 msgstr ""
 
-#: ../../getting-started-symfony.rst:608
+#: ../../getting-started-symfony.rst:609
 msgid "Dans ``DefaultController::indexAction`` :"
 msgstr ""
 

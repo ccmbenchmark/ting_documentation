@@ -235,7 +235,7 @@ msgstr ""
 msgid ""
 "On nomme ici la connexion ``main`` on va l'utiliser ci-dessous lors de la"
 " configuration des repository."
-msgstr "We named the connection ``main`` we gonna used it below."
+msgstr "We named the connection ``main`` we going to used it below."
 
 #: ../../getting-started-symfony.rst:332
 msgid "Configuration pour indiquer l'emplacement des repository"
